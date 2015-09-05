@@ -26,22 +26,7 @@ use mvc\i18n\i18nClass as i18n ?>
                         </tr>
                     <?php endif; ?>
                          
-                 <tr>
-                        <th>
-                            <?php echo i18n::__('lote', null, 'animal') ?>:
-                        </th>
-                        <th>
-                            <select name="<?php echo animalTableClass::getNameField(animalTableClass::LOTE_ID, true) ?>">
-                                <option>...</option>
-                                  <?php foreach ($objLote as $key): ?>
-                  <option value="<?php echo $key->id ?>">
-                    <?php echo $key->nombre_lote ?>
-                  </option>
-                <?php endforeach; ?>
-                          
-                            </select>
-                        </th>
-                    </tr>
+
                   
                     <tr>
                         <th colspan="2" >

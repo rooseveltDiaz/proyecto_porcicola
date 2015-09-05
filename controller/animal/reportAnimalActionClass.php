@@ -19,9 +19,9 @@ class reportAnimalActionClass extends controllerClass implements controllerActio
     public function execute() {
         try {
             $where = null;
-//            if (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
-//                $where = session::getInstance()->getAttribute('animalFiltersAnimal');
-//            }
+            if (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
+                $where = session::getInstance()->getAttribute('animalFiltersAnimal');
+            }
 
             if (request::getInstance()->hasPost('report')) {
                 $report = request::getInstance()->getPost('report');

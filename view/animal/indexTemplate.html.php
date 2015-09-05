@@ -70,7 +70,7 @@ use mvc\view\viewClass as view ?>
                                     <th><?php echo i18n::__('action') ?></th>
                                 <?php endif; ?>
                             </tr>
-                        </thead>
+                        </thead>   
                         <tbody>
                             <?php foreach ($objAnimal as $key): ?>
                                 <tr>
@@ -295,7 +295,7 @@ use mvc\view\viewClass as view ?>
                                 <option value="">
                                     ...
                                 </option>
-                                <?php foreach ($objAnimal as $key): ?>
+                                <?php foreach ($objFilterAnimal as $key): ?>
                                     <option value="<?php echo $key->id ?>">
                                         <?php echo $key->numero_identificacion ?>
                                     </option>

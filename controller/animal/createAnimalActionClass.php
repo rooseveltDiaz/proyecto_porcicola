@@ -21,12 +21,9 @@ class createAnimalActionClass extends controllerClass implements controllerActio
         try {
             if (request::getInstance()->isMethod('POST')) {
                 // DATOS DE ANIMAL
-               $lote = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::LOTE_ID, true));
                $numeroIdentificacion = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::NUMERO, true));
                 //validar si los campos estan vacios
                 $datos = array(
-                  
-                    $lote,
                     $numeroIdentificacion
                 );
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
@@ -52,7 +49,7 @@ class createAnimalActionClass extends controllerClass implements controllerActio
             //Insertar la informacion del usuario
             $data = array(
                
-                animalTableClass::LOTE_ID => $lote,
+                animalTableClass::LOTE_ID => 8,
                 animalTableClass::NUMERO => $numeroIdentificacion
             );
             animalTableClass::insert($data);

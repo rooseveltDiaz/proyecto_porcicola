@@ -20,11 +20,11 @@ class reportDetalleAnimalActionClass extends controllerClass implements controll
         try {
             $where = null;
 //            $idAnimal = request::getInstance()->getRequest(animalTableClass::ID);
-            if (request::getInstance()->hasRequest('report')) {
-                $report = request::getInstance()->getPost('report');
+            if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
 
                 if (isset($report['numero']) and $report['numero'] !== null and $report['numero'] !== '') {
-                    $where[animalTableClass::getNameTable() . '.' . animalTableClass::NUMERO] = $report['numero'];
+                    $where[animalTableClass::getNameTable() . '.' . animalTableClass::ID] = $report['numero'];
                 }//close if
 
                 if (isset($report['lote']) and $report['lote'] !== null and $report['lote'] !== '') {
@@ -47,10 +47,10 @@ class reportDetalleAnimalActionClass extends controllerClass implements controll
             $fJoin1 = animalTableClass::LOTE_ID;
             $fJoin2 = loteTableClass::ID;
 
- 
-
-        
-            $this->objAnimal = animalTableClass::getAllJoin($fieldsAnimal, $fieldsLote, null, null, $fJoin1, $fJoin2, null, null, null, null, true, null, null, null, null, null);
+//            print_r($where); 
+//echo 12;
+//        exit();
+            $this->objAnimal = animalTableClass::getAllJoin($fieldsAnimal, $fieldsLote, null, null, $fJoin1, $fJoin2, null, null, null, null, true, null, null, null, null, $where);
        
             $this->mensajeDetalle = "Inventario de Cerdos por Lote";
             log::register(i18n::__('reporte'), animalTableClass::getNameTable());

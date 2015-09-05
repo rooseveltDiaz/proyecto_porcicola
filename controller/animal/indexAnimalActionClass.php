@@ -83,8 +83,8 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             $lines = config::getRowGrid();
             $this->cntPages = animalTableClass::getAllCount($f, true, $lines, $where);
             // $this->page = request::getInstance()->getGet('page');
-            $this->objLote = loteTableClass::getAll($fieldsLote, false);
-
+            $this->objLote = loteTableClass::getAll($fieldsLote, true);
+            $this->objFilterAnimal = animalTableClass::getAll($fields, true);
             $this->objAnimal = animalTableClass::getAllJoin($fields, $fields3, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->defineView('index', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
