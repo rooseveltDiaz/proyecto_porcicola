@@ -34,10 +34,7 @@ class createHojaVidaActionClass extends controllerClass implements controllerAct
                     $raza,
                     $peso
                 );
-                $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
-                if ($validatorEmpty == false) {
-                    throw new PDOException(i18n::__(10006, null, 'errors', null, 10006));
-                }
+         
 
                 //Validar el formato de fecha
 //                $validacionFecha = validator::getInstance()->validateDate($fecha);

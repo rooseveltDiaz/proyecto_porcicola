@@ -22,7 +22,7 @@ class updateInsertVacunaActionClass extends controllerClass implements controlle
                 $id = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::ID, true));
                 $cantidad = request::getInstance()->getPost(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true));
 
-                vacunaTableClass::validateUpdateInsert($cantidad);
+//                vacunaTableClass::validateUpdateInsert($cantidad);
                 
                 $fieldsVacuna = array(vacunaTableClass::CANTIDAD);
                 $where = array(vacunaTableClass::ID => $id);

@@ -25,7 +25,7 @@ use mvc\request\requestClass as request ?>
 
             <div class="row">
                 <div class="col-xs-12 text-center">
-<?PHP ECHO date("Y") ?>
+<!--<?PHP ECHO date("Y") ?>-->
                     <h2>
                         <?php echo i18n::__('RegistrosEntrada') ?> 
                     </h2>

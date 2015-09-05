@@ -87,7 +87,7 @@ use mvc\view\viewClass as view ?>
                                                 <?php echo i18n::__('insert', null, 'ayuda') ?>
                                             </div> 
 
-                                            <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'viewVacunacion', array(animalTableClass::ID => $key->id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i> </a>
+                                            <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(animalTableClass::ID => $key->id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i> </a>
                                             <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                                                 <?php echo i18n::__('watch', null, 'ayuda') ?>
                                             </div> 

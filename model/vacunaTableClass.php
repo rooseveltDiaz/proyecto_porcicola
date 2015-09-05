@@ -328,11 +328,11 @@ class vacunaTableClass extends vacunaBaseTableClass {
             session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true), true);
         }
         
-        if ($cantidad < 0) {
-            session::getInstance()->setError(i18n::__(10125, null, 'errors', array('%campo%' => $cantidad)));
-            $flag = true;
-            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true), true);
-        } 
+//        if ($cantidad < 0) {
+//            session::getInstance()->setError(i18n::__(10125, null, 'errors', array('%campo%' => $cantidad)));
+//            $flag = true;
+//            session::getInstance()->setFlash(vacunaTableClass::getNameField(vacunaTableClass::CANTIDAD, true), true);
+//        } 
         
                if ($flag == true) {
             request::getInstance()->setMethod('GET');
