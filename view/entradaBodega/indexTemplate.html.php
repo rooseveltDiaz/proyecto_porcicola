@@ -94,10 +94,10 @@ use mvc\request\requestClass as request ?>
 
                                     <?php if ($key->$estado == true): ?>
                                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                            <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$id))?>" class="btn btn-default active btn-sm fa fa-edit"></a>
+<!--                                            <a  id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'editEntrada', array(entradaBodegaTableClass::ID => $key->$id))?>" class="btn btn-default active btn-sm fa fa-edit"></a>
                                             <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                                 <?php echo i18n::__('modificar', null, 'ayuda') ?>
-                                            </div> 
+                                            </div> -->
 
                                             <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
                                             <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
@@ -116,7 +116,7 @@ use mvc\request\requestClass as request ?>
                                             <?php echo i18n::__('inhabilitar', null, 'ayuda') ?>
                                         </div> -->
                                     <?php endif; ?>
-                                    </div> 
+                                    
                                 </td>
                             </tr>
                             <tr>
@@ -136,7 +136,7 @@ use mvc\request\requestClass as request ?>
                                     <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"> <?php echo i18n::__('cancel') ?></a>
                                     <button type="button" class="btn btn-primary fa fa-ban" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo entradaBodegaTableClass::getNameField(entradaBodegaTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteEntrada') ?>')"> <?php echo i18n::__('inhabil') ?></button>
                                 </div>
-                            </div>
+x                            </div>
                         </div>
 
                         <!-- WINDOWS MODAL DETAILS -->

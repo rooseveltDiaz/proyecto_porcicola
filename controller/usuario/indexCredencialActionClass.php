@@ -20,7 +20,8 @@ class indexCredencialActionClass extends controllerClass implements controllerAc
             $where = null;
             $fields = array(
                 credencialTableClass::ID,
-                credencialTableClass::NOMBRE
+                credencialTableClass::NOMBRE,
+                credencialTableClass::DESCRIPCION
             );
             $orderBy = array(
             credencialTableClass::ID

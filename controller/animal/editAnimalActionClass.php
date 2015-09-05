@@ -19,34 +19,25 @@ class editAnimalActionClass extends controllerClass implements controllerActionI
         try {
             if (request::getInstance()->hasRequest(animalTableClass::ID)) {
 
-                $fieldsRaza = array(
-                    razaTableClass::ID,
-                    razaTableClass::NOMBRE_RAZA
-                );
+           
                 $fieldsLote = array(
                     loteTableClass::ID,
                     loteTableClass::NOMBRE
                 );
-                $fieldsGenero = array(
-                    generoTableClass::ID,
-                    generoTableClass::NOMBRE
-                );
+          
                 $fieldsAnimal = array(
-                    animalTableClass::FECHA_NACIMIENTO,
-                    animalTableClass::PRECIO_ANIMAL,
-                    animalTableClass::GENERO_ID,
+         
                     animalTableClass::ID,
                     animalTableClass::LOTE_ID,
-                    animalTableClass::PESO,
-                    animalTableClass::RAZA
+                
                 );
                 $where = array(
                     animalTableClass::ID => request::getInstance()->getRequest(animalTableClass::ID, true)
                 );
 
-                $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
+          
                 $this->objLote = loteTableClass::getAll($fieldsLote);
-                $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
+              
                 $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $where);
                 $this->defineView('edit', 'animal', session::getInstance()->getFormatOutput());
             } else {

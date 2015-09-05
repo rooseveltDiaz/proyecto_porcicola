@@ -25,15 +25,11 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
 
                 $filter = request::getInstance()->getPost('filter');
 
-                if (isset($filter['fecha_final']) and $filter['fecha_final'] !== null and $filter['fecha_final'] !== '' and isset($filter['fecha_inicial']) and $filter['fecha_inicial'] !== null and $filter['fecha_inicial'] !== '') {
+                if (isset($filter['fecha_inicio']) and $filter['fecha_inicio'] !== null and $filter['fecha_inicio'] !== '' and isset($filter['fecha_final']) and $filter['fecha_fina'] !== null and $filter['fecha_final'] !== '') {
                     $where[procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::FECHA_HORA_VENTA] = array(
                         date(config::getFormatTimestamp(), strtotime($filter['fecha_inicial'] . ' 00.00.00')),
                         date(config::getFormatTimestamp(), strtotime($filter['fecha_final'] . ' 23.59.59'))
                     );
-                }//close if
-
-                if (isset($filter['empleado']) and $filter['empleado'] !== null and $filter['empleado'] !== '') {
-                    $where[procesoVentaTableClass::EMPLEADO_ID] = $filter['empleado'];
                 }//close if
 
                 if (isset($filter['cliente']) and $filter['cliente'] !== null and $filter['cliente'] !== '') {
@@ -65,6 +61,10 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
                 clienteTableClass::NOMBRE,
                 clienteTableClass::ID
             );
+            $fieldsAnimal = array(
+                animalTableClass::ID,
+                animalTableClass::NUMERO
+            );
             $fJoin1 = procesoVentaTableClass::EMPLEADO_ID;
             $fJoin2 = empleadoTableClass::ID;
             $fJoin3 = procesoVentaTableClass::CLIENTE_ID;
@@ -95,11 +95,7 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
                 $this->page = $page;
             }//close if 
 
-            $ffA = array(
-            animalTableClass::ID,
-            animalTableClass::NUMERO
-            );
-            $this->objAnimal = animalTableClass::getAll($ffA, true);
+            $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             log::register(i18n::__('ver', null, 'facturaVenta'), procesoVentaTableClass::getNameTable());
             $this->defineView('index', 'facturaVenta', session::getInstance()->getFormatOutput());

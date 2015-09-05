@@ -2,6 +2,9 @@
 culture:                  Español
 dictionary:
   default:
+    valor_kilo:           Valor por Kilo
+    peso_final:           Peso Final
+    total:                Total
     subt:                 Subtotal
     RegistrosEntrada:     Entrada de Bodega
     personal:             Personal
@@ -655,6 +658,7 @@ dictionary:
 
     
   ayuda:
+    atras:               Atrás
     reg:                 Registrar
     compra:              Registrar:A través de esta opción usted podrá aumentar el inventario de vacunas
     req:                 Requerimientos
@@ -693,6 +697,8 @@ dictionary:
     verDetalle:          Ver Detalle:Ver los detalles correspondientes al registro
     insertDetalle:       Insertar Detalle:Inserta un detalle al registro
     verDetalleFact:      Ver Detalle:Ver los detalles correspondientes a la factura
+    insert:              Insertar:Registra los datos básicos del animal
+    watch:               Ver:Visualiza la Hoja de Vida del Animal
     eliminar:            Eliminar:Borra el registro
     editDetalle:         Modificar Detalle:Modifica el detalle del registro
     inhabilitarDetalle:  Inhabilitar Detalle:Inhabilita el detalle del registro

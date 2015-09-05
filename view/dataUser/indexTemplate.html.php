@@ -107,4 +107,8 @@ use mvc\i18n\i18nClass as i18n ?>
     </div>
 
   </div>
+         <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuario') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
 </main>

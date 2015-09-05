@@ -3,70 +3,85 @@
 use mvc\model\table\tableBaseClass;
 
 /**
- * Description of detalleEntradaBodegaBaseTableClass
+ * Description of hojaVidaBaseTableClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class detalleEntradaBodegaBaseTableClass extends tableBaseClass {
+class hojaVidaBaseTableClass extends tableBaseClass {
 
     private $id,
-            $id_entrada,
-            $tipo_insumo,
-            $id_insumo,
-            $estado,
-           
-            $cantidad;
+            $fecha_nacimiento,
+            $raza_id,
+            $numero_parto,
+            $peso_animal,
+            $id_animal,
+            $genero_id;
 
     const ID = 'id';
-    const ID_ENTRADA = 'id_entrada';
-    const TIPO_INSUMO = 'tipo_insumo';
-    const ID_INSUMO = 'id_insumo';
-    const ESTADO = 'estado';
-    const CANDITDAD = 'cantidad';
-  
-
-
+    const PESO = 'peso_animal';
+    const FECHA_NACIMIENTO = 'fecha_nacimiento';
+    const PARTO = 'numero_parto';
+    const ANIMAL = 'id_animal';
+    const GENERO_ID = 'genero_id';
+    const RAZA = 'raza_id';
 
     function getId() {
         return $this->id;
     }
 
-    function getId_entrada() {
-        return $this->id_entrada;
+    function getFecha_nacimiento() {
+        return $this->fecha_nacimiento;
     }
 
-    function getTipo_insumo() {
-        return $this->tipo_insumo;
+    function getRaza_id() {
+        return $this->raza_id;
     }
 
-    function getId_insumo() {
-        return $this->id_insumo;
+    function getNumero_parto() {
+        return $this->numero_parto;
     }
 
-    function getCantidad() {
-        return $this->cantidad;
+    function getPeso_animal() {
+        return $this->peso_animal;
+    }
+
+    function getId_animal() {
+        return $this->id_animal;
+    }
+
+    function getGenero_id() {
+        return $this->genero_id;
     }
 
     function setId($id) {
         $this->id = $id;
     }
 
-    function setId_entrada($id_entrada) {
-        $this->id_entrada = $id_entrada;
+    function setFecha_nacimiento($fecha_nacimiento) {
+        $this->fecha_nacimiento = $fecha_nacimiento;
     }
 
-    function setTipo_insumo($tipo_insumo) {
-        $this->tipo_insumo = $tipo_insumo;
+    function setRaza_id($raza_id) {
+        $this->raza_id = $raza_id;
     }
 
-    function setId_insumo($id_insumo) {
-        $this->id_insumo = $id_insumo;
+    function setNumero_parto($numero_parto) {
+        $this->numero_parto = $numero_parto;
     }
 
-    function setCantidad($cantidad) {
-        $this->cantidad = $cantidad;
+    function setPeso_animal($peso_animal) {
+        $this->peso_animal = $peso_animal;
     }
 
+    function setId_animal($id_animal) {
+        $this->id_animal = $id_animal;
+    }
+
+    function setGenero_id($genero_id) {
+        $this->genero_id = $genero_id;
+    }
+
+    
     /**
      * Método para obtener el nombre del campo más la tabla ya sea en formato
      * DB (.) o en formato HTML (_)
@@ -81,25 +96,24 @@ class detalleEntradaBodegaBaseTableClass extends tableBaseClass {
     }
 
     /**
-     * Obtiene el nombre de la tabla
+     * Obtener los nombres de las tablas
      * @return string
      */
     public static function getNameTable() {
-        return 'detalle_entrada_bodega';
+        return 'hoja_vida';
     }
 
     public static function getNameTable2() {
-        return 'insumo';
+        return 'genero';
     }
 
     public static function getNameTable3() {
-        return 'tipo_insumo';
-    }
-        public static function getNameTable4() {
-        return null;
+        return 'raza';
     }
 
-
+    public static function getNameTable4() {
+        return 'animal';
+    }
 
     /**
      * Método para borrar un registro de una tabla X en la base de datos
@@ -197,18 +211,6 @@ class detalleEntradaBodegaBaseTableClass extends tableBaseClass {
      */
     public static function getAllJoin($fields, $fields2, $fields3 = null, $fields4 = null, $fJoin1 = null, $fJoin2 = null, $fJoin3 = null, $fJoin4 = null, $fJoin5 = null, $fJoin6 = null, $deletedLogical = false, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null, $table2 = null, $table3 = null) {
         return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
-    }
-
-    /**
-     * Método para modificar el estado un registro de una tabla X en la base de datos
-     *
-     * @param array $ids Array con los campos por posiciones
-     * asociativas y los valores por valores a tener en cuenta para el borrado.
-     * Ejemplo $fieldsAndValues['id'] = 1
-     * instancia de \PDOException en caso de fracaso.
-     */
-    public static function stateToToggle($ids, $table = null) {
-        return parent::stateToToggle($ids, self::getNameTable());
     }
 
 }

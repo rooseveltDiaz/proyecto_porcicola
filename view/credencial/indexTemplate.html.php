@@ -43,7 +43,7 @@ use mvc\session\sessionClass as session ?>
                                
 <!--                                <th><?php echo i18n::__('id') ?></th>-->
                                 <th><?php echo i18n::__('name') ?></th>
-<!--                                <th><?php echo i18n::__('descripcion') ?></th>-->
+                                <th><?php echo i18n::__('descripcion') ?></th>
 <!--                              <th><?php echo i18n::__('action') ?></th>-->
                             </tr>
                         </thead>
@@ -53,7 +53,7 @@ use mvc\session\sessionClass as session ?>
 <!--                             <td><?php echo $key->$id ?></td>-->
                                     
                                     <td><?php echo $key->$nombre ?></td>
-<!--                                   <td><?php echo $key->descripcion ?></td>-->
+                                   <td><?php echo $key->descripcion ?></td>
                                     
 <!--                                   <td>
                                         <a href="#" class="btn btn-warning btn-sm disabled">Ver</a>
@@ -73,7 +73,7 @@ use mvc\session\sessionClass as session ?>
             <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteCredencial') ?>" method="POST">
                 <input type="hidden" id="idDelete" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, true) ?>">
             </form>
-            <!--    paginado-->
+<!--                paginado
             <div class="text-right">
                 <nav>
                     <ul class="pagination" id="slqPaginador">
@@ -86,7 +86,7 @@ use mvc\session\sessionClass as session ?>
                         <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexCredencial') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
                     </ul>
                 </nav>
-            </div>
+            </div>-->
         </div>
     </div>
 </main>

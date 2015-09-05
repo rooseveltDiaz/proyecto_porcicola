@@ -123,45 +123,6 @@ use mvc\session\sessionClass as session ?>
                             <tr>
                                 <th>
 
-
-                                    <!-- WINDOWS MODAL CHANGE STATE -->
-                  <!--            <div id="changeState<?php echo $key->$id ?>" class="modalmask">
-                                <div class="modalbox rotate">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('inhRegistro') ?></h4>
-                                  </div>
-                                  <a href="#close" title="Close" class="close">X</a>
-                                  <div class="modal-body">
-                                    <?php echo i18n::__('confirmInhabil') ?>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <a href="#close2" title="Close" class="close2 btn btn-default fa fa-times-circle-o close2"> <?php echo i18n::__('cancel') ?></a>
-                                    <button type="button" class="btn btn-primary fa fa-ban" onclick="eliminar(<?php echo $key->$id ?>, '<?php echo vacunacionTableClass::getNameField(vacunacionTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion') ?>')"> <?php echo i18n::__('inhabil') ?></button>
-                                  </div>
-                                </div>
-                              </div>-->
-
-                                    <!-- WINDOWS MODAL DELETE -->
-                  <!--            <div class="modalmask" id="myModalDelete<?php echo $key->id ?>">
-                                <div class="modalbox rotate">
-                                  <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('confirmDelete') ?></h4>
-                                  </div>
-                                     <a href="#close" title="Close" class="close">X</a>
-                                  <div class="modal-body">
-                  
-                                    <?php echo i18n::__('eliminarIndividual') ?>
-                                  </div>
-                                  <div class="modal-footer">
-                                    <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o" > <?php echo i18n::__('cancel') ?></a>
-                                    <button id="delete" name="delete" type="button" class="btn btn-primary fa fa-ban" onclick="eliminar(<?php echo $key->id ?>, '<?php echo vacunacionBaseTableClass::getNameField(vacunacionTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion') ?>')"> <?php echo i18n::__('delete') ?></button>
-                                  </div>
-                                </div>
-                              </div>-->
-                                    </div> 
-
                                     <!-- WINDOWS MODAL DETAIL VACCINATION -->
                         <div class="modalmask" id="myModalDetail<?php echo $key->id ?>">
                             <div class="modalbox rotate">

@@ -32,14 +32,13 @@ class viewFacturaVentaActionClass extends controllerClass implements controllerA
 
 
 
-//echo $idFactura;
-//exit();
 
 
 
         try {
             if (request::getInstance()->hasRequest(procesoVentaTableClass::ID)) {
                 $idFactura = request::getInstance()->getRequest(procesoVentaTableClass::ID);
+
 
 
 //                if (request::getInstance()->hasPost('filter')) {
@@ -104,12 +103,23 @@ class viewFacturaVentaActionClass extends controllerClass implements controllerA
                     detalleProcesoVentaTableClass::ID,
                     detalleProcesoVentaTableClass::VENTA,
                     detalleProcesoVentaTableClass::VALOR,
-                    detalleProcesoVentaTableClass::ANIMAL
+                    detalleProcesoVentaTableClass::ANIMAL,
+                    detalleProcesoVentaTableClass::PESO,
+                    detalleProcesoVentaTableClass::SUBTOTAL
                 );
+//                $fieldsProcesoVenta= array(
+//                procesoVentaTableClass::ID
+//                );
+                
                 $fieldsAnimal = array(
-                    animalTableClass::NUMERO
+              
+                    animalTableClass::NUMERO,
+                    animalTableClass::LOTE_ID
+                
+                    
                 );
-
+               
+              
 
                 $fJoinDetalle = detalleProcesoVentaTableClass::ANIMAL;
                 $fJoinAnimal = animalTableClass::ID;
@@ -121,20 +131,14 @@ class viewFacturaVentaActionClass extends controllerClass implements controllerA
                     detalleProcesoVentaTableClass::ID
                 );
 
-                
-                $ani = array(
-                animalTableClass::ID,
-                animalTableClass::NUMERO
-                );
-                $this->objAnimal = animalTableClass::getAll($ani, true);
-                        
                 $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, null, null, null, null, $whereVenta);
-                $this->objDetalleFacturaVenta = detalleProcesoVentaTableClass::getAllJoin($fieldsDetalle, $fieldsAnimal, null, null, $fJoinDetalle, $fJoinAnimal, null, null, null, null, false, $orderByDetalle, 'ASC', 10, $page, $whereDetalle);
+                $this->objDetalleFacturaVenta = detalleProcesoVentaTableClass::getAllJoin($fieldsDetalle, $fieldsAnimal, null , null, $fJoinDetalle, $fJoinAnimal, null, null, null, null, false, $orderByDetalle, 'ASC', 10, $page, $whereDetalle);
+            
                 log::register(i18n::__('ver1', null, 'facturaVenta'), detalleProcesoVentaTableClass::getNameTable());
                 $this->defineView('view', 'facturaVenta', session::getInstance()->getFormatOutput());
             } else {
                 session::getInstance()->setError('pailas');
-                routing::getInstance()->redirect('factura', 'indexFacturaVenta');
+                routing::getInstance()->redirect('factura', 'viewFacturaVenta');
             }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

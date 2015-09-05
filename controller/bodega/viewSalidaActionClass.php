@@ -93,11 +93,17 @@ class viewSalidaActionClass extends controllerClass implements controllerActionI
             $fieldsDetalleTipoInsumo = array(
                 tipoInsumoTableClass::DESCRIPCION
             );
+               $fieldsL = array(
+               loteTableClass::NOMBRE
+            );
 
             $fJoin1 = detalleSalidaBodegaTableClass::ID_INSUMO;
             $fJoin2 = insumoTableClass::ID;
             $fJoin3 = detalleSalidaBodegaTableClass::TIPO_INSUMO;
             $fJoin4 = tipoInsumoTableClass::ID;
+            $fJoin5 = detalleSalidaBodegaTableClass::LOTE;
+            $fJoin6 = loteTableClass::ID;
+            
             $fieldsInsumo = array(
                 insumoTableClass::ID,
                 insumoTableClass::NOMBRE
@@ -106,12 +112,18 @@ class viewSalidaActionClass extends controllerClass implements controllerActionI
                 tipoInsumoTableClass::ID,
                 tipoInsumoTableClass::DESCRIPCION
             );
+            
+            $fieldsLote = array (
+            loteTableClass::ID,
+            loteTableClass::NOMBRE
+            );
 
             $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo, false);
             $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
+            $this->objLote = loteTableClass::getAll($fieldsLote, true);
             $this->cntPages = detalleSalidaBodegaTableClass::getAllCount($f, true, $lines, $whereCnt);
             $this->objSalida = salidaBodegaTableClass::getAllJoin($fieldsSalida, $fieldsEmpleado, null, null, $fJoinEntrada1, $fJoinEntrada2, null, null, null, null, true, null, null, config::getRowGrid(), $page, $whereSalida);
-            $this->objDetalleSalida = detalleSalidaBodegaTableClass::getAllJoin($fieldsDetalleSalida, $fieldsDetalleInsumo, $fieldsDetalleTipoInsumo, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, null, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objDetalleSalida = detalleSalidaBodegaTableClass::getAllJoin($fieldsDetalleSalida, $fieldsDetalleInsumo, $fieldsDetalleTipoInsumo, $fieldsL, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, false, null, 'ASC', config::getRowGrid(), $page, $where);
             log::register(i18n::__('ver3', null, 'bodega'), detalleSalidaBodegaTableClass::getNameTable());
             $this->defineView('view', 'salidaBodega', session::getInstance()->getFormatOutput());
 //      } else {

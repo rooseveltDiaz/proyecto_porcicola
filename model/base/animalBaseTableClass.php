@@ -8,109 +8,45 @@
 class animalBaseTableClass extends tableBaseClass {
 
     private $id,
-            $peso_animal,
-            $fecha_nacimiento,
-            $numero_parto,
-            $precio_animal,
-            $genero_id,
-            $lote_id,
             $numero_identificacion,
-            $edad,
-            $raza;
+            $lote_id;
+           
+           
             
     
     const ID = 'id';
-    const PESO = 'peso_animal';
-    const FECHA_NACIMIENTO = 'fecha_nacimiento';
-    const PARTO = 'numero_parto';
-    const FECHA_FIN = 'fecha_fin';
-    const PRECIO_ANIMAL = 'precio_animal';
-    const GENERO_ID = 'genero_id';
-    const LOTE_ID = 'lote_id';
     const NUMERO = 'numero_identificacion';
-    const RAZA = 'raza';
-    const EDAD= 'edad';
-    const DELETED_AT = "deleted_at";
-    
+    const LOTE_ID = 'lote_id';
 
+   
     function getId() {
         return $this->id;
     }
 
-    function getPeso_animal() {
-        return $this->peso_animal;
-    }
 
-    function getFecha_nacimiento() {
-        return $this->fecha_nacimiento;
-    }
-
-    function getNumero_parto() {
-        return $this->numero_parto;
-    }
-
-    function getPrecio_animal() {
-        return $this->precio_animal;
-    }
-
-    function getGenero_id() {
-        return $this->genero_id;
-    }
-
-    function getLote_id() {
-        return $this->lote_id;
-    }
 
     function getNumero_identificacion() {
         return $this->numero_identificacion;
     }
-    function getEdad() {
-        return $this->edad;
-    }
-
-    function getRaza() {
-        return $this->raza;
+        function getLote_id() {
+        return $this->lote_id;
     }
 
     function setId($id) {
         $this->id = $id;
     }
-
-    function setPeso_animal($peso_animal) {
-        $this->peso_animal = $peso_animal;
-    }
-
-    function setFecha_nacimiento($fecha_nacimiento) {
-        $this->fecha_nacimiento = $fecha_nacimiento;
-    }
-
-    function setNumero_parto($numero_parto) {
-        $this->numero_parto = $numero_parto;
-    }
-
-    function setPrecio_animal($precio_animal) {
-        $this->precio_animal = $precio_animal;
-    }
-
-    function setGenero_id($genero_id) {
-        $this->genero_id = $genero_id;
+    
+    function setNumero_identificacion($numero_identificacion) {
+        $this->numero_identificacion = $numero_identificacion;
     }
 
     function setLote_id($lote_id) {
         $this->lote_id = $lote_id;
     }
 
-    function setNumero_identificacion($numero_identificacion) {
-        $this->numero_identificacion = $numero_identificacion;
-    }
-    function setEdad($edad) {
-        $this->edad = $edad;
-    }
 
-    function setRaza($raza) {
-        $this->raza = $raza;
-    }
 
+    
         
     /**
      * Método para obtener el nombre del campo más la tabla ya sea en formato
@@ -134,16 +70,17 @@ class animalBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable2() {
-        return 'genero';
-    }
-
-    public static function getNameTable3() {
         return 'lote';
     }
 
-    public static function getNameTable4() {
-        return 'raza';
+    public static function getNameTable3() {
+        return null;
     }
+
+    public static function getNameTable4() {
+        return null;
+    }
+   
 
     /**
      * Método para borrar un registro de una tabla X en la base de datos

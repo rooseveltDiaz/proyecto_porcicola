@@ -16,7 +16,6 @@ use mvc\session\sessionClass as session ?>
 <?php $empleado = empleadoTableClass::NOMBRE ?>
 <?php $proveedor = proveedorTableClass::NOMBRE ?>
 <?php $estado = procesoCompraTableClass::ACTIVA ?>
-<?php $id = procesoCompraTableClass::ID ?>
 <?php $nombreEmpleado = empleadoTableClass::NOMBRE ?>
 <?php $nombreProveedor = proveedorTableClass::NOMBRE ?>
 <?php $numero = procesoCompraTableClass::NUMERO ?>
@@ -40,10 +39,7 @@ use mvc\session\sessionClass as session ?>
             <div class="mdl-tooltip mdl-tooltip--large" for="new">
               <?php echo i18n::__('registrar', null, 'ayuda') ?>
             </div>
-<!--            <a id="deleteMasa" href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" class="btn btn-default btn-sm fa fa-ellipsis-v"></a>
-            <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-              <?php echo i18n::__('inhabilitarMasaFact', null, 'ayuda') ?>
-            </div>-->
+
           <?php endif; ?>
           <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
           <div class="mdl-tooltip mdl-tooltip--large" for="filter">
@@ -95,7 +91,7 @@ use mvc\session\sessionClass as session ?>
                 <td>  
                   <?php if ($key->$estado == true): ?>
                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                           <!--<a id="edit<?php echo $countDetale ?>" href="<?php //echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))              ?>" class="btn btn-default active btn-sm fa fa-edit"></a>-->
+                           <!--<a id="edit<?php echo $countDetale ?>" href="<?php // echo routing::getInstance()->getUrlWeb('factura', 'editFacturaCompra', array(procesoCompraTableClass::ID => $key->$id))              ?>" class="btn btn-default active btn-sm fa fa-edit"></a>-->
                       <div class="mdl-tooltip mdl-tooltip--large" for="edit<?php echo $countDetale ?>">
                         <?php echo i18n::__('modificar', null, 'ayuda') ?>
                       </div>  
@@ -302,35 +298,7 @@ use mvc\session\sessionClass as session ?>
             </th>   
 
           </tr>
-          <tr>
-            <th>  
-              <?php echo i18n::__('empleado') ?>:
-            </th>
-            <th> 
-              <select name="filter[empleado]">
-                <option value="">...</option>
-                <?php foreach ($objEmpleado as $key): ?>
-                  <option value="<?php echo $key->$id ?>"> <?php echo $key->$nombreEmpleado ?></option>
-                <?php endforeach; //close foreach   ?>
-              </select>
-            </th>   
-
-          </tr>
-
-          <tr>
-            <th>  
-              <?php echo i18n::__('proveedor') ?>:
-            </th>
-            <th> 
-              <select name="filter[proveedor]">
-                <option value="">...</option>
-                <?php foreach ($objProveedor as $key): ?>
-                  <option value="<?php echo $key->$id ?>"> <?php echo $key->$nombreProveedor ?></option>
-                <?php endforeach; //close foreach   ?>
-              </select>
-            </th>   
-
-          </tr>
+         
         </table>
 
       </form>

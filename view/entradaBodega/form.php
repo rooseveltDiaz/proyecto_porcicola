@@ -44,6 +44,8 @@
       </div>
     </div>
   </div>
+     <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexEntrada') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
 </form>
-</div>
-</main>

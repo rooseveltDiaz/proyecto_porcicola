@@ -20,11 +20,11 @@ class indexSalidaActionClass extends controllerClass implements controllerAction
     public function execute() {
         try {
             $where = null;
-              
+
             if (request::getInstance()->hasPost('filter')) {
 
                 $filter = request::getInstance()->getPost('filter');
-                    if (isset($filter['fecha_fin']) and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '' and isset($filter['fecha_inicio']) and $filter ['fecha_inicio'] !== null and $filter['fecha_inicio'] !== '') {
+                if (isset($filter['fecha_fin']) and $filter['fecha_fin'] !== null and $filter['fecha_fin'] !== '' and isset($filter['fecha_inicio']) and $filter ['fecha_inicio'] !== null and $filter['fecha_inicio'] !== '') {
 
                     $where [salidaBodegaTableClass::getNameTable() . '.' . salidaBodegaTableClass::FECHA] = array(
                         date(config::getFormatTimestamp(), strtotime($filter['fecha_inicio'] . ' 00.00.00')),
@@ -35,7 +35,7 @@ class indexSalidaActionClass extends controllerClass implements controllerAction
                     $where[salidaBodegaTableClass::EMPLEADO] = $filter['empleado'];
                 }//close if
                 session::getInstance()->setAttribute('salidaFilter', $where);
-           } elseif (session::getInstance()->hasAttribute('salidaFilter')) {
+            } elseif (session::getInstance()->hasAttribute('salidaFilter')) {
                 $where = session::getInstance()->getAttribute('salidaFilter');
             }//close if
 
@@ -65,6 +65,10 @@ class indexSalidaActionClass extends controllerClass implements controllerAction
                 tipoInsumoTableClass::ID,
                 tipoInsumoTableClass::DESCRIPCION
             );
+            $fieldsLote = array(
+                loteTableClass::ID,
+                loteTableClass::NOMBRE
+            );
 
             $page = 0;
             if (request::getInstance()->hasGet('page')) {
@@ -84,6 +88,7 @@ class indexSalidaActionClass extends controllerClass implements controllerAction
             }//close if 
             $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipoInsumo, false);
             $this->objInsumo = insumoTableClass::getAll($fieldsInsumo, true);
+            $this->objLote = loteTableClass::getAll($fieldsLote, true);
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado2, false);
             $this->objSalidaBodega = salidaBodegaTableClass::getAllJoin($fieldsSalida, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             log::register(i18n::__('ver1', null, 'bodega'), salidaBodegaTableClass::getNameTable());

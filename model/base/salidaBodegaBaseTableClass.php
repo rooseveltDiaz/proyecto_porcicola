@@ -11,13 +11,18 @@ class salidaBodegaBaseTableClass extends tableBaseClass {
 
     private $id,
             $fecha,
+        
             $id_empleado;
 
     const ID = 'id';
     const FECHA = 'fecha';
+  
     const EMPLEADO = 'id_empleado';
     const ESTADO = 'estado';
+    
+ 
 
+    
     function getId() {
         return $this->id;
     }

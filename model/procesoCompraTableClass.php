@@ -31,13 +31,13 @@ class procesoCompraTableClass extends procesoCompraBaseTableClass {
             session::getInstance()->setError(i18n::__(10010, null, 'errors', array('%fecha%' => $fecha)));
             $flag = true;
             session::getInstance()->setFlash(procesoCompraBaseTableClass::getNameField(procesoCompraBaseTableClass::FECHA_HORA_COMPRA, true), true);
-        }
-                if (empty($numero) or ! isset($numero) or $numero == '') {
-
-            session::getInstance()->setError(i18n::__(10119, null, 'errors'));
-            $flag = true;
-            session::getInstance()->setFlash(procesoCompraTableClass::getNameField(procesoCompraTableClass::NUMERO, true), true);
-        }
+//        }
+//                if (empty($numero) or ! isset($numero) or $numero == '') {
+//
+//            session::getInstance()->setError(i18n::__(10119, null, 'errors'));
+//            $flag = true;
+//            session::getInstance()->setFlash(procesoCompraTableClass::getNameField(procesoCompraTableClass::NUMERO, true), true);
+//        }
                 if (!is_numeric($numero)) {
             session::getInstance()->setError(i18n::__(10120, null, 'errors'));
             $flag = true;
@@ -158,4 +158,5 @@ class procesoCompraTableClass extends procesoCompraBaseTableClass {
 //        }
 //    }
 
+}
 }

@@ -13,22 +13,25 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
-class insertAnimalActionClass extends controllerClass implements controllerActionInterface {
+class insertHojaVidaActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
 
-      
-            $fieldsLote = array(
-                loteTableClass::ID,
-                loteTableClass::NOMBRE
-            );
-    
 
-        
-            $this->objLote = loteTableClass::getAll($fieldsLote);
-      
-            $this->defineView('insert', 'animal', session::getInstance()->getFormatOutput());
+            $fieldsGenero = array(
+                generoTableClass::ID,
+                generoTableClass::NOMBRE
+            );
+            $fieldsRaza = array(
+                razaTableClass::ID,
+                razaTableClass::NOMBRE_RAZA
+            );
+
+
+            $this->objGenero = generoTableClass::getAll($fieldsGenero);
+            $this->objRaza = razaTableClass::getAll($fieldsRaza);
+            $this->defineView('index', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

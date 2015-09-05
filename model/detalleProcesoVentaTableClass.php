@@ -53,5 +53,9 @@ class detalleProcesoVentaTableClass extends detalleProcesoVentaBaseTableClass {
             routing::getInstance()->forward('factura', 'indexFacturaVenta');
         }
     }
-
+    public function validateInventario($objAnimal)
+            {
+        $flag=false;
+        
+    }
 }

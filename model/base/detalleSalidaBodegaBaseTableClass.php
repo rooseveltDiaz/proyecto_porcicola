@@ -14,6 +14,7 @@ class detalleSalidaBodegaBaseTableClass extends tableBaseClass {
             $tipo_insumo,
             $id_insumo,
             $estado,
+            $lote_id,
             $cantidad;
 
     const ID = 'id';
@@ -21,6 +22,7 @@ class detalleSalidaBodegaBaseTableClass extends tableBaseClass {
     const TIPO_INSUMO = 'tipo_insumo';
     const ID_INSUMO = 'id_insumo';
     const ESTADO = 'estado';
+    const LOTE = 'lote_id';
     const CANDITDAD = 'cantidad';
 
     function getId() {
@@ -29,6 +31,14 @@ class detalleSalidaBodegaBaseTableClass extends tableBaseClass {
 
     function getId_entrada() {
         return $this->id_entrada;
+    }
+
+    function getLote_id() {
+        return $this->lote_id;
+    }
+
+    function setLote_id($lote_id) {
+        $this->lote_id = $lote_id;
     }
 
     function getTipo_insumo() {
@@ -93,7 +103,7 @@ class detalleSalidaBodegaBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable4() {
-        return null;
+        return 'lote';
     }
 
     /**

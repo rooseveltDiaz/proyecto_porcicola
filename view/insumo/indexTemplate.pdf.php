@@ -59,4 +59,5 @@ foreach ($objInsumo as $key) {
     $pdf->Cell(28, 10, utf8_decode($key->$stock), 1);
     $pdf->Ln();
 }
+
 $pdf->Output();

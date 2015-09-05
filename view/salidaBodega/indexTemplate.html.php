@@ -91,10 +91,10 @@ use mvc\session\sessionClass as session ?>
 
                                         <?php if ($key->$estado == true): ?>
                                             <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                                <a  id="editar<?php echo $countDetale ?>" href="<?php  echo routing::getInstance()->getUrlWeb('bodega', 'editSalida', array(salidaBodegaTableClass::ID => $key->$id))?>" class="btn btn-sm btn-default active fa fa-edit"></a>
+<!--                                                <a  id="editar<?php echo $countDetale ?>" href="<?php  echo routing::getInstance()->getUrlWeb('bodega', 'editSalida', array(salidaBodegaTableClass::ID => $key->$id))?>" class="btn btn-sm btn-default active fa fa-edit"></a>
                                                 <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                                     <?php echo i18n::__('modificar', null, 'ayuda') ?>
-                                                </div> 
+                                                </div> -->
                                                 <a id="insertDetalle<?php echo $countDetale ?>" href="#myModalInserDetails<?php echo $key->$id ?>" class="btn btn-sm btn-primary fa fa-bars" ></a>
                                                 <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                                     <?php echo i18n::__('insertDetalle', null, 'ayuda') ?>
@@ -173,11 +173,21 @@ use mvc\session\sessionClass as session ?>
 
                                         <?php echo i18n::__('cantidad') ?>
                                         <input type="number" name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true) ?>">
+                                  <br />
+                                        <br />
+                                        <?php echo i18n::__('lote') ?>
+                                        <select name="<?php echo detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::LOTE, true) ?>">
+                                            <option value="">...</option>
+                                            <?php foreach ($objLote as $key): ?>
+                                                <option value="<?php echo $key->id ?>"><?php echo $key->nombre_lote ?></option>
+                                            <?php endforeach; //close foreach    ?>
+                                        </select>
                                     </div>
                                     <div class="modal-footer">
                                         <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
                                         <button type="submit" class="btn btn-info active fa fa-plus-square" > <?php echo i18n::__('create') ?></button>
                                     </div>
+                                        
                                 </form>
                             </div>
                         </div>

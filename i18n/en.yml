@@ -657,6 +657,7 @@ dictionary:
     succesMasive3:         The selected Invoice Details Sale have been enabled successfully
     
   ayuda:
+    atras:                 Back
     reg:                   Register
     compra:                Register:Through this option you can increase the inventory of vaccines
     req:                   Requirements
@@ -695,6 +696,8 @@ dictionary:
     insertDetalle:         Insert Detail:Insert a registration Detail
     verDetalleFact:        see Detail:View details on the bill
     eliminar:              Delete:Deletes the record
+    insert:                Insert:Add basic animal data
+    watch:                 View:Displays the resume of Animal
     editDetalle:           Modify Detail:Change the log Detail
     inhabilitarDetalle:    Disable Detail:Disables Record detail
     habilitarDet:          Enable Detail:Enables Record detail

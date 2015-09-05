@@ -857,6 +857,8 @@ animal_index:
     - model/base/generoBaseTableClass.php
     - model/generoTableClass.php
     - libs/validate/validatorFieldsClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 animal_insert:
   url:    /animal/insertar
@@ -959,6 +961,151 @@ animal_reporte:
     - model/loteTableClass.php
     - model/base/generoBaseTableClass.php
     - model/generoTableClass.php
+
+detalleAnimal_reporte:
+  url:    /detalleAnimal/reporte
+  param:  { module: animal, action: reportDetalleAnimal, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+##-------------------------- HOJA DE VIDA --------------------------##
+hojaVida_index:
+  url:    /hojaDeVida/index
+  param:  { module: animal, action: indexHojaVida, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+hojaVida_insert:
+  url:    /hojaVida/insertar
+  param:  { module: animal, action: insertHojaVida, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+hojaVida_create:
+  url:    /hojaVida/crear
+  param:  { module: animal, action: createHojaVida, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    
+hojaVida_edit:
+  url:    /hojaVida/editar
+  param:  { module: animal, action: editHojaVida, format: html }
+  load:
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+hojaVida_update:
+  url:    /hojaVida/actualizar
+  param:  { module: animal, action: updateHojaVida, format: html }
+  load:
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+hojaVida_delete:
+  url:    /hojaVida/eliminar
+  param:  { module: animal, action: deleteHojaVida, format: json }
+  load:
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+hojaVida_deleteSelect:
+  url:    /hojaVida/eliminarSeleccion
+  param:  { module: animal, action: deleteSelectHojaVida, format: html }
+  load:
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+hojaVida_reporte:
+  url:    /hojaVida/reporte
+  param:  { module: animal, action: reportHojaVida, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldsClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/razaBaseTableClass.php
+    - model/razaTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
+    - model/base/generoBaseTableClass.php
+    - model/generoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 #    ----cargo---
 #cargo_index:
@@ -2965,8 +3112,6 @@ entrada_bodega:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
-    
-
    
 
 entrada_bodega:_nuevo:
@@ -3202,6 +3347,8 @@ salida_bodega:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
    
 
 salida_bodega:_nuevo:
@@ -3347,7 +3494,8 @@ salida_bodega_view:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
-
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
     
 salida_bodega_reporte:
   url:    /salida_bodega/reporte
@@ -3386,6 +3534,8 @@ detalleSalida_reporte:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
 
 salida_bodega_crear_detalle:
   url:    /salida_bodega/create_detalle
@@ -3406,6 +3556,8 @@ salida_bodega_crear_detalle:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
     
 detalle_salida_bodega:
   url:    /detalle_salida_bodega/change_state
@@ -3431,6 +3583,8 @@ detalleSalidaBodega_edit:
     - model/insumoTableClass.php
     - model/base/tipoInsumoBaseTableClass.php
     - model/tipoInsumoTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
    
 
 detalleSalidaBodega_update:
@@ -3442,6 +3596,8 @@ detalleSalidaBodega_update:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/loteBaseTableClass.php
+    - model/loteTableClass.php
     
 ########### REGISTRO PARTO ###########    
 registro_parto_index:

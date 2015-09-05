@@ -87,6 +87,10 @@ use mvc\session\sessionClass as session ?>
             </div>
         </div>
     </div>
+         <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
 </form>
 
 </main>

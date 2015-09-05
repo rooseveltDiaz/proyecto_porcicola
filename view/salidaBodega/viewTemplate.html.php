@@ -13,6 +13,7 @@ use mvc\session\sessionClass as session ?>
 <?php $nombreEmpleado = empleadoTableClass::NOMBRE ?>
 <?php $tipoInsumo = tipoInsumoTableClass::DESCRIPCION ?>
 <?php $insumo = insumoTableClass::NOMBRE ?>
+<?php $lote= loteTableClass::NOMBRE ?>
 <?php $cantidad = detalleSalidaBodegaTableClass::CANDITDAD ?>
 <?php $primaria = detalleSalidaBodegaTableClass::ID ?>
 <?php $countDetale = 1 ?>
@@ -56,25 +57,29 @@ use mvc\session\sessionClass as session ?>
                 <!--<form id="frmDelebottom: 10px; margin-top: 30px">-->
                 <br />  
                 <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                    <a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="eliminarSeleccionDetalle" class="btn btn-default btn-sm fa fa-ellipsis-v"></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="eliminarSeleccionDetalle">
+                    <!--<a href="#" data-target="#myModalEliminarMasivo" data-toggle="modal" id="eliminarSeleccionDetalle" class="btn btn-default btn-sm fa fa-ellipsis-v"></a>-->
+<!--                    <div class="mdl-tooltip mdl-tooltip--large" for="eliminarSeleccionDetalle">
                         <?php echo i18n::__('inhabilitarMasaDetalle', null, 'ayuda') ?>
-                    </div>
+                    </div>-->
 <?php endif; ?>
-                <a href="#myModalReport"  id="buscarDetalle" class="btn btn-sm btn-info active fa fa-search"></a>
+<!--                <a href="#myModalReport"  id="buscarDetalle" class="btn btn-sm btn-info active fa fa-search"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="buscarDetalle">
                     <?php echo i18n::__('buscar', null, 'ayuda') ?>
                 </div>
-                <a class="btn btn-sm btn-primary fa fa-reply" id="eliminarBusquedaDetalle" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'deleteFilterDetalleSalida') ?>"></a>
-                <div class="mdl-tooltip mdl-tooltip--large" for="eliminarBusquedaDetalle">
-                    <?php echo i18n::__('eliBusDetalle', null, 'ayuda') ?>
-                </div>
+-->             
+  <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
+  <br/>
+  <br/>
+<!--
                 <a href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'reportDetalleSalidaBodega') ?>" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
-<?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
+<?php //echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
                 </div>
 
-            </div>
+            </div>-->
 
 <!--      <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'delet')  ?>" method="POST">-->
             <div class="table-responsive">
@@ -97,6 +102,9 @@ use mvc\session\sessionClass as session ?>
                             <th>
                             <?php echo i18n::__('cantidad') ?>
                             </th>
+                             <th>
+                            <?php echo i18n::__('lote') ?>
+                            </th>
 <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                 <th><?php echo i18n::__('action') ?></th>
                         <?php endif; ?>
@@ -111,6 +119,7 @@ use mvc\session\sessionClass as session ?>
                                 <td><?php echo $key->$tipoInsumo ?></td>
                                 <td><?php echo $key->$insumo ?></td>
                                 <td><?php echo $key->$cantidad ?></td>
+                                 <td><?php echo $key->$lote ?></td>
                                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                     <td>
                                         <a id="editarDetalle<?php echo $countDetale ?>" href="#myModaUpdateDetails<?php echo $key->$id ?>" class="btn btn-default active btn-sm fa fa-edit"  ></a>
@@ -195,6 +204,13 @@ use mvc\session\sessionClass as session ?>
                     </tbody>
                 </table>
             </div>
+            </div>
+        </div>
+    </div>
+      
+                      
+                      
+</main>
 
 
 

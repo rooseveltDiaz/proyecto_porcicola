@@ -23,6 +23,8 @@ class createFacturaCompraActionClass extends controllerClass implements controll
             $empleado = request::getInstance()->getPost(procesoCompraTableClass::getNameField(procesoCompraTableClass::EMPLEADO_ID, true));
             $proveedor = request::getInstance()->getPost(procesoCompraTableClass::getNameField(procesoCompraTableClass::PROVEEDOR_ID, true));
             $numero= request::getInstance()->getPost(procesoCompraTableClass::getNameField(procesoCompraTableClass::NUMERO, true));
+            
+            
             procesoCompraTableClass::validateCreate($fecha, $empleado, $proveedor, $numero);
             
             $data = array(

@@ -21,43 +21,29 @@ class createAnimalActionClass extends controllerClass implements controllerActio
         try {
             if (request::getInstance()->isMethod('POST')) {
                 // DATOS DE ANIMAL
-                $peso = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PESO, true));
-                $fecha = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::FECHA_NACIMIENTO, true));
-                $precio_animal = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PRECIO_ANIMAL, true));
-                $genero = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::GENERO_ID, true));
-                $lote = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::LOTE_ID, true));
-                $raza = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::RAZA, true));
-                $numeroIdentificacion = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::NUMERO, true));
+               $lote = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::LOTE_ID, true));
+               $numeroIdentificacion = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::NUMERO, true));
                 //validar si los campos estan vacios
                 $datos = array(
-                    $peso,
-                    $fecha,
-                    $precio_animal,
-                    $genero,
+                  
                     $lote,
-                    $raza,
                     $numeroIdentificacion
                 );
                 $validatorEmpty = validator::getInstance()->validateFieldsEmpty($datos);
                 if ($validatorEmpty == false) {
                     throw new PDOException(i18n::__(10006, null, 'errors', null, 10006));
                 }
-             if (self::isUnique(\animalTableClass::ID, true, array(\animalTableClass::ID => request::getInstance()->getPost('inputAnimal')), \animalTableClass::getNameTable())) {
-                $flag = true;
-                session::getInstance()->setFlash('animal', true);
-                session::getInstance()->setError('El animal digitado ya existe', 'animal');
-            }
-
+           
             //Validar el formato de fecha
 //                $validacionFecha = validator::getInstance()->validateDate($fecha);
 //                if ($validacionFecha == true) {
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
             //Validar campos numericos
-            $validacionNumericos = validator::getInstance()->validateCharactersNumber($peso);
-            if ($validacionNumericos == true) {
-                throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
-            }
+//            $validacionNumericos = validator::getInstance()->validateCharactersNumber($peso);
+//            if ($validacionNumericos == true) {
+//                throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
+//            }
 
 //                $validacionNumericos = validator::getInstance()->validateCharactersNumber($edad);
 //                if ($validacionNumericos == true) {
@@ -65,12 +51,8 @@ class createAnimalActionClass extends controllerClass implements controllerActio
 //                }
             //Insertar la informacion del usuario
             $data = array(
-                animalTableClass::PESO => $peso,
-                animalTableClass::FECHA_NACIMIENTO => $fecha,
-                animalTableClass::PRECIO_ANIMAL => $precio_animal,
-                animalTableClass::GENERO_ID => $genero,
+               
                 animalTableClass::LOTE_ID => $lote,
-                animalTableClass::RAZA => $raza,
                 animalTableClass::NUMERO => $numeroIdentificacion
             );
             animalTableClass::insert($data);

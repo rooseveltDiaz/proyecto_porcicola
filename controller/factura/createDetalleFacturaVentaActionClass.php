@@ -22,18 +22,22 @@ class createDetalleFacturaVentaActionClass extends controllerClass implements co
             if (request::getInstance()->isMethod('POST')) {
 
 
-                $id = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VENTA, true));
+                $id_venta = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VENTA, true));
                 $animal = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::ANIMAL, true));
+                $peso = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true));
                 $valor = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VALOR, true));
-//                $venta = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VENTA, true));
-    //        echo $id;       
-    ////                detalleProcesoVentaTableClass::validateCreate($animal, $valor);
-    //exit(); 
+
+//                  detalleProcesoVentaTableClass::validateCreate($animal, $valor);
+                $subtotal = $valor * $peso;
                 $data = array(
-                    detalleProcesoVentaTableClass::VENTA => $id,
+                    detalleProcesoVentaTableClass::VENTA => $id_venta,
                     detalleProcesoVentaTableClass::ANIMAL => $animal,
-                    detalleProcesoVentaTableClass::VALOR => $valor
+                    detalleProcesoVentaTableClass::PESO => $peso,
+                    detalleProcesoVentaTableClass::VALOR => $valor,
+                    detalleProcesoVentaTableClass::SUBTOTAL => $subtotal
                 );
+
+
 
                 //Manejo de inventario
                 $fieldsAnimal = array(
@@ -44,7 +48,7 @@ class createDetalleFacturaVentaActionClass extends controllerClass implements co
                     animalTableClass::ID => $animal
                 );
                 $objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $whereInventario);
-//        detalleProcesoVentaTableClass::validateInventario($objAnimal[0]->id);
+                detalleProcesoVentaTableClass::validateInventario($objAnimal[0]->id);
 
                 $fieldsAnimalDelete = array(
                     animalTableClass::ID => $objAnimal[0]->id
@@ -56,8 +60,8 @@ class createDetalleFacturaVentaActionClass extends controllerClass implements co
                 log::register(i18n::__('create'), detalleProcesoVentaTableClass::getNameTable());
                 routing::getInstance()->redirect('factura', 'indexFacturaVenta');
             } else {
-                session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
-                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
+                session::getInstance()->setError('El Detalle de Factura Venta no pudo ser insertado');
+                routing::getInstance()->redirect('factura', 'indexFacturaVenta');
             }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

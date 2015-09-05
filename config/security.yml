@@ -217,6 +217,10 @@ insumo:
       
       
 animal:
+  reportDetalleAnimal:
+    security: true
+    credentials:
+      - [admin, invitado]
   indexGestacion:
     security: true
     credentials:

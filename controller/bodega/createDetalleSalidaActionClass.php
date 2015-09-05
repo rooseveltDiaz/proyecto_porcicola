@@ -26,6 +26,7 @@ class createDetalleSalidaActionClass extends controllerClass implements controll
                 $tipo_insumo = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::TIPO_INSUMO, true));
                 $id_insumo = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::ID_INSUMO, true));
                 $cantidad = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true));
+                 $lote = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::LOTE, true));
 
                 detalleSalidaBodegaTableClass::validateCreate( $tipo_insumo, $id_insumo, $cantidad);
 
@@ -63,7 +64,8 @@ class createDetalleSalidaActionClass extends controllerClass implements controll
                     detalleSalidaBodegaTableClass::CANDITDAD => $cantidad,
                     detalleSalidaBodegaTableClass::ID_SALIDA => $id_registro,
                     detalleSalidaBodegaTableClass::ID_INSUMO => $id_insumo,
-                    detalleSalidaBodegaTableClass::TIPO_INSUMO => $tipo_insumo
+                    detalleSalidaBodegaTableClass::TIPO_INSUMO => $tipo_insumo,
+                    detalleSalidaBodegaTableClass::LOTE => $lote
                 );
 //                print_r($data);
 //                                exit();

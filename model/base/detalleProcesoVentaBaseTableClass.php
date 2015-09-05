@@ -12,14 +12,18 @@ class detalleProcesoVentaBaseTableClass extends tableBaseClass {
     private $id,
             $id_venta,
             $animal_id,
+            $peso,
             $estado,
-            $valor;
+            $valor,
+            $subtotal;
 
     const ID = 'id';
     const VENTA = 'id_venta';
     const ANIMAL = 'animal_id';
+    const PESO = 'peso';
     const VALOR = 'valor';
     const ACTIVA = 'estado';
+    const SUBTOTAL = 'subtotal';
 
     function getId() {
         return $this->id;
@@ -33,12 +37,30 @@ class detalleProcesoVentaBaseTableClass extends tableBaseClass {
         return $this->animal_id;
     }
 
+    function getSubtotal() {
+        return $this->subtotal;
+    }
+
     function getValor() {
         return $this->valor;
     }
 
+    function getPeso() {
+        return $this->peso;
+    }
+
+   
+
     function setId($id) {
-        $this->id = $id;
+        return $this->id = $id;
+    }
+
+    function setSubtotal($subtotal) {
+                return $this->subtotal=$subtotal;
+        
+    }
+     function setPeso($peso) {
+        return $this->peso=$peso;
     }
 
     function setId_venta($id_venta) {

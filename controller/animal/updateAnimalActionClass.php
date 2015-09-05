@@ -22,25 +22,17 @@ class updateAnimalActionClass extends controllerClass implements controllerActio
 
 
                 $id = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::ID, true));
-                $peso = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PESO, true));
-                $precio_animal = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::PRECIO_ANIMAL, true));
-                $fecha = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::FECHA_NACIMIENTO, true));
-                $genero = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::GENERO_ID, true));
                 $lote = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::LOTE_ID, true));
-                $raza = request::getInstance()->getPost(animalTableClass::getNameField(animalTableClass::RAZA, true));
+               
 
 
                 $ids = array(
                     animalTableClass::ID => $id
                 );
                 $data = array(
-                    animalTableClass::PESO => $peso,
-//                    animalTableClass::EDAD => $edad,
-                    animalTableClass::FECHA_NACIMIENTO => $fecha,
-                    animalTableClass::PRECIO_ANIMAL => $precio_animal,
-                    animalTableClass::GENERO_ID => $genero,
-                    animalTableClass::LOTE_ID => $lote,
-                    animalTableClass::RAZA => $raza
+            
+                    animalTableClass::LOTE_ID => $lote
+             
                 );
                 animalTableClass::update($ids, $data);
                 session::getInstance()->setSuccess(i18n::__('succesUpdate', null, 'animal'));

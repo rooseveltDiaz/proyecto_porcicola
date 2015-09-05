@@ -123,7 +123,7 @@ use mvc\session\sessionClass as session ?>
                     </tbody>
                 </table>
             </div>
-            </form>
+    
             <!----PAGINADOR---->
             <div class="text-right">
                 <nav>
@@ -232,5 +232,5 @@ use mvc\session\sessionClass as session ?>
 
 
 
-</div>
+
 </main>

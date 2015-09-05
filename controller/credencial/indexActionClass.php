@@ -19,8 +19,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         try {
             $fields = array(
                 credencialTableClass::ID,
-                credencialTableClass::NOMBRE
-//                credencialTableClass::DESCRIPCION
+                credencialTableClass::NOMBRE,
+                credencialTableClass::DESCRIPCION
             );
 
             $page = 0;

@@ -116,6 +116,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             </button>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="insumo">
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('insumo', 'index') ?>'" > <button class="mdl-menu__item fa fa-sitemap"><?php echo i18n::__('insumo') ?></button></a>
+                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
 
                             </ul>
                         </div>
@@ -146,13 +147,13 @@ use mvc\i18n\i18nClass as i18n ?>
                                 </button>
                                 <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="usuario">
                                     <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuCredencial') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-random"><?php echo i18n::__('userCredencial') ?></button></a>
-<!--                                    <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexCredencial') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-tag"><?php echo i18n::__('credencial', null, 'credencial') ?></button></a>-->
+                                   <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexCredencial') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-tag"><?php echo i18n::__('credencial', null, 'credencial') ?></button></a>
                                     <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('usuario', 'indexUsuario') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-user"><?php echo i18n::__('usuario', null, 'user') ?></button></a>
                                 </ul>
                             </div>
                         <?php endif; ?>
 
-                        <div class="demo-avatar-dropdown" style="margin-left: 5px">
+                     <!--   <div class="demo-avatar-dropdown" style="margin-left: 5px">
                             <span><?php echo i18n::__('vacunacion', null, 'vacunacion') ?></span>
                             <div class="mdl-layout-spacer"></div>
                             <button id="vacunacion" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -162,7 +163,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item fa fa-medkit"><?php echo i18n::__('registroVacunacion', null, 'animal') ?></button></a>
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
                             </ul>
-                        </div>
+                        </div> -->
 
                         <div class="mdl-layout-spacer"></div>
                         <?php if (session::getInstance()->hasCredential('admin')): ?>
@@ -194,11 +195,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('contrato informatico_1.pdf') ?>'">
                                 <li class="mdl-menu__item fa fa-legal"><?php echo i18n::__('legalInfor') ?></li>
                             </a>
-                            <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                <a  href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('Requerimientos.pdf') ?>'">
-                                    <li class="mdl-menu__item fa fa-check-square-o"><?php echo i18n::__('req', null, 'ayuda') ?></li>
-                                </a>
-                            <?php endif; ?>
+                           
                         </ul>
                     </div>
                 </header>

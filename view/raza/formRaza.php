@@ -26,4 +26,25 @@
             </div>
         </div>
     </div>
+        <br/>
+         <br/>
+          <br/>
+          <br/>
+           <br/>
+            <br/>
+                  <br/>
+          <br/>
+           <br/>
+           <br/>
+            <br/>
+             <br/>
+              <br/>
+                        <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRaza') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
+                        <br/>
+                        <br/>
 </form>
+
+</main>
