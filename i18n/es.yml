@@ -1,0 +1,850 @@
+# Diccionario de ejemplo
+culture:                  Español
+dictionary:
+  default:
+    subt:                 Subtotal
+    RegistrosEntrada:     Entrada de Bodega
+    personal:             Personal
+    fechaFabricacion:     Fecha de Fabricación
+    fechaVencimiento:     Fecha de Vencimiento
+    tipoInsumo:          Tipo de Insumo
+    valorInsumo:          Valor de Insumo
+    nombreInsumo:         Nombre del Insumo
+    descripcion:          Descripción
+    nuev:                 Nuevo
+    inhabil:              Inhabilitar
+    nuevDatos:            Nuevo Datos de Usuario
+    newRegistroVacunacion: Nuevo Registro de Vacunación
+    cerrar:               Cerrar
+    buscar:               Buscar
+    ver:                  Ver
+    edit:                 Editar
+    updateDetail:         Modificar Detalle
+    facturaVenta:         Facturas de venta
+    nombreCliente:        Nombre de Cliente
+    cliente:              Cliente
+    personal:             Personal
+    Clientes:             Clientes
+    proveedores:          Proveedores
+    veterinario:          Veterinarios
+    telefono:             Teléfono
+    fechaInicio:          Fecha de Inicio
+    fechaFin:             Fecha Final
+    inhabilitar:          Inhabilitar Factura
+    habilitar:            Habilitar Factura
+    inhMasa:              Inhabilitar la Selección
+    habMasa:              Habilitar la Selección
+    inhRegistro:          Inhabilitar el Registro
+    habRegistro:          Habilitar el Registro
+    inhDetalle:           Inhabilitar el Detalle
+    habDetalle:           Habilitar Detalle
+    factura:              Facturas
+    facturaCompra:        Facturas de Compra
+    confirmInhabilitar:   Esta seguro que desea inhabilitar esta factura
+    confirmInhabil:       Esta seguro que desea inhabilitar el registro
+    confirmDetalle:       Esta seguro que desea inhabilitar el detalle del registro
+    confirmDetalleHabil:  Esta seguro que desea habilitar el detalle del registro
+    confirmInh:           Esta seguro que desea inhabilitar los registros
+    conInhSel:            Esta seguro que desea inhabilitar las facturas seleccionadas
+    confirmHabilitar:     Esta seguro que desea habilitar esta factura
+    Usuario y contraseña incorrectos:   Usuario y contraseña incorrectos
+    proveedor:            Proveedor
+    usuario:              Usuario
+    contraseña:           Contraseña
+    Recordar mis datos:   Recordar mis datos
+    Olvidastes tu contraseña?:  Olvidó su contraseña?
+    id:                   Id
+    nombre_vacuna:        Nombre Vacuna
+    numero de documento:  Número de Documento
+    direccion:            Dirección
+    dosis:                Dosis
+    fecha_fabricacion_vacuna:  Fecha Fabricacion
+    fecha_vencimiento_vacuna:  Fecha Vencimiento
+    Escoja Idioma:        Selecione el Idioma/Select Lenguage
+    Identificacion:       Identificación
+    Exit:                 Salir
+    lunes:                Lunes
+    martes:               Martes
+    miercoles:            Miercoles
+    jueves:               Jueves
+    viernes:              Viernes
+    sabado:               Sabado
+    domingo:              Domingo
+    enero:                Enero
+    febrero:              Febrero
+    marzo:                Marzo
+    abril:                Abril
+    mayo:                 Mayo 
+    junio:                Junio
+    julio:                Julio
+    agosto:               Agosto
+    septiembre:           Septiembre
+    octubre:              Octubre
+    noviembre:            Noviembre
+    diciembre:            Diciembre
+    Entrar:               Entrar
+    disponible_venta:     Cerda Disponible para la Venta
+    acceso:               Acceso Restringido
+    permiso:              Usted no tiene permisos para acceder a esta acción 
+    reporte:              Reporte
+    report:               Reporte
+    s:                    Reportes
+    buscar:               Buscar
+    filterBy:             Buscar Por
+    new:                  Nuevo Registro
+    deleteFilter:         Eliminar Búsqueda
+    user:                 Usuario
+    empleado:             Empleado
+    nombre:               Nombre Completo
+    newCli:               Nuevo Cliente
+    identificacion:       Número de Identificación
+    cargo:                Cargo
+    dataUser:             Datos usuario
+    credencial:           Credenciales
+    userCredencial:       Asignación de credencial
+    depto:                Departamento
+    city:                 Ciudad
+    raza:                 Raza
+    lote:                 Lote
+    localidad:            localidad
+    insumo:               Insumo
+    cantidad:             Cantidad
+    pass:                 Contraseña
+    stock:                Stock Minimo
+    register:             Registrar
+    update:               Actualizar
+    delete:               Eliminar
+    modules:              Seleccione un Módulo
+    action:               Acciones
+    create:               Insertar
+    errorCreateBitacora:  Se ha producido un error al crear
+    update:               Modificar
+    errorUpdateBitacora:  Se ha producido un error al modificar
+    errorDeleteBitacora:  Se ha producido un error al eliminar
+    confirmDelete:        Desea eliminar el registro
+    cancel:               Cancelar
+    configuracion:        Configuración
+    confirm:              Eliminar registro
+    animal:               Animal
+    name:                 Nombre
+    identification:       Id
+    eliminar filtros:     Eliminar Búsqueda
+    borrar seleccion:     Eliminar Selección
+    factura:              Facturación
+    pVenta:               Factura venta
+    spanish:              Español
+    english:              Ingles
+    filters:              Buscar
+    accion:               Acción
+    usuarios:             Usuarios
+    deleteMasive:         Confirmar eliminar los elementos seleccionados
+    confirmDeleteMasive:  Desea eliminar los elementos seleccionados
+    succesCreate:         El registro se ha creado de forma exitosa   
+    errorCreate:          No se ha podido crear el registro vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el registro exitosamente
+    errorDelete:          No se ha podido eliminar el registro intentelo mas tarde
+    succesUpdate:         El registro se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar el registro intentelo mas tarde
+    eliminarIndividual:   ¿Desea eliminar el Registro?
+    confirmDelete:        Confirmar Eliminar
+    confirm:              Confirmar
+    enfermedad:           La  vacuna fue aplicada por motivo de Enfermedad
+    gestacion:            La vacuna fue aplicada por control de gestacion
+    parto:                La vacuna fue aplicada para inducir el parto
+    rutina:               La vacuna fue aplicada por control rutinario
+    nacido:               La vacuna fue aplicada al cerdo recien nacido
+    valorUni:             Valor unitario
+    edit:                 Editar
+    crear:                Crear
+    granja:               Granja Porcicola
+    sobre:                Sobre
+    contacto:             Contacto
+    legalInfor:           Información Legal
+    ingBusqueda:          Ingrese su Búsqueda...
+    item:                 Item
+        
+  veterinario:
+    veterinario:         Veterinario
+    read:                 Veterinarios 
+    edit:                 Modificar Veterinario
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Registrar un Nuevo Veterinario
+    action:               Acciones
+    identification:       Id
+    Number of document:   Número de documento
+    document type:        Tipo documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Veterinario
+    insertar:             Insertar Veterinario
+    succesCreate:         El veterinario se ha creado de forma exitosa
+    succesUpdate:         El veterinario se ha modificado de forma exitosa
+    succesDelete:         El veterinario se ha eliminado de forma exitosa
+      
+  animal:
+    oblig:                Verifique cuidadosamente el número de identificación  del animal porque una vez registrado no se podrá modificar
+    date_birth:           Fecha de nacimiento
+    precio_compra:        Precio de compra
+    identification:       Número de Identificación
+    peso_inicial:         Peso inicial
+    peso_fin:             Peso final
+    pesos:                Precio $
+    cerdo:                Cerdo
+    precio:               Precio 
+    kg:                   Peso (Kg)
+    edit:                 Editar el Registro del Animal
+    animal:               Animal
+    report:               Reporte
+    nuev:                 Nuevo Animal
+    new:                  Registrar un Nuevo Animal
+    peso:                 Peso
+    edad:                 Edad (meses)
+    edad_inicial:         Edad inicial
+    edad_fin:             Edad final
+    fecha:                Fecha de Nacimiento
+    fecha_inicial:        Fecha de Nacimiento Inicial
+    fecha_fin:            Fecha de Nacimiento Final
+    genero:               Género
+    parto:                Número de Partos
+    parto1:               Fecha de parto
+    lote:                 Lote
+    raza:                 Raza
+    registro:             Registro de Parto
+    Vacunas:              Vacunas
+    Registro:             Registro Vacunas
+    vacunacion:           Vacunación
+    registroVacunacion:   Registro de Vacunación
+    succesCreate:         El animal se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el animal vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los registros seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el animal exitosamente
+    errorDelete:          No se ha podido eliminar el animal intentelo mas tarde
+    succesUpdate:         El animal se ha modificado exitosamente 
+    errorUpdate:          Se ha producido un error al modificar el animal intentelo mas tarde
+    read:                 Cerdos
+    confirm:              Desea Eliminar el Registro
+    
+  user:
+    foto:                 Fotografía
+    usuario:              Usuario
+    correo:               Correo Electrónico
+    newUser:              Registro de un Nuevo Usuario 
+    user:                 Nombre de Usuario
+    pass:                 Contraseña
+    rePass:               Repetir contraseña
+    register:             Registrar
+    editUser:             Modificar Usuario
+    edit:                 Editar
+    motivo:               Ingrese el motivo por el cual desea eliminar
+    oldPass:              Nueva Contraseña
+    read:                 Usuarios 
+    delete:               Eliminar
+    direccion:            Dirección
+    modify:               Modificar
+    quest:                Pregunta de seguridad
+    quest1:               Seguridad
+    escriba:              Escriba su nombre de usuario
+    seleccione:           Seleccione su pregunta secreta
+    resp:                 Escriba su respuesta secreta
+    answer:               Respuesta de seguridad
+    delete:               Eliminar
+    busq:                 Búsqueda
+    confirmDelete:        Eliminar usuario
+    bodyDelete:           Desea eliminar el registro
+    date:                 Fecha de creación
+    succesCreate:         El usuario se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el usuario vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los usuarios seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el usuario exitosamente
+    errorDelete:          No se ha podido eliminar el usuario intentelo mas tarde
+    succesUpdate:         El usuario se ha modificado exitosamente 
+    Seleccione modulo:    Seleccione el Módulo
+    errorUpdate:          Se ha producido un error al modificar al usuario intentelo mas tarde
+    dpVenta:              Detalle Factura Venta
+    pVenta:               Factura Venta
+    factura:              Factura
+    
+  parto:
+    read:                Registros de Parto
+    hembras:             Hembras nacidas vivas
+    machos:              Machos nacidos vivos
+    muertos:             Nacidos Muertos
+    edit:                Modificar Registro Parto
+    new:                 Registrar un nuevo registro Parto
+    registroParto:       Registro Parto   
+    succesCreate:        El Registro de Parto se ha creado de forma exitosa
+    succesUpdate:        El Registro de Parto se ha modificado de forma exitosa
+    
+  proveedor:
+    proveedor:            Proveedor
+    read:                 Proveedores 
+    edit:                 Modificar Proveedor
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Registrar un Nuevo Proveedor
+    action:               Acciones
+    identification:       Id
+    Number of document:   Número de Documento
+    document type:        Tipo Documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Proveedor
+    insertar:             Insertar proveedor
+    nuev:                 Nuevo Proveedor
+    succesCreate:         El proveedor se ha creado de forma exitosa
+    succesUpdate:         El proveedor se ha modificado de forma exitosa
+    succesDelete:         El proveedor se ha eliminado de forma exitosa
+    
+  depto:
+    read:                 Departamentos registrados en nuestro sistema
+    new:                  Registra un nuevo departamento
+    depto:                Departamento
+    edit:                 Modificar departamento
+    
+    
+  city:
+    read:                 Ciudades registradas en nuestro sistema
+    city:                 Ciudad
+    new:                  Registra una nueva ciudad
+    edit:                 Modifica a la ciudad
+    
+  bodega:
+    modic:                Modificar Salida de Bodega
+    modic1:               Modificar Entrada de Bodega
+    bodega:               Bodega
+    entrada:              Entrada de Bodega
+    succesUpdate:         La Entrada de Bodega se ha modificado exitosamente
+    succesUpdateS:        La Salida de Bodega se ha modificado exitosamente
+    salida:               Salida de Bodega
+    detalle1:             Detalle de Salida de Bodega
+    new:                  Registrar una Nueva Entrada de Bodega
+    detalle:              Detalle de Entrada de Bodega
+    sal:                  Registrar una Nueva Salida de Bodega
+    ver:                  Ver Entrada de Bodega
+    ver1:                 Ver Salida de Bodega
+    ver2:                 Ver Detalle de Entrada de Bodega
+    ver3:                 Ver Detalle de salida de Bodega
+    succesCreate:         La Entrada de Bodega se ha creado de forma exitosa 
+    succesCreate1:        La Salida de Bodega se ha creado de forma exitosa 
+    succesCreate2:        El Detalle de Entrada de Bodega se ha creado de forma exitosa 
+    succesCreate3:        El Detalle de Salida de Bodega se ha creado de forma exitosa 
+    succesDelete:         La Entrada de Bodega se ha inhabilitado de forma exitosa
+    succesDelete1:        La Salida de Bodega se ha inhabilitado de forma exitosa
+    succesDelete2:        El Detalle de Entrada de Bodega se ha inhabilitado de forma exitosa
+    succesDelete3:        El Detalle de Salida de Bodega se ha inhabilitado de forma exitosa
+    succesMasive:         Las Entradas de Bodega seleccionadas se han inhabilitado de forma exitosa
+    succesMasive1:        Las Salidas de Bodega seleccionadas se han inhabilitado de forma exitosa
+    succesMasive2:        Los Detalles de Entrada de Bodega seleccionados se han inhabilitado de forma exitosa
+    succesMasive3:        Los Detalles de Salida de Bodega seleccionados se han inhabilitado de forma exitosa
+    succesUpdate:         La Entrada de Bodega se ha modificado de forma exitosa 
+    succesUpdate1:        La Salida de Bodega se ha modificado de forma exitosa
+    succesUpdate2:        El Detalle de la Entrada de Bodega se ha modificado de forma exitosa 
+    succesUpdate3:        El Detalle de la Salida de Bodega se ha modificado de forma exitosa 
+    succesDelete4:        La Entrada de Bodega se ha habilitado de forma exitosa
+    succesDelete5:        La Salida de Bodega se ha habilitado de forma exitosa
+    succesDelete6:        El Detalle de Entrada de Bodega se ha habilitado de forma exitosa
+    succesDelete7:        El Detalle de Salida de Bodega se ha habilitado de forma exitosa
+    succesMasive4:        Las Entradas de Bodega seleccionadas se han habilitado de forma exitosa
+    succesMasive5:        Las Salidas de Bodega seleccionadas se han habilitado de forma exitosa
+    succesMasive6:        Los Detalles de Entrada de Bodega seleccionados se han habilitado de forma exitosa
+    succesMasive7:        Los Detalles de Salida de Bodega seleccionados se han habilitado de forma exitosa
+    
+  datos:
+    read:                 Datos Personales del Usuario
+    new:                  Registrar Datos Personales del Usuario
+    name:                 Nombre
+    tipoDoc:              Tipo de Documento
+    numberDoc:            Número de Documento
+    numRegistro:          Número de Documento del Registro
+    lastName:             Apellidos
+    register:             Registrar
+    tel:                  Teléfono
+    dir:                  Dirección
+    edit:                 Modificar los Datos del Usuario
+    
+  credencial:
+    read:                 Credenciales 
+    new:                  Registrar una Nueva Credencial
+    credencial:           Credencial
+    edit:                 Modificar la Credencial
+    nueva:                Nueva Asignación de la credencial
+  
+  userCredencial:
+    read:                 Roles Asignados
+    new:                  Nuevo Rol
+    user:                 Usuario
+    credencial:           Credencial
+    edit:                 Editar
+    ed:                   Editar la Asignación de la Credencial
+    
+    
+  raza:
+    read:                 Razas 
+    edit:                 Modificar Raza
+    raza:                 Raza
+    new:                  Registrar una Nueva Raza
+    delete:               Eliminar
+    confirmDelete:        Eliminar Raza
+    mother:               Madre
+    succesUpdate:         La raza se ha modificado de forma exitosa
+    succesCreate:         La raza se ha creado de forma exitosa
+    succesDelete:         La raza se ha eliminado de forma exitosa
+    succesDeleteMasive:   Las razas seleccionadas se han eliminado de forma exitosa
+    
+  lote:
+    read:                 Lotes
+    edit:                 Modificar Lote
+    lote:                 Lote
+    new:                  Registrar un Nuevo Lote
+    number:               Número
+    succesCreate:         El lote se ha creado de forma exitosa
+    succesUpdate:         El lote se ha modificado de forma exitosa
+    succesDelete:         El lote se ha eliminado de forma exitosa
+    
+  gestacion:       
+      succesCreate:       El Registro de Gestación se creó de forma exitosa
+      succesUpdate:       El Registro de Gestación se modificó de forma exitosa
+      read:               Registro de Gestación
+      fechaMonta:         Fecha de la monta
+      fechaParto:         Fecha Probable del parto
+      fecundador:         Macho Fecundador
+      new:                Nuevo Registro de Gestación
+      edit:               Editar Registro de Gestación
+      hem:                Hembra
+      ini:                Fecha Inicial del Registro
+      fin:                Fecha Final del Registro
+      hems:               Hembras
+      mac:                Machos
+    
+  insumo:
+    read:                 Insumos 
+    oblig:                Escriba el valor sin signo de pesos, ni comas, ni puntos
+    oblig1:               Verifique cuidadosamente la Cantidad de insumos porque una vez registrada no se podrá modificar
+    oblig2:               Verifique cuidadosamente el Stock Minimo de insumos porque una vez registrado no se podrá modificar
+    edit:                 Modificar Insumo
+    insumo:               Insumo
+    infor:                Informe
+    new:                  Registrar un Nuevo Insumo
+    register:             Nuevo Insumo
+    ver:                  Ver Insumo
+    succesUpdate:         El insumo se ha modificado de forma exitosa
+    succesCreate:         El insumo se ha creado de forma exitosa
+    succesDelete:         El insumo se ha eliminado de forma exitosa
+    
+  cliente:
+    cliente:              Cliente
+    read:                 Clientes 
+    edit:                 Modificar Cliente
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Registrar un Nuevo Cliente
+    action:               Acciones
+    identification:       Id
+    Number of document:   Número de Documento
+    document type:        Tipo Documento
+    name:                 Nombre
+    city:                 Ciudad
+    view:                 Ver Cliente
+    insertar:             Insertar Cliente
+    succesCreate:         El cliente se ha creado de forma exitosa
+    succesUpdate:         El cliente se ha modificado de forma exitosa
+    succesDelete:         El cliente se ha eliminado de forma exitosa
+    
+    
+    
+  empleado:
+    read:                 Empleados Registrados
+    edit:                 Modificar Empleado
+    empleado:             Empleados
+    direccion:            Dirección
+    telefono:             Teléfono
+    new:                  Nuevo Empleado
+    confirmDelete:        Eliminar Empleado
+    register:             Registrar 
+    nuev:                 Registrar un Nuevo Empleado
+    delete:               Eliminar
+    succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         El empleado se ha eliminado de forma exitosa
+    errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
+    succesUpdate:         El empleado se ha modificado de forma exitosa
+    errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
+    view:                 Ver Empleado
+    succesCreate:         El empleado se ha creado de forma exitosa
+    action:               Acciones
+    identificacion:       Identificación
+    identification:       Id
+    Number of document:   Número de Documento
+    document type:        Tipo Documento
+    name:                 Nombre
+    city:                 Ciudad
+    cargo:                Cargo
+    succesCreate:         El empleado se ha registrado de forma exitosa   
+    errorCreate:          No se ha podido crear el empleado vuelve a intentarlo
+    succesDeleteMasivo:   Se han eliminado los empleados seleccionados exitosamente
+    errorDeleteMasivo:    No se ha seleccionado ningun registro
+    succesDelete:         Se ha eliminado el empleado exitosamente
+    errorDelete:          No se ha podido eliminar el empleado intentelo mas tarde
+    succesUpdate:         El empleado se ha modificado exitosamente 
+    Seleccione modulo:    Seleccione Módulo
+    errorUpdate:          Se ha producido un error al modificar al empleado intentelo mas tarde
+
+
+  cargo:
+    read:                 Cargos
+    cargo:                Cargo
+    edit:                 Editar Cargos
+    new:                  Nuevo cargo
+    delete:               Eliminar
+    view:                 Ver
+    read:                 Cargo registrados
+    cargo:                Cargo
+    edit:                 Editar Cargos
+    new:                  Nuevo cargo
+    delete:               Eliminar
+    view:                 Ver
+    
+  vacunacion:
+    vacunacion:           Vacunación
+    vaccination:          VACUNACION
+    registroVacunacion:   Registro de Vacunación
+    fechaRegistro:        Fecha del Registro
+    viewDetail:           Ver Detalle
+    insertDetail:         Insertar Detalle
+    close:                Cerrar
+    edit:                 Editar el Registro de Vacunación
+    editVaccination:      EDITAR VACUNACION
+    newVaccination:       Nueva Vacunación
+    ver:                  Ver Vacuna
+    succesCreate:         El Registro de Vacunación se ha creado de forma exitosa
+    succesUpdate:         El Registro de Vacunación se ha modificado de forma exitosa
+    succesInhabil:        El Registro de Vacunación se ha inhabilitado de forma exitosa
+    succesInhabilMasive:  Los Registros de Vacunación seleccionados se han inhabilitado de forma exitosa
+    succesHabilMasive:    Los Registros de Vacunación seleccionados se han habilitado de forma exitosa
+    succesHabil:          El Registro de Vacunación se ha habilitado de forma exitosa
+    
+  detalleVacunacion:
+    newDetailVaccination: NUEVO DETALLE DE VACUNACION
+    vacuna:               Vacuna
+    fecha:                Fecha de la Vacunación
+    fechaIni:             Fecha de la Vacunación Inicial
+    fechaFin:             Fecha de la Vacunación Final
+    dosis:                Dosis (cm)
+    detailVaccination:    DETALLE VACUNACION
+    filterReport:         Buscar para Reporte
+    oblig:                Verifique cuidadosamente la Acción porque una vez registrada no se podrá modificar
+    N°:                   N° del Registro de Vacunas
+    editDetailVaccination: Editar Detalle de Registro Vacunas
+    succesCreate:         El Detalle de Registro de Vacunación se ha creado de forma exitosa
+    succesUpdate:         El Detalle de Registro de Vacunación se ha modificado de forma exitosa
+    succesInhabil:        El Detalle de Registro de Vacunación se ha inhabilitado de forma exitosa
+    succesInhabilMasive:  Los Detalles de Registro de Vacunación seleccionados se han inhabilitado de forma exitosa
+    succesHabilMasive:    Los Detalles de Registros de Vacunación seleccionados se han habilitado de forma exitosa
+    succesHabil:          El Detalle de Registro de Vacunación se ha habilitado de forma exitosa
+    
+  vacuna:
+    successUpdate:         La Cantidad de Vacunas se han registrado satisfactoriamente
+    vacuna:                Vacunas
+    nameVacuna:            Nombre de la vacuna
+    fecha_fabricacion:     Fecha de fabricación
+    fecha_vencimiento:     Fecha de vencimiento 
+    valor:                 Valor de la vacuna
+    oblig:                 Escriba el valor sin signo de pesos, ni comas, ni puntos
+    oblig1:                Verifique cuidadosamente la Cantidad de vacunas porque una vez registrada no se podrá modificar
+    oblig2:                Verifique cuidadosamente el Stock Minimo de vacunas porque una vez registrado no se podrá modificar
+    read:                  Vacuna
+    new:                   Ingresar una Nueva Vacuna
+    lote:                  Lote de la Vacuna
+    edit:                  Editar la Vacuna
+    nueva:                 Nueva Vacuna
+    succesCreate:          La vacuna se ha creado de forma exitosa
+    succesUpdate:          La vacuna se ha modificado de forma exitosa
+    succesDelete:          La vacuna se ha eliminado de forma exitosa
+    SuccesDeleteMasive:    Las vacunas seleccionadas se han eliminado de forma exitosa        
+
+  pVenta:
+   id:                    id
+   fecha:                 fecha-hora
+   user_id:               usuario_id
+   read:                  facturas registradas en nuestro sistema
+   edit:                  editar
+   new:                   ingrese una nueva factura
+   modify:                modificar
+   register:              registrar
+   details:               detalle
+   nueva:                 Nueva Factura de Venta
+   
+  pCompra:                 
+   nueva:                 Nueva Factura de Compra
+   fact:                  Factura de Compra
+   detalle:               Detalle de Factura de Compra
+   n:                     Id del Registro
+   detalle1:              Detalle de Factura de Venta
+    
+  dpVenta:
+   item:                  Item
+   date:                  Fecha
+   numer:                 Número Documento
+   user:                  Usuario_id
+   animal_id:             id animal
+   valor:                 Valor
+   weight:                Peso
+   price:                 Precio
+   details:               Ver Detalle
+   read:                  Facturas Registradas en Nuestro Sistema
+   edit:                  Editar
+   new:                   Ingrese una Nueva Factura
+   modify:                Modificar
+   register:              Registrar
+   insert:                Insertar
+   succesCreate:          La factura se ha registrado de forma exitosa   
+   errorCreate:           No se ha podido crear la factura vuelve a intentarlo
+   succesDeleteMasivo:    Se han eliminado los registros seleccionados exitosamente
+   errorDeleteMasivo:     No se ha seleccionado ningún registro
+   succesDelete:          Se ha eliminado el registro exitosamente
+   errorDelete:           No se ha podido eliminar el registro intentelo mas tarde
+   succesUpdate:          El registro se ha modificado exitosamente 
+   errorUpdate:           Se ha producido un error al modificar el registro intentelo mas tarde
+   confirm:               Desea eliminar el registro 
+   Olvidastes tu contraseña? :         Olvidastes tu contraseña?
+   Recordar mis datos:                 Recordar mis datos
+ 
+  facturaCompra:
+    ojo:                   Verifique cuidadosamente los datos ingresados porque el registro no se podrá modificar
+    factura:               Facturas de Compra
+    fechaFactura:          Fecha de la Factura
+    new:                   Registrar una Nueva Factura de Compra
+    edit:                  Modificar la Factura de Compra
+    ver:                   Ver Factura de Compra
+    ver1:                  Ver Detalle de Factura de Compra
+    succesCreate:          La Factura de Compra se ha creado de forma exitosa
+    succesCreate1:         El Detalle de la Factura de Compra se ha creado de forma exitosa
+    succesUpdate:          La Factura de Compra se ha modificado de forma exitosa
+    succesUpdate1:         El Detalle de la Factura de Compra se ha modificado de forma exitosa
+    succesDelete:          La Factura de Compra se ha inhabilitado de forma exitosa
+    succesDelete1:         El detalle de la Factura de Compra se ha inhabilitado de forma exitosa
+    succesMasive:          Las Facturas de Compra seleccionadas se han inhabilitado de forma exitosa
+    succesMasive1:         Los Detalles de Factura de Compra seleccionados se han inhabilitado de forma exitosa
+    succesDelete3:         La Factura de Compra se ha habilitado de forma exitosa
+    succesDelete4:         El detalle de la Factura de Compra se ha habilitado de forma exitosa
+    succesMasive2:         Las Facturas de Compra seleccionadas se han habilitado de forma exitosa
+    succesMasive3:         Los Detalles de Factura de Compra seleccionados se han habilitado de forma exitosa
+    
+  facturaVenta:
+    new:                   Registrar una Nueva Factura de Venta
+    fact:                  Factura de Venta
+    ver:                   Ver Factura de Venta
+    ver1:                  Ver Detalle de Factura de Venta
+    succesCreate:          La Factura de Venta se ha creado de forma exitosa
+    succesCreate1:         El Detalle de la Factura de Venta se ha creado de forma exitosa
+    succesUpdate:          La Factura de Venta se ha modificado de forma exitosa
+    succesUpdate1:         El Detalle de la Factura de Venta se ha modificado de forma exitosa
+    succesDelete:          La Factura de Venta se ha inhabilitado de forma exitosa
+    succesDelete1:         El detalle de la Factura de Venta se ha inhabilitado de forma exitosa
+    succesMasive:          Las Facturas de Venta seleccionadas se han inhabilitado de forma exitosa
+    succesMasive1:         Los Detalles de Factura de Venta seleccionados se han inhabilitado de forma exitosa
+    succesDelete3:         La Factura de Venta se ha habilitado de forma exitosa
+    succesDelete4:         El detalle de la Factura de Venta se ha habilitado de forma exitosa
+    succesMasive2:         Las Facturas de Venta seleccionadas se han habilitado de forma exitosa
+    succesMasive3:         Los Detalles de Factura de Venta seleccionados se han habilitado de forma exitosa
+
+    
+  ayuda:
+    reg:                 Registrar
+    compra:              Registrar:A través de esta opción usted podrá aumentar el inventario de vacunas
+    req:                 Requerimientos
+    se:                  SENA
+    sistema:             Sistema de Gestión para una Granja Porcicola
+    version:             Version 1.0
+    j:                   SISTEMA JS
+    cont:                Contáctenos
+    inf:                 Información General
+    centro:              Centro de Diseño Tecnológico Industrial
+    apre:                Aprendices SENA
+    ciu:                 Pradera
+    pais:                Colombia
+    name:                Geraldine Martinez         
+    fijo:                ---
+    cel:                 316 520 45 26
+    correo:              geryliz95@hotmail.com  
+    name1:               Victoria Martinez         
+    fijo1:               ---
+    cel1:                310 518 10 84
+    correo1:             vim169@hotmail.com 
+    name2:               Yenifer Gallardo        
+    fijo2:               ---
+    cel2:                322 644 80 72
+    correo2:             jeniferandrea2009@hotmail.com 
+    name3:               Roosevelt Diaz        
+    fijo3:               ---
+    cel3:                315 349 52 00
+    correo3:             rdt-2012@hotmail.com 
+    registrar:           Insertar:Nuevo registro
+    modificar:           Editar:Modifica el registro
+    buscar:              Buscar:Con esta opción usted podrá obtener de una forma mas rápida y precisa los resultados deseados
+    eliBusqueda:         Eliminar Búsqueda:Deshace la búsqueda realizada y vuelve a mostrar todos los registros
+    reporte:             Reporte:El sistema generará un documento de tipo informe con todos los registros existentes
+    eliminarMasa:        Eliminar Selección:Una vez concluida la selección a través de esta opción usted podrá eliminar todos los registros indicados
+    verDetalle:          Ver Detalle:Ver los detalles correspondientes al registro
+    insertDetalle:       Insertar Detalle:Inserta un detalle al registro
+    verDetalleFact:      Ver Detalle:Ver los detalles correspondientes a la factura
+    eliminar:            Eliminar:Borra el registro
+    editDetalle:         Modificar Detalle:Modifica el detalle del registro
+    inhabilitarDetalle:  Inhabilitar Detalle:Inhabilita el detalle del registro
+    habilitarDet:        Habilitar Detalle:Habilita el detalle del registro
+    eliSelDetalle:       Eliminar Selección:Una vez concluida la selección a través de esta opción usted podrá eliminar los detalles indicados
+    buscarReporteDet:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe 
+    eliBusDetalle:       Eliminar Búsqueda:Deshace la búsqueda realizada y vuelve a mostrar todos los detalles
+    inhabilitar:         Inhabilitar:Inhabilita el registro
+    habilitar:           Habilitar:Habilita el registro
+    inhabilitarMasa:     Inhabilitar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los registros indicados
+    habilitarMasa:       Habilitar Selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todos los registros indicados
+    inhabilitarMasaDetalle: Inhabilitar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todos los detalles indicados
+    habilitarMasaDetalle: Habilitar selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todos los detalles indicados
+    inhFactura:          Inhabilitar:Inhabilitar la Factura
+    habFactura:          Habilitar:Habilitar la Factura
+    h:                   Habilitar:Habilitar el Registro
+    i:                   Inhabilitar:Inhabilitar el Registro
+    insertFactura:       Registrar:Inserte un detalle a la Factura
+    inhabilitarMasaFact:     Inhabiltar Selección:Una vez concluida la selección a través de esta opción usted podrá inhabilitar todas las facturas indicadas
+    habilitarMasaFact:       Habilitar Selección:Una vez concluida la selección a través de esta opción usted podrá habilitar todas las facturas indicadas
+    admin:               Manual
+    
+  errors:
+    00001:                El módulo y la acción solicitada, no existe.
+    00002:                La dirección que solicita no está registrada.
+    00003:                Los datos de usuario y contrseña son inválidos.
+    00004:                Las contraseñas no son iguales
+    00005:                El nombre de usuario ya se encuentra registrado
+    00023:                El campo  debe ser llenado solo con numeros    
+    10026:                No se admite caracteres especiales
+    10006:                Hay campos vacios que son obligatorios
+    10007:                Solo se permiten numeros
+    10008:                El formato de fecha no coincide
+    10009:                La fecha %fecha% es incorrecta
+    10010:                La fecha es mayor a la fecha actual
+    10011:                El veterinario %id_veterinario% no se ha podido insertar
+    10012:                El animal %id_animal% no se ha podido insertar
+    10013:                La vacuna %id_vacuna% no se ha podido insertar
+    10014:                La dosis %dosis_vacuna% no se ha podido insertar
+    10015:                El dato ingresado pasa el numero maximo de caracteres
+    10016:                El cliente %telefono% no se ha podido insertar
+    10017:                El cliente %numero_documento% no se ha podido insertar
+    10018:                La vacuna %id_vacuna% no se ha podido modificar
+    10019:                La dosis %dosis_vacuna% no se ha podido modificar
+    10020:                La fecha de vencimiento ingresada es inferior a la fecha actual
+    10021:                La fecha de fabricacion ingresada excede a la fecha actual
+    10022:                Se ha encontrado caracteres especiales en el campo
+    10023:                No se admite caracteres especiales %campo%
+    10030:                El animal seleccionado no existe en la base de datos
+    10031:                El veterinario seleccionado no existe en la base de datos
+    10032:                El Lote de la vacuna debe ser numerico
+    10033:                El valor de la vacuna debe ser numerico
+    20000:                No hay vacunas suficientes
+    20001:                El cerdo no existe
+    10034:                El nombre de la vacuna no admite caracteres especiales
+    10035:                El lote de la vacuna no admite caracteres especiales
+    10036:                El valor de la vacuna no admite caracteres especiales
+    10037:                El nombre de la vacuna no se admite vacio
+    10038:                El numero maximo de caracteres para el nombre de la vacuna es de 50
+    10039:                El lote de la vacuna no se admite vacio
+    10040:                El lote de la vacuna debe tener minimo 3 caracteres
+    10041:                La fecha de fabricación no se admite vacia
+    10042:                La fecha de vencimiento no se admite vacia
+    10043:                El valor de la vacuna no se admite vacio
+    10044:                El tipo insumo no se admite vacio
+    10045:                El tipo insumo no admite caracteres especiales
+    10046:                El numero maximo de caracteres para el tipo de insumo es de 100
+    10047:                El insumo no se admite vacio
+    10048:                El insumo no admite caracteres especiales
+    10049:                El numero maximo de caracteres para el insumo es de 50
+    10050:                El valor del insumo no se admite vacio
+    10051:                El valor del insumo debe ser numerico
+    10052:                El valor del insumo no puede tener un valor negativo
+    10053:                El valor del insumo no admite caracteres especiales
+    10054:                El tipo insumo seleccionado no existe en la base de datos
+    10055:                La fecha del registro no se admite vacia
+    10056:                El id del veterinario debe ser numerico
+    10057:                El id del animal debe ser numerico
+    10058:                La fecha de vacunación no se admite vacia
+    10059:                El nombre de la vacuna no se admite vacio
+    10060:                El id de la vacuna debe ser numerico
+    10061:                La vacuna seleccionada no existe en la base de datos
+    10062:                El numero maximo de caracteres para la dosis es de 10
+    10063:                El numero maximo de caracteres para la acción es de 50
+    10064:                La dosis de la vacuna no se admite vacia
+    10065:                La acción de la vacuna no se admite vacia
+    10066:                La dosis de la vacuna debe ser numerica
+    10067:                La dosis de la vacuna no admite caracteres especiales
+    10068:                La accion de la vacunación no admite caracteres especiales
+    10069:                El detalle de Vacunación no existe en la base de datos
+    10070:                El registro de Vacunación no existe en la base de datos
+    10071:                La Cantidad de Vacunas debe ser numerica
+    10072:                El Stock Minimo de Vacunas debe ser numerico
+    10073:                La Cantidad de Vacunas no se admite vacía
+    10074:                El Stock Minimo de Vacunas no se admite vacío
+    10075:                La Cantidad de Vacunas no admite un valor negativo
+    10076:                El Stock Minimo de Vacunas no admite un valor negativo
+    10077:                La Cantidad de Vacunas no admite caracteres especiales
+    10078:                El Stock Minimo de Vacunas no admite caracteres especiales
+    10079:                El Lote de la Vacuna no admite un valor negativo
+    10080:                El Valor del insumo no admite un valor negativo
+    10081:                La Cantidad de insumos no admite un valor negativo
+    10082:                El Stock Minimo de insumos no admite un valor negativo
+    10083:                La Cantidad de insumos debe ser numerico
+    10084:                El Stock Minimo de insumos debe ser numerico
+    10085:                El id del tipo insumo debe ser numerico
+    10086:                El id del tipo insumo no admite un valor negativo
+    10087:                La Cantidad de insumos no se admite vacio
+    10088:                El Stock Minimo de insumos no se admite vacio
+    10089:                La Cantidad de insumos no admite caracteres especiales
+    10090:                El Stock Minimo de insumos no admite caracteres especiales
+    10091:                El Lote de la Vacuna no admite un valor negativo
+    10092:                El id del Veterinario no se admite vacío
+    10093:                El id del Animal no se admite vacío
+    10094:                El id del veterinario no admite un valor negativo
+    10095:                El id del animal no admite un valor negativo
+    10096:                El id de la vacuna no se admite vacío
+    10097:                El id de la vacuna no admite un valor negativo
+    10098:                La dosis de la vacuna no admite un valor negativo
+    10099:                El empleado no se admite vacío
+    10100:                El id del empleado debe ser numerico
+    10101:                El id del empleado no admite un valor negativo
+    10102:                El id del insumo debe ser numerico
+    10103:                El id del insumo no admite un valor negativo
+    10104:                La cantidad no se admite vacía
+    10105:                La cantidad debe ser numerica
+    10106:                La cantidad no admite un valor negativo
+    10107:                El id del registro no se admite vacío
+    10108:                El id del registro debe ser numerico
+    10109:                El id del registro no admite un valor negativo
+    10110:                El proveedor no se admite vacío
+    10111:                El id del proveedor debe ser numérico
+    10112:                El id del proveedor no admite un valor negativo
+    10113:                El cliente no se admite vacío
+    10114:                El id del cliente debe ser numérico
+    10115:                El id del cliente no admite un valor negativo
+    10116:                El valor del cerdo no admite un valor negativo
+    10117:                El valor del cerdo no se admite vacío
+    10118:                El valor del cerdo debe ser numerico
+    10119:                El número de documento no se admite vacío
+    10120:                El número de documento debe ser numérico
+    10121:                El número de documento no admite un valor negativo
+    10122:                La cantidad de vacunas para aumentar inventario no se admite vacía
+    10123:                La cantidad de vacunas para aumentar inventario debe ser numerica
+    10124:                La cantidad de vacunas para aumentar inventario no admite un valor negativo
+    10125:                La cantidad de vacunas para aumentar inventario no admite caracteres especiales
+#    00001:  Lo que buscas no existe
+#    10001:  Existe un error en la definición de los includes
+#    10002:  No hay definido un ambito (dev o prod) para la aplicación
+#    10003:  El arhivo %file% no existe
+#    10004:  El directorio %path% no pudo ser creado
+
+
+
+
