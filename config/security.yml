@@ -217,6 +217,10 @@ insumo:
       
       
 animal:
+  indexVacunacion:
+    security: true
+    credentials:
+      - [admin, invitado]
   indexRegistroPeso:
     security: true
     credentials:

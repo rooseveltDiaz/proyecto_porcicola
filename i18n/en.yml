@@ -594,6 +594,10 @@ dictionary:
    detalle1:              Sales Invoice Detail
        
   dpVenta:
+   succesCreate2:         Immunization Registry has successfully created
+   succesUpdate2:         Immunization Registry has been modified successfully
+   errorCreate2:          Could not create the vaccination record try again
+   car:                   Animal Vaccination card
    n:                     New Weight Record
    e:                     Modify the Registry Weight
    succesCreate:          The weight record was created successfully

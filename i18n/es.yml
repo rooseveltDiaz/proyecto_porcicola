@@ -591,11 +591,15 @@ dictionary:
    detalle1:              Detalle de Factura de Venta
     
   dpVenta:
+   car:                   Carné de Vacunación del Animal
    n:                     Nuevo Registro de Peso
    e:                     Modificar el Registro de Peso
    succesCreate1:         El Registro de Peso se ha creado de forma exitosa
    succesUpdate1:         El Registro de Peso se ha modificado de forma exitosa
    errorCreate1:          No se ha podido crear el registro de peso vuelve a intentarlo
+   succesCreate2:         El Registro de Vacunación se ha creado de forma exitosa
+   succesUpdate2:         El Registro de Vacunación se ha modificado de forma exitosa
+   errorCreate2:          No se ha podido crear el registro de vacunación vuelve a intentarlo
    vaT:                   Valor Total
    regPe:                 Registro de Peso Diario
    gestacion:             Ver:Visualiza el Registro de Gestación del Animal            

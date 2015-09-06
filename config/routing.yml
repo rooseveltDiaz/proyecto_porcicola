@@ -842,7 +842,145 @@ insumo_delete_filters:
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
 
+
+########### VACUNACION ###########    
+carneVacunacion_index:
+  url:  /vista/carneVacunacion
+  param: { module: animal, action: indexVacunacion, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
     
+carneVacunacion_insert:
+  url:    /carneVacunacion/insertar
+  param:  { module: animal, action: insertVacunacion, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+carneVacunacion_create:
+  url:    /carneVacunacion/crear
+  param:  { module: animal, action: createVacunacion, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+carneVacunacion_edit:
+  url:    /carneVacunacion/editar
+  param:  { module: animal, action: editVacunacion, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+carneVacunacion_update:
+  url:    /carneVacunacion/actualizar
+  param:  { module: animal, action: updateVacunacion, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+carneVacunacion_delete:
+  url:    /carneVacunacion/eliminar
+  param:  { module: animal, action: deleteVacunacion, format: json }
+  load:
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    
+carneVacunacion_deleteSelect:
+  url:    /carneVacunacion/eliminarSeleccion
+  param:  { module: animal, action: deleteSelectVacunacion, format: html }
+  load:
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+
+carneVacunacion_reporte:
+  url: /carneVacunacion/reporte
+  param: { module: animal, action: reportVacunacion, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - model/base/carneVacunasBaseTableClass.php
+    - model/carneVacunasTableClass.php
+    - model/base/veterinarioBaseTableClass.php
+    - model/veterinarioTableClass.php
+    - model/base/vacunaBaseTableClass.php
+    - model/vacunaTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php
+#    
+    
+carneVacunacion_delete_filters:
+  url:    /borrar_filtros
+  param:  { module: animal, action: deleteFiltersVacunacion, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - hooks/logHookClass.php   
 ##-------------------------- ANIMAL --------------------------##
 animal_index:
   url:    /animal/index
