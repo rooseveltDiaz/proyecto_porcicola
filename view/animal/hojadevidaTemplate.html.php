@@ -213,8 +213,8 @@ use mvc\session\sessionClass as session ?>
         </div>
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-body">
-            <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'viewVacunacion') ?>">
-                <input type="hidden" name="<?php echo vacunacionTableClass::ID ?>" value="<?php echo request::getInstance()->getRequest(vacunacionTableClass::ID) ?>">
+            <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>">
+                <input type="hidden" name="<?php echo hojaVidaTableClass::ID ?>" value="<?php echo request::getInstance()->getRequest(hojaVidaTableClass::ID) ?>">
                 <table class="table table-bordered">
                     <tr>
                         <th><?php echo i18n::__('fechaIni', null, 'detalleVacunacion') ?></th>
@@ -228,7 +228,7 @@ use mvc\session\sessionClass as session ?>
                             <input name="filter[fecha_final]" type="date">
                         </th>
                     </tr>
-                    <tr>
+<!--                    <tr>
 
                         <th><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></th>
                         <th>
@@ -243,7 +243,7 @@ use mvc\session\sessionClass as session ?>
                                 <?php endforeach; //close foreach   ?>
                             </select>
                         </th>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th><?php echo i18n::__('dosis', null, 'detalleVacunacion') ?></th>
                         <th>
@@ -287,7 +287,7 @@ use mvc\session\sessionClass as session ?>
         <a href="#close" title="Close" class="close">X</a>
         <div class="modal-body">
             <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'reportDetalleVacunacion') ?>">
-                <input type="hidden" name="<?php echo vacunacionTableClass::ID ?>" value="<?php echo request::getInstance()->getRequest(vacunacionTableClass::ID) ?>">
+                <input type="hidden" name="<?php echo hojaVidaTableClass::ID ?>" value="<?php echo request::getInstance()->getRequest(hojaVidaTableClass::ID) ?>">
                 <table class="table table-bordered">
                     <tr>
                         <th><?php echo i18n::__('fecha', null, 'detalleVacunacion') ?></th>
@@ -295,7 +295,7 @@ use mvc\session\sessionClass as session ?>
                             <input name="filter[fecha]" type="datetime-local">
                         </th>
                     </tr>
-                    <tr>
+<!--                    <tr>
 
                         <th><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></th>
                         <th>
@@ -310,7 +310,7 @@ use mvc\session\sessionClass as session ?>
                                 <?php endforeach; //close foreach   ?>
                             </select>
                         </th>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th><?php echo i18n::__('dosis', null, 'detalleVacunacion') ?></th>
                         <th>

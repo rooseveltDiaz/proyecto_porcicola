@@ -104,15 +104,15 @@ class hojaVidaBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable2() {
-        return 'genero';
+        return 'animal';
     }
 
     public static function getNameTable3() {
-        return 'raza';
+        return 'genero';
     }
 
     public static function getNameTable4() {
-        return 'animal';
+        return 'raza';
     }
 
     /**

@@ -27,7 +27,7 @@ class createHojaVidaActionClass extends controllerClass implements controllerAct
 //                $parto = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO, true));
                 $peso = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::PESO, true));
 //validar si los campos estan vacios
-                $datos = array(
+                $data = array(
                     $fecha_nacimiento,
                     $genero,
 //                    $parto,

@@ -4,7 +4,7 @@ use mvc\session\sessionClass as session;
 config::setRowGrid(5);
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
-config::setDbName('proyecto');
+config::setDbName('proyecto_porcicola');
 config::setDbPort(5432); // 3306
 config::setDbUser('postgres');
 config::setDbPassword('sena');
