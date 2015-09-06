@@ -55,7 +55,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             </button>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="animal">
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-piggy-bank"><?php echo i18n::__('cerdo', null, 'animal') ?></button></a>
-                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>
+<!--                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexLote') ?>'" > <button class="mdl-menu__item fa fa-th"><?php echo i18n::__('lote') ?></button></a>-->
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRaza') ?>'" > <button class="mdl-menu__item fa fa-delicious"><?php echo i18n::__('raza') ?></button></a>
 <!--                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>'" > <button class="mdl-menu__item glyphicon glyphicon-calendar"><?php echo i18n::__('read', null, 'gestacion') ?></button></a>                               
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>'" > <button class="mdl-menu__item fa fa-file-text-o"><?php echo i18n::__('registro', null, 'animal') ?></button></a>       -->
@@ -103,7 +103,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <i class="material-icons">arrow_drop_down</i>
                             </button>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="reporte">
-                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>'" > <button class="mdl-menu__item fa fa-list-ol"><?php echo i18n::__('reporte') ?></button></a>
+                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>'" > <button class="mdl-menu__item fa fa-area-chart"><?php echo i18n::__('reporte') ?></button></a>
 
                             </ul>
                         </div>
