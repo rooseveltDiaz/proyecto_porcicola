@@ -591,6 +591,13 @@ dictionary:
    detalle1:              Detalle de Factura de Venta
     
   dpVenta:
+   n:                     Nuevo Registro de Peso
+   e:                     Modificar el Registro de Peso
+   succesCreate1:         El Registro de Peso se ha creado de forma exitosa
+   succesUpdate1:         El Registro de Peso se ha modificado de forma exitosa
+   errorCreate1:          No se ha podido crear el registro de peso vuelve a intentarlo
+   vaT:                   Valor Total
+   regPe:                 Registro de Peso Diario
    gestacion:             Ver:Visualiza el Registro de Gestación del Animal            
    parto:                 Ver:Visualiza el Registro de Parto del Animal
    repeso:                Ver:Visualiza el Registro de Peso del Animal

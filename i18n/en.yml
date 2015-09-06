@@ -2,6 +2,9 @@
 culture:                  English
 dictionary:
   default:
+    valor_kilo:           Kilo Value
+    peso_final:           Final Weight
+    total:                Total
     subt:                 Total Parcial
     RegistrosEntrada:     Input of warehouse
     personal:             People
@@ -591,6 +594,13 @@ dictionary:
    detalle1:              Sales Invoice Detail
        
   dpVenta:
+   n:                     New Weight Record
+   e:                     Modify the Registry Weight
+   succesCreate:          The weight record was created successfully
+   succesUpdate:          The weight record has been modified successfully
+   errorCreate1:          Could not create the record weight try again
+   vaT:                   Total Value
+   regPe:                 Record daily weight
    gestacion:             View:Displays the Register of Animal Gestation          
    parto:                 View:Displays the Animal Birth Registration
    repeso:                View:Displays the Register of Animal Weight
