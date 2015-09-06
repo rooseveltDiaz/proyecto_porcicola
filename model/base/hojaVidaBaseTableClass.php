@@ -15,6 +15,8 @@ class hojaVidaBaseTableClass extends tableBaseClass {
             $numero_parto,
             $peso_animal,
             $id_animal,
+            $numero_identificacion,
+            $lote_id,
             $genero_id;
 
     const ID = 'id';
@@ -24,7 +26,26 @@ class hojaVidaBaseTableClass extends tableBaseClass {
     const ANIMAL = 'id_animal';
     const GENERO_ID = 'genero_id';
     const RAZA = 'raza_id';
+    const LOTE = 'lote_id';
+    const NUMERO = 'numero_identificacion';
+    
+    function getNumero_identificacion() {
+        return $this->numero_identificacion;
+    }
 
+    function getLote_id() {
+        return $this->lote_id;
+    }
+
+    function setNumero_identificacion($numero_identificacion) {
+        $this->numero_identificacion = $numero_identificacion;
+    }
+
+    function setLote_id($lote_id) {
+        $this->lote_id = $lote_id;
+    }
+
+    
     function getId() {
         return $this->id;
     }
