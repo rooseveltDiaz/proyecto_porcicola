@@ -196,7 +196,7 @@
                     </tr>
                     <tr>
                         <th>  <?php echo i18n::__('valor', null, 'dpVenta') ?>:</th>
-                        <th> <input  type="number" name="filter[valor]" ></th>   
+                        <th>$ <input  type="number" name="filter[valor]" ></th>   
                     </tr>             
                     <tr>
                         <th>  <?php echo i18n::__('cantidad') ?>:</th>

@@ -42,7 +42,7 @@ class indexTipoInsumoActionClass extends controllerClass implements controllerAc
             $orderBy = array(
                 tipoInsumoTableClass::ID
             );
-            $this->objTipoInsumo = tipoInsumoBaseTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objTipoInsumo = tipoInsumoBaseTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->defineView('index', 'tipoInsumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

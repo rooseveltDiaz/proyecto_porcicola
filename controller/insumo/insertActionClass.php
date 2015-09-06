@@ -18,7 +18,7 @@ class insertActionClass extends controllerClass implements controllerActionInter
                 tipoInsumoTableClass::ID,
                 tipoInsumoTableClass::DESCRIPCION
             );
-            $this->objTipoInsumo = tipoInsumoTableClass::getAll($fields, true);
+            $this->objTipoInsumo = tipoInsumoTableClass::getAll($fields, false);
             $this->defineView('insert', 'insumo', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
