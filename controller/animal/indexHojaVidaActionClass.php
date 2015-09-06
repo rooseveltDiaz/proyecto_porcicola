@@ -63,9 +63,9 @@ class indexHojaVidaActionClass extends controllerClass implements controllerActi
             $fJoin5 = hojaVidaTableClass::RAZA;
             $fJoin6 = razaTableClass::ID;
 
-            $whereDetalle = array(
-                hojaVidaTableClass::ANIMAL => $idAnimal
-            );
+//            $whereDetalle = array(
+//                hojaVidaTableClass::ANIMAL => $idAnimal
+//            );
             $orderBy = array(
                 hojaVidaTableClass::FECHA_NACIMIENTO
             );
@@ -90,7 +90,7 @@ class indexHojaVidaActionClass extends controllerClass implements controllerActi
             $lines = config::getRowGrid();
             $this->cntPages = animalTableClass::getAllCount($f, true, $lines);
             // $this->page = request::getInstance()->getGet('page');
-            $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, false, $orderBy, 'ASC', config::getRowGrid());
+            $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', null, null);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
             $this->objRaza = razaTableClass::getAll($fieldsRaza, false);

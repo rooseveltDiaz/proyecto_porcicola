@@ -203,6 +203,7 @@ dictionary:
     succesDelete:         Vet has been removed successfully
     
   animal:
+    hv:                   SHEET OF LIFE
     oblig:                Carefully check the identification number of the animal because once registered can not be changed
     date_birth:           Date of Birth
     precio_compra:        Purchase Price
@@ -590,6 +591,10 @@ dictionary:
    detalle1:              Sales Invoice Detail
        
   dpVenta:
+   gestacion:             View:Displays the Register of Animal Gestation          
+   parto:                 View:Displays the Animal Birth Registration
+   repeso:                View:Displays the Register of Animal Weight
+   vacu:                  View:Displays Animal vaccination card
    item:                  Item
    date:                  Date
    numer:                 Number Document

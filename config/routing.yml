@@ -859,6 +859,22 @@ animal_index:
     - libs/validate/validatorFieldsClass.php
     - model/base/hojaVidaBaseTableClass.php
     - model/hojaVidaTableClass.php
+
+registroPeso_index:
+  url:    /pesoDiario/index
+  param:  { module: animal, action: indexRegistroPeso, format: html }
+  load:
+#    - model/base/animalBaseTableClass.php
+#    - model/animalTableClass.php
+#    - model/base/razaBaseTableClass.php
+#    - model/razaTableClass.php
+#    - model/base/loteBaseTableClass.php
+#    - model/loteTableClass.php
+#    - model/base/generoBaseTableClass.php
+#    - model/generoTableClass.php
+#    - libs/validate/validatorFieldsClass.php
+#    - model/base/hojaVidaBaseTableClass.php
+#    - model/hojaVidaTableClass.php
     
 animal_insert:
   url:    /animal/insertar
@@ -1089,6 +1105,16 @@ hojaVida_deleteSelect:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    
+hojaVida_deleteFilters:
+  url:     /borrar_filtros/HojaVida
+  param: { module: animal, action: deleteFilterHojaVida, format: html }
+  load:
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 hojaVida_reporte:
   url:    /hojaVida/reporte

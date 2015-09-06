@@ -188,6 +188,7 @@ dictionary:
     succesDelete:         El veterinario se ha eliminado de forma exitosa
       
   animal:
+    hv:                   HOJA DE VIDA
     oblig:                Verifique cuidadosamente el número de identificación  del animal porque una vez registrado no se podrá modificar
     date_birth:           Fecha de nacimiento
     precio_compra:        Precio de compra
@@ -590,6 +591,10 @@ dictionary:
    detalle1:              Detalle de Factura de Venta
     
   dpVenta:
+   gestacion:             Ver:Visualiza el Registro de Gestación del Animal            
+   parto:                 Ver:Visualiza el Registro de Parto del Animal
+   repeso:                Ver:Visualiza el Registro de Peso del Animal
+   vacu:                  Ver:Visualiza el Carné de Vacunación del Animal
    item:                  Item
    date:                  Fecha
    numer:                 Número Documento
