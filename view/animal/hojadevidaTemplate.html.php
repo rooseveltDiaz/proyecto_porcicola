@@ -9,9 +9,12 @@
 <?php $fecha = hojaVidaTableClass::FECHA_NACIMIENTO ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $raza_id = razaTableClass::NOMBRE_RAZA ?>
+<?php $raza = razaTableClass::NOMBRE_RAZA ?>
 <?php $parto = hojaVidaTableClass::PARTO ?>
 <?php $peso = hojaVidaTableClass::PESO ?>
-<?php $countDetale = 1 ?>
+<?php $numero = hojaVidaTableClass::NUMERO ?>
+<!--<?php $lote = loteTableClass::NOMBRE ?>-->
+<!--<?php $countDetale = 1 ?>-->
 
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
@@ -33,6 +36,7 @@
                         <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
 <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
+                        
                        <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportHojaVida') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
                         <?php echo i18n::__('reporte', null, 'ayuda') ?>
@@ -46,19 +50,44 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr class="success">
-                                <td>  <?php echo i18n::__('identificacion') ?>:</td></tr>
-                            <tr>    <td>  <?php echo i18n::__('date_birth', NULL, 'animal') ?>:</td></tr>
-                            <tr>     <td>  <?php echo i18n::__('genero', null, 'animal') ?>:</td></tr>
+                                <td>  <?php echo i18n::__('identificacion') ?>:</td>
+                                                  
+<?php foreach ($objHojaVida as $key): ?>
+                                 <td><?php echo $key->$numero ?></td> </tr>       
+                <?php endforeach; ?>
+                            
+                            <tr>    <td>  <?php echo i18n::__('date_birth', NULL, 'animal') ?>:</td>
+                           <?php foreach ($objHojaVida as $key): ?>
+                            <td>  <?php echo $key->$fecha ?></td></tr>
+                            <?php endforeach; ?>
+                            <tr>     <td>  <?php echo i18n::__('genero', null, 'animal') ?>:</td>
+                                                       <?php foreach ($objHojaVida as $key): ?>
+                            <td>  <?php echo $key->$genero ?></td></tr>
+                            <?php endforeach; ?>
                             <tr>   <td>  <?php echo i18n::__('parto', NULL, 'animal') ?>:
                                 </td>  
-                            </tr>
-                            <tr>   <td>  <?php echo i18n::__('raza') ?>:</td></tr>
-                            <tr>      <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td></tr>
+                                                    <?php foreach ($objHojaVida as $key): ?>
+                            <td>  <?php echo $key->$parto ?></td></tr>
+                            <?php endforeach; ?>
+                            <tr>   <td>  <?php echo i18n::__('raza') ?>:</td>
+                                                           <?php foreach ($objHojaVida as $key): ?>
+                            <td>  <?php echo $key->$raza ?></td></tr>
+                            <?php endforeach; ?>
+                            <tr>      <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td>
+                                                           <?php foreach ($objHojaVida as $key): ?>
+                            <td>  <?php echo $key->$peso ?></td></tr>
+                            <?php endforeach; ?>
                             <tr>   <td>  <?php echo i18n::__('lote', NULL, 'animal') ?>:
                                 </td>  
-                            </tr>
-                            <tr><td>
-                                    <div class="col-xs-12 text-center">
+                        <!--                            <?php foreach ($objHojaVida as $key): ?>
+                            <td>  <?php echo $key->$lote ?></td></tr>
+                            <?php endforeach; ?> -->
+                           
+                        </thead>
+
+                        
+                        <tr><td colspan="2">
+                                  <div class=" text-center">
                                         <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
 <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
@@ -75,37 +104,13 @@
                                         <div class="mdl-tooltip mdl-tooltip--large" for="vacunacion<?php echo $countDetale ?>">
 <?php echo i18n::__('vacu', null, 'dpVenta') ?>
                                         </div> 
-                                    </div>
+                                  </div>
                                 </td>
                             </tr>
-                        </thead>
-                        <tbody>
-<?php foreach ($objHojaVida as $key): ?>
-                        <td>
-                        <td><?php echo $key->$idAnimal ?></td>
-                        <td>  <?php echo $key->$fecha ?></td>
-                        <td>  <?php echo $key->$genero ?></td>
-                        <td>  <?php echo $key->$raza ?></td>
-                        <td> <?php echo $key->$peso ?></td>
-                        <td> <?php echo $key->$parto ?></td>
 
-<?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                        <td>
-                            <a id="editarDetalle<?php echo $countDetale ?>" href="#detailFormEdit<?php echo $key->id ?>" class="btn btn-default active btn-sm fa fa-edit" ></a>
-                            <div class="mdl-tooltip mdl-tooltip--large" for="editarDetalle<?php echo $countDetale ?>">
-<?php echo i18n::__('editDetalle', null, 'ayuda') ?>
-                            </div>  
-                        </td>
-<?php endif; ?>
+                
 
-                        <tr>
-                            <th>
-                            </th>
-                        </tr>
-                           <?php $countDetale++ ?>
-                    <?php endforeach//close foreach   ?>
-
-                        </tbody>
+           
                     </table>
 
                 </div>
