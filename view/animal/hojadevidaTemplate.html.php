@@ -74,6 +74,7 @@ use mvc\session\sessionClass as session ?>
                                 </td>  
                             </tr>
                             <tr><td>
+                                      <div class="col-xs-12 text-center">
                                     <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
                                         <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
@@ -90,6 +91,7 @@ use mvc\session\sessionClass as session ?>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="vacunacion<?php echo $countDetale ?>">
                                         <?php echo i18n::__('vacu', null, 'dpVenta') ?>
                                     </div> 
+                                      </div>
                                 </td>
                             </tr>
                         </thead>
@@ -192,8 +194,10 @@ use mvc\session\sessionClass as session ?>
                 </tbody>
                 </table>
         </div>
+        </form>
     </div>
-</form>
+</div>
+                             
 </main>
 <!-- WINDOWS MODAL DELETE MASIVE -->
 <div class="modalmask" id="myModalEliminarMasivo">
@@ -219,8 +223,7 @@ use mvc\session\sessionClass as session ?>
 <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
 <?php echo i18n::__('atras', null, 'ayuda') ?>
 </div> 
-</div>
-</main>
+
 
 
 
