@@ -23,18 +23,20 @@ class createHojaVidaActionClass extends controllerClass implements controllerAct
                 // DATOS DE ANIMAL
                 $fecha_nacimiento = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::FECHA_NACIMIENTO, true));
                 $genero = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::GENERO_ID, true));
+                $animal = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
                 $raza = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::RAZA, true));
-//                $parto = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO, true));
+                $parto = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO, true));
                 $peso = request::getInstance()->getPost(hojaVidaTableClass::getNameField(hojaVidaTableClass::PESO, true));
 //validar si los campos estan vacios
                 $datos = array(
                     $fecha_nacimiento,
                     $genero,
-//                    $parto,
+                    $animal,
+                    $parto,
                     $raza,
                     $peso
                 );
-         
+
 
                 //Validar el formato de fecha
 //                $validacionFecha = validator::getInstance()->validateDate($fecha);
@@ -42,20 +44,18 @@ class createHojaVidaActionClass extends controllerClass implements controllerAct
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
                 //Validar campos numericos
-      
-
 //                $validacionNumericos = validator::getInstance()->validateCharactersNumber($edad);
 //                if ($validacionNumericos == true) {
 //                    throw new PDOException(i18n::__(10005, null, 'errors', null, 10005));
 //                }
                 //Insertar la informacion del usuario
                 $data = array(
-                hojaVidaTableClass::FECHA_NACIMIENTO => $fecha_nacimiento,
-                hojaVidaTableClass::GENERO_ID => $genero,
-//                hojaVidaTableClass::PARTO => $parto,
-                hojaVidaTableClass::PESO => $peso,
-                hojaVidaTableClass::RAZA => $raza
-                  
+                    hojaVidaTableClass::FECHA_NACIMIENTO => $fecha_nacimiento,
+                    hojaVidaTableClass::GENERO_ID => $genero,
+                    hojaVidaTableClass::PARTO => $parto,
+                    hojaVidaTableClass::PESO => $peso,
+                    hojaVidaTableClass::RAZA => $raza,
+                    hojaVidaTableClass::ANIMAL => $animal,
                 );
                 hojaVidaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'animal'));

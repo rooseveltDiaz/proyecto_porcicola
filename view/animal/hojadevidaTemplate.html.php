@@ -11,7 +11,7 @@ use mvc\request\requestClass as request ?>
 use mvc\session\sessionClass as session ?>
 
 <?php $id = hojaVidaTableClass::ID ?>
-<?php $idAnimal = hojaVidaTableClass::ID ?>
+<?php $idAnimal = animalTableClass::ID ?>
 <?php $fecha = hojaVidaTableClass::FECHA_NACIMIENTO ?>
 <?php $genero = generoTableClass::NOMBRE ?>
 <?php $raza_id = razaTableClass::NOMBRE_RAZA ?>
@@ -19,8 +19,8 @@ use mvc\session\sessionClass as session ?>
 <?php $parto = hojaVidaTableClass::PARTO ?>
 <?php $peso = hojaVidaTableClass::PESO ?>
 <?php $numero = hojaVidaTableClass::NUMERO ?>
-<!--<?php $lote = loteTableClass::NOMBRE ?>-->
-<!--<?php $countDetale = 1 ?>-->
+<!--<?php $lote = loteTableClass::NOMBRE ?>
+<?php $countDetale = 1 ?>-->
 
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
@@ -57,7 +57,7 @@ use mvc\session\sessionClass as session ?>
                         <thead>
                             <tr class="success">
                                 <td>  <?php echo i18n::__('identificacion') ?>:</td>
-
+                             
                                 <?php foreach ($objHojaVida as $key): ?>
                                     <td><?php echo $key->$numero ?></td> </tr>       
                             <?php endforeach; ?>
@@ -82,13 +82,8 @@ use mvc\session\sessionClass as session ?>
                             <tr>      <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td>
                                 <?php foreach ($objHojaVida as $key): ?>
                                     <td>  <?php echo $key->$peso ?></td></tr>
-                            <?php endforeach; ?>
-                            <tr>   <td>  <?php echo i18n::__('lote', NULL, 'animal') ?>:
-                                </td>  
-                                <!--                            <?php foreach ($objHojaVida as $key): ?>
-                                            <td>  <?php echo $key->$lote ?></td></tr>
-                                <?php endforeach; ?> -->
-
+                           <?php endforeach; ?>
+                        
                         </thead>
 
 

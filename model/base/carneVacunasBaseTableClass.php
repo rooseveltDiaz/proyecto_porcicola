@@ -12,7 +12,7 @@ class carneVacunasBaseTableClass extends tableBaseClass {
     private $id;
     private $animal;
     private $veterinario;
-    private $fecha_registro;
+
     private $vacuna;
     private $fecha_vacunacion;
     private $dosis_vacuna;
@@ -21,7 +21,7 @@ class carneVacunasBaseTableClass extends tableBaseClass {
     const ID = 'id';
     const ANIMAL = 'animal';
     const VETERINARIO = 'veterinario';
-    const FECHA = 'fecha_registro';
+
     const VACUNA = 'vacuna';
     const FECHA_VACUNACION = 'fecha_vacunacion';
     const DOSIS = 'dosis_vacuna';
@@ -39,9 +39,6 @@ class carneVacunasBaseTableClass extends tableBaseClass {
         return $this->veterinario;
     }
 
-    function getFecha_registro() {
-        return $this->fecha_registro;
-    }
 
     function getVacuna() {
         return $this->vacuna;
@@ -71,9 +68,6 @@ class carneVacunasBaseTableClass extends tableBaseClass {
         $this->veterinario = $veterinario;
     }
 
-    function setFecha_registro($fecha_registro) {
-        $this->fecha_registro = $fecha_registro;
-    }
 
     function setVacuna($vacuna) {
         $this->vacuna = $vacuna;

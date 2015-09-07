@@ -18,9 +18,13 @@ class indexHojaVidaActionClass extends controllerClass implements controllerActi
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(animalTableClass::ID)) {
-                $idAnimal = request::getInstance()->getRequest(animalTableClass::ID);
-            }
+           
+               
+//                $where[hojaVidaTableClass::ANIMAL] = $idAnimal;
+//                  $where = array(
+//                      hojaVidaTableClass::ANIMAL => $idAnimal
+//                );
+
             $fieldsAnimal = array(
                 animalTableClass::ID,
                 animalTableClass::NUMERO
@@ -45,6 +49,7 @@ class indexHojaVidaActionClass extends controllerClass implements controllerActi
             );
 
 
+           
             $fields1 = array(
                 animalTableClass::NUMERO
             );
@@ -80,6 +85,10 @@ class indexHojaVidaActionClass extends controllerClass implements controllerActi
             $f = array(
                 hojaVidaTableClass::ID
             );
+//             $whereAnimal = array(
+//             animalTableClass::getNameTable() . '.' . animalTableClass::NUMERO => $idAnimal
+//                     );
+          
 
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');

@@ -29,9 +29,6 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
                     );
                 }//close if
 
-                if (isset($filter['numero']) and $filter['numero'] !== null and $filter['numero'] !== '') {
-                      $where[carneVacunasTableClass::ANIMAL] = $filter['numero'];
-                }//close if
                 if (isset($filter['veterinario']) and $filter['veterinario'] !== null and $filter['veterinario'] !== '') {
                     $where[carneVacunasTableClass::getNameTable() . '.' . carneVacunasTableClass::VETERINARIO] = $filter['veterinario'];
                 }//close if
@@ -65,7 +62,7 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
             $fields = array(
             carneVacunasTableClass::ACCION,
             carneVacunasTableClass::DOSIS,
-            carneVacunasTableClass::FECHA,
+
             carneVacunasTableClass::FECHA_VACUNACION,
             carneVacunasTableClass::ID
             );

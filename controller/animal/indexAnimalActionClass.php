@@ -22,17 +22,17 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             if (request::getInstance()->hasPost('filter')) {
                 $filter = request::getInstance()->getPost('filter');
 
-            
+
                 if (isset($filter['numero']) and $filter['numero'] !== null and $filter['numero'] !== '') {
                     $where [animalTableClass::NUMERO] = $filter['numero'];
                 }
-             
+
                 if (isset($filter['lote']) and $filter['lote'] !== null and $filter['lote'] !== '') {
                     $where [animalTableClass::LOTE_ID] = $filter['lote'];
                 }
 
 
-   
+
                 session::getInstance()->setAttribute('animalFiltersAnimal', $where);
             } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
                 $where = session::getInstance()->getAttribute('animalFiltersAnimal');
@@ -53,7 +53,14 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             $fields3 = array(
                 loteTableClass::NOMBRE
             );
-
+            $fieldsGenero = array(
+                generoTableClass::ID,
+                generoTableClass::NOMBRE
+            );
+            $fieldsRaza = array(
+                razaTableClass::ID,
+                razaTableClass::NOMBRE_RAZA
+            );
 
             $fJoin1 = animalTableClass::LOTE_ID;
             $fJoin2 = loteTableClass::ID;
@@ -83,6 +90,8 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             $lines = config::getRowGrid();
             $this->cntPages = animalTableClass::getAllCount($f, true, $lines, $where);
             // $this->page = request::getInstance()->getGet('page');
+            $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
+            $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
             $this->objLote = loteTableClass::getAll($fieldsLote, true);
             $this->objFilterAnimal = animalTableClass::getAll($fields, true);
             $this->objAnimal = animalTableClass::getAllJoin($fields, $fields3, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);

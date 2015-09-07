@@ -6,7 +6,7 @@ $numero = animalTableClass::NUMERO;
 $fecha = hojaVidaTableClass::FECHA_NACIMIENTO;
 $peso = hojaVidaTableClass::PESO;
 $genero = generoTableClass::NOMBRE;
-$lote = animalTableClass::LOTE_ID;
+//$lote = animalTableClass::LOTE_ID;
 $raza = razaTableClass::NOMBRE_RAZA;
 
 class PDF extends FPDF {
@@ -49,7 +49,7 @@ $pdf->Cell(22, 10, utf8_decode('Género'), 1);
 //$pdf->Cell(30, 10, utf8_decode('N. Parto'), 1);
 $pdf->Cell(38, 10, utf8_decode('Raza'), 1);
 $pdf->Cell(20, 10, utf8_decode('Peso (Kg)'), 1);
-$pdf->Cell(38, 10, utf8_decode('Lote'), 1);
+//$pdf->Cell(38, 10, utf8_decode('Lote'), 1);
 
 $pdf->Ln();
 foreach ($objHojaVida as $key) {
@@ -61,7 +61,7 @@ foreach ($objHojaVida as $key) {
     $pdf->Cell(20, 10, utf8_decode($key->$peso), 1);
 
 //    $pdf->Cell(30, 10, utf8_decode($key->numero_parto), 1);
-    $pdf->Cell(38, 10, utf8_decode($key->$lote), 1);
+//    $pdf->Cell(38, 10, utf8_decode($key->$lote), 1);
 
 //    $pdf->Cell(30, 10, utf8_decode($key->precio_animal), 1);
     $pdf->Ln();

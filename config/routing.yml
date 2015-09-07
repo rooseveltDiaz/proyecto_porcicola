@@ -975,7 +975,7 @@ carneVacunacion_reporte:
 #    
     
 carneVacunacion_delete_filters:
-  url:    /borrar_filtros
+  url:    /eliminarBusqueda
   param:  { module: animal, action: deleteFiltersVacunacion, format: html }
   load:
     - model/base/bitacoraBaseTableClass.php

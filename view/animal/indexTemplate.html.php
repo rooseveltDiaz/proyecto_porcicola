@@ -223,17 +223,18 @@ use mvc\view\viewClass as view ?>
 <!-- WINDOWS MODAL INSERT ANIMAL -->
 <div class="modalmask" id="myModalDetail<?php echo $key->id ?>">
     <div class="modalbox rotate">
-        <form id="detailForm" name="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'createHojaVida') ?>">
-
-            <div class="modal-header">
+                 <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('create') ?>:</h4>
             </div>
+        <form id="detailForm" name="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'createHojaVida') ?>">
+
+
             <a href="#close" title="Close" class="close">X</a>
             <div class="modal-body">
 
 
-                <input type="hidden" value="<?php echo $key->id ?>" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::ID, true) ?>" id="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::ID, true) ?>">
+                <input type="hidden" value="<?php echo $key->$idAnimal ?>" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::ID, true) ?>">
                 <?php echo i18n::__('date_birth', null, 'animal') ?>
                 <input type="datetime-local" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::FECHA_NACIMIENTO, true) ?>">    
                 <br/>
@@ -256,16 +257,20 @@ use mvc\view\viewClass as view ?>
                         <option value="<?php echo $key->id ?>"><?php echo $key->nombre_raza ?></option>
                     <?php endforeach; //close foreach   ?>
                 </select>
-              <br/>
+                <br/>
                 <br/>
                 <?php echo i18n::__('parto', null, 'animal') ?>
-              <input type="number" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO, true) ?>">
-               <br/>
+                <input type="number" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO, true) ?>">
+                <br/>
                 <br/>
                 <?php echo i18n::__('kg', null, 'animal') ?>
                 <input type="number" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::PESO, true) ?>">
-              
-            </div>
+<br/>
+                <br/>
+               
+<!--                <?php // echo i18n::__('kg', null, 'animal') ?>
+                <input type="number" name="<?php // echo hojaVidaTableClass::getNameField(hojaVidaTableClass::LOTE, true) ?>">
+            </div>-->
             <div class="modal-footer">
                 <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
                 <button type="submit" class="btn btn-info active fa fa-plus-square" ><?php echo i18n::__('insert', null, 'dpVenta') ?></button>
