@@ -1,6 +1,6 @@
 <?php use mvc\routing\routingClass as routing;
 
-
+$numero = animalTableClass::NUMERO;
 $fecha =  carneVacunasTableClass::FECHA_VACUNACION;
 $veterinario = veterinarioTableClass::NOMBRE;
 $vacuna = vacunaTableClass::NOMBRE_VACUNA;
@@ -27,9 +27,13 @@ $pdf->Ln(30);
 $pdf->SetFont('Arial', 'B', 25);
 $pdf->Cell(70);
 $pdf->Cell(130, 10, $mensaje, 0, 0, 'C');
-
-
 $pdf->Ln(20);
+
+$pdf->SetFont('Arial', 'B', 25);
+$pdf->Cell(70);
+$pdf->Cell(130, 10, $numero, 0, 0, 'C');
+$pdf->Ln(20);
+
 $pdf->SetFont('Arial', 'B', 15);
 $pdf->Cell(1);
 $pdf->Cell(50, 10, utf8_decode('Fecha'), 1, 0, 'C');

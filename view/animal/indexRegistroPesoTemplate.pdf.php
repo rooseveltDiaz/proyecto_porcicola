@@ -34,13 +34,21 @@ $pdf->Cell(90);
 $pdf->Cell(70, 10, $mensaje, 0, 0, 'C');
 // Salto de línea
 $pdf->Ln(20);
+// Arial bold 15
+$pdf->SetFont('Arial', 'B', 25);
+// Movernos a la derecha
+$pdf->Cell(90);
+// Título
+$pdf->Cell(70, 10, $numero, 0, 0, 'C');
+// Salto de línea
+$pdf->Ln(20);
 $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
 $pdf->Cell(1);
 $pdf->Cell(35, 10, utf8_decode('Fecha'), 1, 0, 'C');
 $pdf->Cell(108, 10, utf8_decode('Empleado'), 1, 0 ,'C');
-$pdf->Cell(33, 10, utf8_decode('N. Identificación'), 1, 0, 'C');
+//$pdf->Cell(33, 10, utf8_decode('N. Identificación'), 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Peso'), 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Valor por Kg.'), 1, 0 ,'C');
 $pdf->Cell(30, 10, utf8_decode('Valor Total'), 1, 0, 'C');
@@ -50,7 +58,7 @@ foreach ($objRegistroPeso as $key) {
     $pdf->Cell(1);
     $pdf->Cell(35, 10, date("Y-M-d G:i", strtotime($key->$fecha)), 1, 0 , 'C');
     $pdf->Cell(108, 10, utf8_decode($key->$empleado), 1);
-    $pdf->Cell(33, 10, utf8_decode($key->$numero), 1);
+//    $pdf->Cell(33, 10, utf8_decode($key->$numero), 1);
     $pdf->Cell(30, 10, utf8_decode($key->$peso), 1);
     $pdf->Cell(30, 10, utf8_decode($key->$kilo), 1);
     $pdf->Cell(30, 10, utf8_decode($key->$total), 1);

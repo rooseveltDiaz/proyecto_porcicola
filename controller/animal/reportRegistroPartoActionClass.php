@@ -48,7 +48,8 @@ class reportRegistroPartoActionClass extends controllerClass implements controll
             );
 //            $this->objEmpleado = empleadoTableClass::getAll($fields2, false);
             $this->objParto = registroPartoTableClass::getAllJoin($fields, $fields2, null,null, $fJoin1, $fJoin2, null, null, null, null, false, $orderBy, 'ASC', null,null,$where);
-            $this->mensaje = 'Registros de Partos de la Cerda';         
+            $this->mensaje = 'Registros de Partos de la Cerda';   
+            $this->numero = animalTableClass::NUMERO;  
             $this->defineView('index', 'registroParto', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
