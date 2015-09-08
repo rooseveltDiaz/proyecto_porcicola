@@ -97,14 +97,14 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
             );
 
             $lines = config::getRowGrid();
-            $this->cntPages = carneVacunasTableClass::getAllCount($f, false, $lines);
+            $this->cntPages = carneVacunasTableClass::getAllCount($f, true, $lines);
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
             } else {
                 $this->page = $page;
             }
 
-            $this->objCarne = carneVacunasTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objCarne = carneVacunasTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
 //$this->page = request::getInstance()->getGet('page');
             $this->objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario, true);

@@ -34,6 +34,10 @@ use mvc\view\viewClass as view ?>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroPeso') ?>" method="POST">
                 <div class="row">
                     <div class="col-xs-12 text-center">
+                           <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="atras">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroPeso') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="new">
@@ -53,10 +57,7 @@ use mvc\view\viewClass as view ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
                         <?php echo i18n::__('reporte', null, 'ayuda') ?>
                     </div>
-                        <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="atras">
-                            <?php echo i18n::__('atras', null, 'ayuda') ?>
-                        </div> 
+                     
                     </div>
                 </div>
                 <?php view::includeHandlerMessage() ?>

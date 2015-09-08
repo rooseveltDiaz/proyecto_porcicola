@@ -26,7 +26,7 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
             hojaVidaTableClass::FECHA_NACIMIENTO,
             hojaVidaTableClass::GENERO_ID,
             hojaVidaTableClass::ID,
-            hojaVidaTableClass::NUMERO,
+//            hojaVidaTableClass::NUMERO,
             hojaVidaTableClass::PARTO,
             hojaVidaTableClass::PESO,
             hojaVidaTableClass::RAZA
@@ -55,6 +55,7 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
 
             $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', $where);
             $this->mensaje = 'HOJA DE VIDA DEL CERDO';
+            $this->numero = animalTableClass::NUMERO;
             $this->defineView('hojadevida', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
