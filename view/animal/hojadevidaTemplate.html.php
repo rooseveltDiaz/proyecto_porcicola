@@ -43,9 +43,9 @@ use mvc\session\sessionClass as session ?>
                             <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
 
-                        <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportHojaVida') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
-                            <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                        <a id="informe" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportHojaVida') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="informe">
+                            <?php echo i18n::__('reporteHV', null, 'dpVenta') ?>
                         </div>
                     </div>
                 </div>

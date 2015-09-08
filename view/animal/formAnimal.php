@@ -14,15 +14,16 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
-
-                <table class="table table-responsive">    
+                <div class="table-responsive">
+                <table class="table table-bordered">    
                     <tr>
                         <?php if (!isset($objAnimal)): ?>
                             <th> <?php echo i18n::__('identificacion') ?>:</th>
                             <th> 
                                 <input required  type="text"   name="<?php echo animalTableClass::getNameField(animalTableClass::NUMERO, true) ?>" >
-                                <font size="2">* <?php echo i18n::__('oblig', null, 'animal') ?></font>
-                            </th> 
+                               
+                            </th> </tr><tr>
+                        <th colspan="2"> <font size="2">* <?php echo i18n::__('oblig', null, 'animal') ?></font></th>
                         </tr>
                     <?php endif; ?>
                          
@@ -38,6 +39,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     </th>
                     </tr>
                 </table>
+                </div>
             </div>
         </div>
     </div>

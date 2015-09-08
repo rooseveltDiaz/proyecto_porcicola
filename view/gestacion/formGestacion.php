@@ -99,5 +99,9 @@
         </div>
     </div>
 </form>
+        <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
 </div>
 </main>

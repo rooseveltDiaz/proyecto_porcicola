@@ -67,7 +67,7 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
 
 
             $orderBy = array(
-                animalTableClass::ID
+                animalTableClass::NUMERO
             );
 
 

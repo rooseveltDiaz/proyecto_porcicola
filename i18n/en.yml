@@ -594,6 +594,7 @@ dictionary:
    detalle1:              Sales Invoice Detail
        
   dpVenta:
+   reporteHV:             Report:The system generates a report with document type data sheet Animal Life
    succesCreate2:         Immunization Registry has successfully created
    succesUpdate2:         Immunization Registry has been modified successfully
    errorCreate2:          Could not create the vaccination record try again

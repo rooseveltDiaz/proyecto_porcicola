@@ -12,5 +12,5 @@
     </div>
 </div>
 
-<?php view::includePartial('registroParto/formParto' ,array('objRaza'=> $objRaza, 'objAnimal' => $objAnimal)) ?>
+<?php view::includePartial('registroParto/formParto' ,array()) ?>
 

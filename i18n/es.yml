@@ -591,6 +591,7 @@ dictionary:
    detalle1:              Detalle de Factura de Venta
     
   dpVenta:
+   reporteHV:             Reporte:El sistema generará un documento de tipo informe con los datos de la Hoja de Vida del animal
    car:                   Carné de Vacunación del Animal
    n:                     Nuevo Registro de Peso
    e:                     Modificar el Registro de Peso

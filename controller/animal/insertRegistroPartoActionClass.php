@@ -8,7 +8,11 @@ class insertRegistroPartoActionClass extends controllerClass implements controll
 
     public function execute() {
         try {
-
+//            $fieldsAnimal= array (
+//            animalTableClass::ID,
+//            animalTableClass::NUMERO
+//            );
+//  $this->objAnimal = animalTableClass::getAll($fieldsAnimal);
             $this->defineView('insert', 'registroParto', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

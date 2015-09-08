@@ -60,7 +60,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             </select>
                         </th>
                     </tr>-->
-                     <tr>
+<!--                     <tr>
                         <th>  <?php echo i18n::__('animal', NULL, 'animal') ?>:</th>
                           <th>
                               <select required="" name="<?php echo registroPartoTableClass::getNameField(registroPartoTableClass::ANIMAL_ID, true) ?>">
@@ -72,7 +72,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <?php endforeach; ?>
                             </select>
                         </th>  
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th colspan="2" > <div class="text-center">
 
@@ -85,6 +85,10 @@ use mvc\i18n\i18nClass as i18n ?>
             </div>
         </div>
     </div>
+            <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
 </form>
 
 </main>

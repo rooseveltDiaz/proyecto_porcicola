@@ -30,6 +30,10 @@ use mvc\session\sessionClass as session ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
+                            <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                         <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertGestacion') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="new">
