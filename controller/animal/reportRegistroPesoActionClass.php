@@ -45,7 +45,7 @@ class reportRegistroPesoActionClass extends controllerClass implements controlle
             $orderBy = array(
             registroPesoTableClass::FECHA
             );
-            $this->mensaje = "Informe de Registros de Peso Diarios del Cerdo";
+            $this->mensaje = "Informe de Registros de Peso Diario del Cerdo";
 
             $this->objRegistroPeso = registroPesoTableClass::getAllJoin($fields, $fieldsEmpleado, $fieldsAnimal, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4,  null, null, false, $orderBy, 'ASC');
             log::register(i18n::__('reporte'), registroPesoTableClass::getNameTable());

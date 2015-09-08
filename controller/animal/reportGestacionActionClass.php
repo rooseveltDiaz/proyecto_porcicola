@@ -48,7 +48,7 @@ class reportGestacionActionClass extends controllerClass implements controllerAc
             );
 //            $this->objEmpleado = empleadoTableClass::getAll($fields2, false);
             $this->objGestacion = gestacionTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', null, null, $where);
-            $this->mensaje = 'Informe Gestacion en Nuestro Sistema';
+            $this->mensaje = 'Registro de Gestacion de la Cerda';
             $this->defineView('index', 'gestacion', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

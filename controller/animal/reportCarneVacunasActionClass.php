@@ -50,7 +50,7 @@ class reportCarneVacunasActionClass extends controllerClass implements controlle
             );
 
             $this->objCarne = carneVacunasTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, false, $orderBy, 'ASC', null);
-            $this->mensaje = 'Carnet de Vacunacion del Cerdo';
+            $this->mensaje = 'Carnet de Vacunas del Cerdo';
             log::register(i18n::__('reporte'), carneVacunasTableClass::getNameTable());
             $this->defineView('indexVacunacion', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
