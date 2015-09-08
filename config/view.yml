@@ -18,7 +18,6 @@ all:
     - jqPlot/plugins/jqplot.canvasAxisLabelRenderer.js
     - jqPlot/plugins/jqplot.dateAxisRenderer.js
     - jqPlot/plugins/jqplot.logAxisRenderer.js
-    - http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/themes/smoothness/jquery-ui.css
     - jqPlot/plugins/jqplot.highlighter.js
     
   stylesheet:
