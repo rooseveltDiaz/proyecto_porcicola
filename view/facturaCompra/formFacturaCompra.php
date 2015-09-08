@@ -13,8 +13,8 @@ use mvc\i18n\i18nClass as i18n ?>
   <div class="container">
     <div class="row">
       <div class="col-xs-6-offset-3">
- 
-          <table class="table table-responsive "> 
+          <div class="table-responsive">
+          <table class="table  "> 
                           <tr>
               <th>
                 <?php echo i18n::__('numero de documento') ?>
@@ -75,6 +75,7 @@ use mvc\i18n\i18nClass as i18n ?>
             </th>
             </tr>
           </table>
+          </div>
       </div>
     </div>
   </div>

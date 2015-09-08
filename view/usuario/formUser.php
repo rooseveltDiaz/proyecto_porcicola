@@ -27,7 +27,8 @@ use mvc\i18n\i18nClass as i18n ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
-                <table class="table table-responsive">    
+                <div class="table-responsive">
+                <table class="table">    
                     <tr>
                         <th>  <?php echo i18n::__('user', NULL, 'user') ?>:</th>
                         <th> <input   placeholder="<?php echo ((isset($objUsuario) == FALSE) ? i18n::__('user', NULL, 'user') : $objUsuario[0]->user_name = ucwords($objUsuario[0]->user_name)) ?>" type="text" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" ></th>   
@@ -166,6 +167,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     </th>
                     </tr>
                 </table>
+                </div>
             </div>
         </div>
     </div>

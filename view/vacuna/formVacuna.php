@@ -21,8 +21,8 @@ use mvc\session\sessionClass as session ?>
     <div class="container">
         <div class="row">
             <div class="col-xs-6-offset-3">
-
-                <table class="table table-responsive "> 
+                <div class="table-responsive">
+                <table class="table  "> 
 
                     <tr>
                         <th>  
@@ -84,6 +84,7 @@ use mvc\session\sessionClass as session ?>
                     </th>
                     </tr>
                 </table>
+                </div>
             </div>
         </div>
     </div>
