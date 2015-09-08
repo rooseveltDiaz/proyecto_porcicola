@@ -1,5 +1,7 @@
 <?php
 
+
+
 //$installer = include_once __DIR__ . '/../config/install.php';
     $GLOBALS['timeIni'] = microtime(true);
     session_name('proyectoPorcicola');

@@ -956,7 +956,7 @@ carneVacunacion_deleteSelect:
 
 carneVacunacion_reporte:
   url: /carneVacunacion/reporte
-  param: { module: animal, action: reportVacunacion, format: pdf }
+  param: { module: animal, action: reportCarneVacunas, format: pdf }
   load:
     - libs/fpdf/fpdf.php
     - model/base/animalBaseTableClass.php
@@ -972,6 +972,7 @@ carneVacunacion_reporte:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - hooks/logHookClass.php
+    - libs/validate/validatorFieldsClass.php
 #    
     
 carneVacunacion_delete_filters:
