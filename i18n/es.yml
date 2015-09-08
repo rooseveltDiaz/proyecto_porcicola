@@ -272,6 +272,7 @@ dictionary:
     dpVenta:              Detalle Factura Venta
     pVenta:               Factura Venta
     factura:              Factura
+    verDetalle:           Ver:Ver los datos correspondientes al Usuario
     
   parto:
     read:                Registros de Parto

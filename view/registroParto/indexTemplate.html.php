@@ -33,8 +33,8 @@ use mvc\i18n\i18nClass as i18n ?>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroParto') ?>" method="POST">
                 <div class="row">
                     <div class="col-xs-4-offset-4 text-center">
-                                <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
-   <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                                <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="atras">
                             <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
@@ -52,8 +52,8 @@ use mvc\i18n\i18nClass as i18n ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                             <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                         </div> 
-                        <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+                        <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="report">
                             <?php echo i18n::__('reporte', null, 'ayuda') ?>
                         </div>
 

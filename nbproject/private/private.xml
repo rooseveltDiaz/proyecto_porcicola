@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/proyecto_porcicola/controller/animal/reportCarneVacunasActionClass.php</file>
-            <file>file:/var/www/html/proyecto_porcicola/view/animal/indexVacunacionTemplate.pdf.php</file>
-            <file>file:/var/www/html/proyecto_porcicola/config/routing.yml</file>
+            <file>file:/var/www/html/proyecto_porcicola/view/registroParto/insertTemplate.html.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/insertRazaActionClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/view/registroParto/indexTemplate.html.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/view/registroParto/formParto.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/insertHojaVidaActionClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/insertLoteActionClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/insertRegistroPartoActionClass.php</file>
         </group>
     </open-files>
 </project-private>

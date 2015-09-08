@@ -49,3 +49,5 @@
                             <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
 </form>
+</div>
+</main>

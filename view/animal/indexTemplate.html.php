@@ -67,9 +67,9 @@ use mvc\view\viewClass as view ?>
                             <th><?php echo i18n::__('lote', null, 'animal') ?></th>
 
 
-                            <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                         
                                 <th><?php echo i18n::__('action') ?></th>
-                            <?php endif; ?>
+                         
                         </tr>
                     </thead>   
                     <tbody>
@@ -81,20 +81,21 @@ use mvc\view\viewClass as view ?>
                                 <td><?php echo $key->$lote ?></td>
 
 
-                                <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                             
                                     <td>
+                                           <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                         <a href="#myModalDetail<?php echo $key->id ?>"  id="insertDetalle<?php echo $countDetale ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">add</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                             <?php echo i18n::__('insert', null, 'ayuda') ?>
                                         </div> 
-
+<?php                                            endif; ?>
                                         <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(animalTableClass::ID => $key->id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i> </a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
                                             <?php echo i18n::__('watch', null, 'ayuda') ?>
                                         </div> 
 
                                     </td>
-                                <?php endif; ?>
+                               
                             </tr>
                             <tr>
                                 <th>

@@ -43,8 +43,8 @@ use mvc\session\sessionClass as session ?>
                             <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
 <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                             </div> 
-                            <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'reportUsuario') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
-                            <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+                            <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'reportUsuario') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
+                            <div class="mdl-tooltip mdl-tooltip--large" for="report">
 <?php echo i18n::__('reporte', null, 'ayuda') ?>
                             </div>
                         </div>
@@ -71,7 +71,7 @@ use mvc\session\sessionClass as session ?>
                                                 <td>
                                                     <a id="verDetalle<?php echo $countDetale ?>"href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i></a>
                                                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
-    <?php echo i18n::__('verDetalle', null, 'ayuda') ?>
+    <?php echo i18n::__('verDetalle', null, 'user') ?>
                                                     </div>  
                                                     <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'editUsuario', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                                     <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">

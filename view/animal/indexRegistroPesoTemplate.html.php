@@ -53,8 +53,8 @@ use mvc\view\viewClass as view ?>
                             <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                         </div> 
 
-                    <a id="reporte" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="reporte">
+                    <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="report">
                         <?php echo i18n::__('reporte', null, 'ayuda') ?>
                     </div>
                      

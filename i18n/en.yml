@@ -290,6 +290,7 @@ dictionary:
     dpVenta:              Invoice Detail Sale
     pVenta:               Bill Sale
     factura:              Bill
+    verDetalle:           See:See the data for the User
     
   proveedor:
     proveedor:            Provider

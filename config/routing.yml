@@ -981,7 +981,116 @@ carneVacunacion_delete_filters:
   load:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
-    - hooks/logHookClass.php   
+    - hooks/logHookClass.php 
+##------------------------REGISTRO PESO--------------------------------##
+registroPeso_index:
+  url:    /pesoDiario/index
+  param:  { module: animal, action: indexRegistroPeso, format: html }
+  load:
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    
+registroPeso_deleteSelect:
+  url:    /registroPeso/eliminarSeleccion
+  param:  { module: animal, action: deleteSelectRegistroPeso, format: html }
+  load:
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+registroPeso_reporte:
+  url:    /registroPeso/reporte
+  param:  { module: animal, action: reportRegistroPeso, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    
+registroPeso_insert:
+  url:    /registroPeso/insertar
+  param:  { module: animal, action: insertRegistroPeso, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+registroPeso_create:
+  url:    /registroPeso/crear
+  param:  { module: animal, action: createRegistroPeso, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+registroPeso_edit:
+  url:    /registroPeso/editar
+  param:  { module: animal, action: editRegistroPeso, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+registroPeso_update:
+  url:    /registroPeso/actualizar
+  param:  { module: animal, action: updateRegistroPeso, format: html }
+  load:
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
+    - model/base/empleadoBaseTableClass.php
+    - model/empleadoTableClass.php
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    - libs/validate/validatorFieldsClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
 ##-------------------------- ANIMAL --------------------------##
 animal_index:
   url:    /animal/index
@@ -999,20 +1108,6 @@ animal_index:
     - model/base/hojaVidaBaseTableClass.php
     - model/hojaVidaTableClass.php
 
-registroPeso_index:
-  url:    /pesoDiario/index
-  param:  { module: animal, action: indexRegistroPeso, format: html }
-  load:
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    - model/base/hojaVidaBaseTableClass.php
-    - model/hojaVidaTableClass.php
-    
 animal_insert:
   url:    /animal/insertar
   param:  { module: animal, action: insertAnimal, format: html }
@@ -1100,15 +1195,6 @@ animal_deleteSelect:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     
-registroPeso_deleteSelect:
-  url:    /registroPeso/eliminarSeleccion
-  param:  { module: animal, action: deleteSelectRegistroPeso, format: html }
-  load:
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
     
 animal_reporte:
   url:    /animal/reporte
@@ -1125,92 +1211,6 @@ animal_reporte:
     - model/base/generoBaseTableClass.php
     - model/generoTableClass.php
     
-registroPeso_reporte:
-  url:    /registroPeso/reporte
-  param:  { module: animal, action: reportRegistroPeso, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
-    - libs/validate/validatorFieldsClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - model/base/hojaVidaBaseTableClass.php
-    - model/hojaVidaTableClass.php
-    
-registroPeso_insert:
-  url:    /registroPeso/insertar
-  param:  { module: animal, action: insertRegistroPeso, format: html }
-  load:
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - model/base/hojaVidaBaseTableClass.php
-    - model/hojaVidaTableClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    
-registroPeso_create:
-  url:    /registroPeso/crear
-  param:  { module: animal, action: createRegistroPeso, format: html }
-  load:
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - model/base/hojaVidaBaseTableClass.php
-    - model/hojaVidaTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    
-registroPeso_edit:
-  url:    /registroPeso/editar
-  param:  { module: animal, action: editRegistroPeso, format: html }
-  load:
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - model/base/hojaVidaBaseTableClass.php
-    - model/hojaVidaTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-    
-registroPeso_update:
-  url:    /registroPeso/actualizar
-  param:  { module: animal, action: updateRegistroPeso, format: html }
-  load:
-    - model/base/animalBaseTableClass.php
-    - model/animalTableClass.php
-    - model/base/empleadoBaseTableClass.php
-    - model/empleadoTableClass.php
-    - model/base/registroPesoBaseTableClass.php
-    - model/registroPesoTableClass.php
-    - model/base/hojaVidaBaseTableClass.php
-    - model/hojaVidaTableClass.php
-    - libs/validate/validatorFieldsClass.php
-    - hooks/logHookClass.php
-    - model/base/bitacoraBaseTableClass.php
-    - model/bitacoraTableClass.php
-
-
 detalleAnimal_reporte:
   url:    /detalleAnimal/reporte
   param:  { module: animal, action: reportDetalleAnimal, format: pdf }
