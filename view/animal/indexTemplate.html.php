@@ -67,9 +67,9 @@ use mvc\view\viewClass as view ?>
                             <th><?php echo i18n::__('lote', null, 'animal') ?></th>
 
 
-                         
-                                <th><?php echo i18n::__('action') ?></th>
-                         
+
+                            <th><?php echo i18n::__('action') ?></th>
+
                         </tr>
                     </thead>   
                     <tbody>
@@ -81,21 +81,21 @@ use mvc\view\viewClass as view ?>
                                 <td><?php echo $key->$lote ?></td>
 
 
-                             
-                                    <td>
-                                           <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+
+                                <td>
+                                    <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                         <a href="#myModalDetail<?php echo $key->id ?>"  id="insertDetalle<?php echo $countDetale ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">add</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                             <?php echo i18n::__('insert', null, 'ayuda') ?>
                                         </div> 
-<?php                                            endif; ?>
-                                        <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(animalTableClass::ID => $key->id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i> </a>
-                                        <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
-                                            <?php echo i18n::__('watch', null, 'ayuda') ?>
-                                        </div> 
+                                    <?php endif; ?>
+                                    <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(animalTableClass::ID => $key->id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i> </a>
+                                    <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
+                                        <?php echo i18n::__('watch', null, 'ayuda') ?>
+                                    </div> 
 
-                                    </td>
-                               
+                                </td>
+
                             </tr>
                             <tr>
                                 <th>
@@ -114,7 +114,8 @@ use mvc\view\viewClass as view ?>
                                     <div class="modal-body">
 
 
-                                        <input type="hidden" value="<?php echo $key->$idAnimal ?>" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::ID, true) ?>">
+                                        <input type="hidden" value="<?php echo $key->$idAnimal ?>" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true) ?>">
+                                        <input type="hidden" value="<?php echo $key->$numeroIdenficacion ?>" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::NUMERO, true) ?>">
                                         <?php echo i18n::__('date_birth', null, 'animal') ?>
                                         <input type="datetime-local" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::FECHA_NACIMIENTO, true) ?>">    
                                         <br/>
@@ -139,17 +140,13 @@ use mvc\view\viewClass as view ?>
                                         </select>
                                         <br/>
                                         <br/>
-                                        <?php echo i18n::__('parto', null, 'animal') ?>
-                                        <input type="number" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO, true) ?>">
-                                        <br/>
-                                        <br/>
                                         <?php echo i18n::__('kg', null, 'animal') ?>
                                         <input type="number" name="<?php echo hojaVidaTableClass::getNameField(hojaVidaTableClass::PESO, true) ?>">
                                         <br/>
                                         <br/>
 
-                                        <!--                <?php // echo i18n::__('kg', null, 'animal')     ?>
-                                                        <input type="number" name="<?php // echo hojaVidaTableClass::getNameField(hojaVidaTableClass::LOTE, true)     ?>">
+                                        <!--                <?php // echo i18n::__('kg', null, 'animal')      ?>
+                                                        <input type="number" name="<?php // echo hojaVidaTableClass::getNameField(hojaVidaTableClass::LOTE, true)      ?>">
                                                     </div>-->
                                         <div class="modal-footer">
                                             <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
