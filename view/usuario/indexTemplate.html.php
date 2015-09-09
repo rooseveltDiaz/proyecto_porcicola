@@ -1,9 +1,6 @@
 <?php
 
 use mvc\routing\routingClass as routing ?>
-<?php $usu = usuarioTableClass::USER ?>
-<?php $id = usuarioTableClass::ID ?>
-<?php $creacion = usuarioBaseTableClass::CREATED_AT ?>
 <?php
 
 use mvc\i18n\i18nClass as i18n ?>
@@ -11,6 +8,11 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\view\viewClass as view ?>
 <?php
 use mvc\session\sessionClass as session ?>
+<?php $usu = usuarioTableClass::USER ?>
+<?php $id = usuarioTableClass::ID ?>
+<?php $creacion = usuarioBaseTableClass::CREATED_AT ?>
+
+
 <?php $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
@@ -59,6 +61,7 @@ use mvc\session\sessionClass as session ?>
                                       
                                             <th><?php echo i18n::__('aliasUsuario') ?></th>
 <!--                                            <th><?php echo i18n::__('date', null, 'user') ?></th>-->
+                                          
                                             <th><?php echo i18n::__('action') ?></th>
                                         </tr>
                                     </thead>
@@ -68,6 +71,7 @@ use mvc\session\sessionClass as session ?>
                                               
                                                 <td><?php echo $usuario->$usu ?></td>
 <!--                                                <td><?php echo $usuario->$creacion ?></td>-->
+                                                 
                                                 <td>
                                                     <a id="verDetalle<?php echo $countDetale ?>"href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i></a>
                                                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">

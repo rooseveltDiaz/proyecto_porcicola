@@ -46,6 +46,7 @@ use mvc\i18n\i18nClass as i18n ?>
                         <th><?php echo $key->$user ?></th>
                         </tr>
                         <?php endforeach; ?>
+                   
                         <tr> 
                         <th><?php echo i18n::__('name', null, 'veterinario') ?></th>
                          <?php foreach ($objDatos as $key): ?>
