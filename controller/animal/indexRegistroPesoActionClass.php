@@ -98,7 +98,7 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
 
 
 
-            $this->objRegistroPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             //$this->page = request::getInstance()->getGet('page');
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);

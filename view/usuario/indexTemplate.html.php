@@ -57,7 +57,7 @@ use mvc\session\sessionClass as session ?>
                                     <thead>
                                         <tr class="success">
                                       
-                                            <th><?php echo i18n::__('usuario', null, 'user') ?></th>
+                                            <th><?php echo i18n::__('aliasUsuario') ?></th>
 <!--                                            <th><?php echo i18n::__('date', null, 'user') ?></th>-->
                                             <th><?php echo i18n::__('action') ?></th>
                                         </tr>

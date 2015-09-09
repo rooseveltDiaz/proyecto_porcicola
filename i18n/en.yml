@@ -2,6 +2,7 @@
 culture:                  English
 dictionary:
   default:
+    aliasUsuario:         User Alias
     valor_kilo:           Kilo Value
     peso_final:           Final Weight
     total:                Total

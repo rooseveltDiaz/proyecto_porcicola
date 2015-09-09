@@ -25,7 +25,7 @@ use mvc\i18n\i18nClass as i18n ?>
                         <thead>
                             <tr>
                                 <th>
-                                    <?php echo i18n::__('escriba', NULL, 'user') ?>:</th>
+                                    <?php echo i18n::__('aliasUsuario') ?>:</th>
                                 <th><input type="text" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>">
                                 </th></tr><tr>
                                 <th> <?php echo i18n::__('seleccione', NULL, 'user') ?>:</th>

@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php $user = usuarioTableClass::USER ?>
 <?php $nom_ciudad = ciudadTableClass::NOMBRE ?>
 <?php $correo = datosUsuarioTableClass::CORREO ?> 
-<?php $countDetale = 1 ?>
+<!--<?php $countDetale = 1 ?>-->
 <main class="mdl-layout__content mdl-color--blue-100">
   <div class="mdl-grid demo-content">
     <div class="container container-fluid">
@@ -41,35 +41,61 @@ use mvc\i18n\i18nClass as i18n ?>
                 <table class="table table-bordered">
                     <thead>
                         <tr class="success">
-                          
-
-                            <th><?php echo i18n::__('user') ?></th>
-                            <th><?php echo i18n::__('name', null, 'veterinario') ?></th>
-                            <th><?php echo i18n::__('lastName', null, 'datos') ?></th>
-                            <th><?php echo i18n::__('tipoDoc', null, 'datos') ?></th>
-                            <th><?php echo i18n::__('numberDoc', null, 'datos') ?></th>
-                            <th><?php echo i18n::__('tel', null, 'datos') ?></th>
-                            <th><?php echo i18n::__('correo', null, 'user') ?></th>
-                            <th><?php echo i18n::__('dir', null, 'datos') ?></th>
-                            <th><?php echo i18n::__('city') ?></th>
-        <!--                    <th><?php echo i18n::__('action') ?></th>-->
-                        </tr>
-                    </thead>
-                    <tbody>
+                        <th><?php echo i18n::__('aliasUsuario') ?></th>
                         <?php foreach ($objDatos as $key): ?>
-                            <tr>
-                                              
-
-                                <td><?php echo $key->$user ?></td>
-                                <td><?php echo $key->$nombre ?></td>
-                                <td><?php echo $key->$apellidos ?></td>
-                                <td><?php echo $key->$tipoDocumento ?></td>
-                                <td><?php echo $key->$numeroDocumento ?></td>
-                                <td><?php echo $key->$telefono ?></td>
-                                <td><?php echo $key->$correo ?></td>
-                                <td><?php echo $key->$direccion ?></td>
-                                <td><?php echo $key->$nom_ciudad ?></td>
-        <!--                        <td>
+                        <th><?php echo $key->$user ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr> 
+                        <th><?php echo i18n::__('name', null, 'veterinario') ?></th>
+                         <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$nombre ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>  
+                        <th><?php echo i18n::__('lastName', null, 'datos') ?></th>
+                        <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$apellidos ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>  
+                        <th><?php echo i18n::__('tipoDoc', null, 'datos') ?></th>
+                         <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$tipoDocumento ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>   
+                        <th><?php echo i18n::__('numberDoc', null, 'datos') ?></th>
+                        <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$numeroDocumento ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>  
+                        <th><?php echo i18n::__('tel', null, 'datos') ?></th>
+                         <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$telefono ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>  
+                        <th><?php echo i18n::__('correo', null, 'user') ?></th>
+                         <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$correo ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr> 
+                        <th><?php echo i18n::__('dir', null, 'datos') ?></th>
+                         <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$direccion ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        <tr>   
+                        <th><?php echo i18n::__('city') ?></th>
+                         <?php foreach ($objDatos as $key): ?>
+                        <th><?php echo $key->$nom_ciudad ?></th>
+                        </tr>
+                        <?php endforeach; ?>
+                        </thead>
+                     <!--                        <td>
                                     <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'edit', array(datosUsuarioBaseTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                 <?php echo i18n::__('modificar', null, 'ayuda') ?>
@@ -79,10 +105,10 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                                           </div> 
                                 </td>-->
-                            </tr>
-                            <?php $countDetale++ ?>
-                        <?php endforeach ?>
-                    </tbody>
+                        
+                           
+                   
+                  
                 </table>
             </div>
         </form>

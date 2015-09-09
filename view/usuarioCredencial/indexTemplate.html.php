@@ -43,7 +43,7 @@ use mvc\session\sessionClass as session ?>
                         <thead>
                             <tr class="success">
                        
-                                <th><?php echo i18n::__('user', null, 'userCredencial') ?></th>
+                                <th><?php echo i18n::__('aliasUsuario') ?></th>
                                 <th><?php echo i18n::__('credencial', null, 'credencial') ?></th>
                                 <th><?php echo i18n::__('action') ?> </th>
                             </tr>

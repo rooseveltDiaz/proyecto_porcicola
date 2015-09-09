@@ -36,7 +36,7 @@ use mvc\request\requestClass as request ?>
 
             <div class="col-md-7 col-md-pull-0">
                 <label for="inputUser" class="sr-only"></label>
-                <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="<?php echo i18n::__('usuario') ?>" required autofocus>
+                <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="<?php echo i18n::__('aliasUsuario') ?>" required autofocus>
                 <label for="inputPassword" class="sr-only"></label>
                 <input type="password" id="inputPassword" name="inputPassword" class="form-control" placeholder="<?php echo i18n::__('contraseña') ?>" required>
                 <div class="checkbox">

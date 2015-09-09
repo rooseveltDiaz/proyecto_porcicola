@@ -13,6 +13,21 @@
                 <div class="table-responsive">
                 <table class="table ">    
                       <tr>
+                           <th>
+                            <?php echo i18n::__('aliasUsuario') ?>:
+                        </th>
+                       
+                       
+                        <th>
+                            <select name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true) ?>">
+                                <?php foreach ($objUsuario as $key): ?>
+                                    <option value="<?php echo $key->id ?>">
+                                        <?php echo $key->user_name ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                      </tr><tr>
                         <th>
                             <?php echo i18n::__('credencial', null, 'userCredencial') ?>:
                         </th>
@@ -27,20 +42,7 @@
                             </select>
                         </th>
                     </tr>
-                        <th>
-                            <?php echo i18n::__('user', null, 'userCredencial') ?>:
-                        </th>
                        
-                       
-                        <th>
-                            <select name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true) ?>">
-                                <?php foreach ($objUsuario as $key): ?>
-                                    <option value="<?php echo $key->id ?>">
-                                        <?php echo $key->user_name ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </th>
                     </tr>
                     <tr>
                         <th colspan="2">

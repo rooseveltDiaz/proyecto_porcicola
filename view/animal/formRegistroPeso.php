@@ -40,7 +40,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             </select>
                         </th>
                     </tr>
-                                                           <tr>
+<!--                                                           <tr>
                         <th>
                             <?php echo i18n::__('identificacion') ?>:
                         </th>
@@ -55,7 +55,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <?php endforeach; ?>
                             </select>
                         </th>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th><?php echo i18n::__('weight', null, 'dpVenta') ?>:</th>
                         <th> <input type="number" placeholder="<?php echo i18n::__('weight', null, 'dpVenta') ?>" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::PESO, true) ?>"></th>
