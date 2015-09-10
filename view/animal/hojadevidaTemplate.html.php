@@ -81,7 +81,7 @@ use mvc\session\sessionClass as session ?>
                             <?php endforeach; ?>
                             <tr>      <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td>
                                 <?php foreach ($objHojaVida as $key): ?>
-                                    <td>  <?php echo $key->$peso ?></td></tr>
+                                    <td>  <?php echo $key->$peso ?> <?php echo i18n::__('k', NULL, 'animal') ?> </td></tr>
                            <?php endforeach; ?>
                         
                         </thead>

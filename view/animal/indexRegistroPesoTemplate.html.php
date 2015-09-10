@@ -26,8 +26,9 @@ use mvc\view\viewClass as view ?>
                     <h2>
                         <?php echo i18n::__('regPe', NULL, 'dpVenta') ?>
                     </h2>
+                    <h4>  <?php echo i18n::__('identificacion') ?>:
                     <?php foreach ($objPeso as $key): ?>
-                        <h3><?php echo $key->$numeroIdenficacion ?></h3>
+                       <?php echo $key->$numeroIdenficacion ?></h4>
                     <?php endforeach; ?>
                 </div>
             </div>
@@ -96,7 +97,37 @@ use mvc\view\viewClass as view ?>
                                     <?php endif; ?>
                                 </tr>
 
-                                <!-- WINDOWS MODAL FILTER -->
+                             
+                                    <?php $countDetale++ ?>
+                                <?php endforeach; ?>
+                                </tbody>
+                                            </table>
+ </div>
+                                </form>
+                           
+                            <!----PAGINADOR---->
+                            <div class="text-right">
+                                <nav>
+                                    <ul class="pagination" id="slqPaginador">
+                                        <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
+                                        <?php $count = 0 ?>
+                                        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                                            <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
+                                            <?php $count++ ?>        
+                                        <?php endfor; ?>
+                                        <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+
+
+                </div>
+    
+</main>
+
+
+   <!-- WINDOWS MODAL FILTER -->
                             <div class="modalmask" id="myModalFilter" >
                                 <div class="modalbox rotate">
                                     <div class="modal-header">
@@ -143,35 +174,9 @@ use mvc\view\viewClass as view ?>
                                                     <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
                                                     <button type="button" class="btn btn-info fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
                                                 </div>
-                                     
-                                    <?php $countDetale++ ?>
-                                <?php endforeach; ?>
-                                </tbody>
-                                </table>
- </div>
-                                </form>
-                           
-                            <!----PAGINADOR---->
-                            <div class="text-right">
-                                <nav>
-                                    <ul class="pagination" id="slqPaginador">
-                                        <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
-                                        <?php $count = 0 ?>
-                                        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                                            <li class='<?php echo (($page == $x) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $x ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>')"><a href="#"><?php echo $x ?> <span class="sr-only">(current)</span></a></li>
-                                            <?php $count++ ?>        
-                                        <?php endfor; ?>
-                                        <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
-                                    </ul>
-                                </nav>
+                                            </table>
+                                     </form>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-
-
-                </div>
-        </div>
-</main>
-
-
-
 

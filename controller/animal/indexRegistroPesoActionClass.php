@@ -46,6 +46,8 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
                 $where = session::getInstance()->getAttribute('animalFiltersRegistroPeso');
             }
 
+         
+            
             $fieldsEmpleado = array(
                 empleadoTableClass::ID,
                 empleadoTableClass::NOMBRE
@@ -62,22 +64,26 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
                 registroPesoTableClass::KILO,
                 registroPesoTableClass::PESO,
                 registroPesoTableClass::VALOR
-            );
+            );   
             $fields2 = array(
                 empleadoTableClass::NOMBRE
             );
-            $fields3 = array(
+            
+               $fields3 = array(
                 animalTableClass::NUMERO
             );
+        
+             $fJoin3 = registroPesoTableClass::EMPLEADO;
+            $fJoin4 = empleadoTableClass::ID;
             $fJoin1 = registroPesoTableClass::ANIMAL;
             $fJoin2 = animalTableClass::ID;
-            $fJoin3 = registroPesoTableClass::EMPLEADO;
-            $fJoin4 = empleadoTableClass::ID;
-
+        
 
             $orderBy = array(
                 registroPesoTableClass::ID
             );
+   
+
 
             $page = 0;
             if (request::getInstance()->hasGet('page')) {
@@ -98,7 +104,7 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
 
 
 
-            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin3, $fJoin4, $fJoin1, $fJoin2, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             //$this->page = request::getInstance()->getGet('page');
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);

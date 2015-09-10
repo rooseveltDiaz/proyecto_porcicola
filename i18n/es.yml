@@ -187,6 +187,10 @@ dictionary:
     succesCreate:         El veterinario se ha creado de forma exitosa
     succesUpdate:         El veterinario se ha modificado de forma exitosa
     succesDelete:         El veterinario se ha eliminado de forma exitosa
+     
+  hojaVida:
+   succesCreate:         Se han registrado los datos básicos del animal de forma exitosa 
+   errorCreate:          No se ha podido registrar los datos basicos del animal vuelve a intentarlo
       
   animal:
     hv:                   HOJA DE VIDA
@@ -200,6 +204,7 @@ dictionary:
     cerdo:                Cerdo
     precio:               Precio 
     kg:                   Peso (Kg)
+    k:                    Kg.
     edit:                 Editar el Registro del Animal
     animal:               Animal
     report:               Reporte

@@ -206,6 +206,10 @@ dictionary:
     succesUpdate:         Vet has been modified successfully
     succesDelete:         Vet has been removed successfully
     
+  hojaVida:
+   succesCreate:          There have been basic animal data successfully
+   errorCreate:           Unable to record the basic data Animal try again
+    
   animal:
     hv:                   SHEET OF LIFE
     oblig:                Carefully check the identification number of the animal because once registered can not be changed
@@ -222,6 +226,7 @@ dictionary:
     nuev:                 New Pig
     animal:               Animal
     kg:                   Weight (Kg)
+    k:                    Kg.
     report:               Report
     new:                  Register a New Animal
     peso:                 Weight

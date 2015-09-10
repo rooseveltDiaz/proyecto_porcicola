@@ -74,13 +74,13 @@ class createHojaVidaActionClass extends controllerClass implements controllerAct
                 //Insertar la informacion del usuario
 
                 hojaVidaTableClass::insert($data);
-                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'animal'));
+                session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'hojaVida'));
                 log::register(i18n::__('create'), hojaVidaTableClass::getNameTable());
-                routing::getInstance()->redirect('animal', 'indexHojaVida');
+                routing::getInstance()->redirect('animal', 'index');
             } else {
                 log::register(i18n::__('create'), hojaVidaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
-                session::getInstance()->setError(i18n::__('errorCreate', null, 'animal'));
-                routing::getInstance()->redirect('animal', 'indexHojaVida');
+                session::getInstance()->setError(i18n::__('errorCreate', null, 'hojaVida'));
+                routing::getInstance()->redirect('animal', 'index');
             }
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
