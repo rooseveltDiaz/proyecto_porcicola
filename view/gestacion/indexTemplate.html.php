@@ -8,6 +8,7 @@ use mvc\view\viewClass as view ?>
 <?php
 use mvc\session\sessionClass as session ?>
 <?php $id = gestacionTableClass::ID ?>
+<?php $idAnimal = animalTableClass::ID ?>
 <?php $fecha = gestacionTableClass::FECHA ?>
 <?php $nombre = empleadoTableClass::NOMBRE ?>
 <?php $animal = gestacionTableClass::ANIMAL ?>
@@ -30,35 +31,35 @@ use mvc\session\sessionClass as session ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
-                            <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
-   <div class="mdl-tooltip mdl-tooltip--large" for="atras">
-                            <?php echo i18n::__('atras', null, 'ayuda') ?>
-                        </div> 
+                    <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="atras">
+                        <?php echo i18n::__('atras', null, 'ayuda') ?>
+                    </div> 
                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertGestacion') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+                    <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertGestacion', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $idAnimalHojaVida)) ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="new">
                             <?php echo i18n::__('registrar', null, 'ayuda') ?>
                         </div>
-                            <?php endif; ?>
-                        <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="filter">
-                            <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                        </div>
+                    <?php endif; ?>
+                    <a id="filter" href="#myModalFilter" class="btn btn-sm btn-info active fa fa-search"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="filter">
+                        <?php echo i18n::__('buscar', null, 'ayuda') ?>
+                    </div>
 
-                        <a id="deleteFilter" class="btn btn-sm btn-primary fa fa-reply" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersGestacion') ?>"></a>  
-                        <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
-                            <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
-                        </div>
+                    <a id="deleteFilter" class="btn btn-sm btn-primary fa fa-reply" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteFiltersGestacion') ?>"></a>  
+                    <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
+                        <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
+                    </div>
 
-                        <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="report">
-                            <?php echo i18n::__('reporte', null, 'ayuda') ?>
-                        </div>
-                        <!--             <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
-                                    <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
-                        <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
-                                    </div>-->
-                
+                    <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="report">
+                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                    </div>
+                    <!--             <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
+                                <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
+                    <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
+                                </div>-->
+
                 </div>
             </div>
             <?php view::includeHandlerMessage() ?>
@@ -96,9 +97,9 @@ use mvc\session\sessionClass as session ?>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                             <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                         </div> 
-<!--                                        <a id="eliminar<?php echo $countDetale ?>"  href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
+        <!--                                        <a id="eliminar<?php echo $countDetale ?>"  href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
-                                            <?php echo i18n::__('eliminar', null, 'ayuda') ?>
+                                        <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                                         </div> -->
                                     </td>
                                 <?php endif; ?>
@@ -127,7 +128,7 @@ use mvc\session\sessionClass as session ?>
                     </tbody>
                 </table>
             </div>
-    
+
             <!----PAGINADOR---->
             <div class="text-right">
                 <nav>
@@ -209,7 +210,7 @@ use mvc\session\sessionClass as session ?>
                             </select>
                         </th>
                     </tr>
-                                    <tr>
+                    <tr>
                         <th>
                             <?php echo i18n::__('empleado') ?>:
                         </th>

@@ -27,8 +27,13 @@ class insertGestacionActionClass extends controllerClass implements controllerAc
                 empleadoTableClass::NOMBRE
             );
          
-            $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
+            $where = array(
+            hojaVidaTableClass::GENERO_ID => 2
+            );
+            
+            $this->objAnimal = hojaVidaTableClass::getAll($fieldsAnimal, true, null, null, null,null, $where);
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);
+            $this->idAnimalHojaVida = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
             $this->defineView('insert', 'gestacion', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

@@ -52,7 +52,7 @@ class createGestacionActionClass extends controllerClass implements controllerAc
         gestacionTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'gestacion'));
         log::register(i18n::__('create'), animalTableClass::getNameTable());
-        routing::getInstance()->redirect('animal', 'indexGestacion');
+        routing::getInstance()->redirect('animal', 'indexGestacion', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $animal));
       } else {
         log::register(i18n::__('create'), animalTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
         session::getInstance()->setError(i18n::__('errorCreate', null, 'animal'));

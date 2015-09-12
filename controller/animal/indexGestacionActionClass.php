@@ -16,8 +16,7 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
 
     public function execute() {
         try {
-            $where = null;
-      if (request::getInstance()->hasPost('filter')) {
+            if (request::getInstance()->hasPost('filter')) {
 
                 $filter = request::getInstance()->getPost('filter');
 
@@ -26,7 +25,7 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
                 }//close if
 
                 if (isset($filter['numero']) and $filter['numero'] !== null and $filter['numero'] !== '') {
-                      $where[gestacionTableClass::ANIMAL] = $filter['numero'];
+                    $where[gestacionTableClass::ANIMAL] = $filter['numero'];
                 }//close if
                 if (isset($filter['fechaMonta']) and $filter['fechaMonta'] !== null and $filter['fechaMonta'] !== '') {
                     $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::FECHA_MONTA] = $filter['fechaMonta'];
@@ -35,16 +34,22 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
                     $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::FECHA_PROBABLE_PARTO] = $filter['fechaParto'];
                 }//close if
                 if (isset($filter['macho']) and $filter['macho'] !== null and $filter['macho'] !== '') {
-                      $where[gestacionTableClass::ANIMAL_FECUNDADOR] = $filter['macho'];
+                    $where[gestacionTableClass::ANIMAL_FECUNDADOR] = $filter['macho'];
                 }//close if
                 if (isset($filter['empleado']) and $filter['empleado'] !== null and $filter['empleado'] !== '') {
                     $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::EMPLEADO] = $filter['empleado'];
                 }//close if
-              
+
                 session::getInstance()->setAttribute('animalFiltersGestacion', $where);
             } elseif (session::getInstance()->hasAttribute('animalFiltersGestacion')) {
                 $where = session::getInstance()->getAttribute('animalFiltersGestacion');
             }
+
+            $idAnimalHojaVida = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
+
+            $where = array(
+                gestacionTableClass::ANIMAL => $idAnimalHojaVida
+            );
 
             $fieldsEmpleado = array(
                 empleadoTableClass::ID,
@@ -95,10 +100,11 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
             } else {
                 $this->page = $page;
             }
-
+//            $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL,true));
             $this->objGestacion = gestacionTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
 //$this->page = request::getInstance()->getGet('page');
+            $this->idAnimalHojaVida = $idAnimalHojaVida;
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, false);
             $this->defineView('index', 'gestacion', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

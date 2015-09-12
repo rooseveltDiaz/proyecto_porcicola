@@ -91,7 +91,7 @@ use mvc\session\sessionClass as session ?>
                         <tr><td colspan="2">
                                 <div class=" text-center">
                                     <?php if ($key->genero_id == 1): ?>
-                                        <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
+                                    <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL)  => $key->$idAnimalHojaVida )) ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
                                             <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
                                         </div> 

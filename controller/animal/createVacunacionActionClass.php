@@ -39,7 +39,6 @@ class createVacunacionActionClass extends controllerClass implements controllerA
                 );
 
                 $datos = array(
-//          $fecha,
                     $veterinario,
                     $animal,
                     $fecha_vacunacion,

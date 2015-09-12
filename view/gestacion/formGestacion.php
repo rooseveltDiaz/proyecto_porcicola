@@ -21,6 +21,7 @@
                             <?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?>:
                         </th>
                         <th>
+                            <input name="<?php echo gestacionTableClass::getNameField(gestacionTableClass::ANIMAL, true) ?>" value="<?php echo $idAnimalHojaVida ?>" type="hidden">
                             <input placeholder="<?php echo ((isset($objGestacion) == FALSE) ? i18n::__('fechaRegistro', NULL, 'vacunacion') : $objGestacion[0]->$fecha ) ?>" type="date" name="<?php echo gestacionTableClass::getNameField(gestacionTableClass::FECHA, true) ?>" >
                         </th>
                     </tr>

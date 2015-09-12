@@ -4017,6 +4017,8 @@ gestacion_index:
   load:
     - model/base/gestacionBaseTableClass.php
     - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php    
     - model/base/empleadoBaseTableClass.php
@@ -4033,6 +4035,8 @@ gestacion_insert:
     - model/base/gestacionBaseTableClass.php
     - model/gestacionTableClass.php
     - hooks/logHookClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
     - model/base/empleadoBaseTableClass.php
@@ -4053,6 +4057,8 @@ gestacion_create:
     - model/empleadoTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 gestacion_edit:
   url:    /gestacion/editar
@@ -4067,6 +4073,8 @@ gestacion_edit:
     - model/empleadoTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php    
     
 gestacion_update:
   url:    /gestacion/actualizar
@@ -4081,6 +4089,8 @@ gestacion_update:
     - model/empleadoTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 gestacion_delete:
   url:    /gestacion/eliminar
