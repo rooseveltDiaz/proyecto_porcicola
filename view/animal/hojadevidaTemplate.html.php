@@ -19,8 +19,9 @@ use mvc\session\sessionClass as session ?>
 <?php $parto = hojaVidaTableClass::PARTO ?>
 <?php $peso = hojaVidaTableClass::PESO ?>
 <?php $numero = hojaVidaTableClass::NUMERO ?>
-<!--<?php $lote = loteTableClass::NOMBRE ?>
-<?php $countDetale = 1 ?>-->
+<?php $lote = loteTableClass::NOMBRE ?>
+<?php $idAnimalHojaVida = hojaVidaTableClass::ANIMAL ?>
+<?php $countDetale = 1 ?>-
 
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
@@ -57,63 +58,60 @@ use mvc\session\sessionClass as session ?>
                         <thead>
                             <tr class="success">
                                 <td>  <?php echo i18n::__('identificacion') ?>:</td>
-                             
+
                                 <?php foreach ($objHojaVida as $key): ?>
-                                    <td><?php echo $key->$numero ?></td> </tr>       
+                                    <td><?php echo $key->$numero ?></td>
+                                </tr>       
                             <?php endforeach; ?>
 
-                            <tr>    <td>  <?php echo i18n::__('date_birth', NULL, 'animal') ?>:</td>
-                                <?php foreach ($objHojaVida as $key): ?>
-                                    <td>  <?php echo $key->$fecha ?></td></tr>
-                            <?php endforeach; ?>
-                            <tr>     <td>  <?php echo i18n::__('genero', null, 'animal') ?>:</td>
-                                <?php foreach ($objHojaVida as $key): ?>
-                                    <td>  <?php echo $key->$genero ?></td></tr>
-                            <?php endforeach; ?>
-                            <tr>   <td>  <?php echo i18n::__('parto', NULL, 'animal') ?>:
-                                </td>  
-                                <?php foreach ($objHojaVida as $key): ?>
-                                    <td>  <?php echo $key->$parto ?></td></tr>
-                            <?php endforeach; ?>
-                            <tr>   <td>  <?php echo i18n::__('raza') ?>:</td>
-                                <?php foreach ($objHojaVida as $key): ?>
-                                    <td>  <?php echo $key->$raza ?></td></tr>
-                            <?php endforeach; ?>
-                            <tr>      <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td>
-                                <?php foreach ($objHojaVida as $key): ?>
-                                    <td>  <?php echo $key->$peso ?> <?php echo i18n::__('k', NULL, 'animal') ?> </td></tr>
-                           <?php endforeach; ?>
-                        
+                            <tr>   
+                                <td>  <?php echo i18n::__('date_birth', NULL, 'animal') ?>:</td>
+                                <td>  <?php echo $objHojaVida[0]->$fecha ?></td>
+                            </tr>
+                            <tr>    
+                                <td>  <?php echo i18n::__('genero', null, 'animal') ?>:</td>
+                                <td>  <?php echo $objHojaVida[0]->$genero ?></td>
+                            </tr>
+                            <?php if ($key->genero_id == 1): ?>
+                                <tr>  
+                                    <td>  <?php echo i18n::__('parto', NULL, 'animal') ?>:
+                                    </td>  
+                                    <td>  <?php echo $objHojaVida[0]->$parto ?></td>
+                                </tr>
+                            <?php endif; ?>
+                            <tr> 
+                                <td>  <?php echo i18n::__('raza') ?>:</td>
+                                <td>  <?php echo $objHojaVida[0]->$raza ?></td>
+                            </tr>
+                            <tr>    
+                                <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td>
+                                <td>  <?php echo $objHojaVida[0]->$peso ?> <?php echo i18n::__('k', NULL, 'animal') ?> </td>
+                            </tr>
                         </thead>
-
-
                         <tr><td colspan="2">
                                 <div class=" text-center">
-                                    <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
-                                    <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
-                                        <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
-                                    </div> 
-                                    <a id="parto<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>" class="btn btn-lg glyphicon glyphicon-list-alt" > </a>
-                                    <div class="mdl-tooltip mdl-tooltip--large" for="parto<?php echo $countDetale ?>">
-                                        <?php echo i18n::__('parto', null, 'dpVenta') ?>
-                                    </div> 
-                                    <a id="peso<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso') ?>" class="btn btn-lg glyphicon glyphicon-file" > </a>
+                                    <?php if ($key->genero_id == 1): ?>
+                                        <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion') ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
+                                            <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
+                                        </div> 
+                                        <a id="parto<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>" class="btn btn-lg glyphicon glyphicon-list-alt" > </a>
+                                        <div class="mdl-tooltip mdl-tooltip--large" for="parto<?php echo $countDetale ?>">
+                                            <?php echo i18n::__('parto', null, 'dpVenta') ?>
+                                        </div> 
+                                    <?php endif; ?>
+                                    <a id="peso<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalHojaVida)) ?>" class="btn btn-lg glyphicon glyphicon-file" > </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="peso<?php echo $countDetale ?>">
                                         <?php echo i18n::__('repeso', null, 'dpVenta') ?>
                                     </div> 
-                                    <a id="vacunacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexVacunacion') ?>" class="btn btn-lg fa fa-medkit" > </a>
+                                    <a id="vacunacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexVacunacion',array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalHojaVida)) ?>" class="btn btn-lg fa fa-medkit" > </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="vacunacion<?php echo $countDetale ?>">
                                         <?php echo i18n::__('vacu', null, 'dpVenta') ?>
                                     </div> 
                                 </div>
                             </td>
                         </tr>
-
-
-
-
                     </table>
-
                 </div>
             </form>
         </div>

@@ -3,11 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/proyecto_porcicola/i18n/es.yml</file>
-            <file>file:/var/www/html/proyecto_porcicola/controller/animal/createHojaVidaActionClass.php</file>
-            <file>file:/var/www/html/proyecto_porcicola/i18n/en.yml</file>
-            <file>file:/var/www/html/proyecto_porcicola/view/animal/hojadevidaTemplate.pdf.php</file>
-            <file>file:/var/www/html/proyecto_porcicola/view/animal/hojadevidaTemplate.html.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/view/animal/indexTemplate.html.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/indexAnimalActionClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/.git/config</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/insertHojaVidaActionClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/model/base/animalBaseTableClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/controller/animal/indexHojaVidaActionClass.php</file>
         </group>
     </open-files>
 </project-private>

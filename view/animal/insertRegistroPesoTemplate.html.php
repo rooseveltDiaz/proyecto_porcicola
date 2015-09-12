@@ -18,7 +18,7 @@ use mvc\view\viewClass as view ?>
     </div>
     
 <?php view::includeHandlerMessage() ?>
-<?php view::includePartial('animal/formRegistroPeso', array('objEmpleado' => $objEmpleado, 'objAnimal' => $objAnimal)) ?>
+<?php view::includePartial('animal/formRegistroPeso', array('idAnimalSeleccionado' => $idAnimalSeleccionado, 'objEmpleado' => $objEmpleado, 'objAnimal' => $objAnimal)) ?>
 
   </div>
 </main>

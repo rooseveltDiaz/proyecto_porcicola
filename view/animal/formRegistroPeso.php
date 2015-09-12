@@ -18,6 +18,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <table class="table">  
          <tr>
                         <th>
+                            <input type="hidden" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::ANIMAL, true) ?>"  value="<?php echo $idAnimalSeleccionado ?>">
                             <?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?>:
                         </th>
                         <th>

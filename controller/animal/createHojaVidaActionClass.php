@@ -76,7 +76,7 @@ class createHojaVidaActionClass extends controllerClass implements controllerAct
                 hojaVidaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'hojaVida'));
                 log::register(i18n::__('create'), hojaVidaTableClass::getNameTable());
-                routing::getInstance()->redirect('animal', 'index');
+                routing::getInstance()->redirect('animal', 'indexAnimal');
             } else {
                 log::register(i18n::__('create'), hojaVidaTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate', null, 'hojaVida'));

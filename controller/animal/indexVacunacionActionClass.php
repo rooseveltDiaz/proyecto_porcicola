@@ -109,6 +109,7 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
 //$this->page = request::getInstance()->getGet('page');
             $this->objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario, true);
             $this->objVacuna = vacunaTableClass::getAll($fieldsVacuna, true);
+            $this->idAnimalHojaVida = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
             $this->defineView('indexVacunacion', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

@@ -103,7 +103,7 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
             }
 
 
-
+            $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL,true));
             $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin3, $fJoin4, $fJoin1, $fJoin2, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             //$this->page = request::getInstance()->getGet('page');

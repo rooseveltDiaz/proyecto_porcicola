@@ -22,7 +22,7 @@ class deleteFilterHojaVidaActionClass extends controllerClass implements control
                 session::getInstance()->deleteAttribute('hojaVidaFilters');
             }//close if
 
-            routing::getInstance()->redirect('animal', 'indexHojaVida');
+            routing::getInstance()->redirect('animal', 'indexAnimal');
             log::register(i18n::__('eliminar filtros'), hojaVidaTableClass::getNameTable());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

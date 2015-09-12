@@ -34,6 +34,7 @@ class insertVacunacionActionClass extends controllerClass implements controllerA
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario, true);
             $this->objVacuna = vacunaTableClass::getAll($fieldsVacuna, true);
+            $this->idAnimalHojaVida = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
             $this->defineView('insertVacunacion', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

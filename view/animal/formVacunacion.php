@@ -20,6 +20,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             <?php echo i18n::__('fecha', null, 'detalleVacunacion') ?>:
                         </th>
                         <th>
+                            <input type="hidden" value="<?php echo $idAnimalHojaVida ?>" name="<?php echo carneVacunasTableClass::getNameField(carneVacunasTableClass::ANIMAL, true) ?>">
                             <input type="datetime-local" placeholder="<?php echo i18n::__('fecha', null, 'detalleVacunacion') ?>" name="<?php echo carneVacunasTableClass::getNameField(carneVacunasTableClass::FECHA_VACUNACION, true) ?>">
                         </th>
                     </tr> 

@@ -27,6 +27,7 @@ class insertRegistroPesoActionClass extends controllerClass implements controlle
                 empleadoTableClass::NOMBRE
             );
          
+            $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);
             $this->defineView('insertRegistroPeso', 'animal', session::getInstance()->getFormatOutput());

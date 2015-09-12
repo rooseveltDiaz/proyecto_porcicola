@@ -52,7 +52,7 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
         registroPesoTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('succesCreate1', null, 'dpVenta'));
         log::register(i18n::__('create'), registroPesoTableClass::getNameTable());
-        routing::getInstance()->redirect('animal', 'indexRegistroPeso');
+        routing::getInstance()->redirect('animal', 'indexRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $animal));
       } else {
         log::register(i18n::__('create'), registroPesoTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
         session::getInstance()->setError(i18n::__('errorCreate1', null, 'dpVenta'));

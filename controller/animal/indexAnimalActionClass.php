@@ -53,6 +53,10 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             $fields3 = array(
                 loteTableClass::NOMBRE
             );
+            $fieldsHojaVida = array(
+                hojaVidaTableClass::ID,
+                hojaVidaTableClass::ANIMAL
+            );
             $fieldsGenero = array(
                 generoTableClass::ID,
                 generoTableClass::NOMBRE
@@ -95,6 +99,8 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
             $this->objLote = loteTableClass::getAll($fieldsLote, true);
             $this->objFilterAnimal = animalTableClass::getAll($fields, true);
             $this->objAnimal = animalTableClass::getAllJoin($fields, $fields3, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+//     $this->objAnimal = animalTableClass::getAllJoin($fields, $fields3, $fieldsHojaVida, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objHojaVida = hojaVidaTableClass::getAll($fieldsHojaVida, true);
             $this->defineView('index', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
