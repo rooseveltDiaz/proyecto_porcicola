@@ -95,7 +95,7 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
             );
 
             $lines = config::getRowGrid();
-            $this->cntPages = registroPesoTableClass::getAllCount($f, false, $lines);
+            $this->cntPages = registroPesoTableClass::getAllCount($f, true, $lines);
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
             } else {
@@ -104,7 +104,7 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
 
 
             $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL,true));
-            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin3, $fJoin4, $fJoin1, $fJoin2, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin3, $fJoin4, $fJoin1, $fJoin2, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             //$this->page = request::getInstance()->getGet('page');
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);

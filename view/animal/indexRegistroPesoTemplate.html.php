@@ -16,7 +16,7 @@ use mvc\view\viewClass as view ?>
 <?php $peso = registroPesoTableClass::PESO ?>
 <?php $kilo = registroPesoTableClass::KILO ?>
 <?php $total = registroPesoTableClass::VALOR ?>
-
+<?php $idAnimalSeleccionado = hojaVidaTableClass::ANIMAL ?>
 <?php $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
@@ -27,16 +27,18 @@ use mvc\view\viewClass as view ?>
                         <?php echo i18n::__('regPe', NULL, 'dpVenta') ?>
                     </h2>
                     <h4>  <?php echo i18n::__('identificacion') ?>:
-                        <?php echo $objPeso[0]->$numeroIdenficacion ?>
+                     <?php echo $objPeso[0]->$numeroIdenficacion ?> 
                 </div>
             </div>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroPeso') ?>" method="POST">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                        <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+                          <?php foreach ($objPeso as $key): ?>
+                        <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalSeleccionado)) ?>"></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="atras">
                             <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
+                        <?php endforeach; ?>
                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $idAnimalSeleccionado)) ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="new">

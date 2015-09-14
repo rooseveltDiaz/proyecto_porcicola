@@ -1,7 +1,7 @@
 <?php
 
 use mvc\routing\routingClass as routing;
-
+//$id = animalTableClass::ID;
 $numero = animalTableClass::NUMERO;
 $fecha = hojaVidaTableClass::FECHA_NACIMIENTO;
 $peso = hojaVidaTableClass::PESO;
@@ -41,12 +41,7 @@ $pdf->Cell(30, 10, $mensaje, 0, 0, 'C');
 
 // Salto de línea
 $pdf->Ln(20);
-// Arial bold 15
-$pdf->SetFont('Arial', 'B', 25);
-// Movernos a la derecha
-$pdf->Cell(90);
-$pdf->Cell(30, 10, $numero, 0, 0, 'C');
-$pdf->Ln(20);
+
 $pdf->SetFont('Arial', '', 12);
 //for($i=1;$i<=40;$i++)
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);

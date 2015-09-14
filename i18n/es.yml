@@ -869,6 +869,18 @@ dictionary:
     10123:                La cantidad de vacunas para aumentar inventario debe ser numerica
     10124:                La cantidad de vacunas para aumentar inventario no admite un valor negativo
     10125:                La cantidad de vacunas para aumentar inventario no admite caracteres especiales
+    10126:                El valor por kilo no se admite vacío
+    10127:                El valor por kilo debe ser numérico
+    10128:                El valor por kilo no admite un valor negativo
+    10129:                El número máximo de caracteres para el valor por kilo es de 6
+    10130:                El valor total no se admite vacío
+    10131:                El valor total debe ser numérico
+    10132:                El valor total no admite un valor negativo
+    10133:                El número máximo de caracteres para el valor total es de 10
+    10134:                El peso no se admite vacío
+    10135:                El peso debe ser numérico
+    10136:                El peso no admite un valor negativo
+    10137:                El número máximo de caracteres para el peso es de 4
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

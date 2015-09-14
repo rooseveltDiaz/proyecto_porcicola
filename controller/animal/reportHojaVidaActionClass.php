@@ -17,10 +17,16 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
 
     public function execute() {
         try {
-            $where = null;
+//                 $idAnimal = request::getInstance()->getGet(animalTableClass::ID);
+//           $where =  array(
+//                hojaVidaTableClass::ANIMAL => $idAnimal
+//            );
             if (request::getInstance()->hasRequest('reportHojaVida')) {
                 $report = request::getInstance()->getPost('reportHojaVida');
             }
+            
+      
+            
             $fields = array(
             hojaVidaTableClass::ANIMAL,
             hojaVidaTableClass::FECHA_NACIMIENTO,
@@ -32,6 +38,7 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
             hojaVidaTableClass::RAZA
             );
             $fields1 = array (
+            animalTableClass::ID,
             animalTableClass::NUMERO
             );
             $fields2 = array(
@@ -47,13 +54,12 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
             $fJoin4 = generoTableClass::ID;
             $fJoin5 = hojaVidaTableClass::RAZA;
             $fJoin6 = razaTableClass::ID;
-
-
+    
             $orderBy = array(
             hojaVidaTableClass::ID
             );
-
-            $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', $where);
+//            $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
+            $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', null, null, null);
             $this->mensaje = 'HOJA DE VIDA DEL CERDO';
             $this->numero = animalTableClass::NUMERO;
             $this->defineView('hojadevida', 'animal', session::getInstance()->getFormatOutput());

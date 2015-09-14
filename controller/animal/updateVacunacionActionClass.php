@@ -28,7 +28,8 @@ class updateVacunacionActionClass extends controllerClass implements controllerA
                 $fecha = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::FECHA_VACUNACION, true));
                 $dosis = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::DOSIS, true));
                 $accion = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::ACCION, true));
-//                          gestacionTableClass::validate($fecha, $fecha_monta, $fecha_parto);
+              
+                carneVacunasTableClass::validateModificar($veterinario, $vacuna, $fecha, $dosis, $accion);
 
                 //Insertar la informacion del usuario
                 $ids = array(

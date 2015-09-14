@@ -25,12 +25,12 @@ use mvc\request\requestClass as request ?>
         <div class="row" style="margin-top: 5px">
             <div class="col-md-4 col-md-7" style="color:#0097a7; margin-left: 10px">
                 <div class="date text-center">
-                    <h3>
+                    <h5>
                         <?php echo date::getInstance()->day() ?><br/>
                         <?php echo date("d") ?><br/>
                         <?php echo date::getInstance()->month() ?>
 
-                    </h3>
+                    </h5>
                 </div>
             </div>
 

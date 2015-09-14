@@ -28,8 +28,10 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
 //        $valor_total = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::VALOR, true));
         $peso = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::PESO, true));
        $valor_total = $peso * $valor_kilo;
+         
+       registroPesoTableClass::validateCreate($fecha, $empleado, $valor_kilo, $valor_total, $peso);
        
-        $datos = array(
+       $datos = array(
           $fecha,
           $empleado,
           $animal,
@@ -38,7 +40,7 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
           $peso
           
         );
-        registroPesoTableClass::validateCreate($fecha, $empleado, $animal, $valor_kilo, $valor_total, $peso);
+      
 
    
         $data = array(

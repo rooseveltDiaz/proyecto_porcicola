@@ -47,7 +47,7 @@ class reportRegistroPesoActionClass extends controllerClass implements controlle
             );
             $this->mensaje = "Informe de Registros de Peso Diario del Cerdo";
             $this->numero = animalTableClass::NUMERO;
-            $this->objRegistroPeso = registroPesoTableClass::getAllJoin($fields, $fieldsEmpleado, $fieldsAnimal, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4,  null, null, false, $orderBy, 'ASC');
+            $this->objRegistroPeso = registroPesoTableClass::getAllJoin($fields, $fieldsEmpleado, $fieldsAnimal, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4,  null, null, true, $orderBy, 'ASC');
             log::register(i18n::__('reporte'), registroPesoTableClass::getNameTable());
             $this->defineView('indexRegistroPeso', 'animal', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

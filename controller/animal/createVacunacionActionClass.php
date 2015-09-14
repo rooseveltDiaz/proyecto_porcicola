@@ -24,17 +24,18 @@ class createVacunacionActionClass extends controllerClass implements controllerA
                 $veterinario = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::VETERINARIO, true));
                 $animal = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::ANIMAL, true));
                 $fecha_vacunacion = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::FECHA_VACUNACION, true));
-                $vacuna = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::VACUNA, true));
+                $id_vacuna = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::VACUNA, true));
                 $dosis = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::DOSIS, true));
                 $accion = request::getInstance()->getPost(carneVacunasTableClass::getNameField(carneVacunasTableClass::ACCION, true));
-
+             
+                carneVacunasTableClass::validateCrear($veterinario, $fecha_vacunacion, $id_vacuna, $dosis, $accion);
 
                 $data = array(
                     carneVacunasTableClass::ACCION => $accion,
                     carneVacunasTableClass::ANIMAL => $animal,
                     carneVacunasTableClass::DOSIS => $dosis,
                     carneVacunasTableClass::FECHA_VACUNACION => $fecha_vacunacion,
-                    carneVacunasTableClass::VACUNA => $vacuna,
+                    carneVacunasTableClass::VACUNA => $id_vacuna,
                     carneVacunasTableClass::VETERINARIO => $veterinario
                 );
 
@@ -42,11 +43,29 @@ class createVacunacionActionClass extends controllerClass implements controllerA
                     $veterinario,
                     $animal,
                     $fecha_vacunacion,
-                    $vacuna,
+                    $id_vacuna,
                     $dosis,
                     $accion
                 );
-//        gestacionTableClass::validate($fecha, $fecha_monta, $fecha_parto);
+ //Manejo de inventario
+                $fieldsVacuna = array(
+                    vacunaTableClass::CANTIDAD
+                );
+                $whereVacuna = array(
+                    vacunaTableClass::ID => $id_vacuna
+                );
+                $objVacuna = vacunaTableClass::getAll($fieldsVacuna, true, null, null, null, null, $whereVacuna);
+
+                carneVacunasTableClass::validateInventario($objVacuna[0]->cantidad, 1);
+
+                $vacunaInventario = ($objVacuna[0]->cantidad) - 1;
+                $idsVacuna = array(
+                    vacunaTableClass::ID => $id_vacuna
+                );
+                $dataVacuna = array(
+                    vacunaTableClass::CANTIDAD => $vacunaInventario
+                );
+                vacunaTableClass::update($idsVacuna, $dataVacuna);
 
                 carneVacunasTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate2', null, 'dpVenta'));

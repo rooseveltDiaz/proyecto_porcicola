@@ -900,7 +900,7 @@ bodega:
   reportDetalleEntradaBodega:
     security: true
     credentials:
-      - [ ]
+      - [admin, invitado]
   createDetalleEntrada:
     security: true
     credentials:

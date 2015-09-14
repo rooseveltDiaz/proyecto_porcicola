@@ -38,7 +38,7 @@ use mvc\session\sessionClass as session ?>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectAnimal') ?>" method="POST">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-
+ 
                         <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexAnimal') ?>"></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                             <?php echo i18n::__('atras', null, 'ayuda') ?>

@@ -44,49 +44,47 @@ class reportDetalleEntradaBodegaActionClass extends controllerClass implements c
             $where[detalleEntradaBodegaTableClass::ID_ENTRADA] = $idVacunacion;
 
             $fieldsDetalleEntradaBodega = array(
-            detalleEntradaBodegaTableClass::ID,
-            detalleEntradaBodegaTableClass::ID_ENTRADA,
-            detalleEntradaBodegaTableClass::TIPO_INSUMO,
-            detalleEntradaBodegaTableClass::ID_INSUMO,
-            detalleEntradaBodegaTableClass::CANDITDAD
-          
+                detalleEntradaBodegaTableClass::ID,
+//                detalleEntradaBodegaTableClass::ID_ENTRADA,
+//                detalleEntradaBodegaTableClass::TIPO_INSUMO,
+//                detalleEntradaBodegaTableClass::ID_INSUMO,
+                detalleEntradaBodegaTableClass::CANDITDAD
             );
-
+             $fieldsEntradaBodega = array(
+                entradaBodegaTableClass::ID
+            );
             $fieldsInsumo = array(
-            insumoTableClass::NOMBRE
+                insumoTableClass::NOMBRE
             );
-
-            $fJoin1 = detalleEntradaBodegaTableClass::ID_INSUMO;
-            $fJoin2 = insumoTableClass::ID;
+            $fieldsTipo = array(
+                tipoInsumoTableClass::DESCRIPCION
+            );
+          
+            $fJoin1 = detalleEntradaBodegaTableClass::ID_ENTRADA;
+            $fJoin2 = entradaBodegaTableClass::ID;
+            $fJoin3 = detalleEntradaBodegaTableClass::ID_INSUMO;
+            $fJoin4 = insumoTableClass::ID;
+            $fJoin5 = detalleEntradaBodegaTableClass::TIPO_INSUMO;
+            $fJoin6 = tipoInsumoTableClass::ID;
+      
 
             $fieldsEntrada = array(
-            entradaBodegaTableClass::ID,
-            entradaBodegaTableClass::FECHA
+                entradaBodegaTableClass::ID,
+                entradaBodegaTableClass::FECHA
             );
 
             $fieldsEmpleado = array(
-            empleadoTableClass::NOMBRE
-            );
-
-            $fieldsTipo = array(
-            tipoInsumoTableClass::DESCRIPCION
-            );
-            $fieldsS = array(
-            entradaBodegaTableClass::ID
+                empleadoTableClass::NOMBRE
             );
 
             $fJoinVacunacion1 = entradaBodegaTableClass::EMPLEADO;
             $fJoinVacunacion2 = empleadoTableClass::ID;
-            $fJoinVacunacion3 = detalleEntradaBodegaTableClass::TIPO_INSUMO;
-            $fJoinVacunacion4 = tipoInsumoTableClass::ID;
-            $fJoinVacunacion5 = detalleEntradaBodegaTableClass::ID_ENTRADA;
-            $fJoinVacunacion6 = entradaBodegaTableClass::ID;
 
             $whereVacunacion = array(
                 entradaBodegaTableClass::getNameTable() . "." . entradaBodegaTableClass::ID => $idVacunacion
             );
 
-            $this->objDetalleEntradaBodega = detalleEntradaBodegaTableClass::getAllJoin($fieldsDetalleEntradaBodega, $fieldsInsumo, $fieldsTipo, $fieldsS, $fJoin1, $fJoin2, $fJoinVacunacion3, $fJoinVacunacion4,  $fJoinVacunacion5, $fJoinVacunacion6, true, null, null, null, null, $where);
+            $this->objDetalleEntradaBodega = detalleEntradaBodegaTableClass::getAllJoin($fieldsDetalleEntradaBodega, $fieldsInsumo, $fieldsTipo, $fieldsEntradaBodega, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, null, null, null, null, $where);
             $this->objEntradaBodega = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoinVacunacion1, $fJoinVacunacion2, null, null, null, null, true, null, null, null, null, $whereVacunacion);
             $this->mensajeDetalle = "Informe de Detalles de Entrada de Bodega";
             log::register(i18n::__('reporte'), detalleEntradaBodegaTableClass::getNameTable());

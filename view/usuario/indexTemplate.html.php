@@ -76,12 +76,13 @@ use mvc\session\sessionClass as session ?>
                                                     <a id="verDetalle<?php echo $countDetale ?>"href="<?php echo routing::getInstance()->getUrlWeb('dataUser', 'index', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i></a>
                                                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
     <?php echo i18n::__('verDetalle', null, 'user') ?>
-                                                    </div>  
+                                                    </div> 
+                                                    
                                                     <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'editUsuario', array(usuarioTableClass::ID => $usuario->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                                     <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
     <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                                     </div> 
-                <!--                      <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $usuario->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
+                                                                   <!--                      <a id="eliminar<?php echo $countDetale ?>" href="#myModalDelete<?php echo $usuario->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                                        <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
     <?php echo i18n::__('eliminar', null, 'ayuda') ?>
                                                     </div> -->

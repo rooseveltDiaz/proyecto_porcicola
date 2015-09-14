@@ -15,6 +15,7 @@ use mvc\session\sessionClass as session ?>
 <?php //$usuario_id = usuarioCredencialTableClass::USUARIO_ID  ?>
 <?php //$credencial = usuarioCredencialTableClass::CREDENCIAL_ID  ?>
 <?php $usuario_id = usuarioTableClass::USER ?>
+<?php $usuario = usuarioCredencialTableClass::CREDENCIAL_ID ?>
 <?php $credencial = credencialTableClass::NOMBRE ?>
 <?php $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--blue-100">
@@ -55,11 +56,12 @@ use mvc\session\sessionClass as session ?>
                                     <td><?php echo $key->$usuario_id ?></td>
                                     <td><?php echo $key->$credencial ?></td>
                                     <td>
+                                           <?php if ($key->$id != 3): ?>
                                         <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'editUsuCredencial', array(usuarioCredencialTableClass::ID => usuarioCredencialTableClass::ID)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                 <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                         </div> 
-
+<?php endif; ?>
                                     </td>
                                 </tr>
     <?php $countDetale++ ?>
