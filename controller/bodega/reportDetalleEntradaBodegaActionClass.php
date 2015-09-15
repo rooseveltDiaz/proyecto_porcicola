@@ -50,7 +50,7 @@ class reportDetalleEntradaBodegaActionClass extends controllerClass implements c
 //                detalleEntradaBodegaTableClass::ID_INSUMO,
                 detalleEntradaBodegaTableClass::CANDITDAD
             );
-             $fieldsEntradaBodega = array(
+             $fields = array(
                 entradaBodegaTableClass::ID
             );
             $fieldsInsumo = array(
@@ -84,7 +84,7 @@ class reportDetalleEntradaBodegaActionClass extends controllerClass implements c
                 entradaBodegaTableClass::getNameTable() . "." . entradaBodegaTableClass::ID => $idVacunacion
             );
 
-            $this->objDetalleEntradaBodega = detalleEntradaBodegaTableClass::getAllJoin($fieldsDetalleEntradaBodega, $fieldsInsumo, $fieldsTipo, $fieldsEntradaBodega, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, null, null, null, null, $where);
+            $this->objDetalleEntradaBodega = detalleEntradaBodegaTableClass::getAllJoin($fieldsDetalleEntradaBodega, $fieldsInsumo, $fieldsTipo, $fields, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, null, null, null, null, $where);
             $this->objEntradaBodega = entradaBodegaTableClass::getAllJoin($fieldsEntrada, $fieldsEmpleado, null, null, $fJoinVacunacion1, $fJoinVacunacion2, null, null, null, null, true, null, null, null, null, $whereVacunacion);
             $this->mensajeDetalle = "Informe de Detalles de Entrada de Bodega";
             log::register(i18n::__('reporte'), detalleEntradaBodegaTableClass::getNameTable());

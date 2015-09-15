@@ -43,7 +43,7 @@ class editVacunaActionClass extends controllerClass implements controllerActionI
                     vacunaTableClass::STOCK_MINIMO
                 );
                 $where = array(
-                    vacunaTableClass::ID => request::getInstance()->getGet($id)
+                   vacunaTableClass::ID => request::getInstance()->getGet($id)
                 );
                 $this->objVacuna = vacunaTableClass::getAll($fields, false, null, null, null, null, $where);
 
