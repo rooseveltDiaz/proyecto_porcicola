@@ -35,16 +35,19 @@ class createRegistroPartoActionClass extends controllerClass implements controll
 //                loteTableClass::validatCreate($nombre);
 
                 $fieldsAnimal = array(
-                    animalTableClass::ID,
-                    animalTableClass::PARTO,
-                    animalTableClass::GENERO_ID,
-                    animalTableClass::NUMERO
+                hojaVidaTableClass::ANIMAL,
+                hojaVidaTableClass::ID,
+                hojaVidaTableClass::PARTO,
+                hojaVidaTableClass::GENERO_ID
                 );
                 $whereAnimal = array(
-                    animalTableClass::ID => $animal_id,
+                hojaVidaTableClass::ANIMAL => $animal_id,
+                hojaVidaTableClass::GENERO_ID => 1
                 );
 
-                $objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $whereAnimal);
+                $objAnimal = hojaVidaTableClass::getAll($fieldsAnimal, true, null, null, null, null, $whereAnimal);
+//                print_r($objAnimal);
+//                exit();
                 $flag = false;
 
 
@@ -59,9 +62,9 @@ class createRegistroPartoActionClass extends controllerClass implements controll
                 }
                                
                 $partosAnimal = $objAnimal[0]->numero_parto + 1;
-                $idAnimalInventario = array(animalTableClass::ID => $animal_id);
-                $dataAnimal = array(animalTableClass::PARTO => $partosAnimal);
-                animalTableClass::update($idAnimalInventario, $dataAnimal);
+                $idAnimalInventario = array(hojaVidaTableClass::ANIMAL => $animal_id);
+                $dataAnimal = array(hojaVidaTableClass::PARTO => $partosAnimal);
+                hojaVidaTableClass::update($idAnimalInventario, $dataAnimal);
 
                 $data = array(
                     registroPartoTableClass::FECHA_NACIMIENTO => $fecha,
@@ -75,7 +78,7 @@ class createRegistroPartoActionClass extends controllerClass implements controll
                 registroPartoTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'parto'));
                 log::register(i18n::__('create'), registroPartoTableClass::getNameTable());
-                routing::getInstance()->redirect('animal', 'indexRegistroParto');
+                routing::getInstance()->redirect('animal', 'indexRegistroParto', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $animal_id));
             } else {
                 log::register(i18n::__('create'), registroPartoTableClass::getNameTable(), i18n::__('errorCreateBitacora'));
                 session::getInstance()->setError(i18n::__('errorCreate'));

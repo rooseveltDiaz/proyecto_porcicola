@@ -33,12 +33,12 @@ use mvc\i18n\i18nClass as i18n ?>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroParto') ?>" method="POST">
                 <div class="row">
                     <div class="col-xs-4-offset-4 text-center">
-                                <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
-   <div class="mdl-tooltip mdl-tooltip--large" for="atras">
+                        <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+                        <div class="mdl-tooltip mdl-tooltip--large" for="atras">
                             <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                            <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
+                        <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroParto', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) =>  $idAnimalSeleccionado)) ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="new">
                                 <?php echo i18n::__('registrar', null, 'ayuda') ?>
                             </div> 
@@ -90,7 +90,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <td><?php echo $key->$hembras ?></td>
                                 <td><?php echo $key->$machos ?></td>
                                 <td><?php echo $key->$muertos ?></td>
-<!--                                <th><?php echo $key->$raza ?></th>-->
+    <!--                                <th><?php echo $key->$raza ?></th>-->
                                 <th><?php echo $key->$animal_id ?></th>
                                 <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                     <td>

@@ -95,7 +95,7 @@ use mvc\session\sessionClass as session ?>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
                                             <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
                                         </div> 
-                                        <a id="parto<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto') ?>" class="btn btn-lg glyphicon glyphicon-list-alt" > </a>
+                                        <a id="parto<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroParto', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalHojaVida)) ?>" class="btn btn-lg glyphicon glyphicon-list-alt" > </a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="parto<?php echo $countDetale ?>">
                                             <?php echo i18n::__('parto', null, 'dpVenta') ?>
                                         </div> 

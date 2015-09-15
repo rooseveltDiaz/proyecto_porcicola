@@ -3877,6 +3877,10 @@ registro_parto_index:
     - model/bitacoraTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 registro_parto_insert:
   url:    /registro_parto/insertar
@@ -3891,7 +3895,11 @@ registro_parto_insert:
     - model/razaTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
-
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    
 registro_parto_create:
   url:    /registro_parto/crear
   param:  { module: animal, action: createRegistroParto, format: html }
@@ -3905,6 +3913,10 @@ registro_parto_create:
     - model/razaTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 registro_parto_edit:
   url:    /registro_parto/editar
@@ -3919,6 +3931,10 @@ registro_parto_edit:
     - model/razaTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 registro_parto_update:
   url:    /registro_parto/actualizar
@@ -3933,6 +3949,10 @@ registro_parto_update:
     - model/razaTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 registro_parto_delete:
   url:    /registro_parto/eliminar
@@ -3943,6 +3963,10 @@ registro_parto_delete:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 registro_parto_deleteSelect:
   url:    /registro_parto/eliminarSeleccion
@@ -3953,7 +3977,11 @@ registro_parto_deleteSelect:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
- 
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
+    
 registro_parto_reporte:
   url:    /registro_parto/reporte
   param:  { module: animal, action: reportRegistroParto, format: pdf }
@@ -3966,6 +3994,10 @@ registro_parto_reporte:
     - model/razaTableClass.php
     - model/base/animalBaseTableClass.php
     - model/animalTableClass.php    
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
+    - model/base/hojaVidaBaseTableClass.php
+    - model/hojaVidaTableClass.php
     
 registro_parto_delete_filter:
   url:     /borrar_filtros/registro_parto

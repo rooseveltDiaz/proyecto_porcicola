@@ -1,4 +1,4 @@
-<?phpuse mvc\routing\routingClass as routing ?>
+<?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <main class="mdl-layout__content mdl-color--blue-300">
@@ -12,5 +12,5 @@
     </div>
 </div>
 
-<?php view::includePartial('registroParto/formParto' ,array()) ?>
+<?php view::includePartial('registroParto/formParto' ,array( "idAnimalSeleccionado" =>  $idAnimalSeleccionado)) ?>
 
