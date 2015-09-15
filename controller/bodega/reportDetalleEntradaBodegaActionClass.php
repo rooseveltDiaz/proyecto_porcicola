@@ -50,23 +50,23 @@ class reportDetalleEntradaBodegaActionClass extends controllerClass implements c
 //                detalleEntradaBodegaTableClass::ID_INSUMO,
                 detalleEntradaBodegaTableClass::CANDITDAD
             );
-             $fields = array(
+            $fields = array(
                 entradaBodegaTableClass::ID
             );
             $fieldsInsumo = array(
                 insumoTableClass::NOMBRE
             );
-            $fieldsTipo = array(
+                   $fieldsTipo = array(
                 tipoInsumoTableClass::DESCRIPCION
             );
-          
+       
             $fJoin1 = detalleEntradaBodegaTableClass::ID_ENTRADA;
             $fJoin2 = entradaBodegaTableClass::ID;
             $fJoin3 = detalleEntradaBodegaTableClass::ID_INSUMO;
             $fJoin4 = insumoTableClass::ID;
             $fJoin5 = detalleEntradaBodegaTableClass::TIPO_INSUMO;
             $fJoin6 = tipoInsumoTableClass::ID;
-      
+        
 
             $fieldsEntrada = array(
                 entradaBodegaTableClass::ID,

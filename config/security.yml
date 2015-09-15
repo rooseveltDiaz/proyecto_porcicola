@@ -420,7 +420,7 @@ animal:
   reportDetalleAnimal:
     security: true
     credentials:
-      - [ ]
+      - [admin, invitado]
   deleteFiltersAnimal:
     security: true
     credentials:
@@ -964,7 +964,7 @@ bodega:
   reportDetalleSalidaBodega:
     security: true
     credentials:
-      - [ ]
+      - [admin, invitado]
   createDetalleSalida:
     security: true
     credentials:

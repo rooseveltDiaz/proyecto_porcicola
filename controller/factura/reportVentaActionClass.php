@@ -18,7 +18,26 @@ class reportVentaActionClass extends controllerClass implements controllerAction
 
     public function execute() {
         try {
+$where = null;
+            if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
+    
+                if (isset($report['fecha_inicio']) and $report['fecha_inicio'] !== null and $report['fecha_inicio'] !== '' and isset($report['fecha_fin']) and $report['fecha_fin'] !== null and $report['fecha_fin'] !== '') {
+                    $where[procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::FECHA_HORA_COMPRA] = array(
+                        date(config::getFormatTimestamp(), strtotime($report['fecha_inicio'] . ' 00.00.00')),
+                        date(config::getFormatTimestamp(), strtotime($report['fecha_fin'] . ' 23.59.59'))
+                    );
+                }//close if
 
+                 if (isset($report['empleado']) and $report['empleado'] !== null and $report['empleado'] !== '')  {
+                    $where [procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::EMPLEADO_ID] = $report['empleado'];
+                }
+
+                if (isset($report['proveedor']) and $report['proveedor'] !== null and $report['proveedor'] !== '') {
+                    $where [procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::PROVEEDOR_ID] = $report['proveedor'];
+                }
+
+             } 
 
             $fieldsFacturaVenta = array(
                 procesoVentaTableClass::ID,
@@ -40,9 +59,10 @@ class reportVentaActionClass extends controllerClass implements controllerAction
             $orderBy = array(
                 procesoVentaTableClass::FECHA_HORA_VENTA
             );
-            $this->mensaje = "Informe de Facturas de Venta";
+       
 
-            $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC');
+            $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', null, null, $where);
+             $this->mensaje = "Inventario de Facturas de Venta";
             log::register(i18n::__('reporte'), procesoVentaTableClass::getNameTable());
             $this->defineView('report', 'facturaVenta', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

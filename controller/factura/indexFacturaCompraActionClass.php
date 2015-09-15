@@ -42,6 +42,15 @@ class indexFacturaCompraActionClass extends controllerClass implements controlle
                 $where = session::getInstance()->getAttribute('facturaCompraFilter');
             }//close if
 
+                $fieldsEmple = array(
+                empleadoTableClass::ID,
+                empleadoTableClass::NOMBRE
+            );
+            $fieldsProve = array(
+            proveedorTableClass::ID,
+                proveedorTableClass::NOMBRE
+            );
+            
             $fieldsFacturaCompra = array(
                 procesoCompraTableClass::ID,
                 procesoCompraTableClass::FECHA_HORA_COMPRA,
@@ -103,7 +112,8 @@ class indexFacturaCompraActionClass extends controllerClass implements controlle
                 $this->page = $page;
             }//close if 
 
-
+             $this->objProveedor = proveedorTableClass::getAll($fieldsProve, true);
+            $this->objEmpleado = empleadoTableClass::getAll($fieldsEmple, true);
             $this->objFacturaCompra = procesoCompraTableClass::getAllJoin($fieldsFacturaCompra, $fieldsEmpleado, $fieldsProveedor, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             log::register(i18n::__('ver', null, 'facturaCompra'), procesoCompraTableClass::getNameTable());
             $this->defineView('index', 'facturaCompra', session::getInstance()->getFormatOutput());

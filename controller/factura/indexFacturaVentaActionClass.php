@@ -42,6 +42,16 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
                 $where = session::getInstance()->getAttribute('facturaVentaFilter');
             }//close if
 
+            $fieldsEmple = array(
+                empleadoTableClass::ID,
+                empleadoTableClass::NOMBRE
+            );
+
+            $fieldsCli = array(
+                clienteTableClass::ID,
+                clienteTableClass::NOMBRE
+            );
+
             $fieldsFacturaVenta = array(
                 procesoVentaTableClass::ID,
                 procesoVentaTableClass::FECHA_HORA_VENTA,
@@ -94,7 +104,8 @@ class indexFacturaVentaActionClass extends controllerClass implements controller
             } else {
                 $this->page = $page;
             }//close if 
-
+            $this->objCliente = clienteTableClass::getAll($fieldsCli, true);
+            $this->objEmpleado = empleadoTableClass::getAll($fieldsEmple, true);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             log::register(i18n::__('ver', null, 'facturaVenta'), procesoVentaTableClass::getNameTable());

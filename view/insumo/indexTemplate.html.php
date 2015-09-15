@@ -42,9 +42,9 @@
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                         <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                     </div>
-                    <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('insumo', 'reportInsumo') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="report">
-                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                     <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
+                        <?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
                     </div>
                 </div>
             </div>
@@ -213,6 +213,65 @@
         <div class="modal-footer">
             <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
             <button type="button" class="btn btn-info fa fa-search" onclick="$('#filterForm').submit()"><?php echo i18n::__('buscar') ?></button>
+        </div>
+
+    </div>
+</div>
+<!-- WINDOWS MODAL REPORT -->
+<div class="modalmask" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modalbox rotate">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
+        </div>
+        <a href="#close" title="Close" class="close">X</a>
+        <div class="modal-body">
+            <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('insumo', 'reportInsumo') ?>">
+
+                <table class="table table-bordered">
+                     <tr>
+                        <th>  <?php echo i18n::__('tipoInsumo') ?>:</th>
+                        <th>
+                            <select name="filter[tipoInsumo]">
+                                <option value=''>...</option>
+                                <?php foreach ($objTipoInsumo as $key): ?>
+                                    <option value="<?php echo $key->$id_tipoInsumo ?>"><?php echo $key->$tipoInsumo ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>  <?php echo i18n::__('insumo', NULL, 'insumo') ?>:</th>
+                        <th> <input  type="text" name="filter[nombre]" ></th>   
+                    </tr>
+                    <tr>
+                        <th>  <?php echo i18n::__('fechaFabricacion') ?>:</th>
+                        <th> <input  type="date" name="filter[fabricacionInicial]" ></th>   
+                    </tr>
+                    <tr>
+                        <th>  <?php echo i18n::__('fechaVencimiento') ?>:</th>
+                        <th> <input  type="date" name="filter[VencimientoInicial]" ></th>   
+                    </tr>
+                    <tr>
+                        <th>  <?php echo i18n::__('valor', null, 'dpVenta') ?>:</th>
+                        <th>$ <input  type="number" name="filter[valor]" ></th>   
+                    </tr>             
+                    <tr>
+                        <th>  <?php echo i18n::__('cantidad') ?>:</th>
+                        <th> <input  type="number" name="filter[cantidad]" ></th>   
+                    </tr> 
+                    <tr>
+                        <th>  <?php echo i18n::__('stock') ?>:</th>
+                        <th> <input  type="number" name="filter[stock]" ></th>   
+                    </tr>  
+                      </table>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o close2"  ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
+            <button type="button" class="btn btn-info fa fa-search" onclick="$('#reportForm').submit()"><?php echo i18n::__('buscar') ?></button>
         </div>
 
     </div>

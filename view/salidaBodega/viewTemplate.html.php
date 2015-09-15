@@ -65,21 +65,19 @@ use mvc\session\sessionClass as session ?>
 <!--                <a href="#myModalReport"  id="buscarDetalle" class="btn btn-sm btn-info active fa fa-search"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="buscarDetalle">
                     <?php echo i18n::__('buscar', null, 'ayuda') ?>
-                </div>
--->             
+                </div>         -->
   <a id="deleteFilter" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'indexSalida') ?>"></a>
    <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                             <?php echo i18n::__('atras', null, 'ayuda') ?>
                         </div> 
-  <br/>
-  <br/>
-<!--
-                <a href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'reportDetalleSalidaBodega') ?>" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+  
+
+                    <a href="#myModalReport"  id="buscarDetalle" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
 <?php //echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
                 </div>
 
-            </div>-->
+            </div>
 
 <!--      <form id="frmDeleteAll" action="<?php // echo routing::getInstance()->getUrlWeb('bodega', 'delet')  ?>" method="POST">-->
             <div class="table-responsive">
@@ -105,9 +103,7 @@ use mvc\session\sessionClass as session ?>
                              <th>
                             <?php echo i18n::__('lote') ?>
                             </th>
-<?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                <th><?php echo i18n::__('action') ?></th>
-                        <?php endif; ?>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -120,18 +116,18 @@ use mvc\session\sessionClass as session ?>
                                 <td><?php echo $key->$insumo ?></td>
                                 <td><?php echo $key->$cantidad ?></td>
                                  <td><?php echo $key->$lote ?></td>
-                                        <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+<!--                                        <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                     <td>
                                         <a id="editarDetalle<?php echo $countDetale ?>" href="#myModaUpdateDetails<?php echo $key->$id ?>" class="btn btn-default active btn-sm fa fa-edit"  ></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="editarDetalle<?php echo $countDetale ?>">
                                             <?php echo i18n::__('editDetalle', null, 'ayuda') ?>
-                                        </div>  
+                                        </div>  -->
 <!--                                        <a id="eliminarDetalle<?php echo $countDetale ?>" href="#myModalDelete<?php echo $key->$id ?>" class="btn btn-sm btn-default fa fa-ban" ></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="eliminarDetalle<?php echo $countDetale ?>">
                                 <?php echo i18n::__('inhabilitarDetalle', null, 'ayuda') ?>
                                         </div>  -->
-                                    </td>
-    <?php endif; ?>
+                                <!--    </td>
+    <?php endif; ?>-->
                             </tr>
     <?php $countDetale++ ?>    
 
@@ -214,24 +210,26 @@ use mvc\session\sessionClass as session ?>
 
 
 
-            <!-- WINDOWS MODAL FILTER -->
-            <div id="myModalReport" class="modalmask">
-                <div class="modalbox rotate">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
-                    </div>
-                    <a href="#close" title="Close" class="close">X</a>
-                    <div class="modal-body">
-                        <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'viewSalida') ?>">
-                            <input type="hidden" name="<?php echo salidaBodegaTableClass::ID ?>" value="<?php echo request::getInstance()->getRequest(salidaBodegaTableClass::ID) ?>">
-                            <table class="table table-bordered">
+            <!-- WINDOWS MODAL REPORT -->
+            <div class="modalmask" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modalbox rotate">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
+        </div>
+        <a href="#close" title="Close" class="close">X</a>
+        <div class="modal-body">
+            <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('bodega', 'reportDetalleSalidaBodega') ?>">
+
+                <table class="table table-bordered">
+
                                 <tr>
                                     <th>
                                             <?php echo i18n::__('tipoInsumo') ?>
                                     </th>
                                     <th>
-                                        <select name="filter[tipoInsumo]">
+                                        <select name="report[tipoInsumo]">
                                             <option value="">...</option>
 <?php foreach ($objTipoInsumo as $key): ?>
                                                 <option value="<?php echo $key->id ?>"><?php echo $key->descripcion ?></option>
@@ -245,7 +243,7 @@ use mvc\session\sessionClass as session ?>
                                             <?php echo i18n::__('insumo', null, 'insumo') ?>
                                     </th>
                                     <th>
-                                        <select name="filter[Insumo]">
+                                        <select name="report[Insumo]">
                                             <option value="">...</option>
 <?php foreach ($objInsumo as $key): ?>
                                                 <option value="<?php echo $key->id ?>"><?php echo $key->nombre_insumo ?></option>
@@ -255,20 +253,21 @@ use mvc\session\sessionClass as session ?>
                                 </tr>
                                 <tr>
                                     <th>
-<?php echo i18n::__('cantidad') ?>
+                       <?php echo i18n::__('cantidad') ?>
                                     </th>
                                     <th>
-                                        <input name="filter[cantidad]" type="text">
+                                        <input name="report[cantidad]" type="number">
                                     </th>
                                 </tr>
+                         
                             </table>
-                        </form>
-                    </div>
-                    <div class="modal-footer">
-                        <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal" ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
-                        <button type="button" class="btn btn-info fa fa-search" onclick="$('#reportForm').submit()"><?php echo i18n::__('buscar') ?></button>
-                    </div>
-                </div>
-            </div>
+                               </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o close2"  ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
+            <button type="button" class="btn btn-info fa fa-search" onclick="$('#reportForm').submit()"><?php echo i18n::__('buscar') ?></button>
+        </div>
 
+    </div>
+</div>
 

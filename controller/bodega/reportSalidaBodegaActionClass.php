@@ -19,7 +19,21 @@ class reportSalidaBodegaActionClass extends controllerClass implements controlle
     public function execute() {
         try {
 
+        $where = null;
+            if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
+    
+                if (isset($report['fecha_inicio']) and $report['fecha_inicio'] !== null and $report['fecha_inicio'] !== '' and isset($report['fecha_fin']) and $report['fecha_fin'] !== null and $report['fecha_fin'] !== '') {
+                    $where[salidaBodegaTableClass::getNameTable() . '.' . salidaBodegaTableClass::FECHA] = array(
+                        date(config::getFormatTimestamp(), strtotime($report['fecha_inicio'] . ' 00.00.00')),
+                        date(config::getFormatTimestamp(), strtotime($report['fecha_fin'] . ' 23.59.59'))
+                    );
+                }//close if
 
+                 if (isset($report['empleado']) and $report['empleado'] !== null and $report['empleado'] !== '')  {
+                    $where [salidaBodegaTableClass::getNameTable() . '.' . salidaBodegaTableClass::EMPLEADO] = $report['empleado'];
+                }
+               } 
             $fields = array(
                 salidaBodegaTableClass::ID,
                 salidaBodegaTableClass::FECHA,
@@ -38,7 +52,7 @@ class reportSalidaBodegaActionClass extends controllerClass implements controlle
                 salidaBodegaTableClass::ID
             );
             $this->mensaje = "Informe de Salidas de Bodega";
-            $this->objSalida = salidaBodegaTableClass::getAllJoin($fields, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC');
+            $this->objSalida = salidaBodegaTableClass::getAllJoin($fields, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', null, null, $where);
             log::register(i18n::__('reporte'), salidaBodegaTableClass::getNameTable());
             $this->defineView('index', 'salidaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

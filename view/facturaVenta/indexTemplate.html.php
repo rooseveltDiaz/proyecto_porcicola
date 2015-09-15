@@ -48,9 +48,9 @@ use mvc\session\sessionClass as session ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                         <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                     </div>
-                    <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportVenta') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="report">
-                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                       <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
+                        <?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
                     </div>
                 </div>
             </div>
@@ -260,4 +260,78 @@ use mvc\session\sessionClass as session ?>
         </div>
     </div>
 
+</div>
+
+
+<!-- WINDOWS MODAL REPORT -->
+<div class="modalmask" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modalbox rotate">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
+        </div>
+        <a href="#close" title="Close" class="close">X</a>
+        <div class="modal-body">
+            <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportVenta') ?>">
+
+                <table class="table table-bordered">
+<tr>
+                        <th>
+                            <?php echo i18n::__('fechaInicio') ?>
+                        </th>
+                        <th>
+                            <input type="datetime-local" name="report[fecha_inicio]">
+                        </th>   
+
+                    </tr>
+                    <tr>
+                        <th>
+                            <?php echo i18n::__('fechaFin') ?>
+                        </th>
+                        <th>
+                            <input type="datetime-local" name="report[fecha_fin]">
+                        </th>   
+
+                    </tr>
+        <tr>
+                <th>
+                  <?php echo i18n::__('empleado') ?>:
+                </th>
+                <th>
+                  <select name="report[empleado]"> 
+                    <option>...</option>
+                    <?php foreach ($objEmpleado as $key): ?>
+                      <option value="<?php echo $key->id ?>">
+                        <?php echo $key->nombre_completo ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                </th>
+              </tr>
+                 <tr>
+                <th>
+                  <?php echo i18n::__('cliente') ?>:
+                </th>
+                <th>
+                  <select name="report[veterinario]"> 
+                    <option>...</option>
+                    <?php foreach ($objCliente as $key): ?>
+                      <option value="<?php echo $key->id ?>">
+                        <?php echo $key->nombre_completo_cliente ?>
+                      </option>
+                    <?php endforeach; ?>
+                  </select>
+                </th>
+              </tr>
+                </table>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o close2"  ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
+            <button type="button" class="btn btn-info fa fa-search" onclick="$('#reportForm').submit()"><?php echo i18n::__('buscar') ?></button>
+        </div>
+
+    </div>
 </div>

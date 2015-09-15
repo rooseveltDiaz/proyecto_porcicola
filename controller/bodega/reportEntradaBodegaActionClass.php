@@ -18,7 +18,21 @@ class reportEntradaBodegaActionClass extends controllerClass implements controll
 
     public function execute() {
         try {
+            $where = null;
+            if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
 
+                if (isset($report['fecha_inicio']) and $report['fecha_inicio'] !== null and $report['fecha_inicio'] !== '' and isset($report['fecha_fin']) and $report['fecha_fin'] !== null and $report['fecha_fin'] !== '') {
+                    $where[entradaBodegaTableClass::getNameTable() . '.' . entradaBodegaTableClass::FECHA] = array(
+                        date(config::getFormatTimestamp(), strtotime($report['fecha_inicio'] . ' 00.00.00')),
+                        date(config::getFormatTimestamp(), strtotime($report['fecha_fin'] . ' 23.59.59'))
+                    );
+                }//close if
+
+                if (isset($report['empleado']) and $report['empleado'] !== null and $report['empleado'] !== '') {
+                    $where [entradaBodegaTableClass::getNameTable() . '.' . entradaBodegaTableClass::EMPLEADO] = $report['empleado'];
+                }
+            }
 
             $fields = array(
                 entradaBodegaTableClass::ID,
@@ -39,7 +53,7 @@ class reportEntradaBodegaActionClass extends controllerClass implements controll
             );
             $this->mensaje = "Informe de Entradas de Bodega";
 
-            $this->objEntrada = entradaBodegaTableClass::getAllJoin($fields, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC');
+            $this->objEntrada = entradaBodegaTableClass::getAllJoin($fields, $fieldsEmpleado, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', null, null, $where);
             log::register(i18n::__('reporte'), entradaBodegaTableClass::getNameTable());
             $this->defineView('index', 'entradaBodega', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

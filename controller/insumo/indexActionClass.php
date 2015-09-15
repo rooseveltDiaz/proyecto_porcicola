@@ -91,6 +91,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             );
             $fJoin1 = insumoTableClass::TIPO_INSUMO;
             $fJoin2 = tipoInsumoTableClass::ID;
+            
             $fieldsTipo = array(
                 tipoInsumoTableClass::ID,
                 tipoInsumoTableClass::DESCRIPCION

@@ -28,27 +28,28 @@ class reportDetalleSalidaBodegaActionClass extends controllerClass implements co
 //                }//close if
 
                 if (isset($report['tipoInsumo']) and $report['tipoInsumo'] !== null and $report['tipoInsumo'] !== '') {
-                    $where[detalleEntradaBodegaTableClass::TIPO_INSUMO] = $report['tipoInsumo'];
+                    $where[detalleSalidaBodegaTableClass::TIPO_INSUMO] = $report['tipoInsumo'];
                 }//close if
 
 
                 if (isset($report['Insumo']) and $report['Insumo'] !== null and $report['Insumo'] !== '') {
-                    $where[detalleEntradaBodegaTableClass::ID_INSUMO] = $report['Insumo'];
+                    $where[detalleSalidaBodegaTableClass::ID_INSUMO] = $report['Insumo'];
                 }//close if
 
                 if (isset($report['cantidad']) and $report['cantidad'] !== null and $report['cantidad'] !== '') {
-                    $where[detalleEntradaBodegaTableClass::CANDITDAD] = $report['cantidad'];
+                    $where[detalleSalidaBodegaTableClass::getNameTable() . '.' . detalleSalidaBodegaTableClass::CANDITDAD] = $report['cantidad'];
                 }//close if
+               
             }//close if
 
             $where[detalleSalidaBodegaTableClass::ID_SALIDA] = $idVacunacion;
 
             $fieldsDetalleSalidaBodega = array(
                 detalleSalidaBodegaTableClass::ID,
-                detalleSalidaBodegaTableClass::ID_SALIDA,
-                detalleSalidaBodegaTableClass::CANDITDAD,
-                detalleSalidaBodegaTableClass::TIPO_INSUMO,
-                detalleSalidaBodegaTableClass::ID_INSUMO,
+//                detalleSalidaBodegaTableClass::ID_SALIDA,
+            detalleSalidaBodegaTableClass::CANDITDAD
+//                detalleSalidaBodegaTableClass::TIPO_INSUMO,
+//                detalleSalidaBodegaTableClass::ID_INSUMO,
              
             );
 
@@ -65,6 +66,7 @@ class reportDetalleSalidaBodegaActionClass extends controllerClass implements co
                     $fieldsInsumo = array(
                 insumoTableClass::NOMBRE
             );
+                    
 
             $fJoin1 = detalleSalidaBodegaTableClass::ID_SALIDA;
             $fJoin2 = salidaBodegaTableClass::ID;
