@@ -29,6 +29,7 @@ use mvc\view\viewClass as view ?>
             </form>
             <div class="row">
                 <div class="col-xs-12 text-center">
+                    <?php view::includeHandlerMessage() ?>
                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                         <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertAnimal') ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="new">

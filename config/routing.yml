@@ -1107,6 +1107,8 @@ animal_index:
     - libs/validate/validatorFieldsClass.php
     - model/base/hojaVidaBaseTableClass.php
     - model/hojaVidaTableClass.php
+    - model/base/gestacionBaseTableClass.php
+    - model/gestacionTableClass.php
 
 animal_insert:
   url:    /animal/insertar

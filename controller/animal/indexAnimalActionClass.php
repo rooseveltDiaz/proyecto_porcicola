@@ -31,13 +31,26 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                     $where [animalTableClass::LOTE_ID] = $filter['lote'];
                 }
 
-
-
                 session::getInstance()->setAttribute('animalFiltersAnimal', $where);
             } elseif (session::getInstance()->hasAttribute('animalFiltersAnimal')) {
                 $where = session::getInstance()->getAttribute('animalFiltersAnimal');
             }
 
+
+            $fieldsGestacion = array(gestacionTableClass::ID, gestacionTableClass::ANIMAL, gestacionTableClass::FECHA);
+            $objGestacion = gestacionTableClass::getAll($fieldsGestacion, false);
+
+            foreach ($objGestacion as $key) {
+                $segundos = strtotime($key->fecha) - strtotime('now');
+                $diferencia_dias = intval($segundos / 60 / 60 / 24);
+                $diferencia_dias = $diferencia_dias * -1;
+                if ($diferencia_dias > 116) {
+                    session::getInstance()->setWarning("La cerda ".$key->animal ." no se le realizo el registro de parto");
+                }
+            }
+
+//            print_r($objGestacion);
+//            exit();
             $fields = array(
                 animalTableClass::ID,
                 animalTableClass::NUMERO,

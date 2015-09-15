@@ -91,7 +91,7 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
 
             $lines = config::getRowGrid();
 
-            $this->cntPages = registroPartoTableClass::getAllCount($f, false, $lines);
+            $this->cntPages = registroPartoTableClass::getAllCount($f, false, $lines, $where);
             // $this->page = request::getInstance()->getGet('page');
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             $this->idAnimalSeleccionado = $idAnimalSeleccionado;

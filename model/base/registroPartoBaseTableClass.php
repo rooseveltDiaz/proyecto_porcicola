@@ -179,8 +179,8 @@ class registroPartoBaseTableClass extends tableBaseClass {
         return parent::getAllJoin(self::getNameTable(), self::getNameTable2(), self::getNameTable3(), self::getNameTable4(), $fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
     }
 
-    public static function getAllCount($fields, $deletedLogical = true, $lines = null, $table = null) {
-        return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines);
+    public static function getAllCount($fields, $deletedLogical = true, $lines = null, $where = null, $table = null) {
+        return parent::getAllCount(self::getNameTable(), $fields, $deletedLogical, $lines, $where);
     }
 
 }
