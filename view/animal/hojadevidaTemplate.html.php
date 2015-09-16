@@ -63,33 +63,45 @@ use mvc\session\sessionClass as session ?>
                                     <td><?php echo $key->$numero ?></td>
                                 </tr>       
                             <?php endforeach; ?>
-
-                            <tr>   
+                                <tr>   
                                 <td>  <?php echo i18n::__('date_birth', NULL, 'animal') ?>:</td>
-                                <td>  <?php echo $objHojaVida[0]->$fecha ?></td>
+                                 <?php foreach ($objHojaVida as $key): ?>
+                                <td>  <?php echo $key->$fecha ?></td>
                             </tr>
+                              <?php endforeach; ?>
                             <tr>    
                                 <td>  <?php echo i18n::__('genero', null, 'animal') ?>:</td>
-                                <td>  <?php echo $objHojaVida[0]->$genero ?></td>
+                                     <?php foreach ($objHojaVida as $key): ?>
+                                <td>  <?php echo $key->$genero ?></td>
                             </tr>
+                              <?php endforeach; ?>
+                               <?php foreach ($objHojaVida as $key): ?>
                             <?php if ($key->genero_id == 1): ?>
                                 <tr>  
                                     <td>  <?php echo i18n::__('parto', NULL, 'animal') ?>:
+                                          
                                     </td>  
-                                    <td>  <?php echo $objHojaVida[0]->$parto ?></td>
+                                    <td>  <?php echo $key->$parto ?></td>
                                 </tr>
+                             
                             <?php endif; ?>
-                            <tr> 
+                                   <?php endforeach; ?>
+                                <tr>
                                 <td>  <?php echo i18n::__('raza') ?>:</td>
-                                <td>  <?php echo $objHojaVida[0]->$raza ?></td>
+                                     <?php foreach ($objHojaVida as $key): ?>
+                                <td>  <?php echo $key->$raza ?></td>
                             </tr>
+                              <?php endforeach; ?>
                             <tr>    
                                 <td> <?php echo i18n::__('peso', NULL, 'animal') ?>:</td>
-                                <td>  <?php echo $objHojaVida[0]->$peso ?> <?php echo i18n::__('k', NULL, 'animal') ?> </td>
+                                 <?php foreach ($objHojaVida as $key): ?>
+                                <td>  <?php echo $key->$peso ?> <?php echo i18n::__('k', NULL, 'animal') ?> </td>
                             </tr>
+                               <?php endforeach; ?>
                         </thead>
                         <tr><td colspan="2">
                                 <div class=" text-center">
+                                           <?php foreach ($objHojaVida as $key): ?>
                                     <?php if ($key->genero_id == 1): ?>
                                     <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL)  => $key->$idAnimalHojaVida )) ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
@@ -108,6 +120,7 @@ use mvc\session\sessionClass as session ?>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="vacunacion<?php echo $countDetale ?>">
                                         <?php echo i18n::__('vacu', null, 'dpVenta') ?>
                                     </div> 
+                                    <?php endforeach; ?>
                                 </div>
                             </td>
                         </tr>
