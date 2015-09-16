@@ -685,6 +685,7 @@ dictionary:
 
     
   ayuda:
+    ingrese:             Ingrese el valor restante para fijar el valor por kilogramo
     atras:               Atrás
     reg:                 Registrar
     compra:              Registrar:A través de esta opción usted podrá aumentar el inventario de vacunas

@@ -16,7 +16,7 @@ use mvc\view\viewClass as view ?>
 <?php $peso = registroPesoTableClass::PESO ?>
 <?php $kilo = registroPesoTableClass::KILO ?>
 <?php $total = registroPesoTableClass::VALOR ?>
-<?php $idAnimalSeleccionado = hojaVidaTableClass::ANIMAL ?>
+
 <?php $countDetale = 1 ?>
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content">
@@ -27,18 +27,18 @@ use mvc\view\viewClass as view ?>
                         <?php echo i18n::__('regPe', NULL, 'dpVenta') ?>
                     </h2>
 <!--                    <h4>  <?php echo i18n::__('identificacion') ?>:
-                     <?php echo $objPeso[0]->$numeroIdenficacion ?> </h4>-->
+                    <?php echo $objPeso[0]->$numeroIdenficacion ?> </h4>-->
                 </div>
             </div>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroPeso') ?>" method="POST">
                 <div class="row">
                     <div class="col-xs-12 text-center">
-                       <!--   <?php foreach ($objPeso as $key): ?>
-                        <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalSeleccionado)) ?>"></a>
-                        <div class="mdl-tooltip mdl-tooltip--large" for="atras">
-                            <?php echo i18n::__('atras', null, 'ayuda') ?>
-                        </div> 
-                        <?php endforeach; ?>-->
+                        <?php foreach ($objPeso as $key): ?>
+                            <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+                            <div class="mdl-tooltip mdl-tooltip--large" for="atras">
+                                <?php echo i18n::__('atras', null, 'ayuda') ?>
+                            </div> 
+                        <?php endforeach; ?>
                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $idAnimalSeleccionado)) ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="new">
@@ -87,15 +87,12 @@ use mvc\view\viewClass as view ?>
                                     <td><?php echo $key->$kilo ?></td>
                                     <td><?php echo $key->$total ?></td>
                                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                    <td class="text-center">
-                                              <a id="mas<?php echo $countDetale ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" href="#modalInsert<?php echo $key->$id ?>"><i class="material-icons">add</i></a>
-                                           <div class="mdl-tooltip mdl-tooltip--large" for="mas<?php echo $countDetale ?>">
+                                        <td class="text-center">
+                                            <a id="kilo<?php echo $countDetale ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" href="#modalInsert<?php echo $key->$id ?>"><i class="material-icons">add</i></a>
+                                            <div class="mdl-tooltip mdl-tooltip--large" for="kilo<?php echo $countDetale ?>">
                                                 <?php echo i18n::__('compra1', null, 'ayuda') ?>
                                             </div>  
-<!--                                            <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editRegistroPeso', array(registroPesoTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
-                                            <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
-                                                <?php echo i18n::__('modificar', null, 'ayuda') ?>
-                                            </div> -->
+        
 
                                         </td>
                                     <?php endif; ?>
@@ -184,27 +181,32 @@ use mvc\view\viewClass as view ?>
     </div>
 </div>
 
-                   <!-- WINDOWS MODAL AUMENTAR VALOR POR KILO -->
-                            <div class="modalmask" id="modalInsert<?php echo $key->id ?>">
-                                <div class="modalbox rotate">
+<!-- WINDOWS MODAL AUMENTAR VALOR POR KILO -->
+<div class="modalmask" id="modalInsert<?php echo $key->$id ?>">
+    <div class="modalbox rotate">
 
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                        <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('reg', null, 'ayuda') ?></h4>
-                                    </div>
-                                    <form id="detailForm" name="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'updateInsertRegistroPeso') ?>">
-                                        <a href="#close" title="Close" class="close">X</a>
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel">  <?php echo i18n::__('reg', null, 'ayuda') ?></h4>
+        </div>
+        <form id="detailForm" name="detailForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'updateInsertRegistroPeso') ?>">
+            <a href="#close" title="Close" class="close">X</a>
 
-                                        <div class="modal-body">
-                                            <input type="hidden" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::ID, true) ?>" value="<?php echo $key->id ?>">
-                                            <?php echo i18n::__('cantidad') ?>
-                                            <input type="number" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true) ?>">    
-                                        </div>
-                                        <div class="modal-footer">
-                                            <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
-                                            <button type="submit" class="btn btn-info active fa fa-plus-square" ><?php echo i18n::__('insert', null, 'dpVenta') ?></button>
+            <div class="modal-body">
+                <font size="2">* <?php echo i18n::__('ingrese', null, 'ayuda') ?></font>
+                <br/>
+                <br/>
+                <input type="hidden" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::ID, true) ?>" value="<?php echo $key->$id ?>">
+                <?php echo i18n::__('valor_kilo') ?>
+                <input type="number" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true) ?>">    
 
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>
+                <button type="submit" class="btn btn-info active fa fa-plus-square" ><?php echo i18n::__('insert', null, 'dpVenta') ?></button>
+
+            </div>
+        </form>
+    </div>
+</div>

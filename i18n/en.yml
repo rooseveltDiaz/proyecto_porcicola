@@ -687,6 +687,7 @@ dictionary:
     succesMasive3:         The selected Invoice Details Sale have been enabled successfully
     
   ayuda:
+    ingrese:               Enter the remaining value to set the value per kilogram
     atras:                 Back
     reg:                   Register
     compra:                Register:Through this option you can increase the inventory of vaccines
