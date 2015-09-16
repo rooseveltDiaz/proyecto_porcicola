@@ -211,6 +211,7 @@ dictionary:
    errorCreate:           Unable to record the basic data Animal try again
     
   animal:
+    qil:                  It has increased the value per kilogram successfully
     hv:                   SHEET OF LIFE
     oblig:                Carefully check the identification number of the animal because once registered can not be changed
     date_birth:           Date of Birth
@@ -687,6 +688,7 @@ dictionary:
     atras:                 Back
     reg:                   Register
     compra:                Register:Through this option you can increase the inventory of vaccines
+    compra1:               Register:Through this option you can increase the value per kilogram of pork
     req:                   Requirements
     sistema:               Management System for Swine Farm
     version:               Version 1.0

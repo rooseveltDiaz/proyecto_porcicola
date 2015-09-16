@@ -193,6 +193,7 @@ dictionary:
    errorCreate:          No se ha podido registrar los datos basicos del animal vuelve a intentarlo
       
   animal:
+    qil:                  Se ha aumentado el valor por kilogramo satisfactoriamente
     hv:                   HOJA DE VIDA
     oblig:                Verifique cuidadosamente el número de identificación  del animal porque una vez registrado no se podrá modificar
     date_birth:           Fecha de nacimiento
@@ -685,6 +686,7 @@ dictionary:
     atras:               Atrás
     reg:                 Registrar
     compra:              Registrar:A través de esta opción usted podrá aumentar el inventario de vacunas
+    compra1:             Registrar:A través de esta opción usted podrá aumentar el valor por kilogramo del cerdo
     req:                 Requerimientos
     se:                  SENA
     sistema:             Sistema de Gestión para una Granja Porcicola

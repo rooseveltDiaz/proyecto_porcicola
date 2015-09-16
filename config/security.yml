@@ -257,6 +257,10 @@ animal:
     security: true
     credentials:
       - [admin, invitado]
+  updateInsertRegistroPeso:
+    security: true
+    credentials:
+      - [admin]
   deleteSelectRegistroPeso:
     security: true
     credentials:

@@ -4,7 +4,7 @@ use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
 <?php $id_registro= registroPesoTableClass::ID ?>
-
+<?php $peso= registroPesoTableClass::PESO ?>
 <?php $empleado = empleadoTableClass::NOMBRE ?>
 
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objRegistroPeso) == TRUE) ? 'updateRegistroPeso' : 'createRegistroPeso')) ?>">
@@ -61,11 +61,7 @@ use mvc\i18n\i18nClass as i18n ?>
                         <th><?php echo i18n::__('weight', null, 'dpVenta') ?>:</th>
                         <th> <input type="number" placeholder="<?php echo i18n::__('weight', null, 'dpVenta') ?>" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::PESO, true) ?>"></th>
                     </tr>
-                      <tr>
-                        <th>  <?php echo i18n::__('valor_kilo') ?>:</th>
-                        <th> <input type="number" placeholder="<?php echo i18n::__('valor_kilo') ?>" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true) ?>"></th>   
-
-                    </tr>
+                 
                                                   <tr>
                         <th colspan="2" >
                     <div class=" text-center">

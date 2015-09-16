@@ -47,21 +47,22 @@ $pdf->SetFont('Arial', '', 12);
 //    $pdf->Cell(0,10,'Imprimiendo línea número '.$i,0,1);
 $pdf->Cell(1);
 //$pdf->Cell(32, 10, utf8_decode('N. Identificación'), 1);
-$pdf->Cell(45, 10, utf8_decode('Fecha de nacimiento'), 1);
-$pdf->Cell(25, 10, utf8_decode('Género'), 1);
-$pdf->Cell(63, 10, utf8_decode('N. Parto'), 1);
-$pdf->Cell(48, 10, utf8_decode('Raza'), 1);
+$pdf->Cell(25, 10, utf8_decode('Animal'), 1);
+$pdf->Cell(38, 10, utf8_decode('Fecha nacimiento'), 1);
+$pdf->Cell(17, 10, utf8_decode('Género'), 1);
+$pdf->Cell(48, 10, utf8_decode('N. Parto'), 1, 0, 'C');
+$pdf->Cell(56, 10, utf8_decode('Raza'), 1, 0, 'C');
 $pdf->Cell(20, 10, utf8_decode('Peso (Kg)'), 1);
 //$pdf->Cell(38, 10, utf8_decode('Lote'), 1);
 
 $pdf->Ln();
 foreach ($objHojaVida as $key) {
     $pdf->Cell(1);
-//    $pdf->Cell(32, 10, utf8_decode($key->$numero), 1);
-    $pdf->Cell(45, 10, date("Y-M-d G:i", strtotime($key->$fecha)), 1, 0, 'C');
-    $pdf->Cell(25, 10, utf8_decode($key->$genero), 1);
-    $pdf->Cell(63, 10, utf8_decode($key->$parto), 1);
-    $pdf->Cell(48, 10, utf8_decode($key->$raza), 1);
+    $pdf->Cell(25, 10, utf8_decode($key->$numero), 1);
+    $pdf->Cell(38, 10, date("Y-M-d G:i", strtotime($key->$fecha)), 1);
+    $pdf->Cell(17, 10, utf8_decode($key->$genero), 1);
+    $pdf->Cell(48, 10, utf8_decode($key->$parto), 1);
+    $pdf->Cell(56, 10, utf8_decode($key->$raza), 1);
     $pdf->Cell(20, 10, utf8_decode($key->$peso), 1);
 
 //    $pdf->Cell(30, 10, utf8_decode($key->numero_parto), 1);

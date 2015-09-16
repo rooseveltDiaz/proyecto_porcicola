@@ -997,6 +997,16 @@ registroPeso_index:
     - model/base/hojaVidaBaseTableClass.php
     - model/hojaVidaTableClass.php
     
+peso_index_insertPeso:
+  url:  /registroPeso/insertValorKilogramo
+  param: { module: animal, action: updateInsertRegistroPeso, format: html }
+  load:
+    - model/base/registroPesoBaseTableClass.php
+    - model/registroPesoTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
 registroPeso_deleteSelect:
   url:    /registroPeso/eliminarSeleccion
   param:  { module: animal, action: deleteSelectRegistroPeso, format: html }
