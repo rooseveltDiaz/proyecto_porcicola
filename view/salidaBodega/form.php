@@ -34,6 +34,11 @@
                 </select>
               </th>   
             </tr>
+              <tr>
+                <th colspan="2">  
+                    <font size="2">* <?php echo i18n::__('ojo', null, 'facturaCompra') ?></font>
+                </th>
+            </tr>
             <tr>
               <th colspan="2">
             <div class="text-center">

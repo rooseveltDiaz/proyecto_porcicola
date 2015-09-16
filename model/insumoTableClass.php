@@ -306,7 +306,7 @@ class insumoTableClass extends insumoBaseTableClass {
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
 //           request::getInstance()->addParamGet(array('id' => $id));
-            routing::getInstance()->forward('insumo', 'edit');
+            routing::getInstance()->forward('insumo', 'index');
         }
     }
 

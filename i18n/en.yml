@@ -167,6 +167,8 @@ dictionary:
     parto:                The vaccine was administered to induce labor
     rutina:               The vaccine was applied for routine monitoring
     nacido:               The vaccine was administered to newborn pigs
+    desteta:              The vaccine was applied to breeding sow at weaning
+    destete:              The vaccine was applied to the pig to be weaned
     valorUni:             Unit value
     edit:                 Edit
     crear:                Create

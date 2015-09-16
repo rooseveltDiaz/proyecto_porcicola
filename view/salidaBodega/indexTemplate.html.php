@@ -68,7 +68,7 @@ use mvc\session\sessionClass as session ?>
                                 <th><input type="checkbox" id="chkAll"></th>
                                    <?php endif; //close if   ?> -->
                                 <th><?php echo i18n::__('numberDoc', null, 'datos') ?> </th>
-                                <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
+                                <th><?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?> </th>
                                 <th><?php echo i18n::__('empleado', null, 'empleado') ?> </th>
                                 <th><?php echo i18n::__('action') ?></th>
                             </tr>
@@ -182,6 +182,10 @@ use mvc\session\sessionClass as session ?>
                                                 <option value="<?php echo $key->id ?>"><?php echo $key->nombre_lote ?></option>
                                             <?php endforeach; //close foreach    ?>
                                         </select>
+                                         <br/>
+                                            <br/>
+                                                    <font size="2">* <?php echo i18n::__('ojo', null, 'facturaCompra') ?></font>
+                                                
                                     </div>
                                     <div class="modal-footer">
                                         <a href="#close2" title="Close" type="button" class="btn btn-default fa fa-times-circle-o close2" data-dismiss="modal">   <?php echo i18n::__('cancel') ?></a>

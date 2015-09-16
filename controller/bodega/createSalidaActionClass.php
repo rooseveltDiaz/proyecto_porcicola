@@ -25,7 +25,7 @@ class createSalidaActionClass extends controllerClass implements controllerActio
 
             $data = array(
                 salidaBodegaTableClass::EMPLEADO => $empleado,
-                salidaBodegaTableClass::FECHA => date("", $timestamp),
+                salidaBodegaTableClass::FECHA => $fecha,
                 salidaBodegaTableClass::ESTADO => true
             );
             salidaBodegaTableClass::insert($data);

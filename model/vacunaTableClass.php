@@ -303,7 +303,7 @@ class vacunaTableClass extends vacunaBaseTableClass {
         if ($flag == true) {
             request::getInstance()->setMethod('GET');
 //            request::getInstance()->addParamGet(array('id' => $id));
-            routing::getInstance()->forward('vacunacion', 'editVacuna');
+            routing::getInstance()->forward('vacunacion', 'indexVacuna');
         }
     }
     

@@ -11,7 +11,7 @@ dictionary:
     personal:             Personal
     fechaFabricacion:     Fecha de Fabricación
     fechaVencimiento:     Fecha de Vencimiento
-    tipoInsumo:          Tipo de Insumo
+    tipoInsumo:           Tipo de Insumo
     valorInsumo:          Valor de Insumo
     nombreInsumo:         Nombre del Insumo
     descripcion:          Descripción
@@ -159,6 +159,8 @@ dictionary:
     parto:                La vacuna fue aplicada para inducir el parto
     rutina:               La vacuna fue aplicada por control rutinario
     nacido:               La vacuna fue aplicada al cerdo recien nacido
+    desteta:              La vacuna fue aplicada a la cerda reproductora por destete
+    destete:              La vacuna fué aplicada al lechón al ser destetado
     valorUni:             Valor unitario
     edit:                 Editar
     crear:                Crear

@@ -171,6 +171,10 @@ x                            </div>
                                             <br/>
                                             <?php echo i18n::__('cantidad') ?>
                                             <input type="number" min="1" required="" name="<?php echo detalleEntradaBodegaTableClass::getNameField(detalleEntradaBodegaTableClass::CANDITDAD, true) ?>">
+                                       <br/>
+                                            <br/>
+                                                    <font size="2">* <?php echo i18n::__('ojo', null, 'facturaCompra') ?></font>
+                                                
                                         </div>
                                     </div>
                                     <div class="modal-footer">

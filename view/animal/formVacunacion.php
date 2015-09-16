@@ -84,7 +84,9 @@ use mvc\i18n\i18nClass as i18n ?>
                                             <option><?php echo i18n::__('gestacion') ?></option>
                                             <option><?php echo i18n::__('parto') ?></option>
                                             <option><?php echo i18n::__('rutina') ?></option>
+                                            <option><?php echo i18n::__('destete') ?></option>
                                             <option><?php echo i18n::__('nacido') ?></option>
+                                            <option><?php echo i18n::__('desteta') ?></option>
                                         </select>
                         </th>   
 
