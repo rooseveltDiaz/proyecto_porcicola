@@ -5,8 +5,8 @@
 <?php $empleado = empleadoTableClass::NOMBRE ?>
 <?php $animal = animalTableClass::NUMERO ?>
 <?php $fecha_monta = gestacionTableClass::FECHA_MONTA ?>
-<?php $fecha_parto = gestacionTableClass::FECHA_PROBABLE_PARTO ?>
 <?php $fecundador = gestacionTableClass::ANIMAL_FECUNDADOR ?>
+
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('animal', ((isset($objGestacion) == TRUE) ? 'updateGestacion' : 'createGestacion')) ?>">
     <?php if (isset($objGestacion)): ?>
     <input type="hidden" name="<?php echo gestacionTableClass::getNameField(gestacionTableClass::ID, TRUE) ?>" value="<?php echo $objGestacion[0]->$id ?>">
@@ -64,14 +64,7 @@
                             <input placeholder="<?php echo ((isset($objGestacion) == FALSE) ? i18n::__('fechaMonta', NULL, 'gestacion') : $objGestacion[0]->$fecha_monta ) ?>" type="date" name="<?php echo gestacionTableClass::getNameField(gestacionTableClass::FECHA_MONTA, true) ?>" >
                         </th>
                     </tr>
-                     <tr>
-                        <th>
-                            <?php echo i18n::__('fechaParto', null, 'gestacion') ?>:
-                        </th>
-                        <th>
-                            <input placeholder="<?php echo ((isset($objGestacion) == FALSE) ? i18n::__('fechaParto', NULL, 'gestacion') : $objGestacion[0]->$fecha_parto ) ?>" type="date" name="<?php echo gestacionTableClass::getNameField(gestacionTableClass::FECHA_PROBABLE_PARTO, true) ?>" >
-                        </th>
-                    </tr>
+
                     <tr>
                         <th>
                             <?php echo i18n::__('fecundador', null, 'gestacion') ?>:

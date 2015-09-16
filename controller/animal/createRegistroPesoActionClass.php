@@ -47,7 +47,7 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
             registroPesoTableClass::FECHA => $fecha,
             registroPesoTableClass::EMPLEADO => $empleado,
             registroPesoTableClass::ANIMAL => $animal,
-            registroPesoTableClass::KILO => 6500,
+            registroPesoTableClass::KILO => 3000,
 //           registroPesoTableClass::VALOR => $valor_total,
             registroPesoTableClass::PESO => $peso
         );

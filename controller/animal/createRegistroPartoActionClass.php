@@ -52,7 +52,7 @@ class createRegistroPartoActionClass extends controllerClass implements controll
 
 
                 if ($objAnimal[0]->numero_parto > 5) {
-                    session::getInstance()->setError("El cerdo ha exedido los partos");
+                    session::getInstance()->setError("Disponible para la Venta");
                     $flag = true;
                     session::getInstance()->setFlash(animalTableClass::getNameField(animalTableClass::PESO, true), true);
                 }

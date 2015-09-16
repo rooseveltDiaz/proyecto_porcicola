@@ -25,7 +25,7 @@ class createGestacionActionClass extends controllerClass implements controllerAc
         $empleado = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::EMPLEADO, true));
         $animal = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::ANIMAL, true));
         $fecha_monta = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::FECHA_MONTA, true));
-        $fecha_parto = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::FECHA_PROBABLE_PARTO, true));
+//        $fecha_parto = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::FECHA_PROBABLE_PARTO, true));
         $fecundador = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::ANIMAL_FECUNDADOR, true));
         //validar si los campos estan vacios
         $datos = array(
@@ -33,11 +33,11 @@ class createGestacionActionClass extends controllerClass implements controllerAc
           $empleado,
           $animal,
           $fecha_monta,
-          $fecha_parto,
+//          $fecha_parto,
           $fecundador
           
         );
-        gestacionTableClass::validate($fecha, $fecha_monta, $fecha_parto);
+        gestacionTableClass::validate($fecha, $fecha_monta);
 
    
         //Insertar la informacion del usuario
@@ -46,7 +46,7 @@ class createGestacionActionClass extends controllerClass implements controllerAc
           gestacionTableClass::EMPLEADO => $empleado,
           gestacionTableClass::ANIMAL => $animal,
           gestacionTableClass::FECHA_MONTA => $fecha_monta,
-          gestacionTableClass::FECHA_PROBABLE_PARTO => $fecha_parto,
+//          gestacionTableClass::FECHA_PROBABLE_PARTO => $fecha_parto,
           gestacionTableClass::ANIMAL_FECUNDADOR => $fecundador
         );
         gestacionTableClass::insert($data);

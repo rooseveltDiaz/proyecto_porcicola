@@ -27,7 +27,7 @@ class reportGestacionActionClass extends controllerClass implements controllerAc
 //                gestacionTableClass::ANIMAL,
 //                gestacionTableClass::EMPLEADO,
                 gestacionTableClass::FECHA_MONTA,
-                gestacionTableClass::FECHA_PROBABLE_PARTO,
+//                gestacionTableClass::FECHA_PROBABLE_PARTO,
 //                gestacionTableClass::ANIMAL_FECUNDADOR
             );
             $fields2 = array(
@@ -49,7 +49,7 @@ class reportGestacionActionClass extends controllerClass implements controllerAc
 //            $this->objEmpleado = empleadoTableClass::getAll($fields2, false);
             $this->objGestacion = gestacionTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', null, null, $where);
             $this->mensaje = 'Registro de Gestacion de la Cerda';
-            $this->numero = animalTableClass::NUMERO;
+      
             $this->defineView('index', 'gestacion', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

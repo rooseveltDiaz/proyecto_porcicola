@@ -15,7 +15,7 @@ use mvc\session\sessionClass as session ?>
 <?php $empleado = gestacionTableClass::EMPLEADO ?>
 <?php $numero = animalTableClass::NUMERO ?>
 <?php $fecha_monta = gestacionTableClass::FECHA_MONTA ?>
-<?php $fecha_parto = gestacionTableClass::FECHA_PROBABLE_PARTO ?>
+
 <?php $fecundador = gestacionTableClass::ANIMAL_FECUNDADOR ?>
 <?php $countDetale = 1 ?>
 
@@ -72,7 +72,7 @@ use mvc\session\sessionClass as session ?>
                             <th><?php echo i18n::__('fechaRegistro', null, 'vacunacion') ?></th>             
                             <th><?php echo i18n::__('hem', null, 'gestacion') ?></th>
                             <th><?php echo i18n::__('fechaMonta', null, 'gestacion') ?></th>
-                            <th><?php echo i18n::__('fechaParto', null, 'gestacion') ?></th>
+<!--                            <th><?php echo i18n::__('fechaParto', null, 'gestacion') ?></th>-->
                             <th><?php echo i18n::__('fecundador', null, 'gestacion') ?></th>
                             <th><?php echo i18n::__('empleado') ?></th>
                             <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
@@ -88,7 +88,7 @@ use mvc\session\sessionClass as session ?>
                                 <td><?php echo $key->$fecha ?></td>                
                                 <td><?php echo $key->$numero ?></td>
                                 <th><?php echo $key->$fecha_monta ?></th>
-                                <td><?php echo $key->$fecha_parto ?></td>
+<!--                                <td><?php echo $key->$fecha_parto ?></td>-->
                                 <td><?php echo $key->$numero ?></td>
                                 <td><?php echo $key->$nombre ?></td>
                                 <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
@@ -187,14 +187,14 @@ use mvc\session\sessionClass as session ?>
                             <input type="date" name="filter[fechaMonta]" >               
                         </th>
                     </tr>
-                    <tr>
+<!--                    <tr>
                         <th>
                             <?php echo i18n::__('fechaParto', null, 'gestacion') ?>:
                         </th>
                         <th>
                             <input type="date" name="filter[fechaParto]" >               
                         </th>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th>
                             <?php echo i18n::__('fecundador', null, 'gestacion') ?>:

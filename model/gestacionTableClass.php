@@ -14,7 +14,7 @@ use mvc\routing\routingClass as routing;
  */
 class gestacionTableClass extends gestacionBaseTableClass {
 
-    public static function validate($fecha, $fecha_monta, $fecha_parto) {
+    public static function validate($fecha, $fecha_monta) {
         $flag = false;
 
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
@@ -25,11 +25,11 @@ class gestacionTableClass extends gestacionBaseTableClass {
             $flag = true;
             session::getInstance()->setFlash(gestacionTableClass::getNameField(gestacionTableClass::FECHA, true), true);
         }
-        if ($fecha_parto < $dateNow) {
-            session::getInstance()->setError(i18n::__(10071, null, 'errors'));
-            $flag = true;
-            session::getInstance()->setFlash(gestacionTableClass::getNameField(gestacionTableClass::FECHA_PROBABLE_PARTO, true), true);
-        }
+//        if ($fecha_parto < $dateNow) {
+//            session::getInstance()->setError(i18n::__(10071, null, 'errors'));
+//            $flag = true;
+//            session::getInstance()->setFlash(gestacionTableClass::getNameField(gestacionTableClass::FECHA_PROBABLE_PARTO, true), true);
+//        }
         if ($fecha_monta > $dateNow) {
             session::getInstance()->setError(i18n::__(10072, null, 'errors'));
             $flag = true;

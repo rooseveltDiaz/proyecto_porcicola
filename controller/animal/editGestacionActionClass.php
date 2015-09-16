@@ -21,7 +21,7 @@ class editGestacionActionClass extends controllerClass implements controllerActi
                 gestacionTableClass::ID,
                 gestacionTableClass::FECHA,
                 gestacionBaseTableClass::FECHA_MONTA,
-                gestacionTableClass::FECHA_PROBABLE_PARTO,
+//                gestacionTableClass::FECHA_PROBABLE_PARTO,
                 gestacionTableClass::EMPLEADO,
                 gestacionTableClass::ANIMAL,
                 gestacionTableClass::ANIMAL_FECUNDADOR

@@ -45,7 +45,7 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
                 $diferencia_dias = intval($segundos / 60 / 60 / 24);
                 $diferencia_dias = $diferencia_dias * -1;
                 if ($diferencia_dias > 116) {
-                    session::getInstance()->setWarning("La cerda ".$key->animal ." no se le realizo el registro de parto");
+                    session::getInstance()->setWarning("A la cerda ".$key->animal ." no se le ha realizado el registro de parto");
                 }
             }
 

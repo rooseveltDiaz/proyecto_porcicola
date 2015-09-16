@@ -27,7 +27,7 @@ use mvc\view\viewClass as view ?>
                         <?php echo i18n::__('regPe', NULL, 'dpVenta') ?>
                     </h2>
 <!--                    <h4>  <?php echo i18n::__('identificacion') ?>:
-                     <?php echo $objPeso[0]->$numeroIdenficacion ?> -->
+                     <?php echo $objPeso[0]->$numeroIdenficacion ?> </h4>-->
                 </div>
             </div>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroPeso') ?>" method="POST">

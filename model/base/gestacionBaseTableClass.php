@@ -13,7 +13,7 @@ class gestacionBaseTableClass extends tableBaseClass {
             $empleado,
             $animal,
             $fecha_monta,
-            $fecha_probable_parto,
+//            $fecha_probable_parto,
             $animal_fecundador;
 
     const ID = 'id';
@@ -21,7 +21,7 @@ class gestacionBaseTableClass extends tableBaseClass {
     const EMPLEADO = 'empleado';
     const ANIMAL = 'animal';
     const FECHA_MONTA = 'fecha_monta';
-    const FECHA_PROBABLE_PARTO = 'fecha_probable_parto';
+//    const FECHA_PROBABLE_PARTO = 'fecha_probable_parto';
     const ANIMAL_FECUNDADOR = 'animal_fecundador';
 
     function getId() {
@@ -44,9 +44,9 @@ class gestacionBaseTableClass extends tableBaseClass {
         return $this->fecha_monta;
     }
 
-    function getFecha_probable_parto() {
-        return $this->fecha_probable_parto;
-    }
+//    function getFecha_probable_parto() {
+//        return $this->fecha_probable_parto;
+//    }
 
     function getAnimal_fecundador() {
         return $this->animal_fecundador;
@@ -72,9 +72,9 @@ class gestacionBaseTableClass extends tableBaseClass {
         $this->fecha_monta = $fecha_monta;
     }
 
-    function setFecha_probable_parto($fecha_probable_parto) {
-        $this->fecha_probable_parto = $fecha_probable_parto;
-    }
+//    function setFecha_probable_parto($fecha_probable_parto) {
+//        $this->fecha_probable_parto = $fecha_probable_parto;
+//    }
 
     function setAnimal_fecundador($animal_fecundador) {
         $this->animal_fecundador = $animal_fecundador;

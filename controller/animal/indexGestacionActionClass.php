@@ -30,9 +30,9 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
                 if (isset($filter['fechaMonta']) and $filter['fechaMonta'] !== null and $filter['fechaMonta'] !== '') {
                     $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::FECHA_MONTA] = $filter['fechaMonta'];
                 }//close if
-                if (isset($filter['fechaParto']) and $filter['fechaParto'] !== null and $filter['fechaParto'] !== '') {
-                    $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::FECHA_PROBABLE_PARTO] = $filter['fechaParto'];
-                }//close if
+//                if (isset($filter['fechaParto']) and $filter['fechaParto'] !== null and $filter['fechaParto'] !== '') {
+//                    $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::FECHA_PROBABLE_PARTO] = $filter['fechaParto'];
+//                }//close if
                 if (isset($filter['macho']) and $filter['macho'] !== null and $filter['macho'] !== '') {
                     $where[gestacionTableClass::ANIMAL_FECUNDADOR] = $filter['macho'];
                 }//close if
@@ -65,7 +65,7 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
 //                gestacionTableClass::EMPLEADO,
 //                gestacionTableClass::ANIMAL,
                 gestacionTableClass::FECHA_MONTA,
-                gestacionTableClass::FECHA_PROBABLE_PARTO,
+//                gestacionTableClass::FECHA_PROBABLE_PARTO,
 //                gestacionTableClass::ANIMAL_FECUNDADOR
             );
             $fields2 = array(

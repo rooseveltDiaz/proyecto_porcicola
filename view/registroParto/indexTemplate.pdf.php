@@ -1,7 +1,7 @@
 <?php
 
 use mvc\routing\routingClass as routing;
-$numero = animalTableClass::NUMERO;
+
 class PDF extends FPDF {
 
 // Pie de página
@@ -33,15 +33,7 @@ $pdf->Cell(40, 10, $mensaje, 0, 0, 'C');
 
 // Salto de línea
 $pdf->Ln(20);
-// Arial bold 15
-$pdf->SetFont('Arial', 'B', 25);
-// Movernos a la derecha
-$pdf->Cell(80);
-// Título
-$pdf->Cell(40, 10, $numero, 0, 0, 'C');
 
-// Salto de línea
-$pdf->Ln(20);
 $pdf->SetFont('Arial', '', 10);
 $pdf->Cell(20);
 //for($i=1;$i<=40;$i++)
