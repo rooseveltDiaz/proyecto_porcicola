@@ -83,7 +83,7 @@ use mvc\view\viewClass as view ?>
                                     <td><?php echo $key->$fecha ?></td>
     <!--                                    <td><?php echo $key->$numeroIdenficacion ?></td>-->
                                     <td><?php echo $key->$empleado ?></td>
-                                    <td><?php echo $key->$peso ?></td>
+                                    <td><?php echo $key->$peso ?> Kg.</td>
                                     <td><?php echo $key->$kilo ?></td>
                                     <td><?php echo $key->$total ?></td>
                                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
