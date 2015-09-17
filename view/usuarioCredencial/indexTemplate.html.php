@@ -56,7 +56,7 @@ use mvc\session\sessionClass as session ?>
                                     <td><?php echo $key->$usuario_id ?></td>
                                     <td><?php echo $key->$credencial ?></td>
                                     <td>
-                                           <?php if ($key->$id != 2): ?>
+                                           <?php if ($key->$id != 1): ?>
                                         <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'editUsuCredencial', array(usuarioCredencialTableClass::ID => usuarioCredencialTableClass::ID)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                 <?php echo i18n::__('modificar', null, 'ayuda') ?>
