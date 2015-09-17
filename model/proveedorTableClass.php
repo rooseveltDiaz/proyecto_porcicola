@@ -17,7 +17,7 @@ class proveedorTableClass extends proveedorBaseTableClass {
     public static function validateCreate($nombre_completo, $direccion, $numero_documento, $telefono) {
         $flag = false;
         $patron = "^[a-zA-Z0-9]{3,20}$";
-
+      $patternCs = "^[a-zA-Z0-9[:space:]]*$";
         if (empty($numero_documento)) {
             session::getInstance()->setError('vacio el campo num');
             $flag = true;
@@ -41,7 +41,7 @@ class proveedorTableClass extends proveedorBaseTableClass {
             session::getInstance()->setError('Minimo dos caracteres');
             $flag = true;
             session::getInstance()->setFlash(proveedorTableClass::getNameField(proveedorTableClass::NOMBRE, true), true);
-        } else if (!ereg($patron, $nombre_completo)) {
+        } else if (!ereg($patternCs, $nombre_completo)) {
             session::getInstance()->setError('No se permiten caracteres especiales');
             $flag = true;
             session::getInstance()->setFirstCall(proveedorTableClass::getNameField(proveedorTableClass::NOMBRE, true), true);

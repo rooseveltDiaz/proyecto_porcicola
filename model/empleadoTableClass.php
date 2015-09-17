@@ -18,6 +18,7 @@ class empleadoTableClass extends empleadoBaseTableClass {
         $flag = false;
 
         $patron = "^[a-zA-Z0-9]{3,20}$";
+              $patternCs = "^[a-zA-Z0-9[:space:]]*$";
 
         if (empty($numero_documento)) {
             session::getInstance()->setError('el campo número de documento no puede ser vacio');
@@ -48,7 +49,7 @@ class empleadoTableClass extends empleadoBaseTableClass {
             session::getInstance()->setError('Minimo dos caracteres en el nombre');
             $flag = true;
             session::getInstance()->setFlash(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);
-        } else if (!ereg($patron, $nombre_completo)) {
+        } else if (!ereg($patternCs, $nombre_completo)) {
             session::getInstance()->setError('No se permiten caracteres especiales en el nombre');
             $flag = true;
             session::getInstance()->setFirstCall(empleadoTableClass::getNameField(empleadoTableClass::NOMBRE, true), true);

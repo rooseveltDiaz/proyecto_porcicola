@@ -18,6 +18,7 @@ class clienteTableClass extends clienteBaseTableClass {
         $flag = false;
 
         $patron = "^[a-zA-Z0-9]{3,20}$";
+        $patternCs = "^[a-zA-Z0-9[:space:]]*$";
 
         if (empty($numero_documento)) {
             session::getInstance()->setError('vacio el campo num');
@@ -42,7 +43,7 @@ class clienteTableClass extends clienteBaseTableClass {
             session::getInstance()->setError('Minimo dos caracteres');
             $flag = true;
             session::getInstance()->setFlash(clienteTableClass::getNameField(clienteTableClass::NOMBRE, true), true);
-        } else if (!ereg($patron, $nombre_completo)) {
+        } else if (!ereg($patternCs, $nombre_completo)) {
             session::getInstance()->setError('No se permiten caracteres especiales');
             $flag = true;
             session::getInstance()->setFirstCall(clienteTableClass::getNameField(clienteTableClass::NOMBRE, true), true);

@@ -20,7 +20,7 @@ class insumoTableClass extends insumoBaseTableClass {
         $dateNow = date("Y-m-d", strtotime("now"));
         $pattern = "/^((19|20)?[0-9]{2})[\/|-](0?[1-9]|[1][012])[\/|-](0?[1-9]|[12][0-9]|3[01])$/";
         $patternC = "^[a-zA-Z0-9]{3,20}$";
-       $patternCs = "^[a-zA-Z0-9[:space:]]*$";
+        $patternCs = "^[a-zA-Z0-9[:space:]]*$";
 
         if ($cantidad < 0) {
             session::getInstance()->setError(i18n::__(10081, null, 'errors'));
