@@ -14,6 +14,7 @@ use mvc\session\sessionClass as session ?>
 <?php $animal = gestacionTableClass::ANIMAL ?>
 <?php $empleado = gestacionTableClass::EMPLEADO ?>
 <?php $numero = animalTableClass::NUMERO ?>
+<?php $macho = animalTableClass::NUMERO ?>
 <?php $fecha_monta = gestacionTableClass::FECHA_MONTA ?>
 
 <?php $fecundador = gestacionTableClass::ANIMAL_FECUNDADOR ?>
@@ -75,9 +76,9 @@ use mvc\session\sessionClass as session ?>
 <!--                            <th><?php echo i18n::__('fechaParto', null, 'gestacion') ?></th>-->
                             <th><?php echo i18n::__('fecundador', null, 'gestacion') ?></th>
                             <th><?php echo i18n::__('empleado') ?></th>
-                            <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                          <!--  <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                 <th><?php echo i18n::__('action') ?></th>
-                            <?php endif; ?>
+                            <?php endif; ?>-->
                         </tr>
                     </thead>
                     <tbody>
@@ -88,21 +89,20 @@ use mvc\session\sessionClass as session ?>
                                 <td><?php echo $key->$fecha ?></td>                
                                 <td><?php echo $key->$numero ?></td>
                                 <th><?php echo $key->$fecha_monta ?></th>
-<!--                                <td><?php echo $key->$fecha_parto ?></td>-->
-                                <td><?php echo $key->$numero ?></td>
+                                <td><?php echo $key->$macho ?></td>
                                 <td><?php echo $key->$nombre ?></td>
-                                <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                          <!--        <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                     <td>
                                         <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editGestacion', array(gestacionTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                             <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                         </div> 
-        <!--                                        <a id="eliminar<?php echo $countDetale ?>"  href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
+                                              <a id="eliminar<?php echo $countDetale ?>"  href="#myModalDelete<?php echo $key->$id ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">delete</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="eliminar<?php echo $countDetale ?>">
                                         <?php echo i18n::__('eliminar', null, 'ayuda') ?>
-                                        </div> -->
+                                        </div> 
                                     </td>
-                                <?php endif; ?>
+                                <?php endif; ?>-->
                             </tr>
 
                             <!-- WINDOWS MODAL DELETE -->

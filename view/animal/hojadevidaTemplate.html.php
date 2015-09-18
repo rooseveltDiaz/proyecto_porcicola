@@ -103,6 +103,7 @@ use mvc\session\sessionClass as session ?>
                                 <div class=" text-center">
                                            <?php foreach ($objHojaVida as $key): ?>
                                     <?php if ($key->genero_id == 1): ?>
+                                     
                                     <a id="gestacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexGestacion', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL)  => $key->$idAnimalHojaVida )) ?>" class="btn btn-lg glyphicon glyphicon-calendar " > </a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="gestacion<?php echo $countDetale ?>">
                                             <?php echo i18n::__('gestacion', null, 'dpVenta') ?>
@@ -112,6 +113,7 @@ use mvc\session\sessionClass as session ?>
                                             <?php echo i18n::__('parto', null, 'dpVenta') ?>
                                         </div> 
                                     <?php endif; ?>
+                                    
                                     <a id="peso<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalHojaVida)) ?>" class="btn btn-lg glyphicon glyphicon-file" > </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="peso<?php echo $countDetale ?>">
                                         <?php echo i18n::__('repeso', null, 'dpVenta') ?>

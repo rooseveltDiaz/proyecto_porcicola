@@ -615,7 +615,7 @@ dictionary:
    succesUpdate:          The weight record has been modified successfully
    errorCreate1:          Could not create the record weight try again
    vaT:                   Total Value
-   regPe:                 Record daily weight
+   regPe:                 Record weight
    gestacion:             View:Displays the Register of Animal Gestation          
    parto:                 View:Displays the Animal Birth Registration
    repeso:                View:Displays the Register of Animal Weight

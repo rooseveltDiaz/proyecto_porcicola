@@ -612,7 +612,7 @@ dictionary:
    succesUpdate2:         El Registro de Vacunación se ha modificado de forma exitosa
    errorCreate2:          No se ha podido crear el registro de vacunación vuelve a intentarlo
    vaT:                   Valor Total
-   regPe:                 Registro de Peso Diario
+   regPe:                 Registro de Peso
    gestacion:             Ver:Visualiza el Registro de Gestación del Animal            
    parto:                 Ver:Visualiza el Registro de Parto del Animal
    repeso:                Ver:Visualiza el Registro de Peso del Animal

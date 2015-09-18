@@ -40,7 +40,7 @@
                             </select>
                         </th>
                     </tr>
-                     <tr>
+<!--                     <tr>
                         <th>
                             <?php echo i18n::__('hem', null, 'gestacion') ?>:
                         </th>
@@ -54,7 +54,7 @@
                                 <?php endforeach; ?>
                             </select>
                         </th>
-                    </tr>
+                    </tr>-->
 
                      <tr>
                         <th>
