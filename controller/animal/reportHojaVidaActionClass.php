@@ -26,13 +26,14 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
                 $report = request::getInstance()->getPost('filter');
 
                 if (isset($report['numero']) and $report['numero'] !== null and $report['numero'] !== '') {
-                    $where[hojaVidaTableClass::getNameTable() . '.' . hojaVidaTableClass::ANIMAL] = $report['numero'];
+                    $where[hojaVidaTableClass::getNameTable() . '.' . hojaVidaTableClass::NUMERO] = $report['numero'];
                 }//close if
 
              
             }//close if
       
-            
+//            print_r($where);
+//            exit();
             $fields = array(
             hojaVidaTableClass::ANIMAL,
             hojaVidaTableClass::FECHA_NACIMIENTO,
@@ -65,7 +66,7 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
             hojaVidaTableClass::ID
             );
 //            $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));
-            $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', null, null, null);
+            $this->objHojaVida = hojaVidaTableClass::getAllJoin($fields, $fields1, $fields2, $fields3, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', null, null,  $where);
             $this->mensaje = 'HOJA DE VIDA DEL CERDO';
             $this->numero = animalTableClass::NUMERO;
             $this->defineView('hojadevida', 'animal', session::getInstance()->getFormatOutput());

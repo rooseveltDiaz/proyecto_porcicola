@@ -159,7 +159,7 @@ use mvc\session\sessionClass as session ?>
                                     ...
                                 </option>
                                 <?php foreach ($objAnimal as $key): ?>
-                                    <option value="<?php echo $key->id ?>">
+                                    <option value="<?php echo $key->numero_identificacion ?>">
                                         <?php echo $key->numero_identificacion ?>
                                     </option>
                                 <?php endforeach; //close foreach   ?>
