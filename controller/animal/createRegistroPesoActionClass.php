@@ -50,17 +50,17 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
                 );
                 registroPesoTableClass::insert($dataPeso);
 
-                $fieldsAnimal = array(
-                    hojaVidaTableClass::NUMERO,
-                    hojaVidaTableClass::PESO,
-                );
-                $whereAnimal = array(
-                    hojaVidaTableClass::ANIMAL => $animal
-                );
+//                $fieldsAnimal = array(
+//                    hojaVidaTableClass::NUMERO,
+//                    hojaVidaTableClass::PESO,
+//                );
+//                $whereAnimal = array(
+//                    hojaVidaTableClass::ANIMAL => $animal
+//                );
 
-                $objAnimalHojaDeVida = hojaVidaTableClass::getAll($fieldsAnimal, FALSE, NULL, NULL, NULL, NULL, $whereAnimal);
+//                $objAnimalHojaDeVida = hojaVidaTableClass::getAll($fieldsAnimal, FALSE, NULL, NULL, NULL, NULL, $whereAnimal);
 
-                $peso = $peso + $objAnimalHojaDeVida[0]->peso_animal;
+//                $peso = $peso + $objAnimalHojaDeVida[0]->peso_animal;
 //                exit();
                 // se pasa los datos del ID animal para Actualizar la hoja de vida
                 $data = array(
