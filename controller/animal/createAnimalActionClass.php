@@ -49,7 +49,7 @@ class createAnimalActionClass extends controllerClass implements controllerActio
             //Insertar la informacion del usuario
             $data = array(
                
-                animalTableClass::LOTE_ID => 8,
+                animalTableClass::LOTE_ID => 2,
                 animalTableClass::NUMERO => $numeroIdentificacion
             );
             animalTableClass::insert($data);
