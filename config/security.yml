@@ -260,7 +260,7 @@ animal:
   updateInsertRegistroPeso:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   deleteSelectRegistroPeso:
     security: true
     credentials:
@@ -280,11 +280,11 @@ animal:
   editRegistroPeso:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   updateRegistroPeso:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   indexVacunacion:
     security: true
     credentials:
@@ -300,11 +300,11 @@ animal:
   editVacunacion:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   updateVacunacion:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   deleteVacunacion:
     security: true
     credentials:
@@ -336,11 +336,11 @@ animal:
   editGestacion:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   updateGestacion:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   deleteGestacion:
     security: true
     credentials:
@@ -368,11 +368,11 @@ animal:
   editRegistroParto:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   updateRegistroParto:
     security: true
     credentials:
-      - [admin]
+      - [ ]
   deleteRegistroParto:
     security: true
     credentials:
@@ -786,7 +786,7 @@ factura:
   reportDetalleFacturaCompra:
     security: true
     credentials:
-      - [admin, invitado]
+      - [ ]
   deleteSelectFacturaCompra:
     security: true
     credentials:
@@ -834,7 +834,7 @@ factura:
   reportDetalleFacturaVenta:
     security: true
     credentials:
-      - [admin, invitado]
+      - [ ]
   deleteSelectFacturaVenta:
     security: true
     credentials:
@@ -854,11 +854,11 @@ factura:
   viewFacturaVenta:
     security: true
     credentials:
-      - [admin, invitado]
+      - [ ]
   createDetalleFacturaVenta:
     security: true
     credentials:
-      - [admin]
+      - [ ]
       
 bodega:
   indexEntrada:
@@ -908,7 +908,7 @@ bodega:
   reportDetalleEntradaBodega:
     security: true
     credentials:
-      - [admin, invitado]
+      - [ ]
   createDetalleEntrada:
     security: true
     credentials:
@@ -972,7 +972,7 @@ bodega:
   reportDetalleSalidaBodega:
     security: true
     credentials:
-      - [admin, invitado]
+      - [ ]
   createDetalleSalida:
     security: true
     credentials:
