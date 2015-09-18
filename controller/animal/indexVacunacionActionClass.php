@@ -17,6 +17,8 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
     public function execute() {
         try {
             $where = null;
+            $idHojaVida = request::getInstance()->getGet(hojaVidaBaseTableClass::getNameField(hojaVidaTableClass::ANIMAL, TRUE));
+
       if (request::getInstance()->hasPost('filter')) {
 
                 $filter = request::getInstance()->getPost('filter');
@@ -103,7 +105,7 @@ class indexVacunacionActionClass extends controllerClass implements controllerAc
             } else {
                 $this->page = $page;
             }
-
+            $this->idHojaVida = $idHojaVida;
             $this->objCarne = carneVacunasTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
 //$this->page = request::getInstance()->getGet('page');

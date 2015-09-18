@@ -118,11 +118,16 @@ class viewFacturaVentaActionClass extends controllerClass implements controllerA
                 
                     
                 );
+                $fieldsFactura = array (
+                procesoVentaTableClass::ID  
+                );
                
               
 
                 $fJoinDetalle = detalleProcesoVentaTableClass::ANIMAL;
                 $fJoinAnimal = animalTableClass::ID;
+                $fFactura = detalleProcesoVentaTableClass::VENTA;
+                $fVenta = procesoVentaTableClass::ID;
 
                 $whereDetalle = array(
                     detalleProcesoVentaTableClass::VENTA => $idFactura
@@ -132,7 +137,7 @@ class viewFacturaVentaActionClass extends controllerClass implements controllerA
                 );
 
                 $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, null, null, null, null, $whereVenta);
-                $this->objDetalleFacturaVenta = detalleProcesoVentaTableClass::getAllJoin($fieldsDetalle, $fieldsAnimal, null , null, $fJoinDetalle, $fJoinAnimal, null, null, null, null, false, $orderByDetalle, 'ASC', 10, $page, $whereDetalle);
+                $this->objDetalleFacturaVenta = detalleProcesoVentaTableClass::getAllJoin($fieldsDetalle, $fieldsAnimal, $fieldsFactura , null, $fJoinDetalle, $fJoinAnimal, $fFactura, $fVenta, null, null, false, $orderByDetalle, 'ASC', 10, $page, $whereDetalle);
             
                 log::register(i18n::__('ver1', null, 'facturaVenta'), detalleProcesoVentaTableClass::getNameTable());
                 $this->defineView('view', 'facturaVenta', session::getInstance()->getFormatOutput());

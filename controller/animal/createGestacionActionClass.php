@@ -19,6 +19,7 @@ class createGestacionActionClass extends controllerClass implements controllerAc
 
   public function execute() {
     try {
+       
       if (request::getInstance()->isMethod('POST')) {
         // DATOS DE ANIMAL
         $fecha = request::getInstance()->getPost(gestacionTableClass::getNameField(gestacionTableClass::FECHA, true));
@@ -49,6 +50,7 @@ class createGestacionActionClass extends controllerClass implements controllerAc
 //          gestacionTableClass::FECHA_PROBABLE_PARTO => $fecha_parto,
           gestacionTableClass::ANIMAL_FECUNDADOR => $fecundador
         );
+      
         gestacionTableClass::insert($data);
         session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'gestacion'));
         log::register(i18n::__('create'), animalTableClass::getNameTable());

@@ -17,5 +17,5 @@
 </div>
 
 <?php view::includeHandlerMessage() ?>
-<?php view::includePartial('facturaVenta/formFacturaVenta', array('objEmpleado'=>$objEmpleado, 'objCliente'=>$objCliente)) ?>
+<?php view::includePartial('facturaVenta/formFacturaVenta', array('objEmpleado'=>$objEmpleado, 'objCliente'=>$objCliente, 'objAnimal' => $objAnimal)) ?>
 

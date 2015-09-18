@@ -78,6 +78,10 @@ class procesoVentaTableClass extends procesoVentaBaseTableClass {
         }
     }
   
-
+    public function validateInventario($objAnimal)
+            {
+        $flag= false;
+        
+    }
 }
 

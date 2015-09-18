@@ -24,44 +24,48 @@ class createDetalleFacturaVentaActionClass extends controllerClass implements co
 
                 $id_venta = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VENTA, true));
                 $animal = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::ANIMAL, true));
-                $peso = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true));
+//                $id = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::ID, true));
                 $valor = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VALOR, true));
-
-//                  detalleProcesoVentaTableClass::validateCreate($animal, $valor);
-                $subtotal = $valor * $peso;
+                  $peso = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true));
+//                $venta = request::getInstance()->getPost(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VENTA, true));
+    //        echo $id;       
+    ////                detalleProcesoVentaTableClass::validateCreate($animal, $valor);
+    //exit(); 
+                  $subtotal = $peso * $valor;
+                          
                 $data = array(
                     detalleProcesoVentaTableClass::VENTA => $id_venta,
                     detalleProcesoVentaTableClass::ANIMAL => $animal,
-                    detalleProcesoVentaTableClass::PESO => $peso,
                     detalleProcesoVentaTableClass::VALOR => $valor,
-                    detalleProcesoVentaTableClass::SUBTOTAL => $subtotal
+                    detalleProcesoVentaTableClass::PESO => $peso,
+//                    detalleProcesoVentaTableClass::ID => $id,
+                    detalleProcesoVentaTableClass::SUBTOTAL =>  $subtotal
                 );
-
-
 
                 //Manejo de inventario
-                $fieldsAnimal = array(
-                    animalTableClass::NUMERO,
-                    animalTableClass::ID
-                );
-                $whereInventario = array(
-                    animalTableClass::ID => $animal
-                );
-                $objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $whereInventario);
-                detalleProcesoVentaTableClass::validateInventario($objAnimal[0]->id);
+//                $fieldsAnimal = array(
+//                    animalTableClass::NUMERO,
+//                    animalTableClass::ID
+//                );
+//                $whereInventario = array(
+//                    animalTableClass::ID => $animal
+//                );
+//                $objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, null);
+           
+//        detalleProcesoVentaTableClass::validateInventario($objAnimal[0]->id);
 
-                $fieldsAnimalDelete = array(
-                    animalTableClass::ID => $objAnimal[0]->id
-                );
-                animalTableClass::delete($fieldsAnimalDelete, true);
+//                $fieldsAnimalDelete = array(
+//                    animalTableClass::ID => $objAnimal[0]->id
+//                );
+//                animalTableClass::delete($fieldsAnimalDelete, true);
 
                 detalleProcesoVentaTableClass::insert($data);
                 session::getInstance()->setSuccess(i18n::__('succesCreate1', null, 'facturaVenta'));
                 log::register(i18n::__('create'), detalleProcesoVentaTableClass::getNameTable());
                 routing::getInstance()->redirect('factura', 'indexFacturaVenta');
             } else {
-                session::getInstance()->setError('El Detalle de Factura Venta no pudo ser insertado');
-                routing::getInstance()->redirect('factura', 'indexFacturaVenta');
+                session::getInstance()->setError('El Detalle de Vacunación no pudo ser insertado');
+                routing::getInstance()->redirect('vacunacion', 'indexVacunacion');
             }//close if
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

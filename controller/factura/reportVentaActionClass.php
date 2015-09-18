@@ -34,7 +34,13 @@ $where = null;
                 }
 
                 if (isset($report['proveedor']) and $report['proveedor'] !== null and $report['proveedor'] !== '') {
-                    $where [procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::PROVEEDOR_ID] = $report['proveedor'];
+                    $where [procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::CLIENTE_ID] = $report['proveedor'];
+                }
+                     if (isset($report['peso']) and $report['peso'] !== null and $report['peso'] !== '') {
+                    $where [procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::PESO] = $report['peso'];
+                }
+                     if (isset($report['animal']) and $report['animal'] !== null and $report['animal'] !== '') {
+                    $where [procesoVentaTableClass::getNameTable() . '.' . procesoVentaTableClass::ANIMAL] = $report['animal'];
                 }
 
              } 

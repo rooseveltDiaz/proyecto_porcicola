@@ -17,6 +17,11 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
     public function execute() {
         try {
             $where = null;
+            
+            $idHojaVida = request::getInstance()->getGet(hojaVidaBaseTableClass::getNameField(hojaVidaTableClass::ANIMAL, TRUE));
+            if(isset($idHojaVida)){
+                $where[registroPesoTableClass::ANIMAL] = $idHojaVida;
+            }
             if (request::getInstance()->hasPost('filter')) {
 
                 $filter = request::getInstance()->getPost('filter');
@@ -95,16 +100,16 @@ class indexRegistroPesoActionClass extends controllerClass implements controller
             );
 
             $lines = config::getRowGrid();
-            $this->cntPages = registroPesoTableClass::getAllCount($f, true, $lines);
+            $this->cntPages = registroPesoTableClass::getAllCount($f, false, $lines);
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
             } else {
                 $this->page = $page;
             }
 
-
+            $this->idHojaVida = $idHojaVida;
             $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL,true));
-            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin3, $fJoin4, $fJoin1, $fJoin2, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+            $this->objPeso = registroPesoTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin3, $fJoin4, $fJoin1, $fJoin2, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
             //$this->page = request::getInstance()->getGet('page');
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);

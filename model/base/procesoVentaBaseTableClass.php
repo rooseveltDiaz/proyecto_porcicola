@@ -12,6 +12,11 @@ class procesoVentaBaseTableClass extends tableBaseClass {
     private $id,
             $fecha_hora_venta,
             $usuario_id,
+            $empleado_id,
+            $peso,
+            $valor,
+            $subtotal,
+            $animal_id,
             $cliente_id;
 
     const ID = 'id';
@@ -19,8 +24,44 @@ class procesoVentaBaseTableClass extends tableBaseClass {
     const EMPLEADO_ID = 'empleado_id';
     const CLIENTE_ID = 'cliente_id';
     const ACTIVA = 'estado';
+    const PESO = 'peso';
+    const VALOR = 'valor';
+    const SUBTOTAL = 'subtotal';
+    const ANIMAL = 'animal_id';
+    
+    function getPeso() {
+        return $this->peso;
+    }
 
-    function getId() {
+    function getValor() {
+        return $this->valor;
+    }
+
+    function getSubtotal() {
+        return $this->subtotal;
+    }
+
+    function getAnimal_id() {
+        return $this->animal_id;
+    }
+
+    function setPeso($peso) {
+        $this->peso = $peso;
+    }
+
+    function setValor($valor) {
+        $this->valor = $valor;
+    }
+
+    function setSubtotal($subtotal) {
+        $this->subtotal = $subtotal;
+    }
+
+    function setAnimal_id($animal_id) {
+        $this->animal_id = $animal_id;
+    }
+
+        function getId() {
         return $this->id;
     }
 
@@ -82,7 +123,7 @@ class procesoVentaBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable4() {
-        return null;
+        return 'animal';
     }
 
     /**

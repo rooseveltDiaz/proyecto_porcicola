@@ -106,7 +106,7 @@ class indexAnimalActionClass extends controllerClass implements controllerAction
 
             $lines = config::getRowGrid();
             $this->cntPages = animalTableClass::getAllCount($f, true, $lines, $where);
-            // $this->page = request::getInstance()->getGet('page');
+             $this->page = request::getInstance()->getGet('page');
             $this->objGenero = generoTableClass::getAll($fieldsGenero, false);
             $this->objRaza = razaTableClass::getAll($fieldsRaza, true);
             $this->objLote = loteTableClass::getAll($fieldsLote, true);

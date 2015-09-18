@@ -31,7 +31,7 @@ use mvc\session\sessionClass as session ?>
             </div>
             <div class="row">
                 <div class="col-xs-12 text-center">
-                    <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
+                    <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida',array(hojaVidaTableClass::ID =>$idHojaVida)) ?>"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="atras">
                         <?php echo i18n::__('atras', null, 'ayuda') ?>
                     </div> 
@@ -51,10 +51,10 @@ use mvc\session\sessionClass as session ?>
                         <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                     </div>
 
-                    <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
+<!--                    <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-download"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="report">
                         <?php echo i18n::__('reporte', null, 'ayuda') ?>
-                    </div>
+                    </div>-->
                     <!--             <a id="deleteMasa" href="#myModalEliminarMasivo" class="btn btn-default btn-sm fa fa-trash-o" onclick="borrarSeleccion()"></a>
                                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>

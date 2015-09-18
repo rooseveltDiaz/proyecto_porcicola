@@ -2676,6 +2676,8 @@ proceso_venta_nuevo:
     - model/empleadoTableClass.php
     - model/base/clienteBaseTableClass.php
     - model/clienteTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
 
 proceso_venta_crear:
   url:      /proceso_venta/crear
@@ -2684,6 +2686,8 @@ proceso_venta_crear:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
     - model/base/procesoVentaBaseTableClass.php
     - model/procesoVentaTableClass.php
     - model/base/empleadoBaseTableClass.php

@@ -26,12 +26,6 @@ class insertFacturaVentaActionClass extends controllerClass implements controlle
                 clienteTableClass::NOMBRE
             );
             $this->objCliente = clienteTableClass::getAll($fieldsCliente, false);
-            
-              $fieldsAnimal = array(
-              animalTableClass::ID,
-              animalTableClass::NUMERO
-            );
-            $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
 
             $this->defineView('insert', 'facturaVenta', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

@@ -32,13 +32,13 @@ use mvc\view\viewClass as view ?>
             </div>
             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'deleteSelectRegistroPeso') ?>" method="POST">
                 <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <?php foreach ($objPeso as $key): ?>
-                            <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida') ?>"></a>
-                            <div class="mdl-tooltip mdl-tooltip--large" for="atras">
-                                <?php echo i18n::__('atras', null, 'ayuda') ?>
+                     <div class="col-xs-12 text-center">
+                <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida',array(hojaVidaTableClass::ID =>$idHojaVida)) ?>"></a> 
+                <div class="mdl-tooltip mdl-tooltip--large" for="atras">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        
                             </div> 
-                        <?php endforeach; ?>
+                       
                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                             <a id="new" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'insertRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $idAnimalSeleccionado)) ?>" class="btn btn-sm btn-default active fa fa-plus-square"></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="new">
@@ -54,10 +54,10 @@ use mvc\view\viewClass as view ?>
                             <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                         </div> 
 
-                        <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
+<!--                        <a id="report" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="report">
                             <?php echo i18n::__('reporte', null, 'ayuda') ?>
-                        </div>
+                        </div>-->
 
                     </div>
                 </div>
@@ -72,9 +72,9 @@ use mvc\view\viewClass as view ?>
                                 <th><?php echo i18n::__('peso', null, 'animal') ?></th>
                                 <th><?php echo i18n::__('valor_kilo') ?></th>
                                 <th><?php echo i18n::__('vaT', null, 'dpVenta') ?></th>
-                                <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                           <!--     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                     <th><?php echo i18n::__('action') ?></th>
-                                <?php endif; ?>
+                                <?php endif; ?>-->
                             </tr>
                         </thead>   
                         <tbody>
@@ -83,10 +83,10 @@ use mvc\view\viewClass as view ?>
                                     <td><?php echo $key->$fecha ?></td>
     <!--                                    <td><?php echo $key->$numeroIdenficacion ?></td>-->
                                     <td><?php echo $key->$empleado ?></td>
-                                    <td><?php echo $key->$peso ?> Kg.</td>
+                                    <td><?php echo $key->$peso ?></td>
                                     <td><?php echo $key->$kilo ?></td>
                                     <td><?php echo $key->$total ?></td>
-                                    <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                             <!--       <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                         <td class="text-center">
                                             <a id="kilo<?php echo $countDetale ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored" href="#modalInsert<?php echo $key->$id ?>"><i class="material-icons">add</i></a>
                                             <div class="mdl-tooltip mdl-tooltip--large" for="kilo<?php echo $countDetale ?>">
@@ -95,7 +95,7 @@ use mvc\view\viewClass as view ?>
         
 
                                         </td>
-                                    <?php endif; ?>
+                                    <?php endif; ?>-->
                                 </tr>
 
 

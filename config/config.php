@@ -1,7 +1,7 @@
 <?php
 use mvc\config\myConfigClass as config;
 use mvc\session\sessionClass as session;
-config::setRowGrid(20);
+config::setRowGrid(10);
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
 config::setDbName('granja_porcicola_final');

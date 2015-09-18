@@ -16,7 +16,11 @@ use mvc\session\sessionClass as session ?>
 <?php $empleado = empleadoTableClass::NOMBRE ?>
 <?php $cliente = clienteTableClass::NOMBRE ?>
 <?php $estado = procesoVentaTableClass::ACTIVA ?>
-
+<?php $idAnimal = animalTableClass::ID ?>
+<?php $numAnimal = animalTableClass::NUMERO ?>
+<?php $peso = procesoVentaTableClass::PESO ?>
+<?php $valor = procesoVentaTableClass::VALOR ?>
+<?php $subtotal = procesoVentaTableClass::SUBTOTAL ?>
 
 <?php $countDetale = 1 ?>
 
@@ -48,7 +52,7 @@ use mvc\session\sessionClass as session ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                         <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                     </div>
-                       <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+                    <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
                         <?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
                     </div>
@@ -60,13 +64,17 @@ use mvc\session\sessionClass as session ?>
                     <thead>
                         <tr class="success">
                             <!--       <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                           <th><input type="checkbox" id="chkAll"></th>
+                                               <th><input type="checkbox" id="chkAll"></th>
                             <?php endif; ?> -->
 
                             <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
                             <th><?php echo i18n::__('empleado') ?> </th>
                             <th><?php echo i18n::__('cliente', null, 'cliente') ?> </th>
-                            <th><?php echo i18n::__('action') ?></th>
+                               <th><?php echo i18n::__('identificacion') ?> </th>
+                              <th><?php echo i18n::__('kg', null, 'animal') ?> </th>
+                                <th><?php echo i18n::__('valor_kilo') ?> </th>
+                                  <th><?php echo i18n::__('subt') ?> </th>
+<!--                            <th><?php echo i18n::__('action') ?></th>-->
 
                         </tr>
                     </thead>
@@ -74,18 +82,23 @@ use mvc\session\sessionClass as session ?>
                         <?php foreach ($objFacturaVenta as $key): ?>
                             <tr> 
                                 <!--     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                             <td>
+                                                 <td>
                                     <?php if ($key->$estado == true): ?> 
-                                                       
+                                                               
                                     <?php endif; //close if   ?>
-                                             </td>
+                                                 </td>
                                 <?php endif; //close if   ?> -->
                  <!--                <td><?php echo $key->$id . ' ' . (($key->$estado == true) ? '' : 'Factura inhabilitada') ?></td>-->
 
                                 <td><?php echo date("Y-M-d G:i", strtotime($key->$fecha)) ?></td>
                                 <td><?php echo $key->$empleado ?></td>
                                 <td><?php echo $key->$cliente ?></td>
-                                <td>  
+                                 <td><?php echo $key->$numAnimal ?></td>
+                                 <td><?php echo $key->$peso ?></td>
+                                <td><?php echo $key->$valor ?></td>
+                                 <td><?php echo $key->$subtotal ?></td>
+                               
+<!--                                <td>  
                                     <?php if ($key->$estado == true): ?>
                                         <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
 
@@ -102,7 +115,7 @@ use mvc\session\sessionClass as session ?>
                                     <?php endif ?>
 
                                     </div> 
-                                </td>
+                                </td>-->
                             </tr>
 
                             <tr>
@@ -129,10 +142,10 @@ use mvc\session\sessionClass as session ?>
                                                         <option value="">...</option>
                                                         <?php foreach ($objAnimal as $key): ?> 
 
-                                                            <option value="<?php echo $key->id ?>"><?php echo $key->numero_identificacion ?></option>
+                                                            <option value="<?php echo $key->$idAnimal ?>"><?php echo $key->$numAnimal ?></option>
                                                         <?php endforeach; //close foreach    ?>
                                                     </select>
-  <tr><th>
+                                            <tr><th>
                                                     <?php echo i18n::__('peso_final') ?></th><th>
                                                     <input type="number" name="<?php echo detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true) ?>">
                                                 </th>
@@ -142,10 +155,6 @@ use mvc\session\sessionClass as session ?>
                                                     <input type="number" name="<?php echo detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VALOR, true) ?>">
                                                 </th>
                                             </tr>
-                                            
-                                          
-
-
 
                                             <tr><th colspan="2">  
                                                     <font size="2">* <?php echo i18n::__('ojo', null, 'facturaCompra') ?></font>
@@ -187,7 +196,7 @@ use mvc\session\sessionClass as session ?>
             </ul>
         </nav>
     </div>
-    <form id="frmDelete" action="<?php //echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion')                  ?>" method="POST">
+    <form id="frmDelete" action="<?php //echo routing::getInstance()->getUrlWeb('vacunacion', 'deleteVacunacion')                   ?>" method="POST">
         <input type="hidden" id="idDelete" name="<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::ID, true) ?>">
     </form>
 </div>
@@ -226,15 +235,38 @@ use mvc\session\sessionClass as session ?>
         <div class="modal-body">
             <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'indexFacturaVenta') ?>">
                 <table>
-        <!--          <tr>
+<!--                  <tr>
                     <th>
-                    <?php // echo i18n::__('fechaInicio') ?>
+                    <?php  echo i18n::__('fechaInicio') ?>
                     </th>
                     <th>
                       <input type="datetime-local" name="filter[fecha_inicio]">
                     </th>   
         
+                  </tr>
+                        <tr>
+                    <th>
+                    <?php  echo i18n::__('fechaFin') ?>
+                    </th>
+                    <th>
+                      <input type="datetime-local" name="filter[fecha_fin]">
+                    </th>   
+        
                   </tr>-->
+                             <tr>
+                        <th>
+                            <?php echo i18n::__('empleado') ?>
+                        </th>
+                        <th>
+                            <select name="filter[empleado]">
+                                <option value="">...</option>
+                                <?php foreach ($objEmpleado as $key): ?>
+                                    <option value="<?php echo $key->id ?>"> <?php echo $key->nombre_completo ?></option>
+                                <?php endforeach; //close foreach    ?>
+                            </select>
+                        </th>
+                    </tr>
+              
                     <tr>
                         <th>
                             <?php echo i18n::__('cliente') ?>
@@ -248,7 +280,28 @@ use mvc\session\sessionClass as session ?>
                             </select>
                         </th>
                     </tr>
-
+                               <tr>
+                        <th>
+                            <?php echo i18n::__('identificacion') ?>
+                        </th>
+                        <th>
+                            <select name="filter[animal]">
+                                <option value="">...</option>
+                                <?php foreach ($objAnimal as $key): ?>
+                                    <option value="<?php echo $key->id ?>"> <?php echo $key->numero_identificacion ?></option>
+                                <?php endforeach; //close foreach    ?>
+                            </select>
+                        </th>
+                    </tr>
+         <tr>
+                    <th>
+                    <?php  echo i18n::__('kg', null, 'animal') ?>
+                    </th>
+                    <th>
+                        <input type="number" name="filter[peso]">
+                    </th>   
+        
+                  </tr>
                 </table>
 
 
@@ -276,7 +329,7 @@ use mvc\session\sessionClass as session ?>
             <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportVenta') ?>">
 
                 <table class="table table-bordered">
-<tr>
+                    <tr>
                         <th>
                             <?php echo i18n::__('fechaInicio') ?>
                         </th>
@@ -294,36 +347,58 @@ use mvc\session\sessionClass as session ?>
                         </th>   
 
                     </tr>
-        <tr>
-                <th>
-                  <?php echo i18n::__('empleado') ?>:
-                </th>
-                <th>
-                  <select name="report[empleado]"> 
-                    <option>...</option>
-                    <?php foreach ($objEmpleado as $key): ?>
-                      <option value="<?php echo $key->id ?>">
-                        <?php echo $key->nombre_completo ?>
-                      </option>
-                    <?php endforeach; ?>
-                  </select>
-                </th>
-              </tr>
-                 <tr>
-                <th>
-                  <?php echo i18n::__('cliente') ?>:
-                </th>
-                <th>
-                  <select name="report[veterinario]"> 
-                    <option>...</option>
-                    <?php foreach ($objCliente as $key): ?>
-                      <option value="<?php echo $key->id ?>">
-                        <?php echo $key->nombre_completo_cliente ?>
-                      </option>
-                    <?php endforeach; ?>
-                  </select>
-                </th>
-              </tr>
+                    <tr>
+                        <th>
+                            <?php echo i18n::__('empleado') ?>:
+                        </th>
+                        <th>
+                            <select name="report[empleado]"> 
+                                <option>...</option>
+                                <?php foreach ($objEmpleado as $key): ?>
+                                    <option value="<?php echo $key->id ?>">
+                                        <?php echo $key->nombre_completo ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>
+                            <?php echo i18n::__('cliente') ?>:
+                        </th>
+                        <th>
+                            <select name="report[veterinario]"> 
+                                <option>...</option>
+                                <?php foreach ($objCliente as $key): ?>
+                                    <option value="<?php echo $key->id ?>">
+                                        <?php echo $key->nombre_completo_cliente ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
+                                           <tr>
+                        <th>
+                            <?php echo i18n::__('identificacion') ?>
+                        </th>
+                        <th>
+                            <select name="filter[animal]">
+                                <option value="">...</option>
+                                <?php foreach ($objAnimal as $key): ?>
+                                    <option value="<?php echo $key->id ?>"> <?php echo $key->numero_identificacion ?></option>
+                                <?php endforeach; //close foreach    ?>
+                            </select>
+                        </th>
+                    </tr>
+         <tr>
+                    <th>
+                    <?php  echo i18n::__('kg', null, 'animal') ?>
+                    </th>
+                    <th>
+                        <input type="number" name="filter[peso]">
+                    </th>   
+        
+                  </tr>
                 </table>
 
             </form>

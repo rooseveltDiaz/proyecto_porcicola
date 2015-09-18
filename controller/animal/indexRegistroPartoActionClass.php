@@ -16,7 +16,11 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
 
     public function execute() {
         try {
-
+// $where=null;
+     $idHojaVida = request::getInstance()->getGet(hojaVidaBaseTableClass::getNameField(hojaVidaTableClass::ANIMAL, TRUE));
+            if(isset($idHojaVida)){
+                $where[registroPartoTableClass::ANIMAL_ID] = $idHojaVida;
+            }
 
             if (request::getInstance()->hasPost('filter')) {
                 $filter = request::getInstance()->getPost('filter');
@@ -90,7 +94,7 @@ class indexRegistroPartoActionClass extends controllerClass implements controlle
             );
 
             $lines = config::getRowGrid();
-
+     $this->idHojaVida = $idHojaVida;
             $this->cntPages = registroPartoTableClass::getAllCount($f, false, $lines, $where);
             // $this->page = request::getInstance()->getGet('page');
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);

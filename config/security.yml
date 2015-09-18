@@ -855,6 +855,10 @@ factura:
     security: true
     credentials:
       - [admin, invitado]
+  createDetalleFacturaVenta:
+    security: true
+    credentials:
+      - [admin]
       
 bodega:
   indexEntrada:

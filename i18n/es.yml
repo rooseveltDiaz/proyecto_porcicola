@@ -733,7 +733,12 @@ dictionary:
     inhabilitarDetalle:  Inhabilitar Detalle:Inhabilita el detalle del registro
     habilitarDet:        Habilitar Detalle:Habilita el detalle del registro
     eliSelDetalle:       Eliminar Selección:Una vez concluida la selección a través de esta opción usted podrá eliminar los detalles indicados
-    buscarReporteDet:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe 
+    buscarReporteDet:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe
+    buscarReporteDetHoja: Reporte:El sistema generará un documento de tipo informe con todas las Hojas de Vida existentes
+    buscarReporteDetGes:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe de Gestación
+    buscarReporteDetPar:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe de Partos
+    buscarReporteDetPes:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe de Registro de Peso
+    buscarReporteDetVac:    Búsqueda para Reporte:Usted podrá generar la búsqueda de los datos a incluir en el documento de informe de Vacunación
     eliBusDetalle:       Eliminar Búsqueda:Deshace la búsqueda realizada y vuelve a mostrar todos los detalles
     inhabilitar:         Inhabilitar:Inhabilita el registro
     habilitar:           Habilitar:Habilita el registro

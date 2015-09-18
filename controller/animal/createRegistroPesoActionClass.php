@@ -52,6 +52,36 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
             registroPesoTableClass::PESO => $peso
         );
         registroPesoTableClass::insert($data);
+        
+        $fields = array(
+        hojaVidaTableClass::ANIMAL,
+        hojaVidaTableClass::FECHA_NACIMIENTO,
+        hojaVidaTableClass::GENERO_ID,
+        hojaVidaTableClass::NUMERO,
+        hojaVidaTableClass::PARTO,
+        hojaVidaTableClass::PESO,
+        hojaVidaTableClass::RAZA
+        );
+        $where = array(
+        hojaVidaTableClass::ID => $animal
+        );
+        
+        $daticos = hojaVidaTableClass::getAll($fields, FALSE, NULL, NULL, NULL, NULL, $where);
+        // se pasa los datos del ID animal para Actualizar la hoja de vida
+        $data = array(
+//        hojaVidaTableClass::FECHA_NACIMIENTO => $daticos[hojaVidaTableClass::getNameField(hojaVidaTableClass::FECHA_NACIMIENTO,true)],
+//        hojaVidaTableClass::GENERO_ID => $daticos[hojaVidaTableClass::getNameField(hojaVidaTableClass::GENERO_ID,true)],
+//        hojaVidaTableClass::NUMERO => $daticos[hojaVidaTableClass::getNameField(hojaVidaTableClass::NUMERO, true)],
+//        hojaVidaTableClass::PARTO => $daticos[hojaVidaTableClass::getNameField(hojaVidaTableClass::PARTO,true)],
+//        hojaVidaTableClass::RAZA => $daticos[hojaVidaTableClass::getNameField(hojaVidaTableClass::RAZA, true)],
+        hojaVidaTableClass::PESO=> $peso
+        );
+        $ids = array(
+        hojaVidaTableClass::ID =>$animal
+        );
+        hojaVidaTableClass::update($ids, $data);
+        //FIN 
+        
         session::getInstance()->setSuccess(i18n::__('succesCreate1', null, 'dpVenta'));
         log::register(i18n::__('create'), registroPesoTableClass::getNameTable());
         routing::getInstance()->redirect('animal', 'indexRegistroPeso', array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $animal));

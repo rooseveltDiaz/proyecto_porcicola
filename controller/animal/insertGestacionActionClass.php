@@ -17,6 +17,7 @@ class insertGestacionActionClass extends controllerClass implements controllerAc
 
     public function execute() {
         try {
+     
 
             $fieldsAnimal = array(
                 animalTableClass::ID,
@@ -31,6 +32,7 @@ class insertGestacionActionClass extends controllerClass implements controllerAc
             hojaVidaTableClass::GENERO_ID => 2
             );
             
+         
             $this->objAnimal = hojaVidaTableClass::getAll($fieldsAnimal, true, null, null, null,null, $where);
             $this->objEmpleado = empleadoTableClass::getAll($fieldsEmpleado, true);
             $this->idAnimalHojaVida = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL, true));

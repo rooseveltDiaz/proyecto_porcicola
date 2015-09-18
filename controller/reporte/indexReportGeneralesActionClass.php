@@ -29,7 +29,7 @@ class indexReportGeneralesActionClass extends controllerClass implements control
                 viewReporteVentaBaseTableClass::IDENTIFICACION,
                 viewReporteVentaBaseTableClass::VALOR
             );
-            $objReportGenerales = viewReporteVentaBaseTableClass::getAll($fields, false);
+            $objReportGenerales = viewReporteVentaBaseTableClass::getAll($fields, true);
             $fechaAuto = 0;
             $fechaAuto2 = 0;
             foreach ($objReportGenerales as $key){

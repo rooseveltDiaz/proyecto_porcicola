@@ -16,6 +16,12 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
 
     public function execute() {
         try {
+                 $idHojaVida = request::getInstance()->getGet(hojaVidaBaseTableClass::getNameField(hojaVidaTableClass::ANIMAL, TRUE));
+            if(isset($idHojaVida)){
+                $where[gestacionTableClass::ANIMAL] = $idHojaVida;
+            }
+            
+
             if (request::getInstance()->hasPost('filter')) {
 
                 $filter = request::getInstance()->getPost('filter');
@@ -66,7 +72,7 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
 //                gestacionTableClass::ANIMAL,
                 gestacionTableClass::FECHA_MONTA,
 //                gestacionTableClass::FECHA_PROBABLE_PARTO,
-//                gestacionTableClass::ANIMAL_FECUNDADOR
+                gestacionTableClass::ANIMAL_FECUNDADOR
             );
             $fields2 = array(
                 animalTableClass::NUMERO
@@ -100,6 +106,7 @@ class indexGestacionActionClass extends controllerClass implements controllerAct
             } else {
                 $this->page = $page;
             }
+          $this->idHojaVida = $idHojaVida;
 //            $this->idAnimalSeleccionado = request::getInstance()->getGet(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL,true));
             $this->objGestacion = gestacionTableClass::getAllJoin($fields, $fields2, $fields3, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);

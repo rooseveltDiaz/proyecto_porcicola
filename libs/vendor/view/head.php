@@ -106,6 +106,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>'" > <button class="mdl-menu__item fa fa-area-chart"><?php echo i18n::__('reporte') ?></button></a>
 
                             </ul>
+                    
                         </div>
 
                         <div class="demo-avatar-dropdown" style="margin-left: 5px">

@@ -17,7 +17,6 @@ class insertRegistroPesoActionClass extends controllerClass implements controlle
 
     public function execute() {
         try {
-
             $fieldsAnimal = array(
                 animalTableClass::ID,
                 animalTableClass::NUMERO

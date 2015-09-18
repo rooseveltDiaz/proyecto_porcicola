@@ -22,38 +22,16 @@ class createFacturaVentaActionClass extends controllerClass implements controlle
             $fecha = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::FECHA_HORA_VENTA, true));
             $empleado = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::EMPLEADO_ID, true));
             $cliente = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::CLIENTE_ID, true));
-            $animal = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::ANIMAL, true));
-            $peso = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::PESO, true));
-            $valor = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::VALOR, true));
-            $subtotal = $peso * $valor;
+
             procesoVentaTableClass::validateCreate($fecha, $empleado, $cliente);
             
             $data = array(
                 procesoVentaTableClass::CLIENTE_ID => $cliente,
                 procesoVentaTableClass::EMPLEADO_ID => $empleado,
-                procesoVentaTableClass::FECHA_HORA_VENTA => $fecha,
-                procesoVentaTableClass::ANIMAL => $animal,
-                procesoVentaTableClass::PESO => $peso,
-                procesoVentaTableClass::VALOR => $valor,
-                procesoVentaTableClass::SUBTOTAL => $subtotal
+                procesoVentaTableClass::FECHA_HORA_VENTA => $fecha
             );
 
-            //Manejo de inventario
-                $fieldsAnimal = array(
-                    animalTableClass::NUMERO,
-                    animalTableClass::ID
-                );
-                $whereInventario = array(
-                    animalTableClass::ID => $animal
-                );
-                $objAnimal = animalTableClass::getAll($fieldsAnimal, true, null, null, null, null, $whereInventario);
-           
-        procesoVentaTableClass::validateInventario($objAnimal[0]->id);
 
-                $fieldsAnimalDelete = array(
-                    animalTableClass::ID => $objAnimal[0]->id
-                );
-                animalTableClass::delete($fieldsAnimalDelete, true);
 
             procesoVentaTableClass::insert($data);
             session::getInstance()->setSuccess(i18n::__('succesCreate', null, 'facturaVenta'));

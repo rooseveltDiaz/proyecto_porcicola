@@ -3,6 +3,8 @@
 <?php $id = procesoVentaTableClass::ID ?>
 <?php $nombreEmpleado = empleadoTableClass::NOMBRE ?>
 <?php $cliente = clienteTableClass::NOMBRE ?>
+<?php $animal = animalTableClass::NUMERO ?>
+<?php $idAnimal = animalTableClass::ID ?>
 <form method="post" action="<?php echo routing::getInstance()->getUrlWeb('factura', ((isset($objFacturaVenta) == TRUE) ? 'updateFacturaVenta' : 'createFacturaVenta')) ?>">
     <?php if (isset($objFacturaCompra)): ?>
       <input type="hidden" name="<?php echo empleadoTableClass::getNameField(empleadoTableClass::ID, TRUE) ?>" value="<?php echo $objFacturaCompra[0]->$id ?>">
@@ -51,6 +53,38 @@
                             </th>   
 
                         </tr> 
+                                 <tr>
+                            <th>  
+                                <?php echo i18n::__('identificacion') ?>:
+                            </th>
+                            <th> 
+                                <select name="<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::ANIMAL, true) ?>">
+                                    <option value="">...</option>
+                                    <?php foreach ($objAnimal as $key): ?>
+                                      <option value="<?php echo $key->$idAnimal ?>"> <?php echo $key->$animal ?></option>
+                                    <?php endforeach; //close foreach  ?>
+                                </select>
+                            </th>   
+
+                        </tr>
+                              <tr>
+                            <th>
+                                <?php echo i18n::__('kg', null, 'animal') ?>
+                            </th>
+                            <th>
+                                <input type="number" name="<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::PESO, true) ?>">
+                            </th>   
+
+                        </tr>
+                                  <tr>
+                            <th>
+                                <?php echo i18n::__('valor_kilo') ?>
+                            </th>
+                            <th>
+                                <input type="number" name="<?php echo procesoVentaTableClass::getNameField(procesoVentaTableClass::VALOR, true) ?>">
+                            </th>   
+
+                        </tr>
                          <tr>
                 <th colspan="2">  
                     <font size="2">* <?php echo i18n::__('ojo', null, 'facturaCompra') ?></font>

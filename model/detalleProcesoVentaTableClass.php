@@ -55,7 +55,7 @@ class detalleProcesoVentaTableClass extends detalleProcesoVentaBaseTableClass {
     }
     public function validateInventario($objAnimal)
             {
-        $flag=false;
+        $flag= false;
         
     }
 }
