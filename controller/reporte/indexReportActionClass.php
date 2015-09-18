@@ -1,5 +1,4 @@
 <?php
-
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
@@ -7,14 +6,12 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
 /**
  * Description of indexReportActionClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class indexReportActionClass extends controllerClass implements controllerActionInterface {
-
     public function execute() {
         try {
             $where = NULL;
@@ -41,9 +38,6 @@ class indexReportActionClass extends controllerClass implements controllerAction
                 reporteTableClass::DESCRIPCION,
                 reporteTableClass::DIRECCION
             );
-
-
-
 //            $fields = array(
 //                clienteTableClass::ID,
 //                clienteTableClass::NUMERO_DOC,
@@ -63,12 +57,9 @@ class indexReportActionClass extends controllerClass implements controllerAction
 //            $fJoin2 = ciudadTableClass::ID;
 //            $fJoin3 = clienteTableClass::TIPO_DOC;
 //            $fJoin4 = tipoDocumentoTableClass::ID;
-
-
             $orderBy = array(
                 reporteTableClass::ID
             );
-
             $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $page = request::getInstance()->getGet('page') - 1;
@@ -77,7 +68,6 @@ class indexReportActionClass extends controllerClass implements controllerAction
             $f = array(
                 reporteTableClass::ID
             );
-
             $lines = config::getRowGrid();
             $this->cntPages = reporteTableClass::getAllCount($f, true, $lines);
             if (request::getInstance()->hasGet('page')) {
@@ -87,12 +77,10 @@ class indexReportActionClass extends controllerClass implements controllerAction
             }
             $this->objReporte = reporteTableClass::getAll($fieldsReporte, true, $orderBy, 'ASC', config::getRowGrid(), $page);
 //            $this->objTipoDoc = tipoDocumentoTableClass::getAll($fieldsTipoDoc, false);
-
             $this->defineView('indexReport', 'reporte', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
-
 }

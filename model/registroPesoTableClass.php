@@ -13,7 +13,7 @@ use mvc\routing\routingClass as routing;
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class registroPesoTableClass extends registroPesoBaseTableClass {
-     public static function validateCreate($fecha, $empleado,  $peso) {
+     public static function validateCreate($fecha, $empleado,  $peso, $valor_kilo) {
        
          $flag = false;
          $dateNow = date("Y-m-d H:m", strtotime("now"));      
@@ -45,27 +45,27 @@ class registroPesoTableClass extends registroPesoBaseTableClass {
             $flag = true;
             session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::EMPLEADO, true), true);
         }
-//        if (empty($valor_kilo) or ! isset($valor_kilo) or $valor_kilo == '') {
-//
-//            session::getInstance()->setError(i18n::__(10126, null, 'errors', array('%campo%' => $valor_kilo)));
-//            $flag = true;
-//            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
-//        }
-//        if (!is_numeric($valor_kilo)) {
-//            session::getInstance()->setError(i18n::__(10127, null, 'errors', array('%campo%' => $valor_kilo)));
-//            $flag = true;
-//            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
-//        }
-//        if ($valor_kilo < 0) {
-//            session::getInstance()->setError(i18n::__(10128, null, 'errors'));
-//            $flag = true;
-//            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
-//        }
-//        if (strlen($valor_kilo) > 6) {
-//            session::getInstance()->setError(i18n::__(10129, null, 'errors'));
-//            $flag = true;
-//            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
-//        } 
+        if (empty($valor_kilo) or ! isset($valor_kilo) or $valor_kilo == '') {
+
+            session::getInstance()->setError(i18n::__(10126, null, 'errors', array('%campo%' => $valor_kilo)));
+            $flag = true;
+            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
+        }
+        if (!is_numeric($valor_kilo)) {
+            session::getInstance()->setError(i18n::__(10127, null, 'errors', array('%campo%' => $valor_kilo)));
+            $flag = true;
+            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
+        }
+        if ($valor_kilo < 0) {
+            session::getInstance()->setError(i18n::__(10128, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
+        }
+        if (strlen($valor_kilo) > 6) {
+            session::getInstance()->setError(i18n::__(10129, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true), true);
+        } 
 //        if (empty($valor_total) or ! isset($valor_total) or $valor_total == '') {
 //
 //            session::getInstance()->setError(i18n::__(10130, null, 'errors', array('%campo%' => $valor_total)));

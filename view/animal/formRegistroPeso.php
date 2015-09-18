@@ -61,6 +61,10 @@ use mvc\i18n\i18nClass as i18n ?>
                         <th><?php echo i18n::__('weight', null, 'dpVenta') ?>:</th>
                         <th> <input type="number" placeholder="<?php echo i18n::__('weight', null, 'dpVenta') ?>" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::PESO, true) ?>"></th>
                     </tr>
+                        <tr>
+                        <th><?php echo i18n::__('valor_kilo') ?>:</th>
+                        <th> <input type="number" placeholder="<?php echo i18n::__('valor_kilo') ?>" name="<?php echo registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true) ?>"></th>
+                    </tr>
                  
                                                   <tr>
                         <th colspan="2" >

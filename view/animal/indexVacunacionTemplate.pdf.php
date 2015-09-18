@@ -6,6 +6,7 @@ $veterinario = veterinarioTableClass::NOMBRE;
 $vacuna = vacunaTableClass::NOMBRE_VACUNA;
 $dosis = carneVacunasTableClass::DOSIS;
 $accion = carneVacunasTableClass::ACCION;
+$numero = animalTableClass::NUMERO;
 
 class PDf extends FPDF {
 
@@ -33,19 +34,21 @@ $pdf->Ln(20);
 
 $pdf->SetFont('Arial', 'B', 15);
 $pdf->Cell(1);
-$pdf->Cell(50, 10, utf8_decode('Fecha'), 1, 0, 'C');
-$pdf->Cell(90, 10, utf8_decode('Veterinario'), 1, 0, 'C');
+$pdf->Cell(20, 10, utf8_decode('Animal'), 1, 0, 'C');
+$pdf->Cell(45, 10, utf8_decode('Fecha'), 1, 0, 'C');
+$pdf->Cell(60, 10, utf8_decode('Veterinario'), 1, 0, 'C');
 $pdf->Cell(40, 10, utf8_decode('Vacuna'), 1, 0, 'C');
 $pdf->Cell(20, 10, utf8_decode('Dosis'), 1, 0, 'C');
-$pdf->Cell(67, 10, utf8_decode('Acción'), 1, 0, 'C');
+$pdf->Cell(83, 10, utf8_decode('Acción'), 1, 0, 'C');
 $pdf->Ln();
 foreach ($objCarne as $key) {
     $pdf->Cell(1);
-    $pdf->Cell(50, 10, date("Y-M-d G:i", strtotime($key->$fecha)), 1, 0, 'C');
-    $pdf->Cell(90, 10, utf8_decode($key->$veterinario), 1, 0);
+    $pdf->Cell(20, 10, utf8_decode($key->$numero), 1, 0);
+    $pdf->Cell(45, 10, date("Y-M-d G:i", strtotime($key->$fecha)), 1);
+    $pdf->Cell(60, 10, utf8_decode($key->$veterinario), 1, 0);
     $pdf->Cell(40, 10, utf8_decode($key->$vacuna), 1, 0);
     $pdf->Cell(20, 10, utf8_decode($key->$dosis), 1, 0);
-    $pdf->Cell(67, 10, utf8_decode($key->$accion), 1, 0);
+    $pdf->Cell(83, 10, utf8_decode($key->$accion), 1, 0);
     $pdf->Ln();
 }//close foreach
 

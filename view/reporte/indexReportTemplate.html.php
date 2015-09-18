@@ -26,7 +26,7 @@ use mvc\view\viewClass as view ?>
             </div>
             <div class="table-responsive text-center">
                 <table class="table table-bordered">
-                                          <thead>
+                    <thead>
                         <tr class=" mdl-color--teal-300 mdl-color-text--blue-grey-900">
 
                             <th><?php echo i18n::__('name', null, 'empleado') ?></th>
@@ -44,29 +44,28 @@ use mvc\view\viewClass as view ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="filter <?php echo $countDetale ?>">
                             <?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
                         </div>
-                      
                         </th>
                         </tr>
-                        <tr>
+                                       <tr>
                             <th colspan="2">
                         <div class="text-center">
-                             <a id="informe" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportHojaVida') ?>" class="btn btn-primary active btn-sm fa fa-newspaper-o" ></a>
+                             <a id="informe" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportHojaVida') ?>" class="btn btn-primary active btn-sm glyphicon glyphicon-piggy-bank" ></a>
                          <div class="mdl-tooltip mdl-tooltip--large" for="informe">
                         <?php echo i18n::__('buscarReporteDetHoja', null, 'ayuda') ?>
                     </div>
-                                        <a id="gestacion" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-newspaper-o" ></a>
+                                        <a id="gestacion" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-paw" ></a>
                          <div class="mdl-tooltip mdl-tooltip--large" for="gestacion">
                         <?php echo i18n::__('buscarReporteDetGes', null, 'ayuda') ?>
                     </div>
-                          <a id="parto" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-newspaper-o" ></a>
+                          <a id="parto" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-history" ></a>
                          <div class="mdl-tooltip mdl-tooltip--large" for="parto">
                         <?php echo i18n::__('buscarReporteDetPar', null, 'ayuda') ?>
                     </div>
-                                 <a id="peso" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-newspaper-o" ></a>
+                                 <a id="peso" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-ship" ></a>
                          <div class="mdl-tooltip mdl-tooltip--large" for="peso">
                         <?php echo i18n::__('buscarReporteDetPes', null, 'ayuda') ?>
                     </div>
-                                               <a id="vacunacion" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportCarneVacunas') ?>" class="btn btn-primary active btn-sm fa fa-newspaper-o" ></a>
+                                               <a id="vacunacion" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportCarneVacunas') ?>" class="btn btn-primary active btn-sm fa fa-heartbeat" ></a>
                          <div class="mdl-tooltip mdl-tooltip--large" for="vacunacion">
                         <?php echo i18n::__('buscarReporteDetVac', null, 'ayuda') ?>
                     </div>
@@ -122,7 +121,7 @@ use mvc\view\viewClass as view ?>
                     </tbody>
                 </table>
             </div>
-<!--            <div class="text-right">
+            <div class="text-right">
                 <nav>
                     <ul class="pagination" id="slqPaginador">
                         <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
@@ -134,7 +133,7 @@ use mvc\view\viewClass as view ?>
                         <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
                     </ul>
                 </nav>
-            </div> -->
+            </div> 
         </div>
     </div>
 </main>

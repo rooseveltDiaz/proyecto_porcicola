@@ -1,5 +1,4 @@
 <?php
-
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
@@ -7,18 +6,15 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
 /**
  * Description of indexReportGeneralesActionClass
  *
  * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
  */
 class indexReportGeneralesActionClass extends controllerClass implements controllerActionInterface {
-
     public function execute() {
         try {
             session_start(); 
-
 //            $where = NULL;
             $fields = array(
                 viewReporteVentaBaseTableClass::ANIMAL,
@@ -40,13 +36,9 @@ class indexReportGeneralesActionClass extends controllerClass implements control
 //session::getInstance()->setAttribute("Variable", "ola");
 //$_GET["prueba"] = "ola";
 //$_GET['array'] = $objReportGenerales;
-
 //$array = serialize($objReportGenerales); 
-
 //    $tmp = serialize($array); 
 //    $tmp = urlencode($array); 
-
-
 //$_SESSION["Variable"] = 1; 
             $this->defineView('indexReportGeneralesVenta', 'reporte', session::getInstance()->getFormatOutput());
 // header('Location:http://localhost/proyecto_porcicola/prueba/index.php?cadena='.$tmp);
@@ -55,5 +47,4 @@ class indexReportGeneralesActionClass extends controllerClass implements control
             routing::getInstance()->forward('shfSecurity', 'exception');
         }
     }
-
 }

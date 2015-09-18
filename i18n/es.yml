@@ -154,13 +154,13 @@ dictionary:
     eliminarIndividual:   ¿Desea eliminar el Registro?
     confirmDelete:        Confirmar Eliminar
     confirm:              Confirmar
-    enfermedad:           La  vacuna fue aplicada por motivo de Enfermedad
-    gestacion:            La vacuna fue aplicada por control de gestacion
-    parto:                La vacuna fue aplicada para inducir el parto
-    rutina:               La vacuna fue aplicada por control rutinario
-    nacido:               La vacuna fue aplicada al cerdo recien nacido
-    desteta:              La vacuna fue aplicada a la cerda reproductora por destete
-    destete:              La vacuna fué aplicada al lechón al ser destetado
+    enfermedad:           Enfermedad
+    gestacion:            Gestación
+    parto:                Inducir Parto
+    rutina:               Rutina
+    nacido:               Recien nacido
+    desteta:              Cerda reproductora por destete
+    destete:              Lechón al ser destetado
     valorUni:             Valor unitario
     edit:                 Editar
     crear:                Crear

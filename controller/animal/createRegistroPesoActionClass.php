@@ -24,19 +24,19 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
         $fecha = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::FECHA, true));
         $empleado = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::EMPLEADO, true));
         $animal = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::ANIMAL, true));
-//        $valor_kilo = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true));
+        $valor_kilo = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::KILO, true));
 //        $valor_total = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::VALOR, true));
         $peso = request::getInstance()->getPost(registroPesoTableClass::getNameField(registroPesoTableClass::PESO, true));
-//       $valor_total = $peso * $valor_kilo;
+       $valor_total = $peso * $valor_kilo;
          
-       registroPesoTableClass::validateCreate($fecha, $empleado,  $peso);
+       registroPesoTableClass::validateCreate($fecha, $empleado,  $peso, $valor_kilo);
        
        $datos = array(
           $fecha,
           $empleado,
           $animal,
-//          $valor_kilo,
-//         $valor_total,
+          $valor_kilo,
+         $valor_total,
           $peso
           
         );
@@ -47,8 +47,8 @@ class createRegistroPesoActionClass extends controllerClass implements controlle
             registroPesoTableClass::FECHA => $fecha,
             registroPesoTableClass::EMPLEADO => $empleado,
             registroPesoTableClass::ANIMAL => $animal,
-            registroPesoTableClass::KILO => 3000,
-//           registroPesoTableClass::VALOR => $valor_total,
+            registroPesoTableClass::KILO => $valor_kilo,
+           registroPesoTableClass::VALOR => $valor_total,
             registroPesoTableClass::PESO => $peso
         );
         registroPesoTableClass::insert($data);

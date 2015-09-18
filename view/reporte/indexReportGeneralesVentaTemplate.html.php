@@ -1,206 +1,243 @@
+
 <main class="mdl-layout__content mdl-color--blue-100">
     <div class="mdl-grid demo-content" id="reportesGenerales">
-               <div id="chart1"></div>
-               <?php print_r($fechaAuto[1]) ?>
-<!--        <script>
-            
-            $(document).ready(function () {
-    $.jqplot._noToImageButton = true;
-var    cosPoints = <?php echo json_encode($objReportGenerales) ?>;
-    console.log("prueba ", cosPoints[0].animal)
-    for(var animal in cosPoints){
-       console.log("" + animal  );
-    }
+               
+           
+               
+       <div id="chart1b" style="width:400px;height:260px;"></div>
+
+<div><span></span><span id="info1c"></span></div>
+
+<div id="chart1c" style="width:400px;height:260px;"></div>
+
+<div id="chart2" style="width:800px;height:460px;"></div>
+
+<div id="customTooltipDiv">I'm a tooltip.</div>
+  
+
+
+<!--<script class="code" language="javascript" type="text/javascript">
+$(document).ready(function(){
+
+    var l2 = [11, 9, 5, 12, 14];
+    var l3 = [4, 8, 5, 3, 6];
+    var l4 = [12, 6, 13, 11, 2];    
+
     
-    var prevYear = [["2011-08-01",398], ["2011-08-02",255.25], ["2011-08-03",263.9], ["2011-08-04",154.24], 
-    ["2011-08-05",210.18], ["2011-08-06",109.73], ["2011-08-07",166.91], ["2011-08-08",330.27], ["2011-08-09",546.6], 
-    ["2011-08-10",260.5], ["2011-08-11",330.34], ["2011-08-12",464.32], ["2011-08-13",432.13], ["2011-08-14",197.78], 
-    ["2011-08-15",311.93], ["2011-08-16",650.02], ["2011-08-17",486.13], ["2011-08-18",330.99], ["2011-08-19",504.33], 
-    ["2011-08-20",773.12], ["2011-08-21",296.5], ["2011-08-22",280.13], ["2011-08-23",428.9], ["2011-08-24",469.75], 
-    ["2011-08-25",628.07], ["2011-08-26",516.5], ["2011-08-27",405.81], ["2011-08-28",367.5], ["2011-08-29",492.68], 
-    ["2011-08-30",700.79], ["2011-08-31",588.5], ["2011-09-01",511.83], ["2011-09-02",721.15], ["2011-09-03",649.62], 
-    ["2011-09-04",653.14], ["2011-09-06",900.31], ["2011-09-07",803.59], ["2011-09-08",851.19], ["2011-09-09",2059.24], 
-    ["2011-09-10",994.05], ["2011-09-11",742.95], ["2011-09-12",1340.98], ["2011-09-13",839.78], ["2011-09-14",1769.21], 
-    ["2011-09-15",1559.01], ["2011-09-16",2099.49], ["2011-09-17",1510.22], ["2011-09-18",1691.72], 
-    ["2011-09-19",1074.45], ["2011-09-20",1529.41], ["2011-09-21",1876.44], ["2011-09-22",1986.02], 
-    ["2011-09-23",1461.91], ["2011-09-24",1460.3], ["2011-09-25",1392.96], ["2011-09-26",2164.85], 
-    ["2011-09-27",1746.86], ["2011-09-28",2220.28], ["2011-09-29",2617.91], ["2011-09-30",3236.63]];
+    var plot1b = $.jqplot('chart1b',[l2, l3, l4],{
+       stackSeries: true,
+       showMarker: false,
+       seriesDefaults: {
+           fill: true
+       },
+       axes: {
+           xaxis: {
+               renderer: $.jqplot.CategoryAxisRenderer,
+               ticks: ["Mon", "Tue", "Wed", "Thr", "Fri"]
+           }
+       }
+    });
+    
+    $('#chart1b').bind('jqplotDataHighlight', 
+        function (ev, seriesIndex, pointIndex, data) {
+            $('#info1b').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+        }
+    );
+    
+    $('#chart1b').bind('jqplotDataUnhighlight', 
+        function (ev) {
+            $('#info1b').html('Nothing');
+        }
+    );
+});
+</script>-->
  
  
-    var plot1 = $.jqplot("chart1", [prevYear], {
-        seriesColors: ["rgba(78, 135, 194, 0.7)", "rgb(211, 235, 59)"],
-        title: 'Monthly TurnKey Revenue',
-        highlighter: {
-            show: true,
-            sizeAdjust: 1,
-            tooltipOffset: 9
-        },
-        grid: {
-            background: 'rgba(57,57,57,0.0)',
-            drawBorder: false,
-            shadow: false,
-            gridLineColor: '#666666',
-            gridLineWidth: 2
-        },
-        legend: {
-            show: true,
-            placement: 'outside'
-        },
-        seriesDefaults: {
-            rendererOptions: {
-                smooth: true,
-                animation: {
-                    show: true
-                }
-            },
-            showMarker: false
-        },
-        series: [
-            {
-                fill: true,
-                label: '2010'
-            },
-            {
-                label: '2011'
-            }
-        ],
-        axesDefaults: {
-            rendererOptions: {
-                baselineWidth: 1.5,
-                baselineColor: '#444444',
-                drawBaseline: false
-            }
-        },
-        axes: {
-            xaxis: {
-                renderer: $.jqplot.DateAxisRenderer,
-                tickRenderer: $.jqplot.CanvasAxisTickRenderer,
-                tickOptions: {
-                    formatString: "%b %e",
-                    angle: -30,
-                    textColor: '#dddddd'
-                },
-                min: "2011-08-01",
-                max: "2011-09-30",
-                tickInterval: "7 days",
-                drawMajorGridlines: false
-            },
-            yaxis: {
-                renderer: $.jqplot.LogAxisRenderer,
-                pad: 0,
-                rendererOptions: {
-                    minorTicks: 1
-                },
-                tickOptions: {
-                    formatString: "$%'d",
-                    showMark: false
-                }
-            }
+<!--<script class="code" language="javascript" type="text/javascript">
+$(document).ready(function(){   
+    var l5 = [4, -3, 3, 6, 2, -2];
+    var plot1c = $.jqplot('chart1c',[l5],{
+       stackSeries: true,
+       showMarker: false,
+       seriesDefaults: {
+           fill: true,
+           fillToZero: true,
+           rendererOptions: {
+               highlightMouseDown: true
+           }
+       }
+    });
+
+    $('#chart1c').bind('jqplotDataClick', 
+        function (ev, seriesIndex, pointIndex, data) {
+            $('#info1c').html('series: '+seriesIndex+', point: '+pointIndex+', data: '+data);
+        }
+    );
+});
+</script>-->
+<h1>HOLA</h1>
+<pre><?php print_r($objReporte)?></pre>
+<pre><?php print_r($grafica)?></pre>
+<pre><?php echo json_encode($objReporte)?></pre>
+<pre><?php echo json_encode($grafica)?></pre>
+<pre><?php echo json_encode($ticks)?></pre>
+<script class="code" language="javascript" type="text/javascript">
+$(document).ready(function(){
+    var l6 = [11, 20, 5, 12, 14, 8, 30, 9, 6];
+    var l8 = [2,3,5,4,8,2];
+    var l7 = [11, 20, 5, 12, 14, 8, 30, 9, 6];
+//    var l8 = [12, 6, 13, 11, 2, 3, 4, 2, 1, 5, 7, 4, 8];
+    var intento = <?php echo json_encode($value)?>;
+    var ticks = [[1,'Jan 01'], [2,'Feb 01'], [3,'Mar 15'], [4,'Apr 01'], [5,'May 15'], [6,'Jun 11'], [7,'Jul 11'], [8,'Aug 11'], [9,'Sep 17']];  
+
+    
+    plot2 = $.jqplot('chart2',[l8],{
+       stackSeries: true,
+       showMarker: false,
+       highlighter: {
+        show: true,
+        showTooltip: false
+       },
+       seriesDefaults: {
+           fill: true,
+       },
+       series: [
+        {label: 'Hembras'},
+        {label: 'Machos'},
+//        {label: 'Crackers'}
+       ],
+       legend: {
+        show: true,
+        placement: 'outsideGrid'
+       },
+       grid: {
+        drawBorder: false,
+        shadow: false
+       },
+       axes: {
+           xaxis: {
+              ticks: ticks,
+              tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+              tickOptions: {
+                angle: -40 
+              },
+              drawMajorGridlines: false
+          }           
         }
     });
- 
-      $('.jqplot-highlighter-tooltip').addClass('ui-corner-all')
+    
+    // capture the highlighters highlight event and show a custom tooltip.
+    $('#chart2').bind('jqplotHighlighterHighlight', 
+        function (ev, seriesIndex, pointIndex, data, plot) {
+            // create some content for the tooltip.  Here we want the label of the tick,
+            // which is not supplied to the highlighters standard tooltip.
+            var content = plot.series[seriesIndex].label + ', ' + plot.series[seriesIndex]._xaxis.ticks[pointIndex][1] + ', ' + data[1];
+            // get a handle on our custom tooltip element, which was previously created
+            // and styled.  Be sure it is initiallly hidden!
+            var elem = $('#customTooltipDiv');
+            elem.html(content);
+            // Figure out where to position the tooltip.
+            var h = elem.outerHeight();
+            var w = elem.outerWidth();
+            var left = ev.pageX - w - 10;
+            var top = ev.pageY - h - 10;
+            // now stop any currently running animation, position the tooltip, and fade in.
+            elem.stop(true, true).css({left:left, top:top}).fadeIn(200);
+        }
+    );
+    
+    // Hide the tooltip when unhighliting.
+    $('#chart2').bind('jqplotHighlighterUnhighlight', 
+        function (ev) {
+            $('#customTooltipDiv').fadeOut(300);
+        }
+    );
 });
-            
-//            $(document).ready(function(){
-//               
-//  // Some simple loops to build up data arrays.
-//  var cosPoints = <?php// echo json_encode($objReportGenerales) ?>;
-//  for (var i=0; i<2*Math.PI; i+=1){ 
-//    cosPoints.push([i, Math.cos(i)]); 
-//  }
-//     
-//  var powPoints2 = [1, 2 , 4, 5, 2, 4, 8, 8, 8 ,9 ]; 
-////  for (var i=0; i<2*Math.PI; i+=1) { 
-////      powPoints2.push([i, -2.5 - Math.pow(i/4, 2)]); 
-////  } 
-// 
-//  var plot3 = $.jqplot('chart3', [powPoints2], 
-//    { 
-//      title:'Line Style Options', 
-//      // Set default options on all series, turn on smoothing.
-//      seriesDefaults: {
-//          rendererOptions: {
-//              smooth: true
-//          }
-//      },
-//      // Series options are specified as an array of objects, one object
-//      // for each series.
-//      series:[ 
-//          {
-//            // Change our line width and use a diamond shaped marker.
-//            lineWidth:2, 
-//            markerOptions: { style:'dimaond' }
-//          }, 
-//          {
-//            // Don't show a line, just show markers.
-//            // Make the markers 7 pixels with an 'x' style
-//            showLine:false, 
-//            markerOptions: { size: 7, style:"x" }
-//          },
-//          { 
-//            // Use (open) circlular markers.
-//            markerOptions: { style:"circle" }
-//          }, 
-//          {
-//            // Use a thicker, 5 pixel line and 10 pixel
-//            // filled square markers.
-//            lineWidth:5, 
-//            markerOptions: { style:"filledSquare", size:10 }
-//          }
-//      ]
-//    }
-//  );
-//    
-//});
-            
-            
-//            $(document).ready(function(){
-//  var plot1 = $.jqplot ('chart1', [[3,7,9,1,5,3,8,2,5,15]]);
-//});
-//         
-//$(document).ready(function(){
-//  var plot2 = $.jqplot ('chart2', [[3,7,9,1,5,3,8,2,5]], {
-//      // Give the plot a title.
-//      title: 'Plot With Options',
-//      // You can specify options for all axes on the plot at once with
-//      // the axesDefaults object.  Here, we're using a canvas renderer
-//      // to draw the axis label which allows rotated text.
-//      axesDefaults: {
-//        labelRenderer: $.jqplot.CanvasAxisLabelRenderer
-//      },
-//      // Likewise, seriesDefaults specifies default options for all
-//      // series in a plot.  Options specified in seriesDefaults or
-//      // axesDefaults can be overridden by individual series or
-//      // axes options.
-//      // Here we turn on smoothing for the line.
-//      seriesDefaults: {
-//          rendererOptions: {
-//              smooth: true
-//          }
-//      },
-//      // An axes object holds options for all axes.
-//      // Allowable axes are xaxis, x2axis, yaxis, y2axis, y3axis, ...
-//      // Up to 9 y axes are supported.
-//      axes: {
-//        // options for each axis are specified in seperate option objects.
-//        xaxis: {
-//          label: "X Axis",
-//          // Turn off "padding".  This will allow data point to lie on the
-//          // edges of the grid.  Default padding is 1.2 and will keep all
-//          // points inside the bounds of the grid.
-//          pad: 0
-//        },
-//        yaxis: {
-//          label: "Y Axis"
-//        }
-//      }
-//    });
-//});
+</script>
 
-         
-         
-        </script>-->
+
+<!--
+<script class="code" language="javascript" type="text/javascript">
+$(document).ready(function(){
+    var l6 = [11, 9, 5, 12, 14, 8, 7, 9, 6, 11, 9, 3, 4];
+    var l7 = [4, 8, 5, 3, 6, 5, 3, 2, 6, 7, 4, 3, 2];
+    var l8 = [12, 6, 13, 11, 2, 3, 4, 2, 1, 5, 7, 4, 8];
+
+    var ticks = [[1,'Dec 10'], [2,'Jan 11'], [3,'Feb 11'], [4,'Mar 11'], [5,'Apr 11'], [6,'May 11'], [7,'Jun 11'], [8,'Jul 11'], [9,'Aug 11'], [10,'Sep 11'], [11,'Oct 11'], [12,'Nov 11'], [13,'Dec 11']];  
+
+    
+    plot2 = $.jqplot('chart2',[l6, l7, l8],{
+       stackSeries: true,
+       showMarker: false,
+       highlighter: {
+        show: true,
+        showTooltip: false
+       },
+       seriesDefaults: {
+           fill: true,
+       },
+       series: [
+        {label: 'Beans'},
+        {label: 'Oranges'},
+        {label: 'Crackers'}
+       ],
+       legend: {
+        show: true,
+        placement: 'outsideGrid'
+       },
+       grid: {
+        drawBorder: false,
+        shadow: false
+       },
+       axes: {
+           xaxis: {
+              ticks: ticks,
+              tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+              tickOptions: {
+                angle: -90 
+              },
+              drawMajorGridlines: false
+          }           
+        }
+    });
+    
+    // capture the highlighters highlight event and show a custom tooltip.
+    $('#chart2').bind('jqplotHighlighterHighlight', 
+        function (ev, seriesIndex, pointIndex, data, plot) {
+            // create some content for the tooltip.  Here we want the label of the tick,
+            // which is not supplied to the highlighters standard tooltip.
+            var content = plot.series[seriesIndex].label + ', ' + plot.series[seriesIndex]._xaxis.ticks[pointIndex][1] + ', ' + data[1];
+            // get a handle on our custom tooltip element, which was previously created
+            // and styled.  Be sure it is initiallly hidden!
+            var elem = $('#customTooltipDiv');
+            elem.html(content);
+            // Figure out where to position the tooltip.
+            var h = elem.outerHeight();
+            var w = elem.outerWidth();
+            var left = ev.pageX - w - 10;
+            var top = ev.pageY - h - 10;
+            // now stop any currently running animation, position the tooltip, and fade in.
+            elem.stop(true, true).css({left:left, top:top}).fadeIn(200);
+        }
+    );
+    
+    // Hide the tooltip when unhighliting.
+    $('#chart2').bind('jqplotHighlighterUnhighlight', 
+        function (ev) {
+            $('#customTooltipDiv').fadeOut(300);
+        }
+    );
+});
+</script>-->
+<!--// 
+//  $(document).ready(function() {
+//  $.jqplot('chartdiv',  [[[1, 2],[3,5.12],[5,13.1],[7,33.6],[9,85.9],[11,219.9]]],
+//{ title:'Exponential Line',
+//  axes:{yaxis:{min:1, max:12}},
+//  series:[{color:'#5FAB78'}]
+//});
+//  });-->
+
 
     </div>
 </main>
