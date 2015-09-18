@@ -58,7 +58,10 @@ use mvc\view\viewClass as view ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="report">
                             <?php echo i18n::__('reporte', null, 'ayuda') ?>
                         </div>-->
-
+           <a id="peso" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-ship" ></a>
+                         <div class="mdl-tooltip mdl-tooltip--large" for="peso">
+                        <?php echo i18n::__('buscarReporteDetPes', null, 'ayuda') ?>
+                    </div>
                     </div>
                 </div>
                 <?php view::includeHandlerMessage() ?>

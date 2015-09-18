@@ -59,6 +59,10 @@ use mvc\session\sessionClass as session ?>
                                 <div class="mdl-tooltip mdl-tooltip--large" for="deleteMasa">
                     <?php echo i18n::__('eliminarMasa', null, 'ayuda') ?>
                                 </div>-->
+                                          <a id="gestacion" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-paw" ></a>
+                         <div class="mdl-tooltip mdl-tooltip--large" for="gestacion">
+                        <?php echo i18n::__('buscarReporteDetGes', null, 'ayuda') ?>
+                    </div>
 
                 </div>
             </div>

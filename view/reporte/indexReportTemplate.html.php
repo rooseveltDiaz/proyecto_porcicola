@@ -46,13 +46,14 @@ use mvc\view\viewClass as view ?>
                         </div>
                         </th>
                         </tr>
-                                       <tr>
+<!--                                       <tr>
                             <th colspan="2">
                         <div class="text-center">
-                             <a id="informe" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportHojaVida') ?>" class="btn btn-primary active btn-sm glyphicon glyphicon-piggy-bank" ></a>
-                         <div class="mdl-tooltip mdl-tooltip--large" for="informe">
+                             <a href="#myModalReport" data-toggle="modal" id="informe" class="btn btn-primary active btn-sm glyphicon glyphicon-piggy-bank"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="informe">
                         <?php echo i18n::__('buscarReporteDetHoja', null, 'ayuda') ?>
                     </div>
+
                                         <a id="gestacion" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportGestacion') ?>" class="btn btn-primary active btn-sm fa fa-paw" ></a>
                          <div class="mdl-tooltip mdl-tooltip--large" for="gestacion">
                         <?php echo i18n::__('buscarReporteDetGes', null, 'ayuda') ?>
@@ -71,7 +72,7 @@ use mvc\view\viewClass as view ?>
                     </div>
                         </div>
                 </th>
-                        </tr>
+                        </tr>-->
                         <tr>
                             <th>
                                 <!-- WINDOWS MODAL FILTER -->

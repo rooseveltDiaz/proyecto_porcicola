@@ -735,6 +735,11 @@ dictionary:
     habilitarDet:          Enable Detail:Enables Record detail
     eliSelDetalle:         Remove Selection:Once the selection using this option you can delete the details set
     buscarReporteDet:      Search For Reports:You could generate search data to include in the report document
+    buscarReporteDetHoja:  Report:The system generates a report type document all existing Life Sheets
+    buscarReporteDetGes:    Search Report:You can generate search data to include in the report document Gestation
+    buscarReporteDetPar:    Search Report:You can generate search data to include in the report document Births
+    buscarReporteDetPes:    Search Report:You can generate search data to include in the report Registration document Weight
+    buscarReporteDetVac:    Search Report:You can generate search data to include in the report document Vaccination
     eliBusDetalle:         Remove Search:Undo the search performed and redisplay all the details
     inhabilitar:           Disable:Disable logging
     habilitar:             Enable:Enables logging

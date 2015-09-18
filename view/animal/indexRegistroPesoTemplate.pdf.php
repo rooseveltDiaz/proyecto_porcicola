@@ -2,7 +2,7 @@
 
 $empleado = empleadoTableClass::NOMBRE;
 $fecha = registroPesoTableClass::FECHA;
-
+$numero = animalTableClass::NUMERO;
 $peso = registroPesoTableClass::PESO;
 $kilo = registroPesoTableClass::KILO;
 $total = registroPesoTableClass::VALOR;
@@ -41,7 +41,7 @@ $pdf->SetFont('Arial', '', 12);
 $pdf->Cell(1);
 $pdf->Cell(35, 10, utf8_decode('Fecha'), 1, 0, 'C');
 $pdf->Cell(108, 10, utf8_decode('Empleado'), 1, 0 ,'C');
-//$pdf->Cell(33, 10, utf8_decode('N. Identificación'), 1, 0, 'C');
+$pdf->Cell(33, 10, utf8_decode('Animal'), 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Peso (Kg)'), 1, 0, 'C');
 $pdf->Cell(30, 10, utf8_decode('Valor por Kg.'), 1, 0 ,'C');
 $pdf->Cell(30, 10, utf8_decode('Valor Total'), 1, 0, 'C');
@@ -51,7 +51,7 @@ foreach ($objRegistroPeso as $key) {
     $pdf->Cell(1);
     $pdf->Cell(35, 10, date("Y-M-d G:i", strtotime($key->$fecha)), 1, 0 , 'C');
     $pdf->Cell(108, 10, utf8_decode($key->$empleado), 1);
-//    $pdf->Cell(33, 10, utf8_decode($key->$numero), 1);
+   $pdf->Cell(33, 10, utf8_decode($key->$numero), 1);
     $pdf->Cell(30, 10, utf8_decode($key->$peso), 1);
     $pdf->Cell(30, 10, utf8_decode($key->$kilo), 1);
     $pdf->Cell(30, 10, utf8_decode($key->$total), 1);

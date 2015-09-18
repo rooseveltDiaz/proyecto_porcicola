@@ -56,6 +56,10 @@ use mvc\i18n\i18nClass as i18n ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="report">
                             <?php echo i18n::__('reporte', null, 'ayuda') ?>
                         </div>-->
+                            <a id="parto" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroParto') ?>" class="btn btn-primary active btn-sm fa fa-history" ></a>
+                         <div class="mdl-tooltip mdl-tooltip--large" for="parto">
+                        <?php echo i18n::__('buscarReporteDetPar', null, 'ayuda') ?>
+                    </div>
 
                         <!--                <a href="#" class="btn btn-danger btn-xs" onclick="borrarSeleccion()">Borrar</a>-->
                     </div>
@@ -74,9 +78,9 @@ use mvc\i18n\i18nClass as i18n ?>
                             <th><?php echo i18n::__('muertos', null, 'parto') ?></th>
 <!--                            <th><?php echo i18n::__('raza', null, 'raza') ?></th>-->
                             <th><?php echo i18n::__('mother', null, 'raza') ?></th>
-                            <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                          <!--  <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                 <th><?php echo i18n::__('action') ?></th>
-                            <?php endif; ?>
+                            <?php endif; ?>-->
                         </tr>
                     </thead>
                     <tbody>
@@ -92,17 +96,17 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <td><?php echo $key->$muertos ?></td>
     <!--                                <th><?php echo $key->$raza ?></th>-->
                                 <th><?php echo $key->$animal_id ?></th>
-                                <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
+                          <!--      <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
                                     <td>
-                                        <!--<a href="#" class="btn btn-warning btn-sm disabled">Ver</a>-->
+                                        <!--<a href="#" class="btn btn-warning btn-sm disabled">Ver</a>
                                         <a id="editar<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'editRegistroParto', array(registroPartoBaseTableClass::ID => $key->$id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">edit</i></a>
                                         <div class="mdl-tooltip mdl-tooltip--large" for="editar<?php echo $countDetale ?>">
                                             <?php echo i18n::__('modificar', null, 'ayuda') ?>
                                         </div>                             
-        <!--<a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>-->
-        <!--                            <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>-->
+        <a data-toggle="modal" data-target="#myModalDelete<?php echo $key->$id ?>" href="#" class="btn btn-danger btn-sm"><?php echo i18n::__('delete') ?></a>
+                                  <a href="#" onclick="confirmarEliminar(<?php echo $key->$id ?>)" class="btn btn-danger btn-sm">Eliminar</a>
                                     </td>
-                                <?php endif; ?>
+                                <?php endif; ?>-->
                             </tr>
                             <!-- WINDOWS MODAL DELETE -->
         <!--                <div class="modal fade" id="myModalDelete<?php echo $key->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

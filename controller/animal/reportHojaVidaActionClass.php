@@ -21,10 +21,16 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
 //           $where =  array(
 //                hojaVidaTableClass::ANIMAL => $idAnimal
 //            );
-            if (request::getInstance()->hasRequest('reportHojaVida')) {
-                $report = request::getInstance()->getPost('reportHojaVida');
-            }
-            
+            $where = null;
+            if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
+
+                if (isset($report['numero']) and $report['numero'] !== null and $report['numero'] !== '') {
+                    $where[hojaVidaTableClass::getNameTable() . '.' . hojaVidaTableClass::ANIMAL] = $report['numero'];
+                }//close if
+
+             
+            }//close if
       
             
             $fields = array(
