@@ -2828,6 +2828,8 @@ venta_reporte:
     - model/empleadoTableClass.php
     - model/base/clienteBaseTableClass.php
     - model/clienteTableClass.php
+    - model/base/animalBaseTableClass.php
+    - model/animalTableClass.php
 
 
 

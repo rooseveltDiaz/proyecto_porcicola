@@ -18,8 +18,16 @@ class reportCarneVacunasActionClass extends controllerClass implements controlle
 
     public function execute() {
         try {
+$where= null;
+    if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
 
+                if (isset($report['numero']) and $report['numero'] !== null and $report['numero'] !== '') {
+                    $where[carneVacunasTableClass::getNameTable() . '.' . carneVacunasTableClass::ANIMAL] = $report['numero'];
+                }//close if
 
+             
+            }//close if
             $fields = array(
             carneVacunasTableClass::ID,
             carneVacunasTableClass::ACCION,
@@ -49,7 +57,7 @@ class reportCarneVacunasActionClass extends controllerClass implements controlle
             carneVacunasTableClass::FECHA_VACUNACION
             );
 
-            $this->objCarne = carneVacunasTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, false, $orderBy, 'ASC', null);
+            $this->objCarne = carneVacunasTableClass::getAllJoin($fields, $fields2, $fields3, $fields4, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, false, $orderBy, 'ASC', null, null, $where);
             $this->mensaje = 'Carnet de Vacunas del Cerdo';
           
             log::register(i18n::__('reporte'), carneVacunasTableClass::getNameTable());

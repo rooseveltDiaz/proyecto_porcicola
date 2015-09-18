@@ -251,7 +251,7 @@ use mvc\session\sessionClass as session ?>
                                 </tr>
                                 <tr>
                                     <th>
-                                        <?php echo i18n::__('valor', NULL, 'vacuna') ?>:
+                                        <?php echo i18n::__('pesos', NULL, 'animal') ?>:
                                     </th>
                                     <th>
                                         <input type="number" min="0" name="filter[valor]">
@@ -335,13 +335,13 @@ use mvc\session\sessionClass as session ?>
                                 </tr>
                                 <tr>
                                     <th>
-                                        <?php echo i18n::__('valor', NULL, 'vacuna') ?>:
+                                        <?php echo i18n::__('pesos', NULL, 'animal') ?>:
                                     </th>
                                     <th>
                                         <input type="number" min="0" name="filter[valor]">
                                     </th>
                                 </tr>
-                                <tr>
+<!--                                <tr>
                                     <th>
                                         <?php echo i18n::__('cantidad') ?>:
                                     </th>
@@ -356,7 +356,7 @@ use mvc\session\sessionClass as session ?>
                                     <th>
                                         <input type="number" min="0" name="filter[stock]">
                                     </th>
-                                </tr>
+                                </tr>-->
                                  </table>
 
             </form>

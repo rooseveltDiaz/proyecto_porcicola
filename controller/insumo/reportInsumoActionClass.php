@@ -19,10 +19,8 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
     public function execute() {
         try {
 
-    $where = null;
-
+ $where = null;
             if (request::getInstance()->hasRequest('filter')) {
-
                 $filter = request::getInstance()->getPost('filter');
 
                 if (isset($filter['nombre']) and $filter['nombre'] !== null and $filter['nombre'] !== '') {
@@ -38,15 +36,15 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
                 if (isset($filter['tipoInsumo']) and $filter['tipoInsumo'] !== null and $filter['tipoInsumo'] !== '') {
                     $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::TIPO_INSUMO] = $filter['tipoInsumo'];
                 }//close if
-                if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== '') {
-                    $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::VALOR] = $filter['valor'];
-                }//close if
-                if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
-                    $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::CANTIDAD] = $filter['cantidad'];
-                }//close if
-                if (isset($filter['stock']) and $filter['stock'] !== null and $filter['stock'] !== '') {
-                    $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::STOCK_MINIMO] = $filter['stock'];
-                }//close if
+//                if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== '') {
+//                    $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::VALOR] = $filter['valor'];
+//                }//close if
+//                if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
+//                    $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::CANTIDAD] = $filter['cantidad'];
+//                }//close if
+//                if (isset($filter['stock']) and $filter['stock'] !== null and $filter['stock'] !== '') {
+//                    $where[insumoTableClass::getNameTable() . '.' . insumoTableClass::STOCK_MINIMO] = $filter['stock'];
+//                }//close if
             }
             $fields = array(
                 insumoTableClass::ID,

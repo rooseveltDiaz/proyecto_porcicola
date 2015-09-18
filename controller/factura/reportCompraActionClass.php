@@ -59,7 +59,7 @@ class reportCompraActionClass extends controllerClass implements controllerActio
        
       
             $this->objFacturaCompra = procesoCompraTableClass::getAllJoin($fieldsFacturaCompra, $fieldsEmpleado, $fieldsProveedor, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, null, null, null, null, $where);
-            $this->mensaje = "Inventario de Facturas de Compra";
+            $this->mensaje = "Informe de Facturas de Compra";
             log::register(i18n::__('reporte'), procesoCompraTableClass::getNameTable());
             $this->defineView('report', 'facturaCompra', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

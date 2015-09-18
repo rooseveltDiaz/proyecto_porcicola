@@ -52,10 +52,14 @@ use mvc\request\requestClass as request ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                         <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                     </div>
-                      <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
-                    <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
-                        <?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
+                     <a id="buscarReporteDetalle" href="<?php echo routing::getInstance()->getUrlWeb('bodega', 'reportEntradaBodega') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
+                     <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
+                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
                     </div>
+<!--                      <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
+                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
+                    </div>-->
                 </div>
             </div>
             <?php view::includeHandlerMessage() ?>

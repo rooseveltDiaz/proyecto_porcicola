@@ -17,8 +17,16 @@ class reportRegistroPartoActionClass extends controllerClass implements controll
 
     public function execute() {
         try {
-            $where = null;
-//           
+  $where = null;
+//               if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
+
+                if (isset($report['numero']) and $report['numero'] !== null and $report['numero'] !== '') {
+                    $where[registroPartoTableClass::getNameTable() . '.' . registroPartoTableClass::ANIMAL_ID] = $report['numero'];
+                }//close if
+
+             
+          
 
             $fields = array(
                 registroPartoTableClass::ID,

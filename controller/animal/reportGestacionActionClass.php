@@ -18,8 +18,16 @@ class reportGestacionActionClass extends controllerClass implements controllerAc
 
     public function execute() {
         try {
-            $where = null;
+           $where = null;
+    if (request::getInstance()->hasRequest('filter')) {
+                $report = request::getInstance()->getPost('filter');
 
+                if (isset($report['numero']) and $report['numero'] !== null and $report['numero'] !== '') {
+                    $where[gestacionTableClass::getNameTable() . '.' . gestacionTableClass::ANIMAL] = $report['numero'];
+                }//close if
+
+             
+            }//close if
 
             $fields = array(
                 gestacionTableClass::ID,

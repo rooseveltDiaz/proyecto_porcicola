@@ -72,10 +72,10 @@ use mvc\session\sessionClass as session ?>
                         </div> 
   
 
-                    <a href="#myModalReport"  id="buscarDetalle" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+<!--                    <a href="#myModalReport"  id="buscarDetalle" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
                 <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
-<?php //echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
-                </div>
+<?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
+                </div>-->
 
             </div>
 

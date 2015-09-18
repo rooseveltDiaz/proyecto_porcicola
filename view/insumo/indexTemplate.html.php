@@ -182,7 +182,7 @@
                             </select>
                         </th>
                     </tr>
-                    <tr>
+                         <tr>
                         <th>  <?php echo i18n::__('insumo', NULL, 'insumo') ?>:</th>
                         <th> <input  type="text" name="filter[nombre]" ></th>   
                     </tr>
@@ -253,7 +253,7 @@
                         <th>  <?php echo i18n::__('fechaVencimiento') ?>:</th>
                         <th> <input  type="date" name="filter[VencimientoInicial]" ></th>   
                     </tr>
-                    <tr>
+<!--                    <tr>
                         <th>  <?php echo i18n::__('valor', null, 'dpVenta') ?>:</th>
                         <th>$ <input  type="number" name="filter[valor]" ></th>   
                     </tr>             
@@ -264,7 +264,7 @@
                     <tr>
                         <th>  <?php echo i18n::__('stock') ?>:</th>
                         <th> <input  type="number" name="filter[stock]" ></th>   
-                    </tr>  
+                    </tr>  -->
                       </table>
 
             </form>

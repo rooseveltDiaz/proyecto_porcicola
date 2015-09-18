@@ -52,9 +52,13 @@ use mvc\session\sessionClass as session ?>
                     <div class="mdl-tooltip mdl-tooltip--large" for="deleteFilter">
                         <?php echo i18n::__('eliBusqueda', null, 'ayuda') ?>
                     </div>
-                    <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
+<!--                    <a href="#myModalReport" data-toggle="modal" id="buscarReporteDetalle" class="btn btn-primary active btn-sm fa fa-newspaper-o"></a>
                     <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
                         <?php echo i18n::__('buscarReporteDet', null, 'ayuda') ?>
+                    </div>-->
+ <a id="buscarReporteDetalle" href="<?php echo routing::getInstance()->getUrlWeb('factura', 'reportVenta') ?>" class="btn btn-primary active btn-sm fa fa-download" ></a>
+                     <div class="mdl-tooltip mdl-tooltip--large" for="buscarReporteDetalle">
+                        <?php echo i18n::__('reporte', null, 'ayuda') ?>
                     </div>
                 </div>
             </div>

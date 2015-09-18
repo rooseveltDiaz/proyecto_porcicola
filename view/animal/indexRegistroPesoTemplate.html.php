@@ -58,8 +58,8 @@ use mvc\view\viewClass as view ?>
                         <div class="mdl-tooltip mdl-tooltip--large" for="report">
                             <?php echo i18n::__('reporte', null, 'ayuda') ?>
                         </div>-->
-           <a id="peso" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>" class="btn btn-primary active btn-sm fa fa-ship" ></a>
-                         <div class="mdl-tooltip mdl-tooltip--large" for="peso">
+                         <a href="#myModalReport" data-toggle="modal" id="informe" class="btn btn-primary active btn-sm fa fa-ship"></a>
+                    <div class="mdl-tooltip mdl-tooltip--large" for="informe">
                         <?php echo i18n::__('buscarReporteDetPes', null, 'ayuda') ?>
                     </div>
                     </div>
@@ -211,5 +211,47 @@ use mvc\view\viewClass as view ?>
 
             </div>
         </form>
+    </div>
+</div>
+
+<!-- WINDOWS MODAL REPORT -->
+<div class="modalmask" id="myModalReport" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modalbox rotate">
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('filterBy') ?>:</h4>
+        </div>
+        <a href="#close" title="Close" class="close">X</a>
+        <div class="modal-body">
+            <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('animal', 'reportRegistroPeso') ?>">
+
+                <table class="table table-bordered">
+
+                    <tr>
+                        <th><?php echo i18n::__('identificacion') ?></th>
+                        <th>
+                            <select name="filter[numero]">
+                                <option value="">
+                                    ...
+                                </option>
+                                <?php foreach ($objAnimal as $key): ?>
+                                    <option value="<?php echo $key->id ?>">
+                                        <?php echo $key->numero_identificacion ?>
+                                    </option>
+                                <?php endforeach; //close foreach   ?>
+                            </select>
+                        </th>
+                    </tr>
+        
+                </table>
+
+            </form>
+        </div>
+        <div class="modal-footer">
+            <a href="#close2" title="Close"  type="button" class="btn btn-default fa fa-times-circle-o close2"  ><?php echo i18n::__('close', null, 'vacunacion') ?></a>
+            <button type="button" class="btn btn-info fa fa-search" onclick="$('#reportForm').submit()"><?php echo i18n::__('buscar') ?></button>
+        </div>
+
     </div>
 </div>

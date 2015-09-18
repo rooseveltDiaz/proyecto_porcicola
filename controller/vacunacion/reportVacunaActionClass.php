@@ -18,9 +18,9 @@ class reportVacunaActionClass extends controllerClass implements controllerActio
 
     public function execute() {
         try {
-                        $where = null;
+            $where = null;
             if (request::getInstance()->hasRequest('filter')) {
-                $report = request::getInstance()->getPost('filter');
+                $filter = request::getInstance()->getPost('filter');
     
                 if (isset($filter['nombre']) and $filter['nombre'] !== null and $filter['nombre'] !== '') {
                     $where[vacunaTableClass::NOMBRE_VACUNA] = $filter['nombre'];
@@ -40,12 +40,12 @@ class reportVacunaActionClass extends controllerClass implements controllerActio
                 if (isset($filter['valor']) and $filter['valor'] !== null and $filter['valor'] !== '') {
                     $where[vacunaTableClass::VALOR] = $filter['valor'];
                 }//close if
-                if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
-                    $where[vacunaTableClass::CANTIDAD] = $filter['cantidad'];
-                }//close if
-                if (isset($filter['stock']) and $filter['stock'] !== null and $filter['stock'] !== '') {
-                    $where[vacunaTableClass::STOCK_MINIMO] = $filter['stock'];
-                }//close if
+//                if (isset($filter['cantidad']) and $filter['cantidad'] !== null and $filter['cantidad'] !== '') {
+//                    $where[vacunaTableClass::CANTIDAD] = $filter['cantidad'];
+//                }//close if
+//                if (isset($filter['stock']) and $filter['stock'] !== null and $filter['stock'] !== '') {
+//                    $where[vacunaTableClass::STOCK_MINIMO] = $filter['stock'];
+//                }//close if
 
              } 
             $fields = array(

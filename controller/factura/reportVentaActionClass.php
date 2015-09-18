@@ -48,7 +48,9 @@ $where = null;
             $fieldsFacturaVenta = array(
                 procesoVentaTableClass::ID,
                 procesoVentaTableClass::FECHA_HORA_VENTA,
-                procesoVentaTableClass::ACTIVA
+                procesoVentaTableClass::ACTIVA,
+                procesoVentaTableClass::PESO,
+                procesoVentaTableClass::SUBTOTAL
             );
             $fieldsEmpleado = array(
                 empleadoTableClass::ID,
@@ -58,17 +60,23 @@ $where = null;
                 clienteTableClass::ID,
                 clienteTableClass::NOMBRE
             );
+            $fieldsAnimal = array (
+            animalTableClass::ID,
+            animalTableClass::NUMERO
+            );
             $fJoin1 = procesoVentaTableClass::EMPLEADO_ID;
             $fJoin2 = empleadoTableClass::ID;
             $fJoin3 = procesoVentaTableClass::CLIENTE_ID;
             $fJoin4 = clienteTableClass::ID;
+             $fJoin5 = procesoVentaTableClass::ANIMAL;
+            $fJoin6 = animalTableClass::ID;
             $orderBy = array(
                 procesoVentaTableClass::FECHA_HORA_VENTA
             );
        
 
-            $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, null, $fJoin1, $fJoin2, $fJoin3, $fJoin4, null, null, true, $orderBy, 'ASC', null, null, $where);
-             $this->mensaje = "Inventario de Facturas de Venta";
+            $this->objFacturaVenta = procesoVentaTableClass::getAllJoin($fieldsFacturaVenta, $fieldsEmpleado, $fieldsCliente, $fieldsAnimal, $fJoin1, $fJoin2, $fJoin3, $fJoin4, $fJoin5, $fJoin6, true, $orderBy, 'ASC', null, null, $where);
+             $this->mensaje = "Informe de Facturas de Venta";
             log::register(i18n::__('reporte'), procesoVentaTableClass::getNameTable());
             $this->defineView('report', 'facturaVenta', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
