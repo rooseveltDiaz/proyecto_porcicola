@@ -16,7 +16,6 @@ use mvc\session\sessionClass as session ?>
 <?php $numero = animalTableClass::NUMERO ?>
 <?php $macho = animalTableClass::NUMERO ?>
 <?php $fecha_monta = gestacionTableClass::FECHA_MONTA ?>
-
 <?php $fecundador = gestacionTableClass::ANIMAL_FECUNDADOR ?>
 <?php $countDetale = 1 ?>
 
