@@ -4,8 +4,8 @@ dictionary:
   default:
     aliasUsuario:         User Alias
     valor_kilo:           Kilo Value
-    report_venta:         Reporte de Ventas
-    descripcion_reporteVenta: El siguiente reporte le permitirá visualizar de forma gráfica las ventas que se hicieron durante un determinado tiempo.
+    report_venta:         Sales Report
+    descripcion_reporteVenta: The next report will enable the graphical display of the sales made during a certain time.
     peso_final:           Final Weight
     total:                Total
     subt:                 Total Parcial
