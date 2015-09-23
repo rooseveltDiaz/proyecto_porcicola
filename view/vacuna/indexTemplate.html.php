@@ -216,14 +216,25 @@ use mvc\session\sessionClass as session ?>
                     <div class="modal-body">
                         <form id="filterForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>">
                             <table class="table table-bordered">
-                                <tr>
-                                    <th>
+<!--                                    <tr>
+                        <th>
                                         <?php echo i18n::__('nameVacuna', NULL, 'vacuna') ?>:
-                                    </th>
+                        </th>
                                     <th>
                                         <input pattern="[A-Za-z0-9]{3}"  type="text" name="filter[nombre]" >
                                     </th>   
-                                </tr>
+                    </tr>-->
+                                                       <tr>
+                        <th>  <?php echo i18n::__('nameVacuna', null, 'vacuna') ?>:</th>
+                        <th>
+                            <select name="filter[nombre]">
+                                <option value=''>...</option>
+                                <?php foreach ($objVacuna as $key): ?>
+                                    <option value="<?php echo $key->$nomVacuna ?>"><?php echo $key->$nomVacuna ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
                                 <tr>
                                     <th>
                                         <?php echo i18n::__('lote', NULL, 'vacuna') ?>:
@@ -300,14 +311,25 @@ use mvc\session\sessionClass as session ?>
             <form id="reportForm" class="form-horizontal" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'reportVacuna') ?>">
 
                 <table class="table table-bordered">
-                     <tr>
+<!--                     <tr>
                                     <th>
                                         <?php echo i18n::__('nameVacuna', NULL, 'vacuna') ?>:
                                     </th>
                                     <th>
                                         <input pattern="[A-Za-z0-9]{3}"  type="text" name="filter[nombre]" >
                                     </th>   
-                                </tr>
+                                </tr>-->
+                                                                               <tr>
+                        <th>  <?php echo i18n::__('nameVacuna', null, 'vacuna') ?>:</th>
+                        <th>
+                            <select name="filter[nombre]">
+                                <option value=''>...</option>
+                                <?php foreach ($objVacuna as $key): ?>
+                                    <option value="<?php echo $key->$nomVacuna ?>"><?php echo $key->$nomVacuna ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
                                 <tr>
                                     <th>
                                         <?php echo i18n::__('lote', NULL, 'vacuna') ?>:

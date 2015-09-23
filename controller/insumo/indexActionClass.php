@@ -96,6 +96,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 tipoInsumoTableClass::ID,
                 tipoInsumoTableClass::DESCRIPCION
             );
+         
       
 
             $objInsumo = insumoTableClass::getAllJoin($fieldsInsumo, $fieldsTipoInsumo, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
@@ -110,7 +111,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                             "se ha agotado" );
                 }
             }
- 
+       
             $this->objTipoInsumo = tipoInsumoTableClass::getAll($fieldsTipo, false);
             $this->objInsumo = insumoTableClass::getAllJoin($fieldsInsumo, $fieldsTipoInsumo, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
             log::register(i18n::__('ver', null, 'insumo'), insumoTableClass::getNameTable());

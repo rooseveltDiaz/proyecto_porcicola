@@ -74,7 +74,7 @@ class animalBaseTableClass extends tableBaseClass {
     }
 
     public static function getNameTable3() {
-        return "hoja_vida";
+        return 'hoja_vida';
 //                return 'hoja_vida';
     }
 

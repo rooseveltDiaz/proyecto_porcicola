@@ -153,7 +153,7 @@ use mvc\i18n\i18nClass as i18n ?>
                     </tr>
                     <tr>
                         <th>
-                            Foto
+                            <?php echo i18n::__('foto', null, 'user') ?>: 
                         </th>
                         <th>
                             <input type="file" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::FOTO, true) ?>">

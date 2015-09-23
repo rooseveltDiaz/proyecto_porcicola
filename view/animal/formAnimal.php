@@ -18,7 +18,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <table class="table table-bordered">    
                     <tr>
                         <?php if (!isset($objAnimal)): ?>
-                            <th> <?php echo i18n::__('identificacion') ?>:</th>
+                            <th> <?php echo i18n::__('identification', null, 'animal') ?>:</th>
                             <th> 
                                 <input required  type="text"   name="<?php echo animalTableClass::getNameField(animalTableClass::NUMERO, true) ?>" >
                                

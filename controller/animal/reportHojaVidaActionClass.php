@@ -34,16 +34,19 @@ class reportHojaVidaActionClass extends controllerClass implements controllerAct
       
 //            print_r($where);
 //            exit();
+            
             $fields = array(
             hojaVidaTableClass::ANIMAL,
             hojaVidaTableClass::FECHA_NACIMIENTO,
             hojaVidaTableClass::GENERO_ID,
             hojaVidaTableClass::ID,
 //            hojaVidaTableClass::NUMERO,
-            hojaVidaTableClass::PARTO,
+             
+                hojaVidaTableClass::PARTO,
             hojaVidaTableClass::PESO,
             hojaVidaTableClass::RAZA
             );
+    
             $fields1 = array (
             animalTableClass::ID,
             animalTableClass::NUMERO

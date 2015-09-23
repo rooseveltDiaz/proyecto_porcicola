@@ -37,8 +37,8 @@ use mvc\view\viewClass as view ?>
                     <tbody>
                         <?php foreach ($objReporte as $key): ?>
                             <tr>
-                                <th><?php echo $key->$nombre ?></th>
-                                <th><?php echo $key->$descripcion ?></th>
+                                <th><?php echo i18n::__('report_venta') ?></th>
+                                <th><?php echo i18n::__('descripcion_reporteVenta') ?></th>
                                 <th>
                                     <a id="filter <?php echo $countDetale ?>" href="#myModalFilter<?php echo $key->id ?>" data-toggle="modal" class="fa fa-search-plus"></a>
                         <div class="mdl-tooltip mdl-tooltip--large" for="filter <?php echo $countDetale ?>">
@@ -122,7 +122,7 @@ use mvc\view\viewClass as view ?>
                     </tbody>
                 </table>
             </div>
-            <div class="text-right">
+<!--            <div class="text-right">
                 <nav>
                     <ul class="pagination" id="slqPaginador">
                         <li class='<?php echo (($page == 1 or $page == 0) ? "disabled" : "active" ) ?>' id="anterior"><a href="#" aria-label="Previous"onclick="paginador(1, '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>')"><span aria-hidden="true">&Ll;</span></a></li>
@@ -134,7 +134,7 @@ use mvc\view\viewClass as view ?>
                         <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
                     </ul>
                 </nav>
-            </div> 
+            </div> -->
         </div>
     </div>
 </main>

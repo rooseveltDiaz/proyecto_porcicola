@@ -33,7 +33,7 @@ use mvc\i18n\i18nClass as i18n;
                 $day =  i18n::__('martes', null);
                 $flag = true;
             }
-            if ($day == "Wen") {
+            if ($day == "Wed") {
                 $day =  i18n::__('miercoles', null);
                 $flag = true;
             }

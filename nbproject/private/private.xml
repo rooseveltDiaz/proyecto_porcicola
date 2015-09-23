@@ -3,8 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/var/www/html/proyecto_porcicola/view/animal/indexTemplate.html.php</file>
-            <file>file:/var/www/html/proyecto_porcicola/controller/animal/indexAnimalActionClass.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/view/vacuna/indexTemplate.html.php</file>
+            <file>file:/var/www/html/proyecto_porcicola/view/insumo/indexTemplate.html.php</file>
         </group>
     </open-files>
 </project-private>

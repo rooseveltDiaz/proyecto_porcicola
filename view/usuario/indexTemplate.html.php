@@ -146,7 +146,7 @@ use mvc\session\sessionClass as session ?>
 
                         <table> 
                             <tr>
-                        <th>  <?php echo i18n::__('user', NULL, 'user') ?>:</th>
+                        <th>   <?php echo i18n::__('aliasUsuario') ?>:</th>
                         <th> <input  type="text" name="filter[nombre]" ></th>   
                     </tr>
                         </table>

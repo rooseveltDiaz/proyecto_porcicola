@@ -4,6 +4,8 @@ dictionary:
   default:
     aliasUsuario:         User Alias
     valor_kilo:           Kilo Value
+    report_venta:         Reporte de Ventas
+    descripcion_reporteVenta: El siguiente reporte le permitirá visualizar de forma gráfica las ventas que se hicieron durante un determinado tiempo.
     peso_final:           Final Weight
     total:                Total
     subt:                 Total Parcial
@@ -123,7 +125,7 @@ dictionary:
     veterinario:          Veterinary
     cliente:              Client
     telefono:             Phone
-    direccion:            Addres
+    direccion:            Address
     update:               Update
     delete:               Delete
     modules:              Select Module
@@ -689,6 +691,7 @@ dictionary:
   ayuda:
     ingrese:               Enter the remaining value to set the value per kilogram
     atras:                 Back
+    se:                    SENA
     reg:                   Register
     compra:                Register:Through this option you can increase the inventory of vaccines
     compra1:               Register:Through this option you can increase the value per kilogram of pork

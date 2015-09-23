@@ -74,10 +74,10 @@ use mvc\session\sessionClass as session ?>
                             <th><?php echo i18n::__('fechaFactura', null, 'facturaCompra') ?> </th>
                             <th><?php echo i18n::__('empleado') ?> </th>
                             <th><?php echo i18n::__('cliente', null, 'cliente') ?> </th>
-                               <th><?php echo i18n::__('identificacion') ?> </th>
+                               <th><?php echo i18n::__('animal') ?> </th>
                               <th><?php echo i18n::__('kg', null, 'animal') ?> </th>
                                 <th><?php echo i18n::__('valor_kilo') ?> </th>
-                                  <th><?php echo i18n::__('subt') ?> </th>
+                                  <th><?php echo i18n::__('total') ?> </th>
 <!--                            <th><?php echo i18n::__('action') ?></th>-->
 
                         </tr>

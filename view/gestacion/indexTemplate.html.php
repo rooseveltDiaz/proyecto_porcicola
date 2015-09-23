@@ -258,7 +258,7 @@ use mvc\session\sessionClass as session ?>
                 <table class="table table-bordered">
 
                     <tr>
-                        <th><?php echo i18n::__('identificacion') ?></th>
+                        <th><?php echo i18n::__('identification', null, 'animal') ?></th>
                         <th>
                             <select name="filter[numero]">
                                 <option value="">

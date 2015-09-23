@@ -11,7 +11,7 @@ use mvc\view\viewClass as view ?>
 <?php $idAnimal = animalTableClass::ID ?>
 <?php $numeroIdenficacion = animalTableClass::NUMERO ?>
 <?php $lote = loteTableClass::NOMBRE ?>
-<?php $idAnimalHojaVida = hojaVidaTableClass::ID ?>
+<!--<?php $idAnimalHojaVida = hojaVidaTableClass::ID ?>-->
 
 
 <?php $countDetale = 1 ?>
@@ -77,15 +77,16 @@ use mvc\view\viewClass as view ?>
                                 <td><?php echo $key->$lote ?></td>
                                 <td>
                                     <?php if (session::getInstance()->hasCredential('admin') == 1): ?>
-                                        <?php // if ($key->$idAnimalHojaVida == null or $key->$idAnimalHojaVida == "" or empty($key->$idAnimalHojaVida)): ?>
-                                        <?php // foreach ($objHojaVida as $keyHojaVida): ?>
-                                            <?php // if ($keyHojaVida->$idAnimalHojaVida == $key->$idAnimal): ?>
+                                        <?php  //if ($key->$idAnimalHojaVida == null or $key->$idAnimalHojaVida == "" or empty($key->$idAnimalHojaVida)): ?>
+                                        <?php  //foreach ($objHojaVida as $keyHojaVida): ?>
+                                            <?php  //if ($keyHojaVida->$idAnimalHojaVida == $key->$idAnimal): ?>
                                                 <a href="#myModalDetail<?php echo $key->id ?>"  id="insertDetalle<?php echo $countDetale ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">add</i></a>
                                                 <div class="mdl-tooltip mdl-tooltip--large" for="insertDetalle<?php echo $countDetale ?>">
                                                     <?php echo i18n::__('insert', null, 'ayuda') ?>
                                                 </div> 
-                                            <?php // endif; ?>
-                                        <?php // endforeach; ?>
+                                            <?php  //endif; ?>
+                                        <?php  //endforeach; ?>
+                                                <?php //endif; ?>
                                     <?php endif; ?>
                                     <a id="verDetalle<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexHojaVida', array(animalTableClass::ID => $key->id)) ?>" class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored"><i class="material-icons">watch</i> </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="verDetalle<?php echo $countDetale ?>">
@@ -239,7 +240,7 @@ use mvc\view\viewClass as view ?>
                     <table class="table table-responsive">  
                         <tr>
                             <th>
-                                <?php echo i18n::__('identificacion') ?>:
+                                <?php echo i18n::__('identification', null, 'animal') ?>:
                             </th>
                             <th>
                                 <select name="filter[numero]">

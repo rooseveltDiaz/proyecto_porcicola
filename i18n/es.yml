@@ -4,6 +4,8 @@ dictionary:
   default:
     aliasUsuario:         Alias de Usuario
     valor_kilo:           Valor por Kilo
+    report_venta:         Reporte de Ventas
+    descripcion_reporteVenta:  El siguiente reporte le permitirá visualizar de forma gráfica las ventas que se hicieron durante un determinado tiempo.
     peso_final:           Peso Final
     total:                Total
     subt:                 Subtotal

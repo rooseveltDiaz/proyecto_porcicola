@@ -182,10 +182,21 @@
                             </select>
                         </th>
                     </tr>
-                         <tr>
+                            <tr>
+                        <th>  <?php echo i18n::__('insumo', null, 'insumo') ?>:</th>
+                        <th>
+                            <select name="filter[nombre]">
+                                <option value=''>...</option>
+                                <?php foreach ($objInsumo as $key): ?>
+                                    <option value="<?php echo $key->$nombre ?>"><?php echo $key->$nombre ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
+<!--                                        <tr>
                         <th>  <?php echo i18n::__('insumo', NULL, 'insumo') ?>:</th>
                         <th> <input  type="text" name="filter[nombre]" ></th>   
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th>  <?php echo i18n::__('fechaFabricacion') ?>:</th>
                         <th> <input  type="date" name="filter[fabricacionInicial]" ></th>   
@@ -241,10 +252,21 @@
                             </select>
                         </th>
                     </tr>
-                    <tr>
+                                <tr>
+                        <th>  <?php echo i18n::__('insumo', null, 'insumo') ?>:</th>
+                        <th>
+                            <select name="filter[nombre]">
+                                <option value=''>...</option>
+                                <?php foreach ($objInsumo as $key): ?>
+                                    <option value="<?php echo $key->$nombre ?>"><?php echo $key->$nombre ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </th>
+                    </tr>
+<!--                    <tr>
                         <th>  <?php echo i18n::__('insumo', NULL, 'insumo') ?>:</th>
                         <th> <input  type="text" name="filter[nombre]" ></th>   
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th>  <?php echo i18n::__('fechaFabricacion') ?>:</th>
                         <th> <input  type="date" name="filter[fabricacionInicial]" ></th>   

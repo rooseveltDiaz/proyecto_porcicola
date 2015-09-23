@@ -67,7 +67,7 @@ class reportInsumoActionClass extends controllerClass implements controllerActio
             $orderBy = array(
                 insumoTableClass::ID
             );
-
+         
             $this->objInsumo = insumoTableClass::getAllJoin($fields, $fields2, null, null, $fJoin1, $fJoin2, null, null, null, null, true, $orderBy, 'ASC', null, null, $where);
             $this->mensaje = 'Informe de Insumos en Nuestro Sistema';
             log::register(i18n::__('reporte'), insumoTableClass::getNameTable());
