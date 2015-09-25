@@ -14,7 +14,7 @@ use mvc\i18n\i18nClass as i18n;
  */
 class procesoVentaTableClass extends procesoVentaBaseTableClass {
 
-    public static function validateCreate($fecha, $empleado, $cliente) {
+    public static function validateCreate($fecha, $empleado, $cliente, $animal, $peso, $valor) {
 
         $flag = false;
 
@@ -71,6 +71,56 @@ class procesoVentaTableClass extends procesoVentaBaseTableClass {
             session::getInstance()->setError(i18n::__(10115, null, 'errors'));
             $flag = true;
             session::getInstance()->setFlash(procesoVentaTableClass::getNameField(procesoVentaTableClass::CLIENTE_ID, true), true);
+        }
+        if (empty($animal) or ! isset($animal) or $animal == '') {
+
+            session::getInstance()->setError(i18n::__(10093, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClassgetNameField(detalleProcesoVentaTableClass::ANIMAL, true), true);
+        }
+        if (!is_numeric($animal)) {
+            session::getInstance()->setError(i18n::__(10057, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::ANIMAL, true), true);
+        }
+        if ($animal < 0) {
+            session::getInstance()->setError(i18n::__(10095, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::ANIMAL, true), true);
+        }
+        if ($valor < 0) {
+            session::getInstance()->setError(i18n::__(10116, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VALOR, true), true);
+        }
+
+        if (empty($valor) or ! isset($valor) or $valor == '') {
+
+            session::getInstance()->setError(i18n::__(10117, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VALOR, true), true);
+        }
+        if (!is_numeric($valor)) {
+            session::getInstance()->setError(i18n::__(10118, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::VALOR, true), true);
+        }
+        if ($peso < 0) {
+            session::getInstance()->setError(i18n::__(10136, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true), true);
+        }
+
+        if (empty($peso) or ! isset($peso) or $peso == '') {
+
+            session::getInstance()->setError(i18n::__(10134, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true), true);
+        }
+        if (!is_numeric($peso)) {
+            session::getInstance()->setError(i18n::__(10135, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleProcesoVentaTableClass::getNameField(detalleProcesoVentaTableClass::PESO, true), true);
         }
         if ($flag == true) {
             request::getInstance()->setMethod('GET');

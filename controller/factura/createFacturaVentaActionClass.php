@@ -26,7 +26,7 @@ class createFacturaVentaActionClass extends controllerClass implements controlle
             $peso = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::PESO, true));
             $valor = request::getInstance()->getPost(procesoVentaTableClass::getNameField(procesoVentaTableClass::VALOR, true));
             $subtotal = $peso * $valor;
-            procesoVentaTableClass::validateCreate($fecha, $empleado, $cliente);
+            procesoVentaTableClass::validateCreate($fecha, $empleado, $cliente, $animal, $peso, $valor);
             
             $data = array(
                 procesoVentaTableClass::CLIENTE_ID => $cliente,

@@ -14,7 +14,7 @@ use mvc\i18n\i18nClass as i18n;
  */
 class carneVacunasTableClass extends carneVacunasBaseTableClass {
 
-    public static function validateCrear($veterinario, $fecha_vacunacion, $id_vacuna, $dosis, $accion) {
+    public static function validateCrear($veterinario, $fecha_vacunacion, $animal, $id_vacuna, $dosis, $accion) {
 
         $flag = false;
         $dateNow = date("Y-m-d H:m", strtotime("now"));
@@ -33,6 +33,21 @@ class carneVacunasTableClass extends carneVacunasBaseTableClass {
             session::getInstance()->setError(i18n::__(10094, null, 'errors'));
             $flag = true;
             session::getInstance()->setFlash(carneVacunasTableClass::getNameField(carneVacunasTableClass::VETERINARIO, true), true);
+        }
+                if (empty($animal) or ! isset($animal) or $animal == '') {
+            session::getInstance()->setError(i18n::__(10093, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(carneVacunasTableClass::getNameField(carneVacunasTableClass::ANIMAL, true), true);
+        }
+        if (!is_numeric($animal)) {
+            session::getInstance()->setError(i18n::__(10057, null, 'errors', array('%animal%' => $animal)));
+            $flag = true;
+            session::getInstance()->setFlash(carneVacunasTableClass::getNameField(carneVacunasTableClass::ANIMAL, true), true);
+        }
+        if ($animal < 0) {
+            session::getInstance()->setError(i18n::__(10095, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(carneVacunasTableClass::getNameField(carneVacunasTableClass::ANIMAL, true), true);
         }
         if (empty($fecha_vacunacion) or ! isset($fecha_vacunacion) or $fecha_vacunacion == '') {
 
