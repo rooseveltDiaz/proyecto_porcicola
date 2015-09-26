@@ -151,14 +151,14 @@ use mvc\i18n\i18nClass as i18n ?>
                             <input placeholder="<?php echo i18n::__('correo', null, 'user') ?>" type="text"  min="0" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::CORREO, true) ?>"> 
                         </th>                        
                     </tr>
-                    <tr>
+<!--                    <tr>
                         <th>
                             <?php echo i18n::__('foto', null, 'user') ?>: 
                         </th>
                         <th>
                             <input type="file" name="<?php echo datosUsuarioTableClass::getNameField(datosUsuarioTableClass::FOTO, true) ?>">
                         </th>
-                    </tr>
+                    </tr>-->
                     <tr>
                         <th colspan="2">
                     <div class="text-center">

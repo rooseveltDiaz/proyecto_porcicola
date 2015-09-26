@@ -14,7 +14,7 @@ use mvc\i18n\i18nClass as i18n;
  */
 class detalleSalidaBodegaTableClass extends detalleSalidaBodegaBaseTableClass {
 
-    public static function validateCreate( $tipo_insumo, $id_insumo, $cantidad) {
+    public static function validateCreate( $tipo_insumo, $id_insumo, $cantidad, $lote) {
         $flag = false;
 
  
@@ -33,6 +33,22 @@ class detalleSalidaBodegaTableClass extends detalleSalidaBodegaBaseTableClass {
             session::getInstance()->setError(i18n::__(10086, null, 'errors'));
             $flag = true;
             session::getInstance()->setFlash(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::TIPO_INSUMO, true), true);
+        }
+        if (empty($lote) or ! isset($lote) or $lote == '') {
+
+            session::getInstance()->setError(i18n::__(10138, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleEntradaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::LOTE, true), true);
+        }
+        if (!is_numeric($lote)) {
+            session::getInstance()->setError(i18n::__(10139, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::LOTE, true), true);
+        }
+        if ($lote < 0) {
+            session::getInstance()->setError(i18n::__(10140, null, 'errors'));
+            $flag = true;
+            session::getInstance()->setFlash(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::LOTE, true), true);
         }
         if (empty($id_insumo) or ! isset($id_insumo) or $id_insumo == '') {
 

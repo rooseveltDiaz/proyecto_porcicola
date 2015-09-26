@@ -21,15 +21,15 @@ class updateUsuarioActionClass extends controllerClass implements controllerActi
         try {
             if (request::getInstance()->isMethod('POST')) {
 
-                $ruta = configClass::getUrlBase() . 'objeto';
-                $foto = $_FILES[datosUsuarioTableClass::getNameField(datosUsuarioTableClass::FOTO, true)]['tmp_name'];
-                $nombreArchivo = $_FILES[datosUsuarioTableClass::getNameField(datosUsuarioTableClass::FOTO, true)]['name'];
-                move_uploaded_file($foto, $ruta . "/" . $nombreArchivo);
-                $ruta = $ruta . "/" . $nombreArchivo;
-
-                $dataImg = file_get_contents($foto);
-
-                $img = pg_escape_bytea($dataImg);
+//                $ruta = configClass::getUrlBase() . 'objeto';
+//                $foto = $_FILES[datosUsuarioTableClass::getNameField(datosUsuarioTableClass::FOTO, true)]['tmp_name'];
+//                $nombreArchivo = $_FILES[datosUsuarioTableClass::getNameField(datosUsuarioTableClass::FOTO, true)]['name'];
+//                move_uploaded_file($foto, $ruta . "/" . $nombreArchivo);
+//                $ruta = $ruta . "/" . $nombreArchivo;
+//
+//                $dataImg = file_get_contents($foto);
+//
+//                $img = pg_escape_bytea($dataImg);
 //              echo $dataImg;
 //              exit();
                 //usuario

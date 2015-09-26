@@ -28,7 +28,7 @@ class createDetalleSalidaActionClass extends controllerClass implements controll
                 $cantidad = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::CANDITDAD, true));
                  $lote = request::getInstance()->getPost(detalleSalidaBodegaTableClass::getNameField(detalleSalidaBodegaTableClass::LOTE, true));
 
-                detalleSalidaBodegaTableClass::validateCreate( $tipo_insumo, $id_insumo, $cantidad);
+                detalleSalidaBodegaTableClass::validateCreate( $tipo_insumo, $id_insumo, $cantidad, $lote);
 
 
                 //Manejo de inventario

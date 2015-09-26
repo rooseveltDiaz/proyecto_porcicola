@@ -894,6 +894,9 @@ dictionary:
     10135:                The weight must be numeric
     10136:                The weight does not support a negative value
     10137:                The maximum number of characters for the weight is 4
+    10138:                The empty lot is not supported
+    10139:                Lot Id must be numeric
+    10140:                The id of the lot does not support a negative value
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

@@ -893,6 +893,9 @@ dictionary:
     10135:                El peso debe ser numérico
     10136:                El peso no admite un valor negativo
     10137:                El número máximo de caracteres para el peso es de 4
+    10138:                El lote no se admite vacio
+    10139:                El id del lote debe ser numérico
+    10140:                El id del lote no admite un valor negativo
 #    00001:  Lo que buscas no existe
 #    10001:  Existe un error en la definición de los includes
 #    10002:  No hay definido un ambito (dev o prod) para la aplicación

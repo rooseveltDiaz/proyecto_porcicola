@@ -134,7 +134,7 @@ use mvc\view\viewClass as view ?>
                         <li class='<?php echo (($page == $count) ? "disabled" : "active" ) ?>' onclick="paginador(<?php echo $count ?>, '<?php echo routing::getInstance()->getUrlWeb('reporte', 'indexReport') ?>')" id="anterior"><a href="#" aria-label="Previous"><span aria-hidden="true">&Gg;</span></a></li>
                     </ul>
                 </nav>
-            </div>#
+            </div>
         </div>
     </div>
 </main>
