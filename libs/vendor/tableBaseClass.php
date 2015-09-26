@@ -344,28 +344,28 @@ namespace mvc\model\table {
                 $sql = substr($sql, 0, $newLeng);
 
                 $sql = $sql . ' FROM ' . $table;
-                if ($table2 != null) {
+                if ($table2 != null AND $fields2 !== null) {
                     $sql = $sql . ',' . ' ' . $table2;
                 };
 
-                if ($table3 != null) {
+                if ($table3 != null AND $fields3 !== null) {
                     $sql = $sql . ',' . ' ' . $table3;
                 };
 
-                if ($table4 != null) {
+                if ($table4 != null AND $fields4 !== null) {
                     $sql = $sql . ',' . ' ' . $table4;
                 };
 
                 $flag = false;
 
-                if ($table2 !== null AND $table3 !== null and $table4 !== null) {
+                if ($table2 !== null AND $table3 !== null and $table4 !== null AND $fields2 !== null AND $fields3 !== null AND $fields4 !== null) {
 
                     $sql = $sql . ' WHERE ' . $table . '.' . $fJoin1 . ' = ' . $table2 . '.' . $fJoin2 . ' AND ' . $table . '.' . $fJoin3 . ' = ' . $table3 . '.' . $fJoin4 . ' AND ' . $table . '.' . $fJoin5 . ' = ' . $table4 . '.' . $fJoin6;
                     if ($deletedLogical === true) {
                         $sql = $sql . ' AND ' . $table . '.' . self::$fieldDeleteAt . ' IS NULL';
                     }
                     $flag = true;
-                } else if ($table2 !== null AND $table3 !== null) {
+                } else if ($table2 !== null AND $table3 !== null AND $fields2 !== null AND $fields3 !== null) {
 
                     $sql = $sql . ' WHERE ' . $table . '.' . $fJoin1 . ' = ' . $table2 . '.' . $fJoin2 . ' AND ' . $table . '.' . $fJoin3 . ' = ' . $table3 . '.' . $fJoin4;
 
@@ -420,7 +420,7 @@ namespace mvc\model\table {
                 if ($limit !== null and $offset !== null) {
                     $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
                 }
-//                echo $sql;
+//                echo $sql;  
                 return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
             } catch (\PDOException $exc) {
                 throw $exc;
