@@ -13,22 +13,22 @@ class detalleProcesoCompraTableClass extends detalleProcesoCompraBaseTableClass 
     public static function validateCreate($insumo, $cantidad, $valor, $tipo) {
         $flag = false;
 
-        if (empty($id_registro) or ! isset($id_registro) or $id_registro == '') {
-
-            session::getInstance()->setError(i18n::__(10107, null, 'errors'));
-            $flag = true;
-            session::getInstance()->setFlash(detalleProcesoCompraTableClassgetNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true), true);
-        }
-        if (!is_numeric($id_registro)) {
-            session::getInstance()->setError(i18n::__(10108, null, 'errors'));
-            $flag = true;
-            session::getInstance()->setFlash(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true), true);
-        }
-        if ($id_registro < 0) {
-            session::getInstance()->setError(i18n::__(10109, null, 'errors'));
-            $flag = true;
-            session::getInstance()->setFlash(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true), true);
-        }
+//        if (empty($id_registro) or ! isset($id_registro) or $id_registro == '') {
+//
+//            session::getInstance()->setError(i18n::__(10107, null, 'errors'));
+//            $flag = true;
+//            session::getInstance()->setFlash(detalleProcesoCompraTableClassgetNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true), true);
+//        }
+//        if (!is_numeric($id_registro)) {
+//            session::getInstance()->setError(i18n::__(10108, null, 'errors'));
+//            $flag = true;
+//            session::getInstance()->setFlash(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true), true);
+//        }
+//        if ($id_registro < 0) {
+//            session::getInstance()->setError(i18n::__(10109, null, 'errors'));
+//            $flag = true;
+//            session::getInstance()->setFlash(detalleProcesoCompraTableClass::getNameField(detalleProcesoCompraTableClass::PROCESO_COMPRA_ID, true), true);
+//        }
          if (empty($tipo) or ! isset($tipo) or $tipo == '') {
 
             session::getInstance()->setError(i18n::__(10044, null, 'errors'));
