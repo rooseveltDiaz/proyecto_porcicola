@@ -59,6 +59,11 @@
     </div>
 </div>
 </div>
+   <a id="atras" class="btn btn-sm btn-default  fa fa-arrow-left" href="<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>"></a>
+   <div class="mdl-tooltip mdl-tooltip--large" for="atras">
+                            <?php echo i18n::__('atras', null, 'ayuda') ?>
+                        </div> 
+</form>
 </main>
 
 

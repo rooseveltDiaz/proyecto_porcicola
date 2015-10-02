@@ -154,7 +154,7 @@ use mvc\i18n\i18nClass as i18n ?>
                             </div>
                         <?php endif; ?>
 
-                     <!--   <div class="demo-avatar-dropdown" style="margin-left: 5px">
+                        <div class="demo-avatar-dropdown" style="margin-left: 5px">
                             <span><?php echo i18n::__('vacunacion', null, 'vacunacion') ?></span>
                             <div class="mdl-layout-spacer"></div>
                             <button id="vacunacion" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
@@ -162,9 +162,9 @@ use mvc\i18n\i18nClass as i18n ?>
                             </button>
                             <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="vacunacion">
                                 <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacunacion') ?>'" > <button class="mdl-menu__item fa fa-medkit"><?php echo i18n::__('registroVacunacion', null, 'animal') ?></button></a>
-                                <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>
+                        <!--        <a onclick="location.href = '<?php echo routing::getInstance()->getUrlWeb('vacunacion', 'indexVacuna') ?>'" > <button class="mdl-menu__item fa fa-eyedropper"><?php echo i18n::__('vacuna', null, 'detalleVacunacion') ?></button></a>-->
                             </ul>
-                        </div> -->
+                        </div> 
 
                         <div class="mdl-layout-spacer"></div>
                         <?php if (session::getInstance()->hasCredential('admin')): ?>

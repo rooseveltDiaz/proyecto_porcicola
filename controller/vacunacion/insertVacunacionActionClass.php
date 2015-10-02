@@ -21,14 +21,14 @@ class insertVacunacionActionClass extends controllerClass implements controllerA
                 veterinarioTableClass::ID,
                 veterinarioTableClass::NOMBRE
             );
-//            $fieldsAnimal = array(
-//                animalTableClass::ID,
-//                animalTableClass::NUMERO
-//            );
+          $fieldsAnimal = array(
+              animalTableClass::ID,
+               animalTableClass::NUMERO
+           );
 
 
-//            $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
-            $this->objAnimal = animalTableClass::subQuery();
+            $this->objAnimal = animalTableClass::getAll($fieldsAnimal, true);
+//            $this->objAnimal = animalTableClass::subQuery();
 
             $this->objVeterinario = veterinarioTableClass::getAll($fieldsVeterinario, true);
             $this->defineView('insert', 'vacunacion', session::getInstance()->getFormatOutput());

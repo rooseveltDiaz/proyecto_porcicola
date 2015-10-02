@@ -95,7 +95,7 @@ use mvc\session\sessionClass as session ?>
                                                     </td>
                                 <?php endif; ?>-->
                                 <!--                <td><?php echo $key->id ?></td>-->
-                                <td><?php echo $key->fecha_registro ?></td>
+                                <td><?php echo date("Y-M-d h:m", strtotime($key->fecha_registro)) ?></td>
                                 <td><?php echo $key->$num_doc ?></td>
                                 <td><?php echo $key->$nom_veterinario ?></td>
                                 <td>          

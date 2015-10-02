@@ -122,10 +122,10 @@ use mvc\session\sessionClass as session ?>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="peso<?php echo $countDetale ?>">
                                         <?php echo i18n::__('repeso', null, 'dpVenta') ?>
                                     </div> 
-                                    <a id="vacunacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexVacunacion',array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalHojaVida)) ?>" class="btn btn-lg fa fa-medkit" > </a>
+<!--                                    <a id="vacunacion<?php echo $countDetale ?>" href="<?php echo routing::getInstance()->getUrlWeb('animal', 'indexVacunacion',array(hojaVidaTableClass::getNameField(hojaVidaTableClass::ANIMAL) => $key->$idAnimalHojaVida)) ?>" class="btn btn-lg fa fa-medkit" > </a>
                                     <div class="mdl-tooltip mdl-tooltip--large" for="vacunacion<?php echo $countDetale ?>">
                                         <?php echo i18n::__('vacu', null, 'dpVenta') ?>
-                                    </div> 
+                                    </div> -->
                                     <?php endforeach; ?>
                                 </div>
                             </td>
