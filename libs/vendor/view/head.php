@@ -173,7 +173,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                 <?php echo i18n::__('admin', null, 'ayuda') ?>
                             </div>                       
                         <?php else: ?>
-                            <a id="invitado" href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('manual usuario Administrador.pdf') ?>'"<i class="mdl-color-text--blue-400 text-center material-icons">help_outline</i></a>
+                            <a id="invitado" href="#" target="_blank" onclick="location.href = '<?php echo routing::getInstance()->getUrlObj('MANUAL DE INVITADO.pdf') ?>'"<i class="mdl-color-text--blue-400 text-center material-icons">help_outline</i></a>
                             <div class="mdl-tooltip mdl-tooltip--large" for="invitado">
                                 <?php echo i18n::__('admin', null, 'ayuda') ?>
                             </div>
