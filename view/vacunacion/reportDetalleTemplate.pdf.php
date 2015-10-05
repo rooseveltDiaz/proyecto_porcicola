@@ -4,6 +4,7 @@ use mvc\routing\routingClass as routing;
 $nombreVacuna = vacunaTableClass::NOMBRE_VACUNA;
 $nombreVeterinario = veterinarioTableClass::NOMBRE;
 $num_animal = animalTableClass::NUMERO;
+$accion = detalleVacunacionTableClass::ACCION;
 class PDf extends FPDF {
 
     function Footer() {
@@ -44,21 +45,23 @@ foreach ($objVacunacion as $key) {
 }//close foreach
 $pdf->Ln(15);
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Cell(45);
-$pdf->Cell(20, 10, utf8_decode('Item'), 1, 0, 'C');
+$pdf->Cell(1);
+$pdf->Cell(15, 10, utf8_decode('Item'), 1, 0, 'C');
 //$pdf->Cell(40, 10, utf8_decode('N.Vacunacion'), 1, 0, 'C');
-$pdf->Cell(55, 10, utf8_decode('Fecha Vacunacion'), 1, 0, 'C');
-$pdf->Cell(90, 10, utf8_decode('Vacuna'), 1, 0, 'C');
-$pdf->Cell(30, 10, utf8_decode('Dosis'), 1, 0, 'C');
+$pdf->Cell(48, 10, utf8_decode('Fecha Vacunacion'), 1, 0, 'C');
+$pdf->Cell(85, 10, utf8_decode('Vacuna'), 1, 0, 'C');
+$pdf->Cell(30, 10, utf8_decode('Dosis (cm)'), 1, 0, 'C');
+$pdf->Cell(90, 10, utf8_decode('Accion'), 1, 0, 'C');
 //$pdf->Cell(30, 10, utf8_encode('Accion'), 1, 0, 'C');
 $pdf->Ln();
 foreach ($objDetalleVacunacion as $key) {
-    $pdf->Cell(45);
-    $pdf->Cell(20, 10, utf8_decode($key->id), 1, 0);
+    $pdf->Cell(1);
+    $pdf->Cell(15, 10, utf8_decode($key->id), 1, 0);
 //    $pdf->Cell(40, 10, utf8_decode($key->id_registro), 1, 0, 'C');
-    $pdf->Cell(55, 10, date("Y-M-d", strtotime($key->fecha_vacunacion)), 1, 0, 'C');
-    $pdf->Cell(90, 10, utf8_decode($key->$nombreVacuna), 1, 0);
+    $pdf->Cell(48, 10, date("Y-M-d", strtotime($key->fecha_vacunacion)), 1, 0, 'C');
+    $pdf->Cell(85, 10, utf8_decode($key->$nombreVacuna), 1, 0);
     $pdf->Cell(30, 10, utf8_decode($key->dosis_vacuna), 1, 0, 'C');
+    $pdf->Cell(90, 10, utf8_decode($key->$accion), 1, 0, 'C');
 //    $pdf->Cell(30, 10, utf8_encode($key->id), 1,0,'C');
     $pdf->Ln();
 }//close foreach

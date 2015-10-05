@@ -697,8 +697,8 @@ dictionary:
     compra1:               Register:Through this option you can increase the value per kilogram of pork
     req:                   Requirements
     sistema:               Management System for Swine Farm
-    version:               Version 1.0
-    j:                     JS SYSTEM
+    version:               Version 4.0
+    j:                     INFORMATION SYSTEM SWINE FARM
     cont:                  Contact Us
     inf:                   General Information
     centro:                Center for Industrial Technology Design
